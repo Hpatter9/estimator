@@ -8,13 +8,13 @@ from openpyxl.styles import Font, PatternFill
 
 from ..models import Estimate
 
-HEADERS = ["Room", "Category", "Selector", "Description", "Quantity", "Unit", "Unit Price", "Tax", "Total",
+HEADERS = ["Room", "Optional", "Trade", "Category", "Selector", "Description", "Quantity", "Unit", "Unit Price", "Tax", "Total",
            "Price Source", "Note"]
 
 
 def _rows(est: Estimate):
     for s, i in est.all_items():
-        yield [s.name, i.category, i.selector, i.description, i.quantity, i.unit, i.unit_price, i.tax, i.total,
+        yield [s.name, s.option, i.trade, i.category, i.selector, i.description, i.quantity, i.unit, i.unit_price, i.tax, i.total,
                i.price_source, i.note]
 
 
@@ -36,12 +36,12 @@ def write_xlsx(est: Estimate, path: Path) -> Path:
     flag = PatternFill("solid", fgColor="FFF2CC")
     for row in _rows(est):
         ws.append(row)
-        if row[9] == "ai":  # highlight prices to double-check
+        if row[11] == "ai":  # highlight prices to double-check
             for c in ws[ws.max_row]:
                 c.fill = flag
-    for col, width in zip("ABCDEFGHIJK", [18, 9, 9, 55, 10, 6, 11, 9, 12, 11, 40]):
+    for col, width in zip("ABCDEFGHIJKLM", [18, 14, 22, 9, 9, 55, 10, 6, 11, 9, 12, 11, 40]):
         ws.column_dimensions[col].width = width
-    for r in ws.iter_rows(min_row=2, min_col=7, max_col=9):
+    for r in ws.iter_rows(min_row=2, min_col=9, max_col=11):
         for c in r:
             c.number_format = "#,##0.00"
 
@@ -51,7 +51,8 @@ def write_xlsx(est: Estimate, path: Path) -> Path:
         ("Claim #", est.claim_number), ("Date", est.estimate_date.isoformat()), (),
         ("Line item total", est.line_item_total), ("Sales tax", est.sales_tax),
         (f"Overhead ({est.overhead_pct:g}%)", est.overhead), (f"Profit ({est.profit_pct:g}%)", est.profit),
-        ("Grand total", est.grand_total),
+        ("Total (base scope)", est.grand_total),
+        *[(f"Optional: {o}", est.scope_total(o)) for o in est.options],
     ]:
         summary.append(list(row))
     summary.column_dimensions["A"].width = 20

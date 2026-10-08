@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ doc_title }} - {{ est.title }}</title>
+<style>
+  :root { --navy: #16324a; --ink: #1f2933; --body: #3e4c59; --muted: #7b8794; --pale: #eef2f6; --rule: #c9d2dc; --sky: #4a90c2; }
+  @page {
+    size: letter; margin: 0.55in 0 0.6in 0;
+    @bottom-left { content: "{{ doc_title }}"; font: 7.5pt Helvetica, Arial, sans-serif; color: #9aa5b1; padding-left: 0.6in; }
+    @bottom-right { content: "{{ company.name }} | Page " counter(page); font: 7.5pt Helvetica, Arial, sans-serif; color: #9aa5b1; padding-right: 0.6in; }
+  }
+  @page :first { margin-top: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 0.6in; font: 8pt/1.4 Helvetica, Arial, "Liberation Sans", sans-serif; color: var(--ink); }
+  .band { background: var(--navy); color: #fff; margin: 0 -0.6in; padding: 0.38in 0.6in 0.3in; display: flex; justify-content: space-between; align-items: center; }
+  .band h1 { margin: 0; font-size: 19pt; letter-spacing: -0.2pt; }
+  .band .sub { color: #d5dde6; font-size: 9pt; margin-top: 8px; }
+  .band img { height: 34px; }
+  .info { display: grid; grid-template-columns: {{ info_cols }}; gap: 16px; padding: 18px 0 14px; border-bottom: 1.5px solid {{ info_rule }}; }
+  .label { font-size: 6.5pt; font-weight: bold; letter-spacing: 0.6pt; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+  .agreement .label { color: var(--muted); }
+  .callout { background: var(--pale); border-left: 4px solid var(--navy); padding: 9px 12px; color: var(--body); margin: 14px 0; }
+  h2 { color: var(--navy); font-size: 12pt; margin: 18px 0 8px; }
+  .scope-head { display: flex; justify-content: space-between; color: var(--navy); font-size: 12pt; font-weight: bold; border-bottom: 1.5px solid var(--navy); padding-bottom: 5px; margin-top: 22px; }
+  .areas { color: #5a6672; margin: 6px 0 6px; }
+  .optional-note { font-style: italic; color: var(--muted); margin: 0 0 8px; }
+  .trade { break-inside: avoid; }
+  .bar { background: var(--navy); color: #fff; font-weight: bold; font-size: 8.5pt; display: flex; justify-content: space-between; padding: 5px 10px; border-radius: 3px; margin-top: 8px; }
+  ul.bullets { margin: 5px 0 2px; padding-left: 0; list-style: none; }
+  ul.bullets li { position: relative; padding-left: 12px; margin: 1px 0; }
+  ul.bullets li::before { content: "•"; position: absolute; left: 3px; }
+  .agreement ul.bullets li { padding-left: 14px; margin: 4px 0; }
+  .agreement ul.bullets li::before { content: ""; left: 2px; top: 3px; width: 2px; height: 7px; background: var(--navy); }
+  .note { font-style: italic; color: var(--muted); font-size: 7.5pt; margin: 2px 0 4px; }
+  .note-box { background: var(--pale); border-left: 4px solid var(--navy); color: var(--body); font-size: 7.5pt; padding: 7px 10px; margin: 8px 0 4px; }
+  .agreement .note-box { border-left: none; }
+  table.summary { width: 100%; border-collapse: collapse; }
+  table.summary td { padding: 5px 4px; }
+  table.summary td.n { text-align: right; font-weight: bold; }
+  table.summary tr.total td { font-size: 9.5pt; font-weight: bold; border-top: 1.5px solid var(--navy); border-bottom: 1.5px solid var(--navy); padding: 6px 4px; }
+  table.summary tr.opt td { font-style: italic; color: var(--body); }
+  table.summary tr.plain td { border-bottom: 1px solid var(--rule); }
+  .small { font-size: 7.5pt; color: var(--muted); }
+  .excl li { margin: 4px 0; }
+  table.billing { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  table.billing th { font-size: 7pt; color: var(--muted); text-align: right; padding: 4px; border-bottom: 1.5px solid var(--navy); }
+  table.billing td { text-align: right; padding: 9px 4px; border-bottom: 1px solid var(--rule); }
+  table.billing td:first-child { text-align: left; }
+  table.billing tr.strong td { font-size: 10pt; font-weight: bold; }
+  table.billing tr:last-child td { border-bottom: 1.5px solid var(--navy); }
+  table.billing tr.light td { font-size: 7.5pt; }
+  table.billing tr.light td:nth-child(2) { font-weight: bold; }
+  .license { margin-top: 12px; }
+  .page-break { break-before: page; }
+  .sel { display: grid; grid-template-columns: 1fr 150px; gap: 10px; margin: 10px 0 14px; break-inside: avoid; }
+  .sel .bar { grid-column: 1 / -1; border-radius: 0; margin: 0; }
+  .sel table { width: 100%; border-collapse: collapse; }
+  .sel td { padding: 6px 10px; background: var(--pale); border-bottom: 2px solid #fff; }
+  .sel td.k { width: 120px; font-size: 6.5pt; font-weight: bold; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4pt; }
+  .sel img { width: 150px; height: 150px; object-fit: cover; }
+  .sel .cap { font-size: 6.5pt; color: var(--muted); }
+  h2, h3 { break-after: avoid; }
+  h3 { font-size: 7.5pt; letter-spacing: 0.4pt; color: var(--navy); margin: 14px 0 4px; text-transform: uppercase; }
+  .h2rule { border-bottom: 1px solid var(--sky); padding-bottom: 6px; }
+  ol.terms { padding-left: 16px; margin: 6px 0; }
+  ol.terms li { margin: 3px 0; }
+  ol.terms ol { list-style: lower-alpha; padding-left: 16px; }
+  .sign { margin-top: 36px; width: 55%; border-top: 1px solid var(--ink); padding-top: 4px; font-size: 6.5pt; font-weight: bold; letter-spacing: 0.6pt; }
+</style>
+</head>
+<body class="{{ body_class }}">
+<div class="band">
+  <div><h1>{{ doc_title }}</h1><div class="sub">{{ company.name }}</div></div>
+  {% if logo %}<img src="{{ logo }}" alt="{{ company.name }}">{% endif %}
+</div>
+{% block body %}{% endblock %}
+</body>
+</html>

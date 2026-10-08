@@ -15,6 +15,7 @@ from pathlib import Path
 from . import ai
 from .library import Library, PriceEntry
 from .models import Estimate, LineItem, Room, Section
+from .trades import fill_missing_trades
 
 GEN_ITEM_SCHEMA = ai.obj({
     "category": ai.STR, "selector": ai.STR, "description": ai.STR,
@@ -28,6 +29,7 @@ GEN_SCHEMA = ai.obj({
     "title": ai.STR, "loss_type": ai.STR, "summary": ai.STR,
     "sections": {"type": "array", "items": ai.obj({
         "name": ai.STR,
+        "option": ai.STR,
         "items": {"type": "array", "items": GEN_ITEM_SCHEMA},
     })},
     "questions": {"type": "array", "items": ai.STR},
@@ -48,6 +50,10 @@ Rules:
 - note: brief justification when the quantity isn't obvious (e.g. "2ft flood cut x 46 LF").
 - Don't invent damage that isn't in the notes, photos or measurements. If something important is unclear,
   scope the most likely option and add a question to `questions`.
+- option: "" for the base scope. Only when the notes say an area or piece of work is optional / priced
+  separately / an add-on, put it in its own section(s) with option set to a short name like "Pantry Repairs".
+- Write line-item descriptions in Xactimate wording, like the past estimates. Put a short line-item note where
+  the past estimates would (why an item is needed, how a quantity was figured).
 - summary: 2-4 sentences describing the scope."""
 
 
@@ -85,6 +91,7 @@ def generate_estimate(
     profit_pct: float = 10.0,
     tax_pct: float = 0.0,
     n_similar: int = 3,
+    customer_scope: bool = True,
 ) -> tuple[Estimate, list[str]]:
     """Returns (estimate, open questions for you)."""
     room_names = " ".join(r.name for r in rooms)
@@ -125,11 +132,20 @@ def generate_estimate(
                 category=it["category"], selector=it["selector"], description=it["description"],
                 quantity=it["quantity"], unit=unit, unit_price=price, note=it["note"], price_source=source,
             ))
-        sections.append(Section(name=s["name"], room=by_name.get(s["name"].lower()), items=items))
+        sections.append(Section(name=s["name"], room=by_name.get(s["name"].lower()), option=s["option"],
+                                items=items))
 
     est = Estimate(
         title=data["title"], loss_type=data["loss_type"], summary=data["summary"], sections=sections,
         customer=customer, address=address, claim_number=claim_number,
         overhead_pct=overhead_pct, profit_pct=profit_pct, tax_pct=tax_pct,
     )
-    return est, data["questions"]
+    questions = list(data["questions"])
+    if customer_scope:
+        from .customer import write_customer_scope
+        try:
+            write_customer_scope(est, library.style_examples())
+        except ai.AIError as e:
+            fill_missing_trades(est)
+            questions.append(f"Customer scope wasn't written ({e}); bullets fall back to line-item wording.")
+    return est, questions

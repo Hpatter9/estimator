@@ -1,0 +1,76 @@
+{% extends "_customer_base.html.j2" %}
+{% set doc_title = "Reconstruction Agreement" %}
+{% set body_class = "agreement" %}
+{% set info_cols = "1fr 1fr" %}
+{% set info_rule = "var(--sky)" %}
+{% block body %}
+<div class="info">
+  <div><div class="label">Property</div>{{ est.address | replace(", ", "<br>" | safe, 1) }}</div>
+  <div><div class="label">Customer</div>{{ est.customer }}</div>
+</div>
+
+{% if est.intro %}<div class="callout">{{ est.intro }}</div>{% endif %}
+
+{% for scope in scopes %}
+  {% if has_options %}
+  <div class="scope-head"><span>{{ scope.title }}</span><span>{{ scope.total | money }}</span></div>
+  {% if scope.areas %}<p class="areas">{{ scope.areas }}.</p>{% endif %}
+  {% if scope.option %}<p class="optional-note">{{ scope.description or "Optional add-on. Priced separately. Not included in the Total Agreement Amount unless accepted." }}</p>{% endif %}
+  {% endif %}
+  {% include "_scope.html.j2" %}
+{% endfor %}
+
+{% if selections %}
+<h2 class="h2rule page-break">Material Selections</h2>
+{% for s, img in selections %}
+<div class="sel">
+  <div class="bar"><span>{{ s.title }}</span></div>
+  <table>
+    {% for f in s.fields %}<tr><td class="k">{{ f.label }}</td><td>{{ f.value }}</td></tr>{% endfor %}
+    <tr><td class="k">Viewed</td><td>{{ s.viewed }}</td></tr>
+  </table>
+  <div>{% if img %}<img src="{{ img }}" alt=""><div class="cap">{{ s.caption }}</div>{% endif %}</div>
+</div>
+{% endfor %}
+<h3>Selection Acknowledgments</h3>
+<ul class="bullets">{% for a in company.selection_acknowledgments %}<li><b>{{ a.lead }}</b> {{ a.text }}</li>{% endfor %}</ul>
+{% endif %}
+
+<h2>What This Does Not Include</h2>
+<ul class="bullets excl">{% for lead, text in exclusions %}<li><b>{{ lead }}</b> {{ text }}</li>{% endfor %}</ul>
+
+<div class="trade">
+<table class="summary">
+  {% for s in scopes %}<tr class="plain"><td>{{ "Scope of work" if not s.option else "Optional: " ~ s.option }}</td><td class="n">{{ s.total | money }}</td></tr>{% endfor %}
+  <tr class="total"><td>Total Agreement Amount</td><td class="n">{{ billing[0].total | money }}</td></tr>
+</table>
+<h2>Billing</h2>
+<table class="summary">
+  {% for p in company.billing %}
+  <tr class="plain"><td>{{ p.label }} ({{ p.pct | int }}%)</td><td class="n">{{ billing[0].payments[loop.index0] | money }}</td></tr>
+  {% endfor %}
+</table>
+</div>
+
+<h2 class="h2rule page-break">Waivers and Acknowledgments</h2>
+{% for w in company.waivers %}
+<h3>{{ w.heading }}</h3>
+<ul class="bullets">{% for i in w.items %}<li>{{ i }}</li>{% endfor %}</ul>
+{% endfor %}
+
+<h2 class="h2rule">Reconstruction Work Authorization / Direct to Pay</h2>
+<p>{{ company.agreement_terms_intro }}</p>
+<ol class="terms">
+  {% for t in company.agreement_terms %}
+  <li>{{ t.text }}{% if t.sub %}<ol>{% for s in t.sub %}<li>{{ s }}</li>{% endfor %}</ol>{% endif %}</li>
+  {% endfor %}
+</ol>
+<p><b>{{ company.agreement_terms_footer }}</b></p>
+<p>{{ company.license_line }}</p>
+
+<div class="trade">
+<h2>Approval</h2>
+<p>{{ company.approval_text }}</p>
+<div class="sign">CUSTOMER SIGNATURE / DATE</div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{# one scope (base or optional): trades with totals, bullets and notes #}
+{% for t in scope.trades %}
+<div class="trade">
+  <div class="bar"><span>{{ t.name }}</span><span>{{ t.total | money }}</span></div>
+  <ul class="bullets">{% for b in t.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  {% if t.note %}<div class="{{ 'note-box' if t.note|length > 130 else 'note' }}">{{ t.note }}</div>{% endif %}
+</div>
+{% endfor %}

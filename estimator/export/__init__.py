@@ -8,7 +8,8 @@ from ..models import Estimate
 
 FORMATS = {
     "xactimate": "Xactimate-style PDF (room-by-room line items, recap, O&P summary)",
-    "company": "Your company template (HTML, plus PDF when Chromium is available)",
+    "estimate": "Reconstruction Estimate (your customer template)",
+    "agreement": "Reconstruction Agreement (your contract template)",
     "excel": "Excel workbook",
     "csv": "CSV of line items",
     "json": "JSON (re-importable / editable)",
@@ -18,13 +19,14 @@ FORMATS = {
 def export(est: Estimate, fmt: str, out_dir: Path, company: Company) -> list[Path]:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    stem = _safe(est.title or "estimate")
+    stem = _safe(est.customer or est.title or "estimate")
     if fmt == "xactimate":
         from .xactimate_style import write_pdf
         return [write_pdf(est, out_dir / f"{stem} - xactimate style.pdf", company)]
-    if fmt == "company":
-        from .company_template import write
-        return write(est, out_dir / f"{stem}.html", company)
+    if fmt in ("estimate", "agreement"):
+        from .customer_docs import write
+        label = "Reconstruction Estimate" if fmt == "estimate" else "Reconstruction Agreement"
+        return write(est, out_dir / f"{stem} - {label}", company, doc=fmt)
     if fmt == "excel":
         from .tables import write_xlsx
         return [write_xlsx(est, out_dir / f"{stem}.xlsx")]

@@ -1,72 +1,94 @@
 # Estimator
 
-Drafts new restoration/construction estimates from **your past estimates**, your **job notes**, and the
-**DocuSketch** measurements for the project. Then it exports the result in whatever format you need.
+Drafts new reconstruction estimates from **your past Xactimate estimates**, your **job notes**, and the
+**DocuSketch ESX** for the project. Then it writes them up as your **Reconstruction Estimate** and
+**Reconstruction Agreement**, an Xactimate-style PDF, or Excel.
 
 ```
-past estimates ──► library (line items + your historical prices)
-                         │
-notes + DocuSketch + photos ──► Claude drafts scope & quantities ──► prices filled from your history
-                                                                    │
-                     Xactimate-style PDF · your company template · Excel · CSV · JSON
+Xactimate PDFs ─────────► library: line items + the prices you've charged
+Reconstruction Estimates/Agreements ─► style examples: how you word things for customers
+                                │
+notes + DocuSketch .ESX + photos ─► Claude scopes line items & quantities ─► prices from your history
+                                                                         │
+                                         Claude groups into trades + writes customer bullets
+                                                                         │
+            Reconstruction Estimate · Reconstruction Agreement · Xactimate-style PDF · Excel · CSV
 ```
 
-## Setup
+## Setup (once)
 
 ```bash
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=sk-ant-...      # from console.anthropic.com
+set ANTHROPIC_API_KEY=sk-ant-...      # Windows (macOS/Linux: export ANTHROPIC_API_KEY=...)
 ```
 
-## Use it in the browser
+PDFs of your templates are printed with Chrome or Edge, which most computers already have.
+
+## 1. Load your history
+
+Point it at your estimates folder. It searches all subfolders, skips files it has already imported,
+and you can stop it and run it again at any time:
+
+```bash
+python -m estimator import "C:\Users\you\Documents\Estimates"
+```
+
+- **Xactimate PDFs** are read offline, so they cost nothing. Every room total is checked against the
+  "Totals:" line in the PDF, and the log shows `all room totals match`.
+- **Your Reconstruction Estimates / Agreements** are saved as style examples. Claude copies your
+  wording from them.
+- **Other PDFs** are read by Claude. Add `--no-ai` to skip them and spend nothing.
+
+## 2a. New job: notes + DocuSketch
+
+```bash
+python -m estimator new --notes notes.txt --sketch "5517849v2.ESX" --photos photos/*.jpg ^
+    --customer "Jane Doe" --address "123 Main St, Denver, CO 80211"
+```
+
+The `.ESX` from the DocuSketch folder is read directly: rooms, ceiling heights, wall SF (minus doors
+and windows), floor SF, and floor perimeter (minus doorways), using the same math Xactimate uses. If your
+notes say something is optional or priced separately (e.g. "pantry as optional add-on"), it goes into
+its own optional section with its own total and billing row.
+
+## 2b. Or convert an Xactimate estimate you already wrote
+
+```bash
+python -m estimator convert "Smith - Repair Estimate.pdf" --optional "Pantry=Pantry Repairs"
+```
+
+This reads the Xactimate PDF, groups the line items into your trades, writes the customer bullets, and
+outputs your Reconstruction Estimate and Agreement.
+
+## 3. Review and export: the web app
 
 ```bash
 streamlit run app.py
 ```
 
-1. **Past estimates**: upload your old estimates (Xactimate PDFs, your own PDFs, CSV/XLSX). Do this once. The more you add, the better it gets.
-2. **New estimate**: type your notes and upload the DocuSketch export (PDF measurement report, CSV/XLSX, or ESX), plus photos if you want.
-3. **Review & edit**: change any line item, quantity or price. Rows marked `ai` weren't in your price history, so check those.
-4. **Export**: download as an Xactimate-style PDF, your company template (HTML + PDF), Excel, or CSV.
+The tabs are Library, New estimate, Convert Xactimate, Review & edit, Export, and Settings. In Review you
+can edit line items, which trade each one falls under, optional add-ons, and the customer bullets.
+Items marked `ai` weren't in your price history, so check those prices.
 
-Put your company name, address, logo and terms under **Settings** (saved to `data/company.json`).
+## Output formats
 
-## Or from the command line
-
-```bash
-python -m estimator import past/*.pdf past/*.xlsx
-python -m estimator prices --search drywall
-python -m estimator new --notes examples/notes_sample.txt \
-    --sketch examples/docusketch_rooms_sample.csv --photos photos/*.jpg \
-    --customer "Jane Doe" --address "123 Main St" \
-    --format xactimate --format company --format excel
-python -m estimator export output/<estimate>.json --format excel   # re-export after editing the JSON
-```
-
-## How it decides things
-
-- **Scope and quantities**: Claude reads your notes, photos and room measurements, looks at your 3 most similar past jobs, and writes line items the way you have scoped similar jobs. Quantities come from the measurements (walls → wall SF, flooring → floor SF, baseboard → perimeter LF, flood cuts → perimeter × cut height).
-- **Prices**: when a line item matches one in your history, it uses the **median price you've charged**. Only items you've never used get a Claude-suggested price, and those are flagged.
-- **Questions**: when something important is unclear (e.g. "Is the pad wet?"), it scopes the likely option and lists the question for you.
-
-## Customizing the output
-
-- **Your template**: edit `estimator/templates/company_estimate.html.j2` (plain HTML + CSS). PDF is printed with Chrome/Chromium if installed; otherwise you get the HTML and can print it to PDF.
-- **Xactimate-style PDF**: `estimator/export/xactimate_style.py`. This produces a PDF with the same layout as an Xactimate estimate. It is not a file Xactimate can import. To load an estimate into Xactimate, use the Excel export as your checklist.
-- **New format**: add a writer in `estimator/export/` and register it in `FORMATS` in `estimator/export/__init__.py`.
-
-## Files
-
-| Path | What it does |
+| Format | What it is |
 |---|---|
-| `estimator/ingest/estimate_pdf.py` | Reads past estimate PDFs (Claude, or an offline Xactimate parser with `--no-ai`) |
-| `estimator/ingest/spreadsheet.py` | CSV/XLSX estimates and room tables (flexible column names) |
-| `estimator/ingest/docusketch.py` | DocuSketch room measurements |
-| `estimator/library.py` | SQLite library, similar-job search, price book |
-| `estimator/generate.py` | Drafts the new estimate |
-| `estimator/export/` | Output formats |
-| `app.py` | Web app |
+| `estimate` | Your **Reconstruction Estimate**: trades with O&P-inclusive totals, bullets, exclusions, a 50/40/10 billing table, and a cost summary when there are optional add-ons |
+| `agreement` | Your **Reconstruction Agreement**: the same scope, plus material selections, waivers, work-authorization terms, and a signature block |
+| `xactimate` | A PDF laid out like an Xactimate estimate (it cannot be imported into Xactimate) |
+| `excel`, `csv`, `json` | Line items. The JSON can be edited and re-exported with `python -m estimator export job.json --format agreement` |
 
-Run the tests with `python -m pytest`.
+## Changing the wording
 
-The model defaults to `claude-opus-5-5`. To use a different one, set `ESTIMATOR_MODEL`.
+- **Exclusions, waivers, agreement terms, billing %, license line**: `estimator/company_defaults.json`
+- **Standard trade notes and trade order**: `estimator/trades.py`
+- **How bullets are written**: `STYLE_GUIDE` in `estimator/customer.py`. Importing more of your customer
+  documents also teaches it.
+- **Layout**: `estimator/templates/*.html.j2`
+
+## Notes
+
+- Your estimates and customer data stay on your computer, in `data/` (ignored by git). Only the text
+  needed for each request is sent to Claude.
+- Tests: `python -m pytest`. Model: `claude-opus-5-5`; set `ESTIMATOR_MODEL` to change it.

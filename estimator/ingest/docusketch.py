@@ -3,8 +3,7 @@
 Supported:
   * PDF reports (floor plan / measurements report) - read by Claude
   * CSV / XLSX room tables                         - read directly
-  * ESX / ZIP exports                              - XML inside is read by Claude (best effort;
-                                                     encrypted ESX files can't be read)
+  * ESX exports (what DocuSketch puts in the job folder) - read directly from the sketch, no AI
   * JSON (list of rooms)                           - read directly
 Photos (JPG/PNG) aren't rooms; pass them straight to the generator as job photos.
 """
@@ -40,18 +39,38 @@ def load_rooms(path: Path) -> list[Room]:
     if suffix == ".pdf":
         content = [ai.file_block(path), {"type": "text", "text": "List every room and its measurements."}]
     elif suffix in (".esx", ".zip") and zipfile.is_zipfile(path):
-        content = [{"type": "text", "text": _zip_xml(path)}]
+        try:
+            from .esx import load_esx_rooms
+            return clean_rooms(load_esx_rooms(path))
+        except (ValueError, KeyError, AttributeError):
+            content = [{"type": "text", "text": _zip_xml(path)}]  # unusual ESX - let Claude read the XML
     else:
         raise ValueError(f"Don't know how to read rooms from {path.name}")
     data = ai.structured(ROOMS_SYSTEM, content, ROOMS_SCHEMA, effort="medium")
     return [fill_derived(Room.model_validate(r)) for r in data["rooms"]]
 
 
+def clean_rooms(rooms: list[Room], min_sf: float = 10.0) -> list[Room]:
+    """Drop sketch filler (voids, wall cavities, tiny unnamed spaces) and number duplicate names."""
+    kept = [r for r in rooms if r.name.lower() != "void"
+            and not (r.name.lower().startswith("unknown room") and (r.floor_sf or 0) < min_sf)
+            and (r.floor_sf or 0) >= 1.0]
+    counts: dict[str, int] = {}
+    for r in kept:
+        counts[r.name] = counts.get(r.name, 0) + 1
+    seen: dict[str, int] = {}
+    for r in kept:
+        if counts[r.name] > 1:
+            seen[r.name] = seen.get(r.name, 0) + 1
+            r.name = f"{r.name} ({seen[r.name]})"
+    return kept
+
+
 def _zip_xml(path: Path) -> str:
     parts = []
     with zipfile.ZipFile(path) as z:
         for name in z.namelist():
-            if name.lower().endswith((".xml", ".zipxml", ".json")):
+            if name.lower().endswith((".xml", ".json")):
                 try:
                     parts.append(f"--- {name} ---\n" + z.read(name).decode("utf-8", errors="replace"))
                 except RuntimeError as e:  # encrypted member

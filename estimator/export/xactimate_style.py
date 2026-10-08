@@ -107,11 +107,11 @@ def write_pdf(est: Estimate, path: Path, company: Company) -> Path:
         table.setStyle(TableStyle(spans + [("LINEABOVE", (0, -1), (-1, -1), 0.5, colors.black),
                                             ("FONT", (0, -1), (-1, -1), "Helvetica-Bold", 8)]))
         dims = _dims(section.room)
-        story.append(KeepTogether([Paragraph(section.name, ROOM)] + ([Paragraph(dims, SMALL)] if dims else []) +
+        story.append(KeepTogether([Paragraph(section.name + (f" (Optional: {section.option})" if section.option else ""), ROOM)] + ([Paragraph(dims, SMALL)] if dims else []) +
                                   [Spacer(1, 3)]))
         story.append(table)
 
-    line_total = est.line_item_total
+    line_total = round(sum(est.scope_line_total(o) for o in ["", *est.options]), 2)
     grand = [["Line Item Totals", "", "", _m(totals["tax"]), _m(totals["op"]), _m(totals["rcv"])]]
     t = Table(grand, colWidths=COLS)
     t.setStyle(TableStyle([("FONT", (0, 0), (-1, -1), "Helvetica-Bold", 8), ("ALIGN", (1, 0), (-1, -1), "RIGHT"),
@@ -133,8 +133,12 @@ def write_pdf(est: Estimate, path: Path, company: Company) -> Path:
         ["Material Sales Tax", _m(est.sales_tax)],
         [f"Overhead ({est.overhead_pct:g}%)", _m(est.overhead)],
         [f"Profit ({est.profit_pct:g}%)", _m(est.profit)],
-        ["Replacement Cost Value", _m(est.grand_total)],
+        ["Replacement Cost Value" + (" (Base Scope)" if est.options else ""), _m(est.grand_total)],
     ]
+    for o in est.options:
+        summary.append([f"Optional: {o} (incl. O&P)", _m(est.scope_total(o))])
+    if est.options:
+        summary.append(["Total with Optional Items", _m(est.total_with_options)])
     t = Table(summary, colWidths=[3 * inch, 1.5 * inch])
     t.setStyle(TableStyle([("FONT", (0, 0), (-1, -1), "Helvetica", 9), ("ALIGN", (1, 0), (1, -1), "RIGHT"),
                            ("FONT", (0, -1), (-1, -1), "Helvetica-Bold", 9),

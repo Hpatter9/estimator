@@ -1,11 +1,13 @@
 """Command line:
 
-  python -m estimator import  past_estimates/*.pdf          # teach it your past jobs
-  python -m estimator list                                  # what's in the library
-  python -m estimator prices                                # your price book
-  python -m estimator new --notes notes.txt --sketch docusketch.pdf --photos pics/*.jpg \
-                          --customer "Jane Doe" --format xactimate --format company
-  python -m estimator export output/job.json --format excel # re-export an edited estimate
+  python -m estimator import "C:/Estimates"                 # whole folder (subfolders too); safe to re-run
+  python -m estimator list                                   # what's in the library
+  python -m estimator prices --search drywall                # your price book
+  python -m estimator new --notes notes.txt --sketch job.ESX --photos pics/*.jpg \\
+                          --customer "Jane Doe" --address "123 Main St, Denver, CO 80211"
+  python -m estimator convert xactimate.pdf --optional "Pantry=Pantry Repairs"
+                                                             # Xactimate PDF -> your Estimate + Agreement
+  python -m estimator export output/job.json --format agreement   # re-export an edited estimate
 """
 from __future__ import annotations
 
@@ -17,7 +19,7 @@ from .config import load_company
 from .export import FORMATS, export
 from .library import DEFAULT_DB, Library
 
-PHOTO_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
+DEFAULT_FORMATS = ["xactimate", "estimate", "agreement"]
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -25,29 +27,36 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--db", default=str(DEFAULT_DB), help="library database (default data/library.db)")
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    imp = sub.add_parser("import", help="add past estimates (PDF, CSV, XLSX, JSON) to the library")
-    imp.add_argument("files", nargs="+", type=Path)
-    imp.add_argument("--no-ai", action="store_true", help="parse PDFs with the offline Xactimate parser instead of Claude")
+    imp = sub.add_parser("import", help="add past estimates and customer documents (files or folders)")
+    imp.add_argument("paths", nargs="+", type=Path)
+    imp.add_argument("--no-ai", action="store_true",
+                     help="never call Claude: Xactimate PDFs only (free); other PDFs are skipped")
 
-    sub.add_parser("list", help="list estimates in the library")
+    sub.add_parser("list", help="list what's in the library")
     pr = sub.add_parser("prices", help="show your price book")
     pr.add_argument("--search", default="")
 
-    new = sub.add_parser("new", help="draft a new estimate")
+    new = sub.add_parser("new", help="draft a new estimate from notes + DocuSketch")
     new.add_argument("--notes", type=Path, required=True, help="text file with your job notes")
     new.add_argument("--sketch", type=Path, action="append", default=[],
-                     help="DocuSketch export (PDF, CSV, XLSX, ESX/ZIP, JSON); repeatable")
+                     help="DocuSketch file: .ESX (best), PDF, CSV/XLSX; repeatable")
     new.add_argument("--photos", type=Path, nargs="*", default=[])
     new.add_argument("--attach", type=Path, nargs="*", default=[], help="other PDFs to read (scope sheets, adjuster notes)")
     new.add_argument("--customer", default="")
     new.add_argument("--address", default="")
     new.add_argument("--claim", default="")
-    new.add_argument("--overhead", type=float, default=10.0)
-    new.add_argument("--profit", type=float, default=10.0)
     new.add_argument("--tax", type=float, default=0.0)
     new.add_argument("--format", action="append", choices=list(FORMATS), help="output format(s); repeatable")
     new.add_argument("--out", type=Path, default=Path("output"))
     new.add_argument("--save", action="store_true", help="also add the new estimate to the library")
+
+    conv = sub.add_parser("convert", help="turn an Xactimate PDF into your customer Estimate / Agreement")
+    conv.add_argument("pdf", type=Path)
+    conv.add_argument("--optional", action="append", default=[], metavar="ROOM[=NAME]",
+                      help='price a room as an optional add-on, e.g. "Pantry=Pantry Repairs"; repeatable')
+    conv.add_argument("--no-ai", action="store_true", help="skip Claude; bullets use the Xactimate wording")
+    conv.add_argument("--format", action="append", choices=list(FORMATS))
+    conv.add_argument("--out", type=Path, default=Path("output"))
 
     ex = sub.add_parser("export", help="export a saved estimate JSON to other formats")
     ex.add_argument("estimate", type=Path)
@@ -56,23 +65,20 @@ def main(argv: list[str] | None = None) -> int:
 
     args = p.parse_args(argv)
     lib = Library(args.db)
+    company = load_company()
 
     if args.cmd == "import":
-        from .ingest import load_past_estimate
-        for f in args.files:
-            try:
-                est = load_past_estimate(f, use_ai=not args.no_ai)
-            except Exception as e:  # keep going through a batch
-                print(f"  ! {f.name}: {e}", file=sys.stderr)
-                continue
-            eid = lib.add(est)
-            n = sum(len(s.items) for s in est.sections)
-            print(f"  + #{eid} {f.name}: {n} line items, total ${est.grand_total:,.2f}")
-        return 0
+        from .ingest import import_into_library
+        counts = import_into_library(lib, args.paths, use_ai=not args.no_ai)
+        print(f"\nDone: {counts['estimate']} estimates, {counts['style']} customer documents, "
+              f"{counts['duplicate']} already imported, {counts['skipped']} skipped, {counts['error']} errors.")
+        return 0 if counts["error"] == 0 else 1
 
     if args.cmd == "list":
         for r in lib.list():
             print(f"#{r['id']:<4} {r['title'] or r['source_file']:<45} {r['loss_type'] or '':<12} ${r['grand_total']:>12,.2f}")
+        styles = lib.list_style_examples()
+        print(f"\n{lib.count()} estimates, {len(styles)} customer documents (style examples).")
         return 0
 
     if args.cmd == "prices":
@@ -89,32 +95,58 @@ def main(argv: list[str] | None = None) -> int:
         est, questions = generate_estimate(
             lib, args.notes.read_text(), rooms, photos=args.photos, extra_files=args.attach,
             customer=args.customer, address=args.address, claim_number=args.claim,
-            overhead_pct=args.overhead, profit_pct=args.profit, tax_pct=args.tax,
+            overhead_pct=company.overhead_pct, profit_pct=company.profit_pct, tax_pct=args.tax,
         )
         _report(est, questions)
-        paths = export(est, "json", args.out, load_company())
-        for fmt in args.format or ["xactimate"]:
-            paths += export(est, fmt, args.out, load_company())
-        for pth in paths:
-            print(f"  -> {pth}")
+        _write(est, args.format or DEFAULT_FORMATS, args.out, company)
         if args.save:
             lib.add(est)
+        return 0
+
+    if args.cmd == "convert":
+        from .ingest.xactimate_pdf import parse_xactimate
+        parsed = parse_xactimate(args.pdf)
+        est = parsed.estimate
+        print(f"Read {sum(len(s.items) for s in est.sections)} line items ({parsed.report()}).")
+        for spec in args.optional:
+            room, _, name = spec.partition("=")
+            hits = [s for s in est.sections if s.name.lower() == room.strip().lower()]
+            if not hits:
+                print(f"  ! no room named {room!r}; rooms are: {', '.join(s.name for s in est.sections)}")
+            for s in hits:
+                s.option = name.strip() or f"{s.name} Repairs"
+        if args.no_ai:
+            from .trades import fill_missing_trades
+            fill_missing_trades(est)
+        else:
+            from .customer import write_customer_scope
+            write_customer_scope(est, lib.style_examples())
+        est.estimate_numbers = est.estimate_numbers or [est.title]
+        _write(est, args.format or ["estimate", "agreement"], args.out, company)
         return 0
 
     if args.cmd == "export":
         from .models import Estimate
         est = Estimate.model_validate_json(args.estimate.read_text())
-        for fmt in args.format:
-            for pth in export(est, fmt, args.out, load_company()):
-                print(f"  -> {pth}")
+        _write(est, args.format, args.out, company, save_json=False)
         return 0
     return 1
+
+
+def _write(est, formats, out, company, save_json=True):
+    paths = export(est, "json", out, company) if save_json else []
+    for fmt in formats:
+        paths += export(est, fmt, out, company)
+    for pth in paths:
+        print(f"  -> {pth}")
 
 
 def _report(est, questions):
     ai_priced = [i for _, i in est.all_items() if i.price_source == "ai"]
     n = sum(len(s.items) for s in est.sections)
     print(f"\n{est.title}: {n} line items in {len(est.sections)} areas, total ${est.grand_total:,.2f}")
+    for o in est.options:
+        print(f"  optional {o}: ${est.scope_total(o):,.2f}")
     if ai_priced:
         print(f"  {len(ai_priced)} items had no match in your price history - check their prices:")
         for i in ai_priced:
@@ -126,4 +158,4 @@ def _report(est, questions):
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())

@@ -1,0 +1,64 @@
+{% extends "_customer_base.html.j2" %}
+{% set doc_title = "Reconstruction Estimate" %}
+{% set body_class = "estimate" %}
+{% set info_cols = "1fr 1fr 1fr" %}
+{% set info_rule = "var(--navy)" %}
+{% block body %}
+<div class="info">
+  <div><div class="label">Property</div>{{ est.address | replace(", ", "<br>" | safe, 1) }}</div>
+  <div><div class="label">Customer</div>{{ est.customer }}</div>
+  <div><div class="label">Job</div>
+    Estimate: {{ (est.estimate_numbers or [est.title]) | join(",<br>" | safe) }}<br>
+    {% if estimator %}Estimator: {{ estimator }}<br>{% endif %}
+    Date: {{ est.estimate_date | mdy }}</div>
+</div>
+
+{% if est.intro %}<div class="callout">{{ est.intro }}</div>{% endif %}
+
+{% if has_options %}
+<h2>Cost Summary</h2>
+<table class="summary">
+  <tr class="plain"><td>Base Scope</td><td class="n">{{ base.total | money }}</td></tr>
+  <tr class="total"><td>Total Job Price (Base Scope)</td><td class="n">{{ base.total | money }}</td></tr>
+  {% for s in scopes[1:] %}
+  <tr class="opt plain"><td>Optional: {{ s.option }}</td><td class="n">{{ s.total | money }}</td></tr>
+  {% endfor %}
+  <tr class="total"><td>Total Job Price with Optional {{ scopes[1:] | map(attribute="option") | join(" and ") }}</td><td class="n">{{ est.total_with_options | money }}</td></tr>
+</table>
+{% endif %}
+<p class="small">{{ company.amounts_note }}</p>
+
+{% for scope in scopes %}
+  {% if has_options %}
+  <div class="scope-head"><span>{{ scope.title }}</span><span>{{ scope.total | money }}</span></div>
+  {% if scope.areas %}<p class="areas">{{ scope.areas }}.</p>{% endif %}
+  {% if scope.option %}<p class="optional-note">{{ scope.description or "Optional add-on. Priced separately. This section is not included in the Total Job Price unless accepted." }}</p>{% endif %}
+  {% endif %}
+  {% include "_scope.html.j2" %}
+{% endfor %}
+
+<h2>What This Does Not Include</h2>
+<ul class="bullets excl">{% for lead, text in exclusions %}<li><b>{{ lead }}</b> {{ text }}</li>{% endfor %}</ul>
+
+<div class="trade">
+<h2>Job Total &amp; Billing</h2>
+{% if has_options %}
+<table class="billing">
+  <tr><th></th><th>Total</th>{% for p in company.billing %}<th>{{ p.short }} ({{ p.pct | int }}%)</th>{% endfor %}</tr>
+  {% for row in billing %}
+  <tr class="{{ 'strong' if row.strong else 'light' }}"><td>{{ row.label }}</td><td>{{ row.total | money }}</td>{% for v in row.payments %}<td>{{ v | money }}</td>{% endfor %}</tr>
+  {% endfor %}
+</table>
+<p class="small">Payment for the Base Scope, and for the optional {{ scopes[1:] | map(attribute="option") | join(" and ") | lower }} if accepted, is Owner’s responsibility per the schedule above.</p>
+{% else %}
+<table class="summary">
+  <tr class="total"><td>Total Job Price</td><td class="n">{{ billing[0].total | money }}</td></tr>
+  {% for p in company.billing %}
+  <tr class="plain"><td>{{ p.label }} ({{ p.pct | int }}%)</td><td class="n">{{ billing[0].payments[loop.index0] | money }}</td></tr>
+  {% endfor %}
+</table>
+<p class="small">Payment for the full Total Job Price is Owner’s responsibility per the schedule above.</p>
+{% endif %}
+<p class="license">{{ company.license_line }}</p>
+</div>
+{% endblock %}

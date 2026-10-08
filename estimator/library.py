@@ -21,8 +21,15 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS estimates (
     id INTEGER PRIMARY KEY,
     title TEXT, loss_type TEXT, summary TEXT, source_file TEXT,
-    grand_total REAL, data TEXT NOT NULL,
+    grand_total REAL, data TEXT NOT NULL, file_hash TEXT,
     imported_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS style_examples (
+    id INTEGER PRIMARY KEY, kind TEXT, source_file TEXT, text TEXT NOT NULL, file_hash TEXT,
+    imported_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS skipped_files (
+    file_hash TEXT PRIMARY KEY, source_file TEXT, reason TEXT
 );
 CREATE TABLE IF NOT EXISTS line_items (
     id INTEGER PRIMARY KEY,
@@ -64,12 +71,17 @@ class Library:
         self.db.row_factory = sqlite3.Row
         self.db.execute("PRAGMA foreign_keys = ON")
         self.db.executescript(SCHEMA)
+        cols = {r["name"] for r in self.db.execute("PRAGMA table_info(estimates)")}
+        if "file_hash" not in cols:  # library made by an older version
+            self.db.execute("ALTER TABLE estimates ADD COLUMN file_hash TEXT")
 
     # ---------- writing ----------
-    def add(self, est: Estimate) -> int:
+    def add(self, est: Estimate, file_hash: str = "") -> int:
         cur = self.db.execute(
-            "INSERT INTO estimates(title, loss_type, summary, source_file, grand_total, data) VALUES (?,?,?,?,?,?)",
-            (est.title, est.loss_type, est.summary, est.source_file, est.grand_total, est.model_dump_json()),
+            "INSERT INTO estimates(title, loss_type, summary, source_file, grand_total, data, file_hash)"
+            " VALUES (?,?,?,?,?,?,?)",
+            (est.title, est.loss_type, est.summary, est.source_file, est.grand_total, est.model_dump_json(),
+             file_hash or None),
         )
         eid = cur.lastrowid
         body = []
@@ -88,12 +100,38 @@ class Library:
         self.db.commit()
         return eid
 
+    def add_style_example(self, text: str, kind: str, source_file: str, file_hash: str = "") -> int:
+        cur = self.db.execute("INSERT INTO style_examples(kind, source_file, text, file_hash) VALUES (?,?,?,?)",
+                              (kind, source_file, text, file_hash or None))
+        self.db.commit()
+        return cur.lastrowid
+
+    def style_examples(self, kind: str = "", limit: int = 3) -> list[str]:
+        """Most recent customer documents, used to teach the AI your wording."""
+        rows = self.db.execute(
+            "SELECT text FROM style_examples WHERE (? = '' OR kind = ?) ORDER BY id DESC LIMIT ?",
+            (kind, kind, limit)).fetchall()
+        return [r["text"] for r in rows]
+
+    def has_file(self, file_hash: str) -> bool:
+        for table in ("estimates", "style_examples", "skipped_files"):
+            if self.db.execute(f"SELECT 1 FROM {table} WHERE file_hash=?", (file_hash,)).fetchone():
+                return True
+        return False
+
+    def mark_skipped(self, file_hash: str, source_file: str, reason: str) -> None:
+        self.db.execute("INSERT OR REPLACE INTO skipped_files VALUES (?,?,?)", (file_hash, source_file, reason))
+        self.db.commit()
+
     def delete(self, estimate_id: int) -> None:
         self.db.execute("DELETE FROM estimates WHERE id=?", (estimate_id,))
         self.db.execute("DELETE FROM estimates_fts WHERE rowid=?", (estimate_id,))
         self.db.commit()
 
     # ---------- reading ----------
+    def list_style_examples(self) -> list[sqlite3.Row]:
+        return self.db.execute("SELECT id, kind, source_file, imported_at FROM style_examples ORDER BY id").fetchall()
+
     def list(self) -> list[sqlite3.Row]:
         return self.db.execute(
             "SELECT id, title, loss_type, source_file, grand_total, imported_at FROM estimates ORDER BY id"
