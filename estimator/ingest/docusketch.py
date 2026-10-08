@@ -33,7 +33,7 @@ def load_rooms(path: Path) -> list[Room]:
     if suffix in (".csv", ".xlsx", ".xlsm"):
         return read_room_sheet(path)
     if suffix == ".json":
-        data = json.loads(path.read_text())
+        data = json.loads(path.read_text(encoding="utf-8"))
         rooms = data.get("rooms", data) if isinstance(data, dict) else data
         return [fill_derived(Room.model_validate(r)) for r in rooms]
     if suffix == ".pdf":

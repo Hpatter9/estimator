@@ -169,3 +169,32 @@ def test_customer_scope_uses_ai_answer(monkeypatch):
     base, pantry = build_scopes(est)
     assert base.trades[0].bullets == ["Replace damaged drywall"] and base.areas == "Kitchen"
     assert est.intro.startswith("How this estimate")
+
+
+def test_room_height_recomputes_walls(tmp_path):
+    from estimator.ingest.esx import load_esx_rooms
+    (room,) = load_esx_rooms(make_esx(tmp_path / "job.esx"))
+    openings = 3 * 80 / 12 + 3 * 4
+    assert room.set_height(10).wall_sf == pytest.approx(44 * 10 - openings, abs=0.01)
+
+
+def test_markup_applies_to_customer_documents_only():
+    est = sample_estimate()
+    plain = build_scopes(est)[0].total
+    est.markup_pct = 5
+    base = build_scopes(est)[0]
+    assert base.total == pytest.approx(plain * 1.05, abs=0.02)
+    assert base.total == round(sum(t.total for t in base.trades), 2)  # document always adds up
+    assert est.grand_total == plain  # Xactimate-side totals unchanged
+
+
+def test_markup_history_pairs_documents_with_xactimate(tmp_path):
+    from estimator.markup import history, suggested
+    lib = Library(tmp_path / "lib.db")
+    est = sample_estimate()
+    lib.add(est)
+    customer_total = round(est.grand_total * 1.05, 2)
+    lib.add_style_example(f"Reconstruction Estimate\nEstimate: DOE_1_REC\nTotal Job Price ${customer_total:,.2f}",
+                          "customer_estimate", "doe.pdf")
+    (row,) = history(lib)
+    assert row.estimate == "DOE_1_REC" and suggested(lib) == 5.0

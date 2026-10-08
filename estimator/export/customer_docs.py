@@ -74,7 +74,7 @@ def build_scopes(est: Estimate) -> list[ScopeBlock]:
         trades = []
         for trade in sorted(by_trade, key=trade_sort_key):
             items = by_trade[trade]
-            total = r2(sum(i.total_with_op(est.op_pct) for i in items))
+            total = r2(sum(i.total_with_op(est.op_pct) for i in items) * (1 + est.markup_pct / 100))
             text = texts.get((option, trade))
             if text and text.bullets:
                 bullets, note = text.bullets, text.note
@@ -86,23 +86,23 @@ def build_scopes(est: Estimate) -> list[ScopeBlock]:
         areas = st.areas if st and st.areas else ", ".join(
             dict.fromkeys(s.name for s in est.sections if s.option == option and s.room))
         title = "Base Scope" if not option else f"Optional — {option}"
-        blocks.append(ScopeBlock(option, title, est.scope_total(option), areas,
+        blocks.append(ScopeBlock(option, title, r2(sum(t.total for t in trades)), areas,
                                  st.description if st else "", trades))
     return blocks
 
 
-def billing_rows(est: Estimate, company: Company, doc: str) -> list[BillingRow]:
+def billing_rows(scopes: list[ScopeBlock], company: Company, doc: str) -> list[BillingRow]:
     pcts = [p.pct for p in company.billing]
     base_label = "Total Job Price" if doc == "estimate" else "Total Agreement Amount"
-    if not est.options:
-        return [BillingRow(base_label, est.grand_total, payments(est.grand_total, pcts))]
-    rows = [BillingRow(f"{base_label} (Base Scope)", est.grand_total, payments(est.grand_total, pcts))]
-    for o in est.options:
-        t = est.scope_total(o)
-        rows.append(BillingRow(f"Optional: {o}, if accepted", t, payments(t, pcts), strong=False))
-    names = " and ".join(est.options)
-    rows.append(BillingRow(f"{base_label} with Optional {names}", est.total_with_options,
-                           payments(est.total_with_options, pcts)))
+    base, options = scopes[0], scopes[1:]
+    if not options:
+        return [BillingRow(base_label, base.total, payments(base.total, pcts))]
+    rows = [BillingRow(f"{base_label} (Base Scope)", base.total, payments(base.total, pcts))]
+    for o in options:
+        rows.append(BillingRow(f"Optional: {o.option}, if accepted", o.total, payments(o.total, pcts), strong=False))
+    combined = r2(sum(s.total for s in scopes))
+    names = " and ".join(o.option for o in options)
+    rows.append(BillingRow(f"{base_label} with Optional {names}", combined, payments(combined, pcts)))
     return rows
 
 
@@ -122,7 +122,8 @@ def render(est: Estimate, company: Company, doc: str = "estimate") -> str:
     word = "estimate" if doc == "estimate" else "agreement"
     return env.get_template(template).render(
         est=est, company=company, scopes=scopes, base=scopes[0], has_options=len(scopes) > 1,
-        billing=billing_rows(est, company, doc), logo=_data_uri(company.logo),
+        billing=billing_rows(scopes, company, doc), logo=_data_uri(company.logo),
+        total_with_options=r2(sum(s.total for s in scopes)),
         exclusions=[(e.lead, e.text.replace("{doc}", word)) for e in company.exclusions],
         selections=[(s, _data_uri(s.image_path)) for s in est.selections],
         estimator=company.estimator,

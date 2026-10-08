@@ -53,7 +53,18 @@ class Room(BaseModel):
     ceiling_sf: Optional[float] = None
     wall_sf: Optional[float] = None
     perimeter_lf: Optional[float] = None
+    ceiling_perimeter_lf: Optional[float] = None  # from the sketch; lets walls be recomputed for a new height
+    openings_sf: Optional[float] = None  # doors/windows/missing walls deducted from wall SF
     notes: str = ""
+
+    def set_height(self, height_ft: float) -> "Room":
+        """Change the ceiling height and recompute wall SF the way Xactimate does."""
+        self.height_ft = height_ft
+        if self.ceiling_perimeter_lf is not None:
+            self.wall_sf = round(max(self.ceiling_perimeter_lf * height_ft - (self.openings_sf or 0), 0), 2)
+        elif self.perimeter_lf:
+            self.wall_sf = round(self.perimeter_lf * height_ft, 2)
+        return self
 
 
 class Section(BaseModel):
@@ -114,6 +125,7 @@ class Estimate(BaseModel):
     overhead_pct: float = 10.0
     profit_pct: float = 10.0
     tax_pct: float = 0.0
+    markup_pct: float = 0.0  # added on top for the customer Estimate / Agreement only (not the Xactimate)
     source_file: str = ""
 
     @property

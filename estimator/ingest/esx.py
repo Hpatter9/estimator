@@ -4,7 +4,9 @@ An ESX is a zip with:
   * <number>.XML     - the sketch: levels, rooms, walls, doors/windows (readable)
   * XACTDOC.ZIPXML   - the Xactimate estimate data (encrypted; not used)
 
-Sketch units are 1/127 inch (1 ft = 1524). Rooms are polygons of wall centerlines; we move each
+Sketch units are 1/127 inch (1 ft = 1524). DocuSketch exports every room at its default 8' ceiling;
+set real heights with Room.set_height() (the CLI's --height, or the room table in the app) and wall SF
+is recomputed - checked against a finished Xactimate: floor SF and perimeter exact, walls within 1%. Rooms are polygons of wall centerlines; we move each
 wall in by half its thickness to get interior dimensions, then compute the numbers Xactimate shows:
   SF Floor / Ceiling  - interior area
   LF Ceil. Perimeter  - interior perimeter
@@ -34,6 +36,7 @@ class SketchRoom:
     ceiling_perimeter_lf: float
     floor_perimeter_lf: float
     wall_sf: float
+    openings_sf: float = 0.0
     openings: list[str] = field(default_factory=list)
 
     def to_room(self) -> Room:
@@ -41,7 +44,8 @@ class SketchRoom:
         if self.openings:
             notes += "; openings: " + ", ".join(self.openings)
         return Room(name=self.name, height_ft=self.height_ft, floor_sf=self.floor_sf, ceiling_sf=self.floor_sf,
-                    wall_sf=self.wall_sf, perimeter_lf=self.floor_perimeter_lf, notes=notes)
+                    wall_sf=self.wall_sf, perimeter_lf=self.floor_perimeter_lf,
+                    ceiling_perimeter_lf=self.ceiling_perimeter_lf, openings_sf=self.openings_sf, notes=notes)
 
 
 def _sketch_xml(path: Path) -> ET.Element:
@@ -171,10 +175,11 @@ def read_esx(path: Path) -> list[SketchRoom]:
             ops = openings.get(rid, [])
             to_floor = [w for w, h, z in ops if abs(z - floor_z) < 30]
             floor_perim = max(ceil_perim - sum(to_floor), 0)
-            wall_sf = max(ceil_perim * height - sum(w * min(h, height) for w, h, _ in ops), 0)
+            openings_sf = sum(w * h for w, h, _ in ops)
+            wall_sf = max(ceil_perim * height - openings_sf, 0)
             labels = [f"{'door/opening' if abs(z - floor_z) < 30 else 'window'} {w:.1f}' x {h:.1f}'" for w, h, z in ops]
             rooms.append(SketchRoom(name, level.get("name", ""), round(height, 2), round(area_sf, 2),
-                                    round(ceil_perim, 2), round(floor_perim, 2), round(wall_sf, 2), labels))
+                                    round(ceil_perim, 2), round(floor_perim, 2), round(wall_sf, 2), round(openings_sf, 2), labels))
     return rooms
 
 

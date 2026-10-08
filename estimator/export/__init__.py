@@ -35,7 +35,7 @@ def export(est: Estimate, fmt: str, out_dir: Path, company: Company) -> list[Pat
         return [write_csv(est, out_dir / f"{stem}.csv")]
     if fmt == "json":
         p = out_dir / f"{stem}.json"
-        p.write_text(est.model_dump_json(indent=2))
+        p.write_text(est.model_dump_json(indent=2), encoding="utf-8")
         return [p]
     raise ValueError(f"Unknown format {fmt!r}. Choose from: {', '.join(FORMATS)}")
 

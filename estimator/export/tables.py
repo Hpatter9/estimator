@@ -19,7 +19,7 @@ def _rows(est: Estimate):
 
 
 def write_csv(est: Estimate, path: Path) -> Path:
-    with open(path, "w", newline="") as f:
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:  # -sig so Excel shows dashes right
         w = csv.writer(f)
         w.writerow(HEADERS)
         w.writerows(_rows(est))

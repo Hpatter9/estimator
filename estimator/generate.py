@@ -44,6 +44,8 @@ Rules:
 - Quantities come from the room measurements: e.g. drywall/paint on walls -> wall SF, flooring -> floor SF,
   baseboard -> perimeter LF, ceilings -> ceiling SF. Apply cut heights from the notes (e.g. 2 ft flood cut ->
   perimeter LF x 2 SF). Round sensibly, the way the past estimates do.
+- DocuSketch exports every room at an 8' ceiling. If the notes give a room's real height, use it: wall SF =
+  ceiling_perimeter_lf x height - openings_sf (and say so in the item note).
 - price_book_match: copy the exact description of the price-book item you are using, or "" if none fits.
 - suggested_unit_price: your best per-unit price for the area/market implied by past estimates. It is only
   used when price_book_match is "".

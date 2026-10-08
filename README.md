@@ -15,14 +15,26 @@ notes + DocuSketch .ESX + photos ─► Claude scopes line items & quantities �
             Reconstruction Estimate · Reconstruction Agreement · Xactimate-style PDF · Excel · CSV
 ```
 
-## Setup (once)
+## Setup on Windows (once)
 
-```bash
-pip install -r requirements.txt
-set ANTHROPIC_API_KEY=sk-ant-...      # Windows (macOS/Linux: export ANTHROPIC_API_KEY=...)
+You need [Python](https://www.python.org/downloads/) (tick **"Add python.exe to PATH"** when installing)
+and [Git](https://git-scm.com/download/win). Then, in PowerShell:
+
+```powershell
+cd $HOME\Documents
+git clone https://github.com/hpatter9/estimator.git
+cd estimator
+git checkout claude/modest-wozniak-p8l4u6
+py -m pip install -r requirements.txt
 ```
 
-PDFs of your templates are printed with Chrome or Edge, which most computers already have.
+For the AI features, add your key from console.anthropic.com (one time, then open a new PowerShell window):
+
+```powershell
+setx ANTHROPIC_API_KEY "sk-ant-..."
+```
+
+PDFs of your templates are printed with Edge or Chrome, which Windows already has.
 
 ## 1. Load your history
 
@@ -30,31 +42,41 @@ Point it at your estimates folder. It searches all subfolders, skips files it ha
 and you can stop it and run it again at any time:
 
 ```bash
-python -m estimator import "C:\Users\you\Documents\Estimates"
+py -m estimator import "C:\Users\you\Documents\Estimates" --no-ai
+py -m estimator list
+py -m estimator markup
 ```
 
 - **Xactimate PDFs** are read offline, so they cost nothing. Every room total is checked against the
   "Totals:" line in the PDF, and the log shows `all room totals match`.
 - **Your Reconstruction Estimates / Agreements** are saved as style examples. Claude copies your
   wording from them.
-- **Other PDFs** are read by Claude. Add `--no-ai` to skip them and spend nothing.
+- **Other PDFs** are read by Claude. With `--no-ai` they are skipped and nothing is spent; you can run the
+  import again later without `--no-ai` to pick them up.
+
+`markup` pairs each customer document with the Xactimate it names and shows how much you marked up
+each job. New customer documents use the median of those jobs, unless you set `markup_pct` in
+`data/company.json` or pass `--markup 5`.
 
 ## 2a. New job: notes + DocuSketch
 
 ```bash
-python -m estimator new --notes notes.txt --sketch "5517849v2.ESX" --photos photos/*.jpg ^
+py -m estimator new --notes notes.txt --sketch "5517849v2.ESX" --height "Kitchen=10" `
     --customer "Jane Doe" --address "123 Main St, Denver, CO 80211"
 ```
 
-The `.ESX` from the DocuSketch folder is read directly: rooms, ceiling heights, wall SF (minus doors
-and windows), floor SF, and floor perimeter (minus doorways), using the same math Xactimate uses. If your
+The `.ESX` from the DocuSketch folder is read directly: rooms, wall SF (minus doors and windows),
+floor SF, and floor perimeter (minus doorways), using the same math Xactimate uses. Checked against a
+finished Xactimate: floor SF and perimeter match exactly, and wall SF is within 1%. DocuSketch exports
+every room with an 8' ceiling, so give real heights with `--height "Kitchen=10"` (repeatable) or
+`--default-height 8.75`, or set them in the room table in the web app. If your
 notes say something is optional or priced separately (e.g. "pantry as optional add-on"), it goes into
 its own optional section with its own total and billing row.
 
 ## 2b. Or convert an Xactimate estimate you already wrote
 
 ```bash
-python -m estimator convert "Smith - Repair Estimate.pdf" --optional "Pantry=Pantry Repairs"
+py -m estimator convert "Smith - Repair Estimate.pdf" --optional "Pantry=Pantry Repairs"
 ```
 
 This reads the Xactimate PDF, groups the line items into your trades, writes the customer bullets, and
@@ -63,11 +85,12 @@ outputs your Reconstruction Estimate and Agreement.
 ## 3. Review and export: the web app
 
 ```bash
-streamlit run app.py
+py -m streamlit run app.py
 ```
 
 The tabs are Library, New estimate, Convert Xactimate, Review & edit, Export, and Settings. In Review you
-can edit line items, which trade each one falls under, optional add-ons, and the customer bullets.
+can edit line items, which trade each one falls under, optional add-ons, the customer bullets, and
+material selections (optional; only the Agreement shows them). The Export tab has the markup.
 Items marked `ai` weren't in your price history, so check those prices.
 
 ## Output formats

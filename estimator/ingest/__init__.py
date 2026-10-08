@@ -70,7 +70,7 @@ def import_file(path: Path, use_ai: bool = True) -> ImportResult:
     suffix = path.suffix.lower()
     try:
         if suffix == ".json":
-            est = Estimate.model_validate_json(path.read_text())
+            est = Estimate.model_validate_json(path.read_text(encoding="utf-8"))
         elif suffix in (".csv", ".xlsx", ".xlsm"):
             from .spreadsheet import read_estimate_sheet
             est = read_estimate_sheet(path)

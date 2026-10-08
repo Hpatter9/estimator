@@ -23,7 +23,7 @@
   {% for s in scopes[1:] %}
   <tr class="opt plain"><td>Optional: {{ s.option }}</td><td class="n">{{ s.total | money }}</td></tr>
   {% endfor %}
-  <tr class="total"><td>Total Job Price with Optional {{ scopes[1:] | map(attribute="option") | join(" and ") }}</td><td class="n">{{ est.total_with_options | money }}</td></tr>
+  <tr class="total"><td>Total Job Price with Optional {{ scopes[1:] | map(attribute="option") | join(" and ") }}</td><td class="n">{{ total_with_options | money }}</td></tr>
 </table>
 {% endif %}
 <p class="small">{{ company.amounts_note }}</p>
