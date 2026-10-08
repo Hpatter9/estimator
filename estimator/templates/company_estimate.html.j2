@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ est.title }}</title>
+<style>
+  @page { size: letter; margin: 0.6in; }
+  body { font-family: Helvetica, Arial, sans-serif; font-size: 11px; color: #222; }
+  header { display: flex; justify-content: space-between; border-bottom: 3px solid #1f4e79; padding-bottom: 10px; }
+  header img { max-height: 70px; }
+  h1 { color: #1f4e79; font-size: 22px; margin: 0; }
+  h2 { background: #1f4e79; color: #fff; font-size: 12px; padding: 4px 8px; margin: 18px 0 4px; }
+  .dims { color: #666; font-size: 10px; margin: 0 0 4px 8px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; border-bottom: 1px solid #999; font-size: 10px; text-transform: uppercase; }
+  td, th { padding: 3px 6px; vertical-align: top; }
+  td.n, th.n { text-align: right; white-space: nowrap; }
+  tr.sub td { border-top: 1px solid #999; font-weight: bold; }
+  .note { color: #666; font-size: 9px; }
+  .totals { width: 45%; margin-left: auto; margin-top: 20px; }
+  .totals tr.grand td { border-top: 2px solid #1f4e79; font-size: 14px; font-weight: bold; }
+  .meta td { padding: 1px 6px; }
+  .terms { margin-top: 30px; font-size: 9px; color: #555; }
+  .sign { margin-top: 40px; display: flex; gap: 60px; }
+  .sign div { border-top: 1px solid #333; width: 240px; padding-top: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    {% if logo %}<img src="{{ logo }}" alt="logo"><br>{% endif %}
+    <strong>{{ company.name }}</strong>{% if company.address %}<br>{{ company.address }}{% endif %}{% if company.phone or company.email %}<br>{{ company.phone }}{% if company.phone and company.email %} &middot; {% endif %}{{ company.email }}{% endif %}
+    {% if company.license %}<br>License #{{ company.license }}{% endif %}
+  </div>
+  <div>
+    <h1>ESTIMATE</h1>
+    <table class="meta">
+      <tr><td>Date</td><td>{{ est.estimate_date.strftime('%m/%d/%Y') }}</td></tr>
+      <tr><td>Customer</td><td>{{ est.customer }}</td></tr>
+      <tr><td>Property</td><td>{{ est.address }}</td></tr>
+      {% if est.claim_number %}<tr><td>Claim #</td><td>{{ est.claim_number }}</td></tr>{% endif %}
+      {% if company.estimator %}<tr><td>Estimator</td><td>{{ company.estimator }}</td></tr>{% endif %}
+    </table>
+  </div>
+</header>
+
+<p><strong>{{ est.title }}</strong>{% if est.loss_type %} &mdash; {{ est.loss_type }}{% endif %}<br>{{ est.summary }}</p>
+
+{% for section in est.sections %}
+<h2>{{ section.name }}</h2>
+{% if section.room and section.room.floor_sf %}
+<p class="dims">Floor {{ '%.0f' % section.room.floor_sf }} SF
+  {% if section.room.wall_sf %}&middot; Walls {{ '%.0f' % section.room.wall_sf }} SF{% endif %}
+  {% if section.room.perimeter_lf %}&middot; Perimeter {{ '%.0f' % section.room.perimeter_lf }} LF{% endif %}</p>
+{% endif %}
+<table>
+  <tr><th>Description</th><th class="n">Qty</th><th class="n">Unit Price</th><th class="n">Total</th></tr>
+  {% for item in section.items %}
+  <tr>
+    <td>{{ item.description }}{% if item.note %}<div class="note">{{ item.note }}</div>{% endif %}</td>
+    <td class="n">{{ '%.2f' % item.quantity }} {{ item.unit }}</td>
+    <td class="n">{{ item.unit_price | money }}</td>
+    <td class="n">{{ item.total | money }}</td>
+  </tr>
+  {% endfor %}
+  <tr class="sub"><td colspan="3">{{ section.name }} subtotal</td><td class="n">{{ section.subtotal | money }}</td></tr>
+</table>
+{% endfor %}
+
+<table class="totals">
+  <tr><td>Subtotal</td><td class="n">{{ est.line_item_total | money }}</td></tr>
+  {% if est.sales_tax %}<tr><td>Sales tax</td><td class="n">{{ est.sales_tax | money }}</td></tr>{% endif %}
+  {% if est.overhead %}<tr><td>Overhead ({{ est.overhead_pct }}%)</td><td class="n">{{ est.overhead | money }}</td></tr>{% endif %}
+  {% if est.profit %}<tr><td>Profit ({{ est.profit_pct }}%)</td><td class="n">{{ est.profit | money }}</td></tr>{% endif %}
+  <tr class="grand"><td>Total</td><td class="n">{{ est.grand_total | money }}</td></tr>
+</table>
+
+<p class="terms">{{ company.terms }}</p>
+<div class="sign"><div>Customer signature / date</div><div>{{ company.name }}</div></div>
+</body>
+</html>

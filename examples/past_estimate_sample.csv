@@ -1,0 +1,7 @@
+Room,Category,Selector,Description,Quantity,Unit,Unit Price,Tax
+Kitchen,WTR,DRYW,Tear out wet drywall - Cat 2 - after hours,92.00,SF,1.45,0
+Kitchen,DRY,1/2,"1/2"" drywall - hung, taped, floated, ready for paint",92.00,SF,2.88,0
+Kitchen,PNT,SP,Seal/prime then paint the walls (2 coats),384.00,SF,1.12,0
+Kitchen,FCV,BASE,Baseboard - 3 1/4 in - detach & reset,46.00,LF,1.95,0
+General,WTR,DHM,Dehumidifier (per 24 hour period) - Large - No monitoring,3.00,EA,72.50,0
+General,WTR,EQA,Air mover (per 24 hour period) - No monitoring,12.00,EA,25.00,0
