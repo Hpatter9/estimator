@@ -19,8 +19,12 @@ folder and save finished files to the outputs folder (`/mnt/user-data/outputs` o
 - **New job**: an ESX and/or notes and/or photos. Do steps 1–5.
 - **Convert an Xactimate PDF**: someone uploads an Xactimate estimate and wants the customer documents. Run
   `python scripts/read_xactimate.py estimate.pdf --json est.json` and confirm the summary says
-  "all room totals match". Keep its items and prices as they are (`price_source: "xactimate"`), then do steps 3–5.
-  Use the Xactimate's estimate name as `estimate_number`.
+  "all room totals match". Keep its items and prices as they are (`price_source: "xactimate"`), then do steps 3–5,
+  rendering with `--only estimate,agreement` unless the Xactimate-style PDF is asked for. Use the Xactimate's
+  estimate name as `estimate_number`. While you have the line items in front of you, look for the slips an
+  estimator would want caught before the customer sees a price: an install with no matching removal (new carpet
+  but no carpet removal), a quantity far off the room size (1 SF of membrane on a 250 SF floor), a labor minimum
+  triggered by such a slip, or $0 open/bid items. Don't change the Xactimate; mention them in the report.
 - **Revise**: change the existing estimate.json and re-run step 4. Don't start over.
 
 ## 1. Read the inputs
@@ -72,12 +76,13 @@ user gives one or estimate.json sets it. Say which markup you used.
 
 ## 5. Report back
 
-Keep it short. Cover:
+Keep it short; the estimator reads this between jobs. Cover:
 1. The documents created.
 2. The total, plus optional add-ons.
 3. Items priced without price-book history.
 4. Assumptions, especially 8' ceilings and rooms left out.
-5. Your questions.
+5. Your questions: the few (about 3) whose answers would change the price most. Fold the minor ones into the
+   assumptions instead of asking.
 
 Also keep `estimate.json` in the outputs, so changes later are quick.
 
