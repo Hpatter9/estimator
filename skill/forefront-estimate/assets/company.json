@@ -1,0 +1,271 @@
+{
+  "name": "Forefront Building + Restoration",
+  "legal_name": "Forefront Building & Restoration",
+  "address": "169 Inverness Dr W Ste 120, Englewood, CO 80112",
+  "phone": "(303) 660-6216",
+  "email": "hunter@forefrontteam.com",
+  "estimator": "Hunter Patterson",
+  "logo_path": "",
+  "overhead_pct": 10.0,
+  "profit_pct": 10.0,
+  "markup_pct": 5.0,
+  "billing": [
+    {
+      "label": "Deposit due at signing",
+      "short": "Deposit at signing",
+      "pct": 50.0
+    },
+    {
+      "label": "Progress payment at 50% project completion",
+      "short": "At 50% completion",
+      "pct": 40.0
+    },
+    {
+      "label": "Final invoice on completion",
+      "short": "Final on completion",
+      "pct": 10.0
+    }
+  ],
+  "amounts_note": "All amounts include overhead and profit.",
+  "license_line": "Licensed (State of Colorado) and insured as required. Our employees are covered by Worker’s Compensation Insurance.",
+  "exclusions": [
+    {
+      "lead": "Damage we cannot see yet.",
+      "text": "Our price is based on what was visible when we walked the job. If we open a wall or pull flooring and find more damage, we will stop, show you, and price it before continuing."
+    },
+    {
+      "lead": "Code upgrades.",
+      "text": "We are replacing what was there, like for like. If current code requires an upgrade, that is priced separately."
+    },
+    {
+      "lead": "Existing conditions.",
+      "text": "Walls may not be perfectly straight and the subfloor may need extra leveling. If we find that, we will show you before we do anything."
+    },
+    {
+      "lead": "Deep cleaning.",
+      "text": "We leave the space tidy and broom clean. There will be construction dust. We recommend a professional post-construction cleaning, and we are happy to recommend someone."
+    },
+    {
+      "lead": "Anything not listed above.",
+      "text": "If it is not described in this {doc}, it is not in the price."
+    }
+  ],
+  "selection_acknowledgments": [
+    {
+      "lead": "Viewed in person or online:",
+      "text": "Each selection above is marked as viewed in person or online only. Samples, photos, and on-screen images do not show the full look of a product once it is installed, especially when viewed online. If Owner does not like how a selection looks after signing, that is Owner's responsibility and is not a defect."
+    },
+    {
+      "lead": "Color and lot variation:",
+      "text": "Installed materials may vary slightly in shade, texture, and sheen from samples, photos, or on-screen images due to production lots and lighting."
+    },
+    {
+      "lead": "Final selection:",
+      "text": "Once signed and ordered, selections cannot be changed or returned. Any change after ordering is at Owner's cost under a signed change order."
+    }
+  ],
+  "waivers": [
+    {
+      "heading": "STRUCTURAL / UNKNOWN CONDITIONS",
+      "items": [
+        "Concealed Damage Waiver - We are not responsible for damage not visible at time of estimate. Additional repairs may be required once materials are removed and will be billed separately.",
+        "Concealed Damage Waiver - Work is based on like-for-like replacement. Any required upgrades to meet current building codes are not included unless specifically stated and may result in additional cost.",
+        "Engineering / Structural Adequacy - We assume existing structure is sufficient for intended repairs. Any structural deficiencies discovered will require engineering and additional cost."
+      ]
+    },
+    {
+      "heading": "FRAMING / SUBSTRATE",
+      "items": [
+        "Subfloor Adequacy - We do not guarantee existing subfloor is suitable for new flooring materials. Additional leveling, reinforcement, or replacement may be required at additional cost.",
+        "Wall Straightness / Flatness - Existing framing may not be level, plumb, or square. Corrections are not included unless specified.",
+        "Fastener / Backing - Adequate backing for mounting items (cabinets, vanities, etc.) is not guaranteed and may require additional work."
+      ]
+    },
+    {
+      "heading": "MITIGATION / ENVIRONMENTAL",
+      "items": [
+        "Moisture Source Resolution - We are not responsible for identifying or repairing the source of water intrusion unless specifically included.",
+        "Mold / Hazardous Materials Expansion - Visible contamination is based on initial inspection. Additional affected areas discovered during demolition will require updated scope and cost.",
+        "Asbestos / Lead - No testing or abatement is included unless explicitly stated. Discovery of hazardous materials will stop work until properly addressed."
+      ]
+    },
+    {
+      "heading": "MECHANICAL / ELECTRICAL / PLUMBING",
+      "items": [
+        "Existing System Functionality - We are not responsible for pre-existing issues with plumbing, electrical, or HVAC systems.",
+        "Code Compliance (MEP) - Upgrades required to meet current code (GFCIs, venting, etc.) are not included unless explicitly stated.",
+        "Fixture Compatibility - New fixtures may require modifications to existing systems. These are not included unless specified.",
+        "Hidden Utilities - Unknown or improperly installed wiring/plumbing may require correction at additional cost."
+      ]
+    },
+    {
+      "heading": "CORE MEP DETACH AND RESET",
+      "items": [
+        "Detach & Reset, Existing Equipment Condition - Existing plumbing, electrical, and HVAC components are assumed to be in working condition at time of removal. Due to age, corrosion, wear, or prior improper installation, components may fail during removal or reinstallation. We do not guarantee functionality of existing items after reset. Any required repairs or replacement will be billed separately."
+      ]
+    },
+    {
+      "heading": "FINISHES",
+      "items": [
+        "Texture Matching - We will attempt to match existing textures, but exact match is not guaranteed.",
+        "Paint Matching - Color and sheen match is not guaranteed due to age, fading, and existing conditions.",
+        "Material Discontinuation - If original materials are unavailable, closest match will be used.",
+        "Flooring Transitions - Transitions between new and existing flooring may require additional materials or modifications not included."
+      ]
+    },
+    {
+      "heading": "CABINETS / MILLWORK / TRIM",
+      "items": [
+        "Cabinet & Counters Reset vs Replace - Existing cabinets and counters may not be reusable once removed. Damage during removal is not guaranteed against. Forefront is not responsible for damage during detach.",
+        "Trim Matching - Exact match of existing trim profiles is not guaranteed.",
+        "Door / Window Alignment - Existing openings may not be square; with new flooring, doors may not open correctly. Adjustments may be required and are not included unless explicitly stated."
+      ]
+    },
+    {
+      "heading": "DEMO / ACCESS / JOB CONDITIONS",
+      "items": [
+        "Limited Access / Logistics - Difficult access, parking, material transport, or restricted work hours may result in additional cost.",
+        "Occupied Home Conditions - Work in occupied homes may extend timelines and impact finish quality.",
+        "Protection Limitations - We will take reasonable steps to protect unaffected areas, but full dust/noise containment is not guaranteed."
+      ]
+    },
+    {
+      "heading": "INSURANCE / SCOPE GAP",
+      "items": [
+        "Insurance Scope Differences - Approved insurance scope may not reflect actual site conditions. Additional work required to complete repairs will be billed separately.",
+        "Customer-Requested Changes - Any changes to scope after approval will result in additional cost and timeline adjustments.",
+        "Allowances / Unknowns - Any allowances are placeholders only and subject to change based on actual conditions."
+      ]
+    },
+    {
+      "heading": "EXTERIOR / ROOFING",
+      "items": [
+        "Decking Condition - Roof decking is assumed to be in acceptable condition. Any damaged or non-compliant decking will be replaced at additional cost.",
+        "Ventilation Compliance - Existing ventilation may not meet code. Corrections are not included unless specified.",
+        "Flashing Integration - Existing flashing may not integrate with new materials and may require replacement."
+      ]
+    },
+    {
+      "heading": "CONTENTS, FURNITURE, AND PROPERTY HANDLING",
+      "items": [
+        "Owner is responsible for removing all personal items, valuables, decor, fragile items, and contents from the work area prior to the start of work. This includes items located inside or on furniture, cabinets, and drawers. Furniture must be emptied before any movement.",
+        "Contractor will move large furniture only as necessary to complete the work. Contractor is not responsible for damage to furniture or contents resulting from: pre-existing damage, wear, or prior repairs; age, deterioration, or weakened materials; loose joints, veneers, finishes, or inferior construction; items left inside, on, or attached to furniture.",
+        "Contractor does not move, disconnect, or handle electronics, appliances, or audio/visual equipment. Owner is responsible for removing or arranging removal of these items prior to work. Any such items left in the work area are at Owner's risk.",
+        "Owner acknowledges that construction activities may involve vibration, dust, and incidental contact. Contractor is not responsible for damage to contents, furniture, or personal property that remain in the work area and were not removed or protected by Owner.",
+        "Contractor does not document pre-existing condition of contents or furniture unless specifically noted in writing prior to the start of work. Any concerns regarding existing damage must be identified by Owner before work begins."
+      ]
+    }
+  ],
+  "agreement_terms_intro": "I am the Owner or Authorized Representative (hereinafter \"Owner\") of the jobsite address at which work is to be done.",
+  "agreement_terms": [
+    {
+      "text": "Price: Forefront Building & Restoration (\"FF\") proposes to furnish all the materials and perform all the labor necessary for the completion of the attached scope (\"Work\") at the above address for the amount listed above (\"Work Price\"), plus change orders, additional work, supplementals, or open items. FF requires a deposit in the amount listed above. The Deposit covers mobilization, overhead, supervision, scheduling, materials, permits, and other initial costs.",
+      "sub": []
+    },
+    {
+      "text": "Payments: Owner understands and shall abide by the following payment schedule:",
+      "sub": [
+        "Initial Deposit: 50% of the Work Price, due and payable prior to the commencement of any work. The Initial Deposit will secure scheduling and cover costs associated with initial labor, materials, and project mobilization, including but not limited to demolition, framing, and any rough-in phases.",
+        "Progress Payment: 40% of the remainder of the Work Price or ACV released by insurance provider, due upon substantial completion of approximately 50% of the Work, as determined by Forefront in accordance with internal production benchmarks and as indicated in the Project Schedule prior to commencement of any Work. Owner understands and agrees that, at this stage, portions of the Work, including but not limited to electrical, plumbing, or mechanical installations, may not be fully visible but shall constitute a significant portion of labor and material costs incurred to date.",
+        "Final Payment: 10% remaining balance of the Work Price, due upon completion of the Work and Owner acceptance."
+      ]
+    },
+    {
+      "text": "Owner understands and agrees that Owner is fully responsible for payment of total project costs, as specified in this Agreement, regardless of status or timing of insurance reimbursement. Invoices issued pursuant to this Agreement shall be due immediately upon receipt.",
+      "sub": []
+    },
+    {
+      "text": "Owner understands that Forefront is not affiliated with or party to any agreement with Owner's insurance provider. Owner authorizes Forefront to submit invoices directly to their insurance provider and appoints Forefront as attorney-in-fact for the limited purpose of endorsing checks related to the Work performed under this Agreement. Owner further authorizes their insurance provider to issue payment directly to Forefront and to include Forefront as a named payee on any checks issued in connection with this Agreement.",
+      "sub": []
+    },
+    {
+      "text": "Owner understands that the sum total represents a fair cost to bring the Owner's property back to its original condition to the best of FF's knowledge at the time the estimate was written. Deviations from the line items of this estimate themselves do not automatically constitute a refund or reduction in the sum total when the balance is due.",
+      "sub": []
+    },
+    {
+      "text": "Dust: Owner understands that construction produces dust. FF keeps its work area clean but is not responsible for construction dust.",
+      "sub": []
+    },
+    {
+      "text": "Contents: Owner is responsible for removing all personal items, valuables, decor, fragile items, and contents from the work area. Contractor is not liable for damage to contents left in the work area, including items in or on furniture, cabinets, or drawers. Furniture must be emptied before being moved.",
+      "sub": []
+    },
+    {
+      "text": "Furniture: Contractor will move large furniture only as needed for work. Contractor is not responsible for damage to furniture caused by age, wear, pre-existing weakness, loose joints, or inferior construction.",
+      "sub": []
+    },
+    {
+      "text": "Electronics: Contractor does not move, disconnect or handle electronics, appliances, or audio/visual equipment. Owner must remove these items prior to work.",
+      "sub": []
+    },
+    {
+      "text": "Limited Liability: Owner acknowledges that construction activities may cause vibration, dust, or incidental contact. Contractor is not responsible for damage to items the Owner did not remove or protect as required above.",
+      "sub": []
+    },
+    {
+      "text": "Work Quality: Owner understands that all work involving restoration and/or repairs is for the damaged work only and for like kind and quality craftsmanship and does not cover unaffected areas and does not cover restoring existing deficiencies. Our work will conform to existing qualities. Owner understands all construction debris will be removed from project and areas left in a broom-swept and/or shop vac quality cleaned condition. The repairs performed by Forefront Building & Restoration are based on Forefront Building & Restoration visual inspection and investigation of the problem area reported unless otherwise agreed. Forefront Building & Restoration will only perform a visual inspection, and cannot guarantee that no additional problems will be discovered once repairs begin. Forefront Building & Restoration assumes original walls, floors, and framing are plumb, square, and straight. Repair construction does not result in perfect finishes. Forefront Building & Restoration assumes all mechanical systems are up to code and in proper working order, and is therefore not responsible for damage caused by inadequate mechanical systems (plumbing, electrical, HVAC, etc.). Owner understands that not all texture can be duplicated. This can result in imperfect match to existing texture.",
+      "sub": []
+    },
+    {
+      "text": "Owner understands FF will not confirm scheduling without this signed agreement.",
+      "sub": []
+    },
+    {
+      "text": "Extra work / change orders: Any changes in the work that result in additional cost will be disclosed to Owner. Out of pocket costs will require Owner approval. Insurance supplementals do not require approval. If the overall scope of work is reduced, overhead and profit will still apply to the overall price.",
+      "sub": []
+    },
+    {
+      "text": "Selections: Owner's material selections are documented in the Material Selections section of this Agreement, which is incorporated into and made part of this Agreement. By signing this Agreement, Owner confirms that all selections are complete and final. All selection choices are final. A change of mind regarding any selection after signing does not entitle Owner to a refund, credit, price adjustment, or replacement, and does not constitute a defect. If Forefront agrees to accommodate a requested selection change, it will be handled as a change order at Owner's cost, including any materials already ordered, received, or installed. The only exception is an obvious defect in the material as delivered, which Forefront will pursue with the manufacturer or vendor on Owner's behalf. Owner agrees to use FF's agencies where applicable. FF does not offer a full warranty where Owner purchases their own selections.",
+      "sub": []
+    },
+    {
+      "text": "Storage charges: Owner is responsible for storage facilities/pods and payment of storage charges if utilized.",
+      "sub": []
+    },
+    {
+      "text": "Contents / Inventory: Contents will be photographed. Lost or damaged items will be assessed at a depreciated value.",
+      "sub": []
+    },
+    {
+      "text": "FF has the right to retain the benefit of any early payment discounts provided by subcontractors.",
+      "sub": []
+    },
+    {
+      "text": "Environmental conditions: The scope of work may include asbestos testing but does not include abatement, removal, disposal of any hazardous substance. If FF finds hazardous materials, work will stop and FF will extend the project timeline so that hazardous materials can be eliminated. FF does not guarantee total elimination of bacterial, environmental or other contamination and Owner acknowledges and agrees that additional testing would be required to disclose any remaining bacterial, environmental or other contamination. If environmental conditions result in additional work, a supplemental estimate will be presented.",
+      "sub": []
+    },
+    {
+      "text": "Warranties: FF warrants that all work to be performed by FF or its agent will be completed in a workman like manner and be free from material defects for a period of one (1) year from the date of completion. Owner acknowledges that due to the subjective judgment required in assessing original condition, COMPANY CANNOT WARRANT OR GUARANTEE THAT THE SPECIFICATIONS WILL SUCCESSFULLY RESTORE PERSONAL OR REAL PROPERTY. Owner's remedy for any breach of warranty contained herein shall be limited to repair or replacement of any defective work and FF shall not be subject to any liability for incidental or consequential damages as a result of any such breach. Except as expressly provided for in this proposal, there are no other warranties, express or implied, with regard to the labor or materials to be provided by COMPANY AND ANY AND ALL WARRANTIES, INCLUDING ANY WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE HEREBY DISCLAIMED.",
+      "sub": []
+    },
+    {
+      "text": "No prior representations / Entire agreement: Owner acknowledges and represents that no other agreements have been made with FF or its agent except as expressly contained in this agreement. If any portion of this agreement is deemed to be invalid, the other sections of the contract shall remain valid.",
+      "sub": []
+    },
+    {
+      "text": "Dispute Resolution:",
+      "sub": [
+        "Right to stop work: FF reserves the right to stop work if a dispute arises between FF and Owner with regard to this proposal. Owner waives any right to claims or damages due to any interruption in the work. FF and Owner agree to attempt to resolve the dispute within five (5) business days of the interruption. FF reserves the right to collect payment for all work completed prior to recommencing with the repairs.",
+        "Arbitration: Any claim or dispute between FF and the Owner shall be resolved by binding arbitration according to the procedures of American Arbitration Association under its Construction Industry Arbitration Rules before a single arbitrator. Any standard arbitration hearing that requires the parties' physical presence shall be held in Colorado. The Parties also agree that any award tendered by the arbitrator may be entered as a judgment in any court having jurisdiction. The provisions of this paragraph shall not preclude the institution of legal proceedings by FF for the collection of any sums owed it hereunder, or to foreclose any lien filed by FF as a result of such nonpayment."
+      ]
+    },
+    {
+      "text": "Late Fees / Attorney Fees: Owner agrees that it is fair and necessary for FF to pursue legal action to collect any unpaid balance. If Owner fails to pay under the terms of this proposal in a timely fashion, Owner agrees to pay a late payment of 2% per month (24% per annum) on any and all sums not timely paid. In the event that FF is required to retain the services of an attorney as a result of Owner's failure to comply with Owner's obligation under this agreement, whether or not suit action or arbitration is instituted, FF shall be entitled to recover from Owner its reasonable attorney fees and all costs incurred as a result. In addition, in the event any legal or arbitration proceedings are instituted as a result of a default under the terms of this agreement or to interpret or enforce this agreement, the prevailing party in any action or arbitration proceeding shall be entitled to recover its reasonable attorney's fees and arbitrator fees incurred in any such action or proceedings and any appeal therefrom.",
+      "sub": []
+    },
+    {
+      "text": "If this account is not paid when due, FF may file a lien on Owner's property and/or FF may retain a collection agency for collection. Owner agrees to pay collection agency fees, including fees based upon a percentage of the amount owing, not to exceed 35% thereof.",
+      "sub": []
+    },
+    {
+      "text": "Direct to Pay:",
+      "sub": [
+        "Owner authorizes FF to communicate with their insurance company in order to facilitate the processing and payment of their claim.",
+        "If Owner's name is included on the payment, Owner agrees to promptly endorse said payment to FF for disbursement. If both FF and a Lender are payees on the insurance check, FF agrees to promptly endorse said payment to Lender for deposit into an escrow account acceptable to FF, for disbursement by a series of draw requests by FF.",
+        "Owner agrees to sign a Certificate of Satisfaction upon project completion."
+      ]
+    }
+  ],
+  "agreement_terms_footer": "THIS PROPOSAL IS SUBJECT TO THE TERMS AND CONDITIONS ON THIS AGREEMENT.",
+  "approval_text": "By signing below, you approve the scope, pricing, and material selections above and authorize Forefront Building + Restoration to proceed."
+}

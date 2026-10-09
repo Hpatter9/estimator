@@ -15,6 +15,23 @@ notes + DocuSketch .ESX + photos ─► Claude scopes line items & quantities �
             Reconstruction Estimate · Reconstruction Agreement · Xactimate-style PDF · Excel · CSV
 ```
 
+## Use it in Claude (no install): the forefront-estimate skill
+
+`skill/forefront-estimate/` is a Claude skill: upload it once and anyone on your Claude account (or your
+team, on Team/Enterprise plans) can write estimates from claude.ai or the Claude phone app. Drop in the
+DocuSketch .ESX, notes and a zip of photos, or an Xactimate PDF, and Claude produces the Reconstruction
+Estimate, Agreement and Xactimate-style PDFs. It doesn't need an API key, and nothing needs to be installed.
+
+The skill prices from **your price book**: every line item from your past Xactimates with the prices you
+charged (no customer names or addresses). To refresh it after importing more estimates on this PC:
+
+```powershell
+py -m estimator build-skill        # -> dist\forefront-estimate.skill
+```
+
+then upload `dist\forefront-estimate.skill` in Claude (**Settings → Capabilities → Skills → Upload**),
+replacing the old one. Your markup setting goes into the skill too.
+
 ## Easy setup (Windows)
 
 1. Get the code onto your computer: either `git clone https://github.com/hpatter9/estimator.git`, or on

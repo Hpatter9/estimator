@@ -1,0 +1,116 @@
+description,unit,median_price,latest_price,min_price,max_price,times_used,typical_qty,xactimate_group
+Final cleaning - construction - Residential,SF,0.46,0.46,0.43,0.46,28,156.71,Cleaning
+Add for dustless floor sanding,SF,1.0,1.0,1.0,1.0,10,328.82,Hardwood
+Additional coats of finish (per coat),SF,1.21,1.21,1.21,1.45,10,328.82,Hardwood
+"Sand, stain, and finish wood floor",SF,5.24,5.24,5.24,6.36,10,328.82,Hardwood
+Interior door - Detach & reset - slab only,EA,27.39,27.39,27.39,27.39,9,1.0,Door
+Carpet - per specs from independent carpet analysis,SF,1.09,1.09,1.09,1.09,8,207.88,Carpet
+Mask per square foot for drywall work,SF,0.3,0.3,0.3,0.3,8,48.7,Drywall
+"1/2"" drywall - hung, taped, ready for texture",SF,2.72,2.76,2.72,2.76,7,122.0,Drywall
+R&R Angle stop valve,EA,68.02,68.02,68.02,68.02,7,2.0,Cabinets & Sink
+Sand & finish wood heat register,EA,4.49,4.49,4.49,4.49,7,2.0,Hardwood
+Mask and prep for paint - tape only (per LF),LF,0.71,0.71,0.67,0.71,6,26.61,Baseboard
+R&R Carpet pad - per specs from independent pad analysis,SF,0.33,0.33,0.33,0.33,6,200.39,Carpet
+R&R Plumbing fixture supply line,EA,39.0,33.9,33.9,39.0,6,2.0,Cabinets & Sink
+Remove Carpet - per specs from independent carpet analysis,SF,0.39,0.39,0.39,0.39,6,200.39,Carpet
+"Casing - 2 1/4""",LF,2.75,2.75,2.75,2.75,5,17.0,Casing
+Drywall Installer / Finisher - per hour,HR,110.07,110.0,110.0,110.07,5,2.0,Drywall
+Install Sink faucet - Kitchen,EA,167.33,167.33,167.33,167.33,5,1.0,Cabinets & Sink
+"Mask wall - plastic, paper, tape (per LF)",LF,1.68,1.7,1.67,1.7,5,30.0,Drywall
+Paint baseboard - one coat,LF,1.1,1.1,1.07,1.1,5,30.77,Baseboard
+R&R P-trap assembly - ABS (plastic),EA,115.92,115.92,115.92,115.92,5,1.0,Cabinets & Sink
+Texture drywall - machine,SF,0.89,0.89,0.89,0.89,5,183.0,Drywall
+Outlet,EA,37.16,37.16,37.16,37.16,4,1.0,Electrical
+Switch,EA,37.86,37.86,37.86,37.86,4,1.0,Electrical
+Tape joint for new to existing drywall - per LF,LF,8.28,11.11,8.28,11.11,4,25.5,Drywall
+Acoustic ceiling (popcorn) texture,SF,1.3,1.3,1.3,1.3,3,45.75,Drywall
+Baseboard - Detach & reset,LF,3.43,3.45,3.43,3.45,3,61.71,Baseboard
+Caulking - silicone,LF,2.93,2.93,2.92,2.93,3,30.0,Baseboard
+Floor protection - heavy paper and tape,SF,0.52,0.43,0.43,0.52,3,251.49,Engineered Hardwood
+Garbage disposer - Detach & reset,EA,285.98,285.98,285.98,285.98,3,1.0,Cabinets & Sink
+Haul debris - per pickup truck load - including dump fees,EA,216.73,216.73,211.64,243.65,3,2.0,General
+Install Cabinet knob or pull,EA,6.17,6.17,6.17,6.17,3,14.0,Cabinets & Sink
+Install Cabinetry - lower (base) units,LF,48.45,48.45,48.45,48.45,3,6.0,Cabinets & Sink
+Install Cabinetry - upper (wall) units,LF,48.45,48.45,48.45,48.45,3,12.0,Cabinets & Sink
+Install Countertop - flat laid plastic laminate,LF,16.71,16.71,16.71,16.71,3,6.0,Cabinets & Sink
+Install Kitchen Sink - single basin,EA,193.94,193.94,193.94,193.94,3,1.0,Cabinets & Sink
+Plumbing labor minimum,EA,132.81,34.22,34.22,161.56,3,1.0,
+"1/2"" - drywall per LF - up to 2' tall",LF,12.45,12.45,12.45,12.45,2,7.0,Drywall
+"Baseboard - 5 1/4""",LF,6.35,6.35,6.35,6.35,2,7.5,Baseboard
+Baseboard - Reset,LF,1.4,1.4,1.4,1.4,2,7.5,Baseboard
+"Batt insulation - 6"" - R19 - paper / foil faced",SF,1.5,1.5,1.5,1.5,2,9.0,Insulation
+Bypass (sliding) door set - Install,EA,323.74,323.74,323.74,323.74,2,1.0,Door
+Carpet pad - per specs from independent pad analysis,SF,0.14,0.14,0.14,0.14,2,34.69,Carpet
+Clean baseboard,LF,0.6,0.6,0.6,0.6,2,51.09,Baseboard
+Flange repair kit,EA,650.0,650.0,650.0,650.0,2,1.0,Plumbing
+Heat/AC register - Mechanically attached - Detach & reset,EA,22.98,22.98,22.98,22.98,2,1.0,HVAC
+"Install Casing - 4"" - hardwood",LF,1.31,1.31,1.31,1.31,2,19.0,Casing
+Install Door knob - interior,EA,27.25,27.25,27.25,27.25,2,1.0,Door
+Install Light bar - 3 lights,EA,143.91,143.91,143.91,143.91,2,1.0,Electrical
+Install Toilet,EA,371.02,371.02,371.02,371.02,2,1.0,Plumbing
+Install Vanity with cultured marble or solid surface top,LF,75.17,75.17,75.17,75.17,2,2.0,Cabinets & Sink
+Interior door unit install,EA,323.65,323.65,323.65,323.65,2,1.0,Door
+"Mask and prep for paint - plastic, paper, tape (per LF)",LF,1.54,1.54,1.54,1.54,2,74.0,Paint
+Mask the floor per square foot - plastic and tape - 4 mil,SF,0.28,0.28,0.28,0.28,2,239.05,Paint
+Paint casing - one coat,LF,1.13,1.13,1.13,1.13,2,19.0,Casing
+Paint part of the walls - one coat,SF,0.76,0.78,0.74,0.78,2,117.44,Paint
+Plumbing fixture supply line,EA,31.95,31.95,31.95,31.95,2,1.0,Plumbing
+Seal the surface area w/PVA primer - one coat,SF,0.64,0.64,0.64,0.64,2,28.0,Drywall
+Texture drywall - smooth / skim coat,SF,1.79,1.79,1.79,1.79,2,28.0,Drywall
+"2"" x 4"" lumber (.667 BF per LF)",LF,3.02,3.02,3.02,3.02,1,24.0,Plumbing
+Add for glued down wood flooring application over concrete,SF,4.1,4.1,4.1,4.1,1,80.0,Flooring
+Add for lacing/weaving hardwood flooring - per LF,LF,42.65,42.65,42.65,42.65,1,3.0,Hardwood
+Built-in freezer/refrigerator - Remove & reset,EA,730.16,730.16,730.16,730.16,1,1.0,Appliances
+Clean ceramic tile,SF,0.9,0.9,0.9,0.9,1,51.49,Tile Floor
+Clean ductwork - Interior (PER REGISTER),EA,37.95,37.95,37.95,37.95,1,32.0,Hardwood General Conditions
+Contents - move out then reset,EA,110.08,110.08,110.08,110.08,1,1.0,Appliances
+Detach & Reset Refrigerator - compact (under counter),EA,80.47,80.47,80.47,80.47,1,1.0,Appliances
+Dishwasher - Detach & reset,EA,417.19,417.19,417.19,417.19,1,1.0,Appliances
+Dryer - Remove & reset,EA,60.36,60.36,60.36,60.36,1,1.0,Appliances
+"Drywall patch / small repair, ready for paint",EA,98.76,98.76,98.76,98.76,1,2.0,Drywall
+Dust Containment,HR,75.45,75.45,75.45,75.45,1,48.0,Hardwood General Conditions
+Dust containment,EA,700.0,700.0,700.0,700.0,1,1.0,Flooring General Conditions
+Dust control barrier per square foot,SF,1.16,1.16,1.16,1.16,1,100.0,Drywall
+Electrical labor minimum,EA,76.05,76.05,76.05,76.05,1,1.0,
+Engineered wood flooring,SF,10.37,10.37,10.37,10.37,1,251.49,Engineered Hardwood
+Floor drain - tub/shower - metal/plastic,EA,68.1,68.1,68.1,68.1,1,1.0,Plumbing
+Framing labor minimum,EA,165.9,165.9,165.9,165.9,1,1.0,
+"Furnace or A/C - check, clean, replace filters and service",EA,198.61,198.61,198.61,198.61,1,1.0,Hardwood General Conditions
+"Heat, vent, & air cond. labor minimum",EA,153.02,153.02,153.02,153.02,1,1.0,
+Install Bathtub,EA,799.2,799.2,799.2,799.2,1,1.0,Plumbing
+Install Fiberglass tub surround only,EA,570.41,570.41,570.41,570.41,1,1.0,Plumbing
+Install Light fixture,EA,105.63,105.63,105.63,105.63,1,1.0,Electrical
+Install Range hood,EA,217.39,217.39,217.39,217.39,1,1.0,Electrical
+Install Shower faucet,EA,185.51,185.51,185.51,185.51,1,1.0,Plumbing
+Insulation labor minimum,EA,190.35,190.35,190.35,190.35,1,1.0,
+Interior door - Reset - slab only,EA,16.18,16.18,16.18,16.18,1,1.0,Door
+Lace in wood floors,HR,100.0,100.0,100.0,100.0,1,3.0,Flooring General Conditions
+Mask and cover large light fixture,EA,22.18,22.18,22.18,22.18,1,1.0,Paint
+Mask and cover light fixture,EA,15.74,15.74,15.74,15.74,1,10.0,Paint
+Oak flooring - clear grade - no finish,SF,13.28,13.28,13.28,13.28,1,9.0,Hardwood
+Oak flooring - select grade - no finish,SF,17.49,17.49,17.49,17.49,1,80.0,Flooring
+Paint more than the ceiling - one coat - 2 colors,SF,0.89,0.89,0.89,0.89,1,624.02,Paint
+Paint the surface area - two coats,SF,1.1,1.1,1.1,1.1,1,24.0,Paint
+Paint the surface area - two coats - 2 colors,SF,1.36,1.36,1.36,1.36,1,32.0,Paint
+Protect contents - Cover with plastic,SF,0.33,0.33,0.33,0.33,1,100.0,Paint
+R&R T- molding - for wood flooring,LF,8.49,8.49,8.49,8.49,1,9.0,Engineered Hardwood
+R&R Tile mat - uncoupling membrane,SF,8.65,8.65,8.65,8.65,1,1.0,Engineered Hardwood
+Radiant heat - wire mat,SF,22.25,22.25,22.25,22.25,1,251.49,Engineered Hardwood
+Range - gas - Remove & reset,EA,215.87,215.87,215.87,215.87,1,1.0,Appliances
+Remove Engineered wood flooring,SF,3.38,3.38,3.38,3.38,1,241.49,Engineered Hardwood
+Remove Oak flooring - select grade - no finish,SF,4.13,4.13,4.13,4.13,1,30.0,Flooring
+Remove Tile floor covering - High grade,SF,3.54,3.54,3.54,3.54,1,45.49,Tile Floor
+Remove Tile mat - uncoupling membrane,SF,1.63,1.63,1.63,1.63,1,45.49,Tile Floor
+Residential Supervision / Project Management - per hour,HR,80.85,80.85,80.85,80.85,1,8.0,
+Rough-in plumbing - per fixture,EA,1106.27,1106.27,1106.27,1106.27,1,1.0,Plumbing
+"Sand, stain, and finish steps and/or risers",LF,19.37,19.37,19.37,19.37,1,4.0,Hardwood
+Seal/prime (1 coat) then paint (1 coat) the surface area,SF,1.1,1.1,1.1,1.1,1,88.0,Paint
+"Step charge for ""tucked"" carpet installation - High grade",EA,18.43,18.43,18.43,18.43,1,18.0,Carpet
+Texture drywall - heavy hand texture,SF,1.66,1.66,1.66,1.66,1,88.0,Drywall
+Tile floor covering - High grade,SF,13.17,13.17,13.17,13.17,1,51.49,Tile Floor
+Tile floor covering labor minimum,EA,557.93,557.93,557.93,557.93,1,1.0,
+Tile mat - uncoupling membrane,SF,7.09,7.09,7.09,7.09,1,51.49,Tile Floor
+Toilet - Detach & reset,EA,341.48,341.48,341.48,341.48,1,1.0,Toilet
+Vapor barrier - 15# felt,SF,0.4,0.4,0.4,0.4,1,44.55,Hardwood
+Washer/Washing machine - Remove & reset,EA,78.29,78.29,78.29,78.29,1,1.0,Appliances
+Wood delivery,EA,360.0,360.0,360.0,360.0,1,1.0,Flooring General Conditions

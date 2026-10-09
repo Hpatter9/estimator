@@ -9,6 +9,7 @@
                                                              # Xactimate PDF -> your Estimate + Agreement
   python -m estimator export output/job.json --format agreement   # re-export an edited estimate
   python -m estimator markup                                 # your markup on past jobs
+  python -m estimator build-skill                            # -> dist/forefront-estimate.skill for Claude
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ def main(argv: list[str] | None = None) -> int:
                      help="never call Claude: Xactimate PDFs only (free); other PDFs are skipped")
 
     sub.add_parser("list", help="list what's in the library")
+    bs = sub.add_parser("build-skill", help="build the Claude skill file from your library (price book, markup)")
+    bs.add_argument("--out", type=Path, default=Path("dist/forefront-estimate.skill"))
     sub.add_parser("markup", help="show how much you marked up past customer documents over the Xactimate")
     pr = sub.add_parser("prices", help="show your price book")
     pr.add_argument("--search", default="")
@@ -91,6 +94,14 @@ def main(argv: list[str] | None = None) -> int:
             print(f"#{r['id']:<4} {r['title'] or r['source_file']:<45} {r['loss_type'] or '':<12} ${r['grand_total']:>12,.2f}")
         styles = lib.list_style_examples()
         print(f"\n{lib.count()} estimates, {len(styles)} customer documents (style examples).")
+        return 0
+
+    if args.cmd == "build-skill":
+        from .skill_build import build
+        info = build(lib, company, args.out)
+        print(f"Price book: {info['line_items']} line items from {info['estimates']} estimates; markup {info['markup']:g}%")
+        print(f"Skill file: {info['file']}")
+        print("Upload it in Claude: Settings > Capabilities > Skills > Upload skill.")
         return 0
 
     if args.cmd == "markup":
