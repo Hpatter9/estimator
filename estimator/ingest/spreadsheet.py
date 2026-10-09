@@ -13,7 +13,7 @@ from pathlib import Path
 from ..models import Estimate, LineItem, Room, Section
 
 ALIASES = {
-    "section": ["room", "section", "area", "group", "location"],
+    "section": ["room", "section", "area", "group", "group description", "location"],
     "category": ["category", "cat", "trade"],
     "selector": ["selector", "sel", "code", "item code"],
     "description": ["description", "desc", "item", "line item"],
@@ -21,6 +21,7 @@ ALIASES = {
     "unit": ["unit", "units", "uom"],
     "unit_price": ["unit price", "unit cost", "price", "rate", "replace"],
     "remove": ["remove"],
+    "line_total": ["item amount", "amount", "line total", "total", "extended", "rcv"],
     "tax": ["tax"],
     "length_ft": ["length", "len"],
     "width_ft": ["width"],
@@ -66,7 +67,9 @@ def _f(v) -> float | None:
 
 def read_estimate_sheet(path: Path) -> Estimate:
     rows = _rows(path)
-    header_idx = next(i for i, r in enumerate(rows) if "description" in _map_headers(r) or "item" in [_norm(c) for c in r])
+    header_idx = next((i for i, r in enumerate(rows) if "description" in _map_headers(r)), None)
+    if header_idx is None:  # e.g. a subcontractor's proposal laid out as a letter, not a line-item table
+        return Estimate(title=path.stem, sections=[], source_file=path.name)
     cols = _map_headers(rows[header_idx])
     get = lambda r, k: r[cols[k]] if k in cols and cols[k] < len(r) else None
     sections: dict[str, Section] = {}
@@ -75,10 +78,13 @@ def read_estimate_sheet(path: Path) -> Estimate:
         if not desc:
             continue
         name = str(get(r, "section") or "General")
+        qty = _f(get(r, "quantity")) or 0.0
         price = (_f(get(r, "unit_price")) or 0.0) + (_f(get(r, "remove")) or 0.0)
+        if not price and qty and (total := _f(get(r, "line_total"))):
+            price = round(total / qty, 2)  # sheets with only a line total (e.g. "Item Amount")
         sections.setdefault(name, Section(name=name)).items.append(LineItem(
             category=str(get(r, "category") or ""), selector=str(get(r, "selector") or ""),
-            description=str(desc), quantity=_f(get(r, "quantity")) or 0.0,
+            description=str(desc), quantity=qty,
             unit=str(get(r, "unit") or "EA"), unit_price=price, tax=_f(get(r, "tax")) or 0.0,
             price_source="history",
         ))

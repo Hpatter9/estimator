@@ -98,8 +98,13 @@ def main(argv: list[str] | None = None) -> int:
         rows = history(lib)
         for r in rows:
             print(f"{r.estimate:<30} Xactimate ${r.xactimate_total:>11,.2f}  customer ${r.customer_total:>11,.2f}  {r.pct:+.1f}%")
-        print(f"\nMedian markup: {suggested(lib):.1f}%" if rows else
+        from .markup import jobs
+        n = jobs(lib)
+        print(f"\nMedian markup: {suggested(lib):.1f}% from {n} job{'s' * (n != 1)}" if rows else
               "No pairs found. Import the Xactimate and the customer Estimate/Agreement for the same jobs.")
+        if rows and n < 5:
+            print("That's too few jobs to rely on. Customer documents are only paired when they name their "
+                  "Xactimate (\"Estimate: SMITH_123_REC\"). Set markup_pct in data/company.json to fix the markup.")
         return 0
 
     if args.cmd == "prices":

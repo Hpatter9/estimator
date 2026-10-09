@@ -82,6 +82,9 @@ def import_file(path: Path, use_ai: bool = True) -> ImportResult:
             if kind == "xactimate":
                 from .xactimate_pdf import parse_xactimate
                 parsed = parse_xactimate(path)
+                if not any(s.items for s in parsed.estimate.sections):
+                    # e.g. a quantities-only export with no price columns; nothing to learn prices from
+                    return ImportResult(path, "skipped", "Xactimate PDF with no priced line items")
                 if parsed.ok or not use_ai:
                     est = parsed.estimate
                     n = sum(len(s.items) for s in est.sections)
@@ -98,6 +101,8 @@ def import_file(path: Path, use_ai: bool = True) -> ImportResult:
         return ImportResult(path, "error", f"{type(e).__name__}: {e}")
     est.source_file = est.source_file or path.name
     n = sum(len(s.items) for s in est.sections)
+    if n == 0:
+        return ImportResult(path, "skipped", "no line items found")
     return ImportResult(path, "estimate", f"{n} line items", estimate=est)
 
 

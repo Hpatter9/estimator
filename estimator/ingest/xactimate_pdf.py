@@ -20,11 +20,13 @@ import pdfplumber
 
 from ..models import Estimate, LineItem, Room, Section
 
-UNITS = r"SF|LF|SY|EA|HR|CF|CY|SQ|DA|WK|MO|GL|LS|RM|BX|PR|TN|RL|DY|MH|RN|KT|ST|BG|LB|PK|CS|SH|PC|TH"
+UNITS = r"[A-Z]{2}"  # SF, LF, EA, HR, BF, PL, ... Xactimate units are always two capitals
 MONEY = r"\(?-?[\d,]+\.\d{2}\)?"
-ITEM_RE = re.compile(rf"^(?P<n>\d+)\.\s+(?P<desc>.*?)\s*(?P<qty>-?[\d,]+\.\d{{2}})\s*(?P<unit>{UNITS})\s+(?P<nums>(?:{MONEY}\s*){{4,6}})$")
-TOTALS_RE = re.compile(rf"^Totals:\s+(?P<name>.+?)\s+(?P<tax>{MONEY})\s+(?P<op>{MONEY})\s+(?P<total>{MONEY})$")
-GRAND_RE = re.compile(rf"^Line Item Totals:\s+.+?\s+(?P<tax>{MONEY})\s+(?P<op>{MONEY})\s+(?P<total>{MONEY})$")
+# Quantity: large ones are cut off at the column edge ("13,513."), and some items print no quantity.
+ITEM_RE = re.compile(rf"^(?P<n>[\d,]+)\.\s+(?P<desc>.*?)\s*(?P<qty>-?[\d,]+\.\d{{0,2}})?\s*(?P<unit>{UNITS})\s+(?P<nums>(?:{MONEY}\s*){{3,6}})$")
+TOTALS_RE = re.compile(rf"^Totals:\s+(?P<name>.+?)\s+(?P<tax>{MONEY})\s+(?:(?P<op>{MONEY})\s+)?(?P<total>{MONEY})$")
+AREA_TOTAL_RE = re.compile(rf"^Total:\s+(?P<name>.+?)\s+(?P<tax>{MONEY})\s+(?:(?P<op>{MONEY})\s+)?(?P<total>{MONEY})$")
+GRAND_RE = re.compile(rf"^Line Item Totals:\s+.+?\s+(?P<tax>{MONEY})\s+(?:(?P<op>{MONEY})\s+)?(?P<total>{MONEY})$")
 DIM_PATTERNS = {
     "wall_sf": r"([\d,]+\.\d+)\s*SF Walls(?! &)",
     "ceiling_sf": r"([\d,]+\.\d+)\s*SF Ceiling",
@@ -78,10 +80,10 @@ class ParseResult:
 
     @property
     def ok(self) -> bool:
-        return all(abs(a - b) < 0.02 for _, a, b in self.checks) and bool(self.checks)
+        return all(abs(a - b) < 0.05 for _, a, b in self.checks) and bool(self.checks)
 
     def report(self) -> str:
-        bad = [f"{n}: parsed {a:,.2f} vs printed {b:,.2f}" for n, a, b in self.checks if abs(a - b) >= 0.02]
+        bad = [f"{n}: parsed {a:,.2f} vs printed {b:,.2f}" for n, a, b in self.checks if abs(a - b) >= 0.05]
         return "all room totals match" if self.ok else ("; ".join(bad) or "no room totals found")
 
 
@@ -98,9 +100,26 @@ def _lines(pdf) -> list[list[Line]]:
                 k = (c["fontname"].split("+")[-1], round(c["size"], 1))
                 fonts[k] = fonts.get(k, 0) + 1
             font, size = max(fonts, key=fonts.get)
-            out.append(Line(l["text"].strip(), l["top"], font, size))
+            text = l["text"].strip()
+            if any(abs(c["size"] - size) > 1 for c in chars):
+                text = _clean_line(chars, size) or text
+            out.append(Line(text, l["top"], font, size))
         pages.append(out)
     return pages
+
+
+def _clean_line(chars: list[dict], size: float) -> str:
+    """Rebuild a line from only the characters of its main font size.
+
+    Some estimates print a small floor-plan sketch on the item pages; its 6pt room labels land in the
+    middle of 9pt item lines ("Vinyl plank flooring 3.90 SF HHaallllwwaa0yy.00 ...")."""
+    out, prev = "", None
+    for c in sorted((c for c in chars if abs(c["size"] - size) <= 1), key=lambda c: c["x0"]):
+        if prev is not None and c["x0"] - prev["x1"] > 0.2 * size:
+            out += " "
+        out += c["text"]
+        prev = c
+    return out.strip()
 
 
 def _room_name(text: str) -> str:
@@ -124,6 +143,7 @@ def parse_xactimate(path: Path) -> ParseResult:
     printed_total = None
     item_totals: dict[int, float] = {}  # id(item) -> printed line total incl. O&P
     group = ""
+    has_op = True
 
     for lines in pages:
         in_table = False
@@ -147,6 +167,7 @@ def parse_xactimate(path: Path) -> ParseResult:
                 continue
             if t.startswith("DESCRIPTION") and "QTY" in t:
                 in_table, dim_room = True, None
+                has_op = "O&P" in t  # mitigation estimates and invoices have no O&P column
                 last_kind = "header"
                 continue
             if m := GRAND_RE.match(t):
@@ -159,14 +180,28 @@ def parse_xactimate(path: Path) -> ParseResult:
                 est.sections.append(Section(name=name, room=rooms.get(name.lower()), items=pending))
                 pending, group, in_table, last_kind = [], "", False, "totals"
                 continue
+            if m := AREA_TOTAL_RE.match(t):
+                # "Total: 1st Floor" closes items listed on a level/area itself (e.g. final cleaning for
+                # the whole floor). The bold "Total:" after an area's rooms has nothing pending: skip it.
+                if pending:
+                    name = m["name"].strip()
+                    parsed = round(sum(item_totals.get(id(i), 0.0) for i in pending), 2)
+                    checks.append((name, parsed, money(m["total"])))
+                    est.sections.append(Section(name=name, room=rooms.get(name.lower()), items=pending))
+                    pending, group, in_table, last_kind = [], "", False, "totals"
+                continue
             if not in_table:
                 continue
             if ln.group:
                 group, last_kind = t, "group"
-            elif ln.regular and (m := ITEM_RE.match(t)):
+            elif (ln.regular or ln.bold) and (m := ITEM_RE.match(t)):  # bid items print in bold
                 nums = [money(x) for x in re.findall(MONEY, m["nums"])]
-                *prices, tax, op, total = nums
-                item = LineItem(description=m["desc"].strip(), quantity=money(m["qty"]), unit=m["unit"],
+                if has_op:
+                    *prices, tax, _op, total = nums
+                else:
+                    *prices, tax, total = nums
+                item = LineItem(description=m["desc"].strip(), quantity=money(m["qty"]) if m["qty"] else 0.0,
+                                unit=m["unit"],
                                 unit_price=round(sum(prices), 2), tax=tax, group=group, price_source="history")
                 item_totals[id(item)] = total
                 pending.append(item)

@@ -26,24 +26,38 @@ class MarkupRow:
 
 
 def history(library: Library) -> list[MarkupRow]:
-    by_title = {r["title"].upper(): r for r in library.list() if r["title"]}
+    by_title: dict[str, list] = {}
+    for r in library.list():
+        if r["title"]:
+            by_title.setdefault(r["title"].upper(), []).append(r)
     rows = []
     for text in library.style_examples(limit=100000):
         m = TOTAL_RE.search(text)
         if not m:
             continue
         customer_total = float(m[1].replace(",", ""))
-        for name in re.findall(r"\b[A-Z][A-Z0-9]*_\d+_[A-Z0-9]+\b", text):
-            est = by_title.get(name)
-            if est and est["grand_total"]:
-                rows.append(MarkupRow(name, est["grand_total"], customer_total))
-                break
+        names = list(dict.fromkeys(re.findall(r"\b[A-Z][A-Z0-9]*_\d+_[A-Z0-9]+\b", text)))
+        # Only pair when the document names exactly one Xactimate and exactly that one was imported.
+        # A document naming several (e.g. an HOA portion plus the full job) covers more than any one of
+        # them; and two imported revisions under the same name can't be told apart.
+        if len(names) != 1 or len(by_title.get(names[0], [])) != 1:
+            continue
+        est = by_title[names[0]][0]
+        if est["grand_total"]:
+            rows.append(MarkupRow(names[0], est["grand_total"], customer_total))
     return rows
 
 
 def suggested(library: Library) -> float | None:
-    rows = history(library)
-    return statistics.median(r.pct for r in rows) if rows else None
+    """Median markup, counting each job once (revisions of one customer document are averaged)."""
+    per_job: dict[str, list[float]] = {}
+    for r in history(library):
+        per_job.setdefault(r.estimate, []).append(r.pct)
+    return statistics.median(statistics.mean(v) for v in per_job.values()) if per_job else None
+
+
+def jobs(library: Library) -> int:
+    return len({r.estimate for r in history(library)})
 
 
 def default_markup(library: Library, company) -> float:

@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 from reportlab.lib.pagesizes import letter
+from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfgen import canvas
 
 from estimator import customer as customer_mod
@@ -198,3 +199,105 @@ def test_markup_history_pairs_documents_with_xactimate(tmp_path):
                           "customer_estimate", "doe.pdf")
     (row,) = history(lib)
     assert row.estimate == "DOE_1_REC" and suggested(lib) == 5.0
+
+
+def test_markup_skips_documents_covering_more_than_one_xactimate(tmp_path):
+    from estimator.markup import history
+    lib = Library(tmp_path / "lib.db")
+    lib.add(sample_estimate())  # DOE_1_REC
+    lib.add_style_example("Reconstruction Estimate\nEstimate: DOE_1_REC\nEstimate: DOE_1_HOA\n"
+                          "Total Job Price $99,999.00", "customer_estimate", "doe-full.pdf")
+    assert history(lib) == []
+
+
+def draw_pdf(path: Path, lines) -> Path:
+    """lines: (text, font, size, gap) tuples, drawn top-down; a gap of 0 draws on the previous line."""
+    c = canvas.Canvas(str(path), pagesize=letter)
+    y = 760
+    for text, font, size, gap, *x in lines:
+        y -= gap
+        c.setFont(font, size)
+        c.drawString(x[0] if x else 36, y, text)
+    c.save()
+    return path
+
+
+R, B, BI = "Times-Roman", "Times-Bold", "Times-BoldItalic"
+HEADER = ("DESCRIPTION QTY RESET REMOVE REPLACE TAX O&P TOTAL", B, 9, 20)
+
+
+def test_xactimate_area_items_bid_items_and_odd_quantities(tmp_path):
+    r = parse_xactimate(draw_pdf(tmp_path / "x.pdf", [
+        ("Estimate: STARR_1_REC", R, 10, 0),
+        ("1st Floor", B, 10, 30),
+        HEADER,
+        ("Cleaning", BI, 9, 16),
+        # items on the level itself close with "Total:", not "Totals:"
+        ("3. Final cleaning - construction - 393.09 SF 0.00 0.43 0.00 33.80 202.83", R, 9, 16),
+        ("Total: 1st Floor 0.00 33.80 202.83", R, 9, 22),
+        ("Bathroom Height: 7'", B, 10, 30),
+        HEADER,
+        ("4. Content Manipulation (Bid Item) 1.00 EA 0.00 5,714.00 0.00 1,142.80 6,856.80", B, 9, 16),  # bold
+        ("5. Stud wall - 2x4 (per BF) 40.00 BF 0.00 2.75 0.00 22.00 132.00", R, 9, 16),  # unit BF
+        ("6. Stain & finish stair skirt/apron LF 0.00 9.05 0.00 0.00 0.00", R, 9, 16),  # no quantity
+        ("1,000. R&R Carpet tile 12,705. SF 0.89 3.95 0.00 12,298.82 73,792.96", R, 9, 16),  # cut-off qty
+        ("Totals: Bathroom 0.00 13,463.62 80,781.76", R, 9, 22),
+        ("Total: 1st Floor 0.00 13,497.42 80,984.59", B, 9, 16),  # area subtotal: nothing pending
+    ]))
+    assert r.ok, r.report()
+    floor, bath = r.estimate.sections
+    assert floor.name == "1st Floor" and [i.unit_price for i in floor.items] == [0.43]
+    bid, stud, skirt, carpet = bath.items
+    assert bid.unit_price == 5714.00 and stud.unit == "BF" and skirt.quantity == 0
+    assert (carpet.quantity, carpet.unit_price) == (12705, 4.84)
+
+
+def test_xactimate_without_op_column(tmp_path):
+    r = parse_xactimate(draw_pdf(tmp_path / "x.pdf", [
+        ("DESCRIPTION QTY REMOVE REPLACE TAX TOTAL", B, 9, 0),
+        ("1. Emergency service call - during 1.00 EA 0.00 237.27 0.00 237.27", R, 9, 16),
+        ("2. Haul debris - per pickup truck load - 3.00 EA 254.71 0.00 0.00 764.13", R, 9, 16),
+        ("Totals: Dining Room 0.00 1,001.40", R, 9, 22),
+    ]))
+    assert r.ok, r.report()
+    assert [i.unit_price for i in r.estimate.sections[0].items] == [237.27, 254.71]
+
+
+def test_xactimate_ignores_sketch_labels_over_items(tmp_path):
+    item = "45. Vinyl plank flooring 3.90 SF 0.00 7.15 0.00 5.58 33.47"
+    x = 36 + pdfmetrics.stringWidth("45. Vinyl plank flooring 3.90 SF 0.", R, 9)
+    r = parse_xactimate(draw_pdf(tmp_path / "x.pdf", [
+        HEADER,
+        (item, R, 9, 16),
+        ("Hallway", R, 6, 0, x),  # a floor-plan label printed over the item line
+        ("Totals: Pantry 0.00 5.58 33.47", R, 9, 20),
+    ]))
+    assert r.ok, r.report()
+
+
+def test_quantity_only_xactimate_is_skipped(tmp_path):
+    draw_pdf(tmp_path / "q.pdf", [
+        ("DESCRIPTION QTY", B, 10, 0),
+        ("1. Haul debris - per pickup truck load - including dump fees 1.00 EA", R, 10, 16),
+    ])
+    lib = Library(tmp_path / "lib.db")
+    counts = import_into_library(lib, [tmp_path / "q.pdf"], use_ai=False, progress=lambda m: None)
+    assert counts["skipped"] == 1 and lib.count() == 0
+
+
+def test_spreadsheets_line_totals_and_letters(tmp_path):
+    from openpyxl import Workbook
+    from estimator.ingest import import_file
+    wb = Workbook()
+    wb.active.append(["#", "Group Description", "Desc", "Qty", "Item Amount"])
+    wb.active.append([1, "Living Room", "Paint the ceiling - one coat", 363.08, 283.20])
+    wb.save(tmp_path / "items.xlsx")
+    wb = Workbook()
+    for row in (["PROPOSAL"], ["To:", "FOREFRONT"], ["Refinish floors", 5000]):
+        wb.active.append(row)
+    wb.save(tmp_path / "letter.xlsx")
+
+    r = import_file(tmp_path / "items.xlsx", use_ai=False)
+    (item,) = r.estimate.sections[0].items
+    assert r.estimate.sections[0].name == "Living Room" and item.unit_price == 0.78
+    assert import_file(tmp_path / "letter.xlsx", use_ai=False).status == "skipped"
