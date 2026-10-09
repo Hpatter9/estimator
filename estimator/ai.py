@@ -11,13 +11,35 @@ import anthropic
 
 MODEL = os.environ.get("ESTIMATOR_MODEL", "claude-opus-5-5")
 
+KEY_FILE = Path("data/api_key.txt")  # written by the app's Settings tab; data/ is never committed
+
 _client: anthropic.Anthropic | None = None
+
+
+def api_key() -> str:
+    """The key from the ANTHROPIC_API_KEY environment variable, else the one saved in Settings."""
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return os.environ["ANTHROPIC_API_KEY"]
+    try:
+        return KEY_FILE.read_text(encoding="utf-8").strip()
+    except OSError:
+        return ""
+
+
+def save_api_key(key: str) -> None:
+    global _client
+    KEY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    KEY_FILE.write_text(key.strip(), encoding="utf-8")
+    _client = None
 
 
 def client() -> anthropic.Anthropic:
     global _client
     if _client is None:
-        _client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY
+        key = api_key()
+        if not key:
+            raise AIError("No Anthropic API key yet. Add it in the app's Settings tab (get one at console.anthropic.com).")
+        _client = anthropic.Anthropic(api_key=key)
     return _client
 
 

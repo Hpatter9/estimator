@@ -301,3 +301,14 @@ def test_spreadsheets_line_totals_and_letters(tmp_path):
     (item,) = r.estimate.sections[0].items
     assert r.estimate.sections[0].name == "Living Room" and item.unit_price == 0.78
     assert import_file(tmp_path / "letter.xlsx", use_ai=False).status == "skipped"
+
+
+def test_api_key_saved_in_settings_is_used(tmp_path, monkeypatch):
+    from estimator import ai
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setattr(ai, "KEY_FILE", tmp_path / "api_key.txt")
+    assert ai.api_key() == ""
+    ai.save_api_key("  sk-ant-test \n")
+    assert ai.api_key() == "sk-ant-test"
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-env")
+    assert ai.api_key() == "sk-ant-env"

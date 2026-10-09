@@ -15,28 +15,32 @@ notes + DocuSketch .ESX + photos ─► Claude scopes line items & quantities �
             Reconstruction Estimate · Reconstruction Agreement · Xactimate-style PDF · Excel · CSV
 ```
 
-## Setup on Windows (once)
+## Easy setup (Windows)
 
-You need [Python](https://www.python.org/downloads/) (tick **"Add python.exe to PATH"** when installing)
-and [Git](https://git-scm.com/download/win). Then, in PowerShell:
+1. Get the code onto your computer: either `git clone https://github.com/hpatter9/estimator.git`, or on
+   GitHub click **Code → Download ZIP** and unzip it somewhere like `Documents\estimator`.
+2. Double-click **Setup Estimator** in that folder. It installs Python if needed, installs the app, and
+   puts an **Estimator** icon on your desktop. The first time takes a few minutes.
+3. From then on, double-click the **Estimator** icon. The app opens in your browser at
+   http://localhost:8501. It runs on your computer, so your files never leave it. Keep the small black window open
+   while you use the app; close it to stop the app. If the folder came from `git clone`, the icon also
+   picks up the latest version each time.
+4. In the app: **Settings** → paste your Anthropic API key and set your markup; **Library** → type
+   your estimates folder path → **Import folder**.
+
+<details><summary>Command-line setup instead</summary>
 
 ```powershell
 cd $HOME\Documents
 git clone https://github.com/hpatter9/estimator.git
 cd estimator
-git checkout claude/modest-wozniak-p8l4u6
 py -m pip install -r requirements.txt
 ```
 
-For the AI features, add your key from console.anthropic.com (one time, then open a new PowerShell window):
+The API key can also be set with `setx ANTHROPIC_API_KEY "sk-ant-..."` (open a new PowerShell window afterwards).
+</details>
 
-```powershell
-setx ANTHROPIC_API_KEY "sk-ant-..."
-```
-
-PDFs of your templates are printed with Edge or Chrome, which Windows already has.
-
-## 1. Load your history
+## 1. Load your history (command line)
 
 Point it at your estimates folder. It searches all subfolders, skips files it has already imported,
 and you can stop it and run it again at any time:

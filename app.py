@@ -25,6 +25,12 @@ company = load_company()
 UPLOADS = Path(tempfile.gettempdir()) / "estimator_uploads"
 UPLOADS.mkdir(exist_ok=True)
 
+from estimator import ai  # noqa: E402
+
+if not ai.api_key():
+    st.info("Add your Anthropic API key in **Settings** to draft estimates and write customer scopes. "
+            "Importing Xactimate PDFs and reading DocuSketch ESX files work without it.")
+
 
 def save_upload(f) -> Path:
     p = UPLOADS / f.name
@@ -37,6 +43,28 @@ tab_lib, tab_new, tab_conv, tab_review, tab_export, tab_settings = st.tabs(
 
 with tab_lib:
     st.subheader(f"Library: {lib.count()} estimates, {len(lib.list_style_examples())} customer documents")
+    st.markdown("**Import a folder from this computer** (subfolders included; files already imported are skipped)")
+    c1, c2 = st.columns([4, 1])
+    folder = c1.text_input("Folder", placeholder=r"C:\Users\you\Documents\Estimates", label_visibility="collapsed")
+    folder_ai = st.checkbox("Also use Claude for PDFs that aren't Xactimate (costs a little per file)", value=False)
+    if c2.button("Import folder", disabled=not folder.strip()):
+        path = Path(folder.strip().strip('"'))
+        if not path.is_dir():
+            st.error(f"Can't find the folder {path}")
+        else:
+            from estimator.ingest import import_into_library
+            log = st.empty()
+            folder_lines: list[str] = []
+
+            def show_folder(msg):
+                folder_lines.append(msg)
+                log.code("\n".join(folder_lines[-30:]))
+
+            counts = import_into_library(lib, [path], use_ai=folder_ai, progress=show_folder)
+            st.success(f"{counts['estimate']} estimates, {counts['style']} customer documents, "
+                       f"{counts['duplicate']} already imported, {counts['skipped']} skipped, "
+                       f"{counts['error']} errors")
+    st.markdown("**Or add individual files**")
     files = st.file_uploader("Add Xactimate PDFs (they teach line items and prices) and your Reconstruction "
                              "Estimates / Agreements (they teach your wording). Already-imported files are skipped.",
                              accept_multiple_files=True, type=["pdf", "csv", "xlsx", "json"])
@@ -246,11 +274,29 @@ with tab_export:
                     st.download_button(f"Download {pth.name}", pth.read_bytes(), file_name=pth.name, key=str(pth))
 
 with tab_settings:
-    st.caption(f"Changes are saved to {CONFIG_PATH}. Exclusions, waivers and agreement terms live in "
+    st.subheader("Anthropic API key")
+    st.caption("Needed for drafting estimates and writing customer scopes. Get one at console.anthropic.com. "
+               "It is saved only on this computer (data/api_key.txt).")
+    key = st.text_input("API key", type="password", placeholder="sk-ant-..." if not ai.api_key() else "saved - paste a new one to replace it")
+    if st.button("Save key", disabled=not key.strip()):
+        ai.save_api_key(key)
+        st.success("Key saved.")
+        st.rerun()
+
+    st.subheader("Markup on customer Estimates / Agreements")
+    from estimator.markup import jobs, suggested
+    hint = suggested(lib)
+    use_history = st.checkbox("Use the median of my past jobs", value=company.markup_pct is None,
+                              help=(f"{hint:.1f}% from {jobs(lib)} paired jobs" if hint is not None
+                                    else "No paired jobs found yet"))
+    markup = None if use_history else st.number_input("Markup %", value=float(company.markup_pct or 0), step=0.5)
+
+    st.subheader("Company")
+    st.caption(f"Saved to {CONFIG_PATH}. Exclusions, waivers and agreement terms live in "
                "estimator/company_defaults.json.")
-    simple = {k: v for k, v in company.model_dump().items() if isinstance(v, (str, float, int))}
+    simple = {k: v for k, v in company.model_dump().items() if isinstance(v, (str, float, int)) and k != "markup_pct"}
     new = {k: (st.number_input(k, value=float(v)) if isinstance(v, (float, int)) else st.text_input(k, v))
            for k, v in simple.items()}
     if st.button("Save settings"):
-        save_company(company.model_copy(update=new))
+        save_company(company.model_copy(update={**new, "markup_pct": markup}))
         st.success("Saved.")
