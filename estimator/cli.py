@@ -37,6 +37,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("list", help="list what's in the library")
     bs = sub.add_parser("build-skill", help="build the Claude skill file from your library (price book, markup)")
     bs.add_argument("--out", type=Path, default=Path("dist/forefront-estimate.skill"))
+    bs.add_argument("--markup", type=float, help="markup %% for customer documents (saved as your company setting)")
     sub.add_parser("markup", help="show how much you marked up past customer documents over the Xactimate")
     pr = sub.add_parser("prices", help="show your price book")
     pr.add_argument("--search", default="")
@@ -98,6 +99,10 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.cmd == "build-skill":
         from .skill_build import build
+        if args.markup is not None:
+            from .config import save_company
+            company = company.model_copy(update={"markup_pct": args.markup})
+            save_company(company)
         info = build(lib, company, args.out)
         print(f"Price book: {info['line_items']} line items from {info['estimates']} estimates; markup {info['markup']:g}%")
         print(f"Skill file: {info['file']}")
