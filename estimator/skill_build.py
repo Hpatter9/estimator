@@ -203,25 +203,31 @@ def regenerate_scripts() -> None:
     (SKILL / "scripts" / "read_esx.py").write_text(generated_read_esx(), encoding="utf-8")
 
 
-def package(out: Path) -> Path:
+def package(out: Path, src: Path = SKILL) -> Path:
     out.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        for f in sorted(SKILL.rglob("*")):
+        for f in sorted(src.rglob("*")):
             if f.is_file() and "__pycache__" not in f.parts and not f.name.startswith("_"):
-                z.write(f, Path(SKILL.name) / f.relative_to(SKILL))
+                z.write(f, Path(SKILL.name) / f.relative_to(src))
     return out
 
 
 def build(library, company, out: Path) -> dict:
+    """Builds in a copy (dist/forefront-estimate/) so the files tracked in git never change here."""
+    import shutil
     from .markup import default_markup, suggested
-    regenerate_scripts()
+    stage = out.parent / SKILL.name
+    shutil.rmtree(stage, ignore_errors=True)
+    shutil.copytree(SKILL, stage, ignore=shutil.ignore_patterns("__pycache__", "_*"))
+    (stage / "scripts" / "read_xactimate.py").write_text(generated_read_xactimate(), encoding="utf-8")
+    (stage / "scripts" / "read_esx.py").write_text(generated_read_esx(), encoding="utf-8")
     rows = price_book_rows(library)
     markup = company.markup_pct if company.markup_pct is not None else suggested(library)
     if rows:
-        write_price_book(rows, SKILL / "references", markup, library.count())
+        write_price_book(rows, stage / "references", markup, library.count())
     company_data = json.loads(company.model_dump_json())
     company_data["markup_pct"] = default_markup(library, company)
-    (SKILL / "assets" / "company.json").write_text(json.dumps(company_data, indent=2, ensure_ascii=False),
+    (stage / "assets" / "company.json").write_text(json.dumps(company_data, indent=2, ensure_ascii=False),
                                                    encoding="utf-8")
-    package(out)
+    package(out, stage)
     return {"line_items": len(rows), "estimates": library.count(), "markup": company_data["markup_pct"], "file": out}

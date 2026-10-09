@@ -93,3 +93,20 @@ def test_package_contains_skill_files(tmp_path):
     names = zipfile.ZipFile(out).namelist()
     assert "forefront-estimate/SKILL.md" in names and "forefront-estimate/scripts/render.py" in names
     assert not any(n.endswith(".txt") or "__pycache__" in n for n in names)
+
+
+def test_build_leaves_tracked_files_alone(tmp_path):
+    from estimator.config import Company
+    from estimator.library import Library
+    before = {p: p.read_bytes() for p in skill_build.SKILL.rglob("*") if p.is_file()}
+    lib = Library(tmp_path / "lib.db")
+    from estimator.ingest import import_into_library
+    from tests.test_formats import make_xactimate_pdf as mk
+    mk(tmp_path / "a.pdf")
+    import_into_library(lib, [tmp_path / "a.pdf"], use_ai=False, progress=lambda m: None)
+    info = skill_build.build(lib, Company(markup_pct=4), tmp_path / "dist" / "forefront-estimate.skill")
+    assert {p: p.read_bytes() for p in skill_build.SKILL.rglob("*") if p.is_file()} == before
+    z = zipfile.ZipFile(info["file"])
+    book = z.read("forefront-estimate/references/price_book.csv").decode()
+    assert "R&R Angle stop valve" in book and info["markup"] == 4
+    assert json.loads(z.read("forefront-estimate/assets/company.json"))["markup_pct"] == 4

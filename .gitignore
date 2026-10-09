@@ -5,3 +5,4 @@ data/
 output/
 .env
 .pytest_cache/
+dist/
