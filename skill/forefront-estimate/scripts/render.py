@@ -7,7 +7,7 @@
 Writes:
     <Customer> - Reconstruction Estimate.pdf    trades with O&P-inclusive totals, bullets, exclusions, billing
     <Customer> - Reconstruction Agreement.pdf   same scope + material selections, waivers, terms, signature
-    <Customer> - Xactimate style.pdf            room-by-room line items at price-book prices (no markup)
+    <Customer> - Xactimate Estimate.pdf         Xactimate-format estimate (Forefront letterhead, rooms, recaps, sketch)
 
 and prints the totals. The JSON format is in references/estimate_format.md.
 Money math: O&P is figured per line (like Xactimate), markup is applied per trade on the customer
@@ -449,92 +449,9 @@ def render_agreement(job: Job, company: dict, path: Path):
 
 
 # ---------------------------------------------------------------- Xactimate-style PDF
+# Laid out like Forefront's real Xactimate exports (see xactimate_pdf.py).
 
-def render_xactimate(job: Job, company: dict, path: Path):
-    d = job.d
-    rooms = {r["name"].lower(): r for r in d.get("rooms", []) if r.get("name")}
-    small = S("xs", fontSize=8, leading=10)
-    cols = [3.35 * inch, 0.95 * inch, 0.75 * inch, 0.6 * inch, 0.7 * inch, 0.85 * inch]
-    head = Table([[Paragraph(f"<b>{esc(company.get('legal_name') or company.get('name'))}</b><br/>{esc(company.get('address'))}"
-                             f"<br/>{esc(company.get('phone'))}", small),
-                   Paragraph(f"<b>Insured:</b> {esc(d.get('customer'))}<br/><b>Property:</b> {esc(d.get('address'))}<br/>"
-                             f"<b>Claim Number:</b> {esc(d.get('claim_number'))}<br/><b>Date:</b> {job.date:%m/%d/%Y}<br/>"
-                             f"<b>Estimate:</b> {esc(d.get('estimate_number'))}", small)]],
-                 colWidths=[3.6 * inch, 3.7 * inch])
-    head.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LINEBELOW", (0, 0), (-1, 0), 1, colors.black)]))
-    story = [head, Spacer(1, 6)]
-    n, recap = 0, defaultdict(float)
-    grand = {"tax": 0.0, "op": 0.0, "rcv": 0.0}
-    for s in job.sections:
-        rows = [["DESCRIPTION", "QUANTITY", "UNIT PRICE", "TAX", "O&P", "RCV"]]
-        spans, sub = [], {"tax": 0.0, "op": 0.0, "rcv": 0.0}
-        for i in s.get("items", []):
-            n += 1
-            ext, op, tax = job.ext(i), job.op(i), float(i.get("tax", 0) or 0)
-            rcv = r2(ext + tax + op)
-            for k, v in (("tax", tax), ("op", op), ("rcv", rcv)):
-                sub[k] += v
-            recap[i.get("trade") or "Other"] += ext
-            flag = " *" if i.get("price_source") == "estimated" else ""
-            rows.append([Paragraph(f"{n}. {esc(i['description'])}{flag}", small), f"{float(i.get('quantity', 0)):,.2f} {i.get('unit', '')}",
-                         f"{float(i.get('unit_price', 0)):,.2f}", f"{tax:,.2f}", f"{op:,.2f}", f"{rcv:,.2f}"])
-            if i.get("note"):
-                rows.append([Paragraph(esc(i["note"]), S("xn", fontSize=7, leading=9, textColor=MUTED, leftIndent=14)), "", "", "", "", ""])
-                spans.append(("SPAN", (0, len(rows) - 1), (-1, len(rows) - 1)))
-        rows.append([Paragraph(f"<b>Totals: {esc(s['name'])}</b>", small), "", "", f"{sub['tax']:,.2f}", f"{sub['op']:,.2f}", f"{sub['rcv']:,.2f}"])
-        for k in grand:
-            grand[k] += sub[k]
-        t = Table(rows, colWidths=cols, repeatRows=1)
-        t.setStyle(TableStyle(spans + [
-            ("FONT", (0, 0), (-1, -1), "Helvetica", 8), ("FONT", (0, 0), (-1, 0), "Helvetica-Bold", 8),
-            ("FONT", (0, -1), (-1, -1), "Helvetica-Bold", 8), ("LINEBELOW", (0, 0), (-1, 0), 0.75, colors.black),
-            ("LINEABOVE", (0, -1), (-1, -1), 0.5, colors.black), ("ALIGN", (1, 0), (-1, -1), "RIGHT"),
-            ("VALIGN", (0, 0), (-1, -1), "TOP"), ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5)]))
-        r = rooms.get(s["name"].lower())
-        title = s["name"] + (f" (Optional: {s['option']})" if s.get("option") else "")
-        dims = ""
-        if r:
-            bits = [f"Height: {r['height_ft']:g}'" if r.get("height_ft") else ""] + [
-                f"{r[k]:,.2f} {lbl}" for k, lbl in (("wall_sf", "SF Walls"), ("floor_sf", "SF Floor"),
-                                                    ("floor_perimeter_lf", "LF Floor Perimeter"), ("perimeter_lf", "LF Floor Perimeter"))
-                if r.get(k)]
-            dims = " &nbsp; ".join(b for b in dict.fromkeys(bits) if b)
-        story.append(KeepTogether([Paragraph(f"<b>{esc(title)}</b>", S("rm", fontSize=10, leading=13, spaceBefore=10))]
-                                  + ([Paragraph(dims, small)] if dims else []) + [Spacer(1, 3)]))
-        story.append(t)
-    line_total = r2(sum(job.ext(i) for _, i in job.items()))
-    t = Table([["Line Item Totals", "", "", f"{grand['tax']:,.2f}", f"{grand['op']:,.2f}", f"{grand['rcv']:,.2f}"]], colWidths=cols)
-    t.setStyle(TableStyle([("FONT", (0, 0), (-1, -1), "Helvetica-Bold", 8), ("ALIGN", (1, 0), (-1, -1), "RIGHT"),
-                           ("LINEABOVE", (0, 0), (-1, 0), 1, colors.black)]))
-    story += [Spacer(1, 8), t, Paragraph("<b>Recap by Trade</b>", S("rh", fontSize=10, spaceBefore=12, spaceAfter=4))]
-    rec = [["Trade", "Amount", "%"]] + [[k, f"{v:,.2f}", f"{(v / line_total * 100 if line_total else 0):.2f}%"]
-                                       for k, v in sorted(recap.items(), key=lambda kv: trade_key(kv[0]))]
-    t = Table(rec, colWidths=[3 * inch, 1.2 * inch, 0.8 * inch])
-    t.setStyle(TableStyle([("FONT", (0, 0), (-1, -1), "Helvetica", 8), ("FONT", (0, 0), (-1, 0), "Helvetica-Bold", 8),
-                           ("LINEBELOW", (0, 0), (-1, 0), 0.75, colors.black), ("ALIGN", (1, 0), (-1, -1), "RIGHT")]))
-    story.append(t)
-    summ = [["Line Item Total", f"{line_total:,.2f}"], ["Overhead & Profit", f"{grand['op']:,.2f}"],
-            ["Sales Tax", f"{grand['tax']:,.2f}"], ["Replacement Cost Value (all sections)", f"{grand['rcv']:,.2f}"]]
-    t = Table(summ, colWidths=[3 * inch, 1.5 * inch])
-    t.setStyle(TableStyle([("FONT", (0, 0), (-1, -1), "Helvetica", 9), ("FONT", (0, -1), (-1, -1), "Helvetica-Bold", 9),
-                           ("ALIGN", (1, 0), (1, -1), "RIGHT"), ("LINEABOVE", (0, -1), (-1, -1), 1, colors.black)]))
-    story += [Paragraph("<b>Summary</b>", S("sh2", fontSize=10, spaceBefore=12, spaceAfter=4)), t]
-    if any(i.get("price_source") == "estimated" for _, i in job.items()):
-        story.append(Paragraph("* Not in the price book - price estimated; check before sending.",
-                               S("fl", fontSize=7, textColor=MUTED, spaceBefore=6)))
-
-    def page(c, doc):
-        c.saveState()
-        c.setFont("Helvetica", 7)
-        c.drawString(MARGIN, 0.45 * inch, f"{d.get('estimate_number', '')}  {job.date:%m/%d/%Y}")
-        c.drawRightString(PAGE_W - MARGIN, 0.45 * inch, f"Page: {doc.page}")
-        c.restoreState()
-
-    doc = BaseDocTemplate(str(path), pagesize=letter, leftMargin=MARGIN, rightMargin=MARGIN, topMargin=0.6 * inch,
-                          bottomMargin=0.7 * inch, title=d.get("estimate_number", "Estimate"))
-    doc.addPageTemplates([PageTemplate("all", [Frame(MARGIN, 0.7 * inch, WIDTH, PAGE_H - 1.3 * inch, id="x",
-                                                     leftPadding=0, rightPadding=0)], onPage=page)])
-    doc.build(story)
+from xactimate_pdf import render_xactimate  # noqa: E402
 
 
 # ---------------------------------------------------------------- main
@@ -569,7 +486,7 @@ def main(argv=None) -> int:
         written.append(a.out / f"{stem} - Reconstruction Agreement.pdf")
         render_agreement(job, company, written[-1])
     if "xactimate" in wanted:
-        written.append(a.out / f"{stem} - Xactimate style.pdf")
+        written.append(a.out / f"{stem} - Xactimate Estimate.pdf")
         render_xactimate(job, company, written[-1])
 
     scopes = job.scopes()

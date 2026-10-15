@@ -266,5 +266,50 @@
     }
   ],
   "agreement_terms_footer": "THIS PROPOSAL IS SUBJECT TO THE TERMS AND CONDITIONS ON THIS AGREEMENT.",
-  "approval_text": "By signing below, you approve the scope, pricing, and material selections above and authorize Forefront Building + Restoration to proceed."
+  "approval_text": "By signing below, you approve the scope, pricing, and material selections above and authorize Forefront Building + Restoration to proceed.",
+  "xactimate": {
+    "company_title": "Forefront Building & Restoration",
+    "office_label": "Corporate Office",
+    "address_lines": [
+      "169 Inverness Dr W  Ste 120",
+      "Englewood, CO, 80112"
+    ],
+    "phone": "(303) 660-6216",
+    "iicrc": "135259",
+    "logo": "xact_logo.png",
+    "operator": "HUNTE",
+    "estimator": "Hunter Patterson",
+    "position": "Estimator",
+    "company": "Forefront Building + Restoration",
+    "business_phone": "(720) 854-5395",
+    "email": "hunter@forefrontteam.com",
+    "labor_efficiency": "Restoration/Service/Remodel",
+    "price_list": "COBO8X_OCT26",
+    "type_of_estimate": "Water",
+    "source_area": "Source - DocuSketchConverter",
+    "deposit_html": "<b><i>We request a <u>50% deposit</u> of the estimated amount for all reconstruction and roofing projects.</i></b>",
+    "cover_paragraphs": [
+      "The following is not a contract but a general overview of Forefront Building &amp; Restoration polices.",
+      "Forefront proposes to furnish all the materials and perform all the labor necessary for the completion of the following scope of repairs.",
+      "<b>Xactimate</b><br/><i>This proposal is presented utilizing the Xactimate estimating software customized to reflect the specific scope of work presented in this loss. The work descriptions in this proposal are maintained by a third party, using a customized pricing database accepted by most insurance carriers, and may not precisely describe the actual work to be completed. It is intended to be used to arrive at the nearest approximate cost of repairs.</i>",
+      "<i>&nbsp;&nbsp;&nbsp;To satisfy the needs of the insurance industry, this proposal is written to provide a specific scope of work at a package price. Line items include a description of the work to be done, the unit of measure and quantity needed.</i>",
+      "<i>&nbsp;&nbsp;&nbsp;The estimator also may have relied on the use of written or verbal quotes from subcontract labor or suppliers who were deemed capable of completing their respective scopes of work.</i>",
+      "<i>&nbsp;&nbsp;&nbsp;Quantities in this proposal are for estimating purposes only and are not guaranteed to be accurate. In some cases, quantities are factored for waste, pattern matching and other circumstances.</i>",
+      "<b>Please consider the following:</b><br/>1. This proposal contains no allowance for the review of ordinance and law. During the course of work we may find that your home or commercial building has a pre-existing condition that could require changes to the estimate in order to meet current standards and codes.",
+      "2. Costs which were unknown at this time remain “OPEN”.",
+      "Prior to work starting it is not always possible to tell if materials will be restorable or if there is concealed damage. Mechanical trade bids (ie: plumbing, electric &amp; heating and cooling) are often not possible to bid before mitigation and demolition is complete. “OPEN” items and additional costs addressing concealed damage, upgrades or other necessary work related to the restoration of your damaged property will be presented upon discovery and added to the contract amount.",
+      "3. Scope May Change:",
+      "Any deviation in scope, methods or conditions, may have a reciprocal effect on this opinion. If this should occur, we reserve the right to review such changes and modify our opinion accordingly. The accuracy of the assessment is limited to what we were able to inspect visually.",
+      "4. Change Orders and Credits:",
+      "Forefront is under no obligation to make any changes, deletions or alterations in the contract document. Upon reasonable request of the Owner, we may make changes, additions or alterations after a written change order has been executed.",
+      "<b>This proposal assumes that the work will be contracted in its entirety. Deletions or additions to the scope of this estimate may result in changes to the pricing within the remaining line items.</b>",
+      "5. Work Schedule:",
+      "Forefront will make every reasonable attempt to complete the project in a timely manner; however, there is no completion date agreed or a specific time of completion set. Factors that can cause delays in our work schedule can include the discovery of hidden damages, weather, customer specified changes to the scope of work, customer delays in availability, and the nature of an emergency based business. It is impossible to state a definite completion date. However, Forefront continues to pledge to make every reasonable effort to complete the project in a timely manner for you.",
+      "6. Owner Responsibilities:",
+      "Owner understands and agrees that the direction and supervision of all workers, including subcontractors, rests with Forefront. Owner agrees not to issue any instruction to or interfere with the workers. Owner is to contact the project superintendent with any questions or request for additional work not included in the estimate.",
+      "Owner agrees not to negotiate for any additional work with workers employed by Forefront or its subcontractors.",
+      "The repair process can be a dusty, dirty job and even with all precautions taken, at times, some dust will accumulate. Please take caution to protect your possessions and bear with us during repairs. In the demolition process, any damaged material will become the property of Forefront unless other arrangements are made prior to contract signing."
+    ],
+    "closing_html": "Forefront Building &amp; Restoration provides outstanding customer service while proudly operating according to the standard of care set forth in the <b>IICRC Standard and Reference Guide for Professional Water Damage Restoration</b>."
+  }
 }

@@ -10,6 +10,8 @@
   python -m estimator export output/job.json --format agreement   # re-export an edited estimate
   python -m estimator markup                                 # your markup on past jobs
   python -m estimator build-skill                            # -> dist/forefront-estimate.skill for Claude
+  python -m estimator import-pricelist PRICELIST_DENVER.pdf --components PRICELIST_DENVER_COMPONENTS.pdf
+                                                             # this month's Xactimate prices -> the skill
 """
 from __future__ import annotations
 
@@ -38,6 +40,9 @@ def main(argv: list[str] | None = None) -> int:
     bs = sub.add_parser("build-skill", help="build the Claude skill file from your library (price book, markup)")
     bs.add_argument("--out", type=Path, default=Path("dist/forefront-estimate.skill"))
     bs.add_argument("--markup", type=float, help="markup %% for customer documents (saved as your company setting)")
+    ip = sub.add_parser("import-pricelist", help="load this month's Xactimate rate-sheet PDF(s) into the skill")
+    ip.add_argument("items_pdf", type=Path, help="rate sheet with every line item (REMOVE / REPLACE columns)")
+    ip.add_argument("--components", type=Path, help="rate sheet of material / equipment / labor components")
     sub.add_parser("markup", help="show how much you marked up past customer documents over the Xactimate")
     pr = sub.add_parser("prices", help="show your price book")
     pr.add_argument("--search", default="")
@@ -80,6 +85,14 @@ def main(argv: list[str] | None = None) -> int:
                         "(default: company setting, else the median of your past jobs)")
 
     args = p.parse_args(argv)
+    if args.cmd == "import-pricelist":
+        from .pricelist import import_pricelist
+        from .skill_build import SKILL
+        info = import_pricelist(args.items_pdf, args.components, SKILL / "references")
+        print(f"{info['price_list']}: {info['list_items']} line items -> {info['rows']} price rows"
+              + (f", {info['components']} components" if "components" in info else ""))
+        print("Now run build-skill and upload the new skill file.")
+        return 0
     lib = Library(args.db)
     company = load_company()
 
