@@ -54,17 +54,19 @@ folder and save finished files to the outputs folder (`/mnt/user-data/outputs` o
   read from the link, so ask for the downloaded photos or photo report instead.
 - **Xactimate price list (.PLX)**: encrypted by Xactware and can't be read. Prices come from
   `references/xactimate_prices.csv` instead, which is imported each month from a rate-sheet PDF exported from
-  Xactimate (`py -m estimator import-pricelist`). Set `price_list` in estimate.json to the list those prices came
-  from (the `list` column header in price_lookup output, e.g. `CODE8X_OCT26`), and say so in the report when the
-  job is in another market (a Boulder job priced on the Denver list).
+  Xactimate (`py -m estimator import-pricelist`). Pick the list for the job's market (Boulder County address ->
+  COBO8X, Denver metro -> CODE8X) and set `price_list` to it. If the job's market isn't loaded, use the nearest
+  one and say so in the report.
 
 ## 2. Scope the line items
 
 Read `references/scoping_guide.md` (quantity rules, items Forefront usually includes) and skim
 `references/common_items.md` (most-used items and typical prices). For each item:
-`python scripts/price_lookup.py <words> [--unit SF]`, then copy its description and unit exactly. Price it at the
-`list` column (this month's Xactimate price list, `price_source: "price_list"`) whenever the item has one, and at
-`median` from Forefront's history (`price_source: "price_book"`) only when it doesn't. When two wordings exist for
+`python scripts/price_lookup.py <words> [--unit SF] [--list COBO8X_OCT26]`, then copy its description and unit
+exactly. It shows one price column per Xactimate price list loaded (CODE8X = Denver metro, COBO8X = Boulder County).
+Price from the list for the job's market whenever the item is on it (`price_source: "price_list"`), and set
+`price_list` in estimate.json to that list; use `median` from Forefront's history (`price_source: "price_book"`)
+only when the item isn't on the list. When two wordings exist for
 the same work, pick the one on the list. Items with neither get a realistic price and
 `price_source: "estimated"`. The user needs to check those, so they are flagged in the PDF and the summary.
 `python scripts/price_lookup.py --components <words>` shows material / equipment / labor component costs, for

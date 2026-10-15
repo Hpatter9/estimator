@@ -137,6 +137,7 @@ def test_pricelist_parsing():
     assert rows["Snaplock Laminate - simulated wood flooring"]["price"] == 6.45
     assert rows["Remove Snaplock Laminate - simulated wood flooring"]["price"] == 1.77
     assert rows["R&R Snaplock Laminate - simulated wood flooring"]["price"] == 8.22
+    assert {r["price_list"] for r in pricelist.price_rows(items, "COBO8X_OCT26")} == {"COBO8X_OCT26"}
     comps = pricelist.parse_components("\n".join([
         "                                                MATERIAL COMPONENTS",
         "     Code              Description                                            Quantity @     Unit Price   Total",
@@ -148,4 +149,4 @@ def test_pricelist_parsing():
 
 def test_price_lookup_shows_list_price():
     out = run("price_lookup.py", "snaplock", "laminate", "simulated")
-    assert "list" in out.splitlines()[0]
+    assert "CODE8X_OCT26" in out.splitlines()[0] and "median" in out.splitlines()[0]

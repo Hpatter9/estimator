@@ -52,10 +52,11 @@ for similar small scopes did.
 
 ## Prices
 
-1. Search: `python scripts/price_lookup.py <words> [--unit SF]`. It shows each item's price on the current
-   Xactimate price list (`list`) next to Forefront's history (`median`, `latest`, `used`). The most-used items are
+1. Search: `python scripts/price_lookup.py <words> [--unit SF] [--list COBO8X_OCT26]`. It shows each item's price
+   on every loaded Xactimate price list (CODE8X_OCT26 = Denver, COBO8X_OCT26 = Boulder) next to Forefront's
+   history (`median`, `latest`, `used`). Use the list for the job's market. The most-used items are
    listed in `references/common_items.md`.
-2. Use the item's description and unit exactly. Price at `list` when there is one (`price_source: "price_list"`);
+2. Use the item's description and unit exactly. Price from the market's list when the item is on it (`price_source: "price_list"`);
    otherwise at `median` (`price_source: "price_book"`). The list's R&R items are split into install-only and
    "Remove ..." rows priced from its REPLACE and REMOVE columns, so "Snaplock Laminate - simulated wood flooring"
    and "Remove Snaplock Laminate - ..." both have list prices.

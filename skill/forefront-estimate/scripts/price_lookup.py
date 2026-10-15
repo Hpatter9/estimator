@@ -4,12 +4,14 @@
     python price_lookup.py drywall 1/2              # items matching all the words
     python price_lookup.py "baseboard" --unit LF
     python price_lookup.py vanity --limit 40
+    python price_lookup.py snaplock --list COBO8X_OCT26   # only the Boulder list
     python price_lookup.py --components laminate     # material / equipment / labor component costs
 
-Columns: `list` is this month's Xactimate price list (references/xactimate_prices.csv, e.g. CODE8X_OCT26),
-`median` / `latest` / `used` come from Forefront's past estimates (references/price_book.csv).
-Prices are per unit, before O&P. Copy the description and unit exactly into estimate.json and price it at `list`
-when there is one (price_source "price_list"); otherwise use `median` (price_source "price_book").
+One price column per Xactimate price list in references/xactimate_prices.csv (CODE8X_OCT26 = Denver,
+COBO8X_OCT26 = Boulder, ...); `median` / `latest` / `used` come from Forefront's past estimates
+(references/price_book.csv). Prices are per unit, before O&P. Copy the description and unit exactly into
+estimate.json and price it from the job's market list when the item is on it (price_source "price_list");
+otherwise use `median` (price_source "price_book").
 """
 from __future__ import annotations
 
@@ -35,16 +37,17 @@ def _match(text: str, words: list[str]) -> int:
     return sum(1 for w in words if w in text)
 
 
-def components(words: list[str], unit: str | None, limit: int) -> int:
-    rows = _read(COMPONENTS)
+def components(words: list[str], unit: str | None, limit: int, plist: str | None) -> int:
+    rows = [r for r in _read(COMPONENTS) if not plist or r.get("price_list", "") == plist]
     hits = [r for r in rows if _match((r["code"] + " " + r["description"]).lower(), words) == len(words)
             and (not unit or r["unit"].upper() == unit.upper())]
     if not hits:
         print(f"No component costs match {' '.join(words)!r}.")
         return 1
-    print(f"{'code':<14} {'description':<62} {'unit':<4} {'price':>10}")
+    print(f"{'code':<14} {'description':<56} {'unit':<4} {'price':>10}  list")
     for r in hits[:limit]:
-        print(f"{r['code']:<14} {r['description'][:62]:<62} {r['unit']:<4} {float(r['unit_price']):>10,.2f}")
+        print(f"{r['code']:<14} {r['description'][:56]:<56} {r['unit']:<4} {float(r['unit_price']):>10,.2f}  "
+              f"{r.get('price_list', '')}")
     if len(hits) > limit:
         print(f"... {len(hits) - limit} more; add words or --limit")
     return 0
@@ -56,14 +59,19 @@ def main(argv=None) -> int:
     p.add_argument("--unit")
     p.add_argument("--limit", type=int, default=25)
     p.add_argument("--components", action="store_true", help="search material/equipment/labor component costs")
+    p.add_argument("--list", dest="plist", help="only this price list, e.g. COBO8X_OCT26 (Boulder)")
     a = p.parse_args(argv)
     words = [w.lower() for w in a.words]
     if a.components:
-        return components(words, a.unit, a.limit)
+        return components(words, a.unit, a.limit, a.plist)
 
     book = {(r["description"].lower(), r["unit"].upper()): r for r in _read(BOOK)}
-    plist = {(r["description"].lower(), r["unit"].upper()): r for r in _read(LIST)}
-    list_name = next(iter(plist.values()))["price_list"] if plist else ""
+    lists: dict[str, dict] = {}
+    for r in _read(LIST):
+        if not a.plist or r["price_list"] == a.plist:
+            lists.setdefault(r["price_list"], {})[(r["description"].lower(), r["unit"].upper())] = r
+    names = sorted(lists)
+    plist = {k: v for name in names for k, v in lists[name].items()}
     hits = []
     for key in set(book) | set(plist):
         desc, unit = key
@@ -80,13 +88,14 @@ def main(argv=None) -> int:
         print(f"No items match {' '.join(a.words)!r}. Try fewer or different words "
               "(Xactimate wording, e.g. 'R&R', 'Detach & reset', 'drywall - hung').")
         return 1
-    print(f"{'description':<66} {'unit':<4} {'list':>9} {'median':>9} {'latest':>9} {'used':>5}"
-          + (f"   (list = {list_name})" if list_name else ""))
+    head = "".join(f" {n[:12]:>12}" for n in names)
+    print(f"{'description':<62} {'unit':<4}{head} {'median':>9} {'latest':>9} {'used':>5}")
     for _, key in hits[:a.limit]:
-        b, l = book.get(key), plist.get(key)
-        name = (b or l)["description"]
-        fmt = lambda r, k: f"{float(r[k]):>9,.2f}" if r else f"{'-':>9}"
-        print(f"{name[:66]:<66} {key[1]:<4} {fmt(l, 'price')} {fmt(b, 'median_price')} {fmt(b, 'latest_price')} "
+        b = book.get(key)
+        name = (b or plist[key])["description"]
+        fmt = lambda r, k, w=9: f"{float(r[k]):>{w},.2f}" if r else f"{'-':>{w}}"
+        cols = "".join(" " + fmt(lists[n].get(key), "price", 12) for n in names)
+        print(f"{name[:62]:<62} {key[1]:<4}{cols} {fmt(b, 'median_price')} {fmt(b, 'latest_price')} "
               f"{(b['times_used'] if b else '0'):>5}")
     if len(hits) > a.limit:
         print(f"... {len(hits) - a.limit} more; add words or --limit")
