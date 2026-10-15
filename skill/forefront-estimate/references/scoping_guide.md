@@ -52,12 +52,18 @@ for similar small scopes did.
 
 ## Prices
 
-1. Search the price book: `python scripts/price_lookup.py <words> [--unit SF]`. The most-used items are listed in
-   `references/common_items.md`.
-2. Use the item's description and unit exactly, and its `median_price` (per unit, before O&P).
-   `price_source: "price_book"`.
-3. If nothing in the price book fits, estimate a realistic Denver-area Xactimate price, set
-   `price_source: "estimated"`, and list it for the user to check. Never present an estimated price as history.
+1. Search: `python scripts/price_lookup.py <words> [--unit SF]`. It shows each item's price on the current
+   Xactimate price list (`list`) next to Forefront's history (`median`, `latest`, `used`). The most-used items are
+   listed in `references/common_items.md`.
+2. Use the item's description and unit exactly. Price at `list` when there is one (`price_source: "price_list"`);
+   otherwise at `median` (`price_source: "price_book"`). The list's R&R items are split into install-only and
+   "Remove ..." rows priced from its REPLACE and REMOVE columns, so "Snaplock Laminate - simulated wood flooring"
+   and "Remove Snaplock Laminate - ..." both have list prices.
+3. The list doesn't cover every trade (painting, insulation, light fixtures and some cleaning items aren't on it);
+   those come from history.
+4. If nothing fits either, estimate a realistic Denver-area Xactimate price, set `price_source: "estimated"`, and
+   list it for the user to check. Never present an estimated price as history.
+5. `python scripts/price_lookup.py --components <words>` searches material / equipment / labor component costs.
 
 ## When the scope is unclear
 

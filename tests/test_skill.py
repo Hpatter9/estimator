@@ -118,3 +118,34 @@ def test_build_leaves_tracked_files_alone(tmp_path):
     book = z.read("forefront-estimate/references/price_book.csv").decode()
     assert "R&R Angle stop valve" in book and info["markup"] == 4
     assert json.loads(z.read("forefront-estimate/assets/company.json"))["markup_pct"] == 4
+
+
+def test_pricelist_parsing():
+    from estimator import pricelist
+    text = "\n".join([
+        "                                             Drywall",
+        "     DESCRIPTION                                   QTY   REMOVE    REPLACE       TAX       TOTAL",
+        "     1,001. R&R Snaplock Laminate - simulated      1.00 SF      1.77       6.45      0.00         8.22",
+        "     wood flooring",
+        "     1,002. Texture drywall - machine            SF             0.00          0.83      0.00         0.00",
+        "     Totals: Drywall                                                             0.00      9.05",
+    ])
+    items = pricelist.parse_items(text)
+    assert [i["description"] for i in items] == ["R&R Snaplock Laminate - simulated wood flooring",
+                                                 "Texture drywall - machine"]
+    rows = {r["description"]: r for r in pricelist.price_rows(items, "CODE8X_OCT26")}
+    assert rows["Snaplock Laminate - simulated wood flooring"]["price"] == 6.45
+    assert rows["Remove Snaplock Laminate - simulated wood flooring"]["price"] == 1.77
+    assert rows["R&R Snaplock Laminate - simulated wood flooring"]["price"] == 8.22
+    comps = pricelist.parse_components("\n".join([
+        "                                                MATERIAL COMPONENTS",
+        "     Code              Description                                            Quantity @     Unit Price   Total",
+        "     CABCTFSPL4        Laminate backsplash - 4\"                                1.05 LF   @        5.400     5.69*",
+    ]))
+    assert comps == [{"code": "CABCTFSPL4", "description": "Laminate backsplash - 4\"", "unit": "LF",
+                      "unit_price": 5.4, "section": "Material Components"}]
+
+
+def test_price_lookup_shows_list_price():
+    out = run("price_lookup.py", "snaplock", "laminate", "simulated")
+    assert "list" in out.splitlines()[0]

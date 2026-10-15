@@ -52,16 +52,23 @@ folder and save finished files to the outputs folder (`/mnt/user-data/outputs` o
   assumptions.
 - A DocuSketch share link (`app.docusketch.com/player/...`) is a 360° viewer. Its photos usually can't be
   read from the link, so ask for the downloaded photos or photo report instead.
-- **Xactimate price list (.PLX)**: encrypted by Xactware and can't be read. Use its file name (e.g.
-  `COBO8X_OCT26`) as `price_list` on the Xactimate PDF; prices still come from the price book.
+- **Xactimate price list (.PLX)**: encrypted by Xactware and can't be read. Prices come from
+  `references/xactimate_prices.csv` instead, which is imported each month from a rate-sheet PDF exported from
+  Xactimate (`py -m estimator import-pricelist`). Set `price_list` in estimate.json to the list those prices came
+  from (the `list` column header in price_lookup output, e.g. `CODE8X_OCT26`), and say so in the report when the
+  job is in another market (a Boulder job priced on the Denver list).
 
 ## 2. Scope the line items
 
 Read `references/scoping_guide.md` (quantity rules, items Forefront usually includes) and skim
 `references/common_items.md` (most-used items and typical prices). For each item:
-`python scripts/price_lookup.py <words> [--unit SF]`, then copy its description and unit, and use
-`median_price`. Items with no match get a realistic price and `price_source: "estimated"`. The user needs to
-check those, so they are flagged in the PDF and the summary.
+`python scripts/price_lookup.py <words> [--unit SF]`, then copy its description and unit exactly. Price it at the
+`list` column (this month's Xactimate price list, `price_source: "price_list"`) whenever the item has one, and at
+`median` from Forefront's history (`price_source: "price_book"`) only when it doesn't. When two wordings exist for
+the same work, pick the one on the list. Items with neither get a realistic price and
+`price_source: "estimated"`. The user needs to check those, so they are flagged in the PDF and the summary.
+`python scripts/price_lookup.py --components <words>` shows material / equipment / labor component costs, for
+pricing a bid item or explaining a price.
 
 Only scope the affected rooms; sketches often cover the whole house. Group items into sections by room, plus
 "General Conditions". When the notes call something optional or priced separately, give those sections an
@@ -143,4 +150,7 @@ Also keep `estimate.json` in the outputs, so changes later are quick.
 terms, default markup, and the `"xactimate"` block (letterhead, estimator details, cover wording, IICRC line);
 `assets/logo.png` is the customer-document logo and `assets/xact_logo.png` the Xactimate letterhead logo.
 `references/price_book.csv` is generated from Forefront's past Xactimate estimates (no customer data) by
-`py -m estimator build-skill` on the estimating PC. Re-uploading the rebuilt skill refreshes prices.
+`py -m estimator build-skill` on the estimating PC. `references/xactimate_prices.csv` (every line item on the
+current Xactimate price list, REMOVE and REPLACE split) and `references/component_costs.csv` come from
+`py -m estimator import-pricelist <items.pdf> --components <components.pdf>`. Re-uploading the rebuilt skill
+refreshes prices.
