@@ -3,7 +3,9 @@
     py -m estimator import-pricelist PRICELIST_DENVER_FINAL_DRAFT_CON.pdf --components PRICELIST_DENVER_COMPONENTS_CON.pdf
 
 Writes skill/forefront-estimate/references/xactimate_prices.csv (every line item on the list at this month's price
-list, with REMOVE and REPLACE split) and component_costs.csv (material / equipment / labor components). R&R items
+list, with REMOVE and REPLACE split) and component_costs.csv (material / equipment / labor components). Each file
+holds one set of rows per price list (CODE8X_OCT26 for Denver, COBO8X_OCT26 for Boulder, ...); importing a list
+replaces only that list's rows, so import each market you price in. R&R items
 also produce their install-only ("Snaplock Laminate ...") and remove-only ("Remove Snaplock Laminate ...") rows,
 priced from the REPLACE and REMOVE columns, the way Xactimate prices them.
 """
@@ -121,16 +123,25 @@ def write_csv(rows: list[dict], path: Path) -> None:
         w.writerows(rows)
 
 
+def merge_csv(rows: list[dict], path: Path, price_list: str) -> None:
+    """Replace this price list's rows in the file and keep the other markets' lists (Denver, Boulder, ...)."""
+    old = []
+    if path.exists():
+        with open(path, newline="", encoding="utf-8") as fh:
+            old = [r for r in csv.DictReader(fh) if r.get("price_list") and r["price_list"] != price_list]
+    write_csv(old + rows, path)
+
+
 def import_pricelist(items_pdf: Path, components_pdf: Path | None, out_dir: Path) -> dict:
     text = pdf_text(items_pdf)
     m = PRICE_LIST.search(text)
     price_list = m.group(1) if m else items_pdf.stem
     items = parse_items(text)
     rows = price_rows(items, price_list)
-    write_csv(rows, out_dir / "xactimate_prices.csv")
+    merge_csv(rows, out_dir / "xactimate_prices.csv", price_list)
     info = {"price_list": price_list, "list_items": len(items), "rows": len(rows)}
     if components_pdf:
-        comps = parse_components(pdf_text(components_pdf))
-        write_csv(comps, out_dir / "component_costs.csv")
+        comps = [{**c, "price_list": price_list} for c in parse_components(pdf_text(components_pdf))]
+        merge_csv(comps, out_dir / "component_costs.csv", price_list)
         info["components"] = len(comps)
     return info
