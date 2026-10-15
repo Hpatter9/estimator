@@ -63,6 +63,8 @@ class Company(BaseModel):
     agreement_terms: list[Term] = Field(default_factory=list)
     agreement_terms_footer: str = ""
     approval_text: str = ""
+    # Xactimate-format PDF: letterhead, estimator block and cover wording (see skill scripts/xactimate_pdf.py)
+    xactimate: dict = Field(default_factory=dict)
 
     @property
     def logo(self) -> Path | None:

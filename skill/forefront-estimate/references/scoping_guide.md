@@ -26,9 +26,15 @@ built from them. Write them in Xactimate wording, using items from the price boo
 
 ## Items Forefront usually includes
 
-**General Conditions** (its own section, not a room): haul debris (per pickup truck load), residential
-supervision/project management when the job warrants it, dust containment for sanding, delivery fees for
-materials that need acclimation (wood).
+**General Conditions** (its own section, not a room): haul debris (per pickup truck load), dust containment
+for sanding, delivery fees for materials that need acclimation (wood), HVAC service after construction dust.
+- Residential supervision/project management only on large jobs (multiple floors or a long schedule). A
+  one-unit or few-room job doesn't get it.
+- Masking and protection are not General Conditions: put "Mask and prep for paint", floor masking and floor
+  protection in the room they protect (windows, sliders, fireplace, cabinets in that room).
+- Electrical is never "Electrician - per hour". Write the work as line items in the room where it happens:
+  "Outlet or switch - Detach & reset" and "Outlet or switch cover" per device in rebuilt walls,
+  "Detach & Reset Light fixture" per fixture, smoke/CO detectors, fan covers.
 
 **Each affected room**, as applicable:
 - Drywall: mask wall (per LF), mask per SF for drywall work, drywall (hung, taped, ready for texture), tape joint

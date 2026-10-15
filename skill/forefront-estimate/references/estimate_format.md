@@ -74,3 +74,37 @@ One file holds the whole job: the Xactimate-style line items (by room) plus the 
 - Trade total on the customer documents = sum of line totals with O&P × (1 + markup).
 - Scope total = sum of its trade totals. Billing = 50% / 40% / 10% (company.json), rounded half-up, the final
   payment takes the remainder.
+
+## Xactimate-format PDF fields (xactimate_pdf.py)
+
+The Xactimate PDF always uses Forefront's Xactimate export layout: letterhead (logo, "Forefront Building &
+Restoration", Corporate Office, address, phone, IICRC) on every page; cover with Client / Property / Operator /
+Estimator / Type of Estimate / Price List / Estimate, Total Estimate, the 50% deposit line and the policy wording;
+line items by room; Grand Total Areas; Summary for Dwelling; Recap of Taxes, Overhead and Profit; Recap by Room;
+Recap by Category; then one landscape sketch page per floor plan. The wording and header live in
+`assets/company.json` -> `"xactimate"`; don't rewrite them per job.
+
+Job-level fields it reads (all optional):
+
+```json
+"level": "1st Floor",                 // area heading for rooms that don't set "area"
+"type_of_estimate": "Water",          // Water | Fire | Mold ...
+"price_list": "COBO8X_OCT26",         // Xactimate price list name (the .PLX file name)
+"sketches": [{"title": "1st Floor", "image": "/path/to/image_wall_measurements_1st floor.png"}]
+```
+
+Per section: `"area": "Basement"` puts that room under another level heading. A section named
+"General Conditions" prints first, before any level.
+
+Per item: `"group"` overrides the italic sub-heading the item prints under inside its room, and `"category"`
+overrides its Recap by Category line. Normally leave both out: they are worked out from the description.
+Sub-headings print in this order: General, Demolition, Framing, Insulation, Drywall, Electrical, Light Fixtures,
+Plumbing, Tub and Surround, Vanity, Cabinets, Appliances, Paint, Baseboard, Snaplock Laminate, Vinyl Plank,
+Hardwood, Carpet, Tile, Doors and Casing, Window Trim, Shelving, Mirrors, Bath Accessories, HVAC, Contents,
+Cleaning. Paint for baseboard prints under Baseboard and paint for doors under Doors and Casing, like Xactimate.
+
+`rooms[].name` must match the section name exactly for the dimension block (SF Walls, SF Walls & Ceiling,
+SY Flooring, LF Ceil. Perimeter, SF Ceiling, SF Floor, LF Floor Perimeter, Height) to print. Optional room keys:
+`ceiling_sf` (defaults to floor_sf) and `ceiling_perimeter_lf` (defaults to floor_perimeter_lf).
+
+Items whose description starts with "Remove" or "Tear out" show their price in REMOVE; everything else in REPLACE.
