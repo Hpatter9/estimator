@@ -20,7 +20,7 @@ folder and save finished files to the outputs folder (`/mnt/user-data/outputs` o
 - **Convert an Xactimate PDF**: someone uploads an Xactimate estimate and wants the customer documents. Run
   `python scripts/read_xactimate.py estimate.pdf --json est.json` and confirm the summary says
   "all room totals match". Keep its items and prices as they are (`price_source: "xactimate"`), then do steps 3–5,
-  rendering with `--only estimate,agreement` unless the Xactimate PDF is asked for. Use the Xactimate's
+  rendering all three documents as usual (the Xactimate PDF is rebuilt in Forefront's layout from its items). Use the Xactimate's
   estimate name as `estimate_number`. While you have the line items in front of you, look for the slips an
   estimator would want caught before the customer sees a price: an install with no matching removal (new carpet
   but no carpet removal), a quantity far off the room size (1 SF of membrane on a 250 SF floor), a labor minimum
@@ -104,7 +104,9 @@ section names exactly. Then:
 python scripts/render.py estimate.json --out /mnt/user-data/outputs
 ```
 
-Use `--only estimate,agreement` or `--only xactimate` when only some are wanted. The script prints the totals by
+Always produce all three documents - Reconstruction Estimate, Reconstruction Agreement and Xactimate Estimate - on
+every job and every revision, and deliver all three. Use `--only` only when the user explicitly asks for just one
+or two. Before reporting back, confirm the script printed three `->` lines. The script prints the totals by
 trade; check that they look sane (no trade at $0, no missing trades, warnings about items without a trade).
 
 Markup applies to the Estimate and Agreement only, using `markup_pct` from `assets/company.json` unless the
@@ -134,9 +136,8 @@ After rendering, look at a few pages (`pdftoppm -r 60 -png`) to confirm nothing 
 
 ### File names
 
-Save the documents as `<Customer Last Name> - Reconstruction Estimate.pdf`,
-`<Customer Last Name> - Reconstruction Agreement.pdf` and `<Customer Last Name> - Xactimate Estimate.pdf`
-(render.py names them after the full customer name; rename to the last name).
+render.py names the documents by the customer's last name: `<Last Name> - Reconstruction Estimate.pdf`,
+`<Last Name> - Reconstruction Agreement.pdf` and `<Last Name> - Xactimate Estimate.pdf`.
 
 ## 5. Report back
 
