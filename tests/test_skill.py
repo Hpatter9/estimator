@@ -62,15 +62,15 @@ def test_render_all_documents(tmp_path):
     (tmp_path / "estimate.json").write_text(json.dumps(sample_job()))
     out = run("render.py", tmp_path / "estimate.json", "--out", tmp_path / "out")
     pdfs = sorted(p.name for p in (tmp_path / "out").glob("*.pdf"))
-    assert pdfs == ["Jane Doe - Reconstruction Agreement.pdf", "Jane Doe - Reconstruction Estimate.pdf",
-                    "Jane Doe - Xactimate Estimate.pdf"]
+    assert pdfs == ["Doe - Reconstruction Agreement.pdf", "Doe - Reconstruction Estimate.pdf",
+                    "Doe - Xactimate Estimate.pdf"]
     # 272.00 + 20% O&P = 326.40; +5% markup = 342.72.  50 + O&P = 60; +5% = 63.00
     assert "$342.72" in out and "$405.72" in out and "1 items priced without price-book history" in out
     import pdfplumber
-    with pdfplumber.open(tmp_path / "out" / "Jane Doe - Reconstruction Estimate.pdf") as pdf:
+    with pdfplumber.open(tmp_path / "out" / "Doe - Reconstruction Estimate.pdf") as pdf:
         text = "\n".join(p.extract_text() for p in pdf.pages)
     assert "Cost Summary" in text and "Optional: Pantry Repairs" in text and "DOE_1_REC" in text
-    with pdfplumber.open(tmp_path / "out" / "Jane Doe - Xactimate Estimate.pdf") as pdf:
+    with pdfplumber.open(tmp_path / "out" / "Doe - Xactimate Estimate.pdf") as pdf:
         xtext = " ".join(" ".join(p.extract_text() or "" for p in pdf.pages).split())
     # Forefront's Xactimate layout: letterhead + cover wording, grouped line items, recaps; no dwelling summary
     for want in ("Forefront Building & Restoration", "IICRC:", "Total Estimate:", "50% deposit", "Please consider",

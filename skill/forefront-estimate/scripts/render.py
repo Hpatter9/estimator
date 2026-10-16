@@ -5,9 +5,9 @@
     python render.py estimate.json --out out --only estimate          # estimate | agreement | xactimate
 
 Writes:
-    <Customer> - Reconstruction Estimate.pdf    trades with O&P-inclusive totals, bullets, exclusions, billing
-    <Customer> - Reconstruction Agreement.pdf   same scope + material selections, waivers, terms, signature
-    <Customer> - Xactimate Estimate.pdf         Xactimate-format estimate (Forefront letterhead, rooms, recaps, sketch)
+    <Last Name> - Reconstruction Estimate.pdf   trades with O&P-inclusive totals, bullets, exclusions, billing
+    <Last Name> - Reconstruction Agreement.pdf  same scope + material selections, waivers, terms, signature
+    <Last Name> - Xactimate Estimate.pdf        Xactimate-format estimate (Forefront letterhead, rooms, recaps, sketch)
 
 and prints the totals. The JSON format is in references/estimate_format.md.
 Money math: O&P is figured per line (like Xactimate), markup is applied per trade on the customer
@@ -476,7 +476,10 @@ def main(argv=None) -> int:
         print("! " + msg, file=sys.stderr)
 
     a.out.mkdir(parents=True, exist_ok=True)
-    stem = safe(data.get("customer") or data.get("estimate_number") or "Estimate")
+    # Forefront names files by the customer's last name: "Wegener - Reconstruction Agreement.pdf"
+    cust = (data.get("customer") or "").strip()
+    last = cust.split(",")[0].strip() if "," in cust else (cust.split()[-1] if cust else "")
+    stem = safe(last or data.get("estimate_number") or "Estimate")
     wanted = {w.strip() for w in a.only.split(",")}
     written = []
     if "estimate" in wanted:
@@ -500,6 +503,8 @@ def main(argv=None) -> int:
         print(f"{len(est)} items priced without price-book history: " + "; ".join(est[:12]))
     for f in written:
         print(f"-> {f}")
+    if len(written) < 3:
+        print(f"Note: only {len(written)} of 3 documents written (--only {a.only}).")
     return 0
 
 
