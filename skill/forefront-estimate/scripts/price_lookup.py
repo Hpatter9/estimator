@@ -6,6 +6,7 @@
     python price_lookup.py vanity --limit 40
     python price_lookup.py snaplock --list COBO8X_OCT26   # only the Boulder list
     python price_lookup.py --components laminate     # material / equipment / labor component costs
+                                                     # (component_costs.csv + hand-entered component_costs_manual.csv)
 
 One price column per Xactimate price list in references/xactimate_prices.csv (CODE8X_OCT26 = Denver,
 COBO8X_OCT26 = Boulder, ...); `median` / `latest` / `used` come from Forefront's past estimates
@@ -24,6 +25,7 @@ REF = Path(__file__).resolve().parent.parent / "references"
 BOOK = REF / "price_book.csv"
 LIST = REF / "xactimate_prices.csv"
 COMPONENTS = REF / "component_costs.csv"
+MANUAL_COMPONENTS = REF / "component_costs_manual.csv"   # costs entered by hand; import-pricelist never touches it
 
 
 def _read(path: Path) -> list[dict]:
@@ -38,7 +40,7 @@ def _match(text: str, words: list[str]) -> int:
 
 
 def components(words: list[str], unit: str | None, limit: int, plist: str | None) -> int:
-    rows = [r for r in _read(COMPONENTS) if not plist or r.get("price_list", "") == plist]
+    rows = [r for r in _read(MANUAL_COMPONENTS) + _read(COMPONENTS) if not plist or r.get("price_list", "") == plist]
     hits = [r for r in rows if _match((r["code"] + " " + r["description"]).lower(), words) == len(words)
             and (not unit or r["unit"].upper() == unit.upper())]
     if not hits:

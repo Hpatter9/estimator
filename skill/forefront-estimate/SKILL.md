@@ -87,7 +87,11 @@ an adjuster (reason or measurement), not as reminders to yourself.
 Read `references/house_style.md`. Give every line item a `trade`, then write one `trades` entry per trade
 (per option) with bullets in Forefront's wording and the standard note where one applies. Add `scopes` areas
 and an `intro` only when there are optional add-ons. Agreements only: add `selections` when the user gives
-product details (brand, product, SKU/color, size, photo).
+product details (brand, product, SKU/color, size, photo). When the owner still has to pick finishes (flooring,
+tile, doors, cabinets), add a `selections` entry per finish as an allowance: the material cost per unit from
+`price_lookup.py --components <words> --list <market>` (hand-entered costs such as snaplock laminate live in
+`references/component_costs_manual.csv`), the quantity with waste, the allowance total, the pre-loss finish,
+"Brand / product / color: To be selected by Owner", what happens over allowance, and `"viewed": "To be selected"`.
 
 ## 4. Build the documents
 
