@@ -1,116 +1,2050 @@
 description,unit,median_price,latest_price,min_price,max_price,times_used,typical_qty,xactimate_group
-Final cleaning - construction - Residential,SF,0.46,0.46,0.43,0.46,28,156.71,Cleaning
-Add for dustless floor sanding,SF,1.0,1.0,1.0,1.0,10,328.82,Hardwood
-Additional coats of finish (per coat),SF,1.21,1.21,1.21,1.45,10,328.82,Hardwood
-"Sand, stain, and finish wood floor",SF,5.24,5.24,5.24,6.36,10,328.82,Hardwood
-Interior door - Detach & reset - slab only,EA,27.39,27.39,27.39,27.39,9,1.0,Door
-Carpet - per specs from independent carpet analysis,SF,1.09,1.09,1.09,1.09,8,207.88,Carpet
-Mask per square foot for drywall work,SF,0.3,0.3,0.3,0.3,8,48.7,Drywall
-"1/2"" drywall - hung, taped, ready for texture",SF,2.72,2.76,2.72,2.76,7,122.0,Drywall
-R&R Angle stop valve,EA,68.02,68.02,68.02,68.02,7,2.0,Cabinets & Sink
-Sand & finish wood heat register,EA,4.49,4.49,4.49,4.49,7,2.0,Hardwood
-Mask and prep for paint - tape only (per LF),LF,0.71,0.71,0.67,0.71,6,26.61,Baseboard
-R&R Carpet pad - per specs from independent pad analysis,SF,0.33,0.33,0.33,0.33,6,200.39,Carpet
-R&R Plumbing fixture supply line,EA,39.0,33.9,33.9,39.0,6,2.0,Cabinets & Sink
-Remove Carpet - per specs from independent carpet analysis,SF,0.39,0.39,0.39,0.39,6,200.39,Carpet
-"Casing - 2 1/4""",LF,2.75,2.75,2.75,2.75,5,17.0,Casing
-Drywall Installer / Finisher - per hour,HR,110.07,110.0,110.0,110.07,5,2.0,Drywall
-Install Sink faucet - Kitchen,EA,167.33,167.33,167.33,167.33,5,1.0,Cabinets & Sink
-"Mask wall - plastic, paper, tape (per LF)",LF,1.68,1.7,1.67,1.7,5,30.0,Drywall
-Paint baseboard - one coat,LF,1.1,1.1,1.07,1.1,5,30.77,Baseboard
-R&R P-trap assembly - ABS (plastic),EA,115.92,115.92,115.92,115.92,5,1.0,Cabinets & Sink
-Texture drywall - machine,SF,0.89,0.89,0.89,0.89,5,183.0,Drywall
+Final cleaning - construction - Residential,SF,0.43,0.42,0.28,0.66,1828,98.64,Cleaning
+Mask per square foot for drywall work,SF,0.3,0.3,0.25,0.6,807,100.0,Drywall
+Paint baseboard - one coat,LF,1.08,1.13,0.94,1.58,768,34.12,Baseboard
+Mask and prep for paint - tape only (per LF),LF,0.68,0.67,0.46,1.7,708,34.0,Baseboard
+Floor protection - heavy paper and tape,SF,0.43,0.43,0.39,0.72,633,90.0,Flooring
+"Mask and prep for paint - plastic, paper, tape (per LF)",LF,1.55,1.6,1.09,6.26,600,15.0,Paint
+Mask the floor per square foot - plastic and tape - 4 mil,SF,0.28,0.28,0.2,1.06,585,116.1,Paint
+"Mask wall - plastic, paper, tape (per LF)",LF,1.69,1.73,1.45,3.46,565,19.25,Drywall
+Content Manipulation charge - per hour,HR,62.12,62.12,42.73,115.0,551,2.0,Contents
+"1/2"" drywall - hung, taped, ready for texture",SF,2.74,2.72,2.24,13.95,505,80.0,Drywall
+Seal the surface area w/PVA primer - one coat,SF,0.68,0.68,0.45,1.62,463,32.0,Drywall
+Haul debris - per pickup truck load - including dump fees,EA,211.62,210.72,163.93,482.94,441,1.0,General
+Baseboard - Detach & reset,LF,3.41,3.54,2.5,4.95,438,32.83,Baseboard
+Paint the surface area - two coats,SF,1.15,1.14,0.77,2.47,407,30.0,Paint
+"1/2"" - drywall per LF - up to 2' tall",LF,12.48,12.92,10.95,19.31,357,15.33,Drywall
+Mask and cover large light fixture,EA,21.94,21.33,14.85,102.72,356,1.0,Paint
+Texture drywall - machine - knockdown,SF,1.17,1.16,1.01,1.82,348,102.51,Drywall
+Fill holes created by wall cavity drying,EA,2.82,2.78,2.68,2.94,345,22.0,Cove Base
+Tape joint for new to existing drywall - per LF,LF,10.88,9.98,7.89,24.22,344,20.0,Drywall
+Interior door - Detach & reset - slab only,EA,26.93,26.91,19.48,29.64,316,1.0,Door
+Final cleaning - construction - Commercial,SF,0.33,0.33,0.23,0.42,314,200.0,Cleaning
+Texture drywall - smooth / skim coat,SF,1.8,1.79,1.44,3.16,301,32.0,Drywall
+"Cove base molding - rubber or vinyl, 4"" high",LF,2.82,2.33,1.94,20.27,298,35.0,Cove Base
+Paint door or window opening - 2 coats (per side),EA,36.4,37.19,31.08,43.57,298,2.0,Doors and Casing
+Paint door slab only - 2 coats (per side),EA,43.85,44.11,40.77,46.72,275,2.0,Doors and Casing
+Floor preparation for resilient flooring,SF,0.73,0.73,0.46,0.79,264,90.66,Flooring
+Texture drywall - machine,SF,0.83,0.85,0.71,1.2,263,44.33,Drywall
+Carpet pad,SF,0.68,0.68,0.61,2.2,253,104.84,Carpet
+R&R Plumbing fixture supply line,EA,33.77,47.75,23.63,53.55,251,2.0,Plumbing
+Clean baseboard,LF,0.59,0.59,0.46,0.9,243,32.83,Baseboard
+Paint baseboard - two coats,LF,1.64,1.62,1.58,2.0,236,29.11,Baseboard
+"Baseboard - 3 1/4"" MDF w/profile",LF,4.24,4.24,3.5,6.14,235,14.17,Baseboard
+Add for dustless floor sanding,SF,1.0,1.0,0.82,1.02,228,131.98,Flooring
+"Sand, stain, and finish wood floor",SF,5.22,6.36,4.42,6.36,226,134.24,Flooring
+Paint part of the walls - one coat,SF,0.77,0.77,0.52,1.12,225,153.94,Paint
+Seal (1 coat) & paint (1 coat) baseboard,LF,1.76,1.87,1.46,1.88,223,24.09,Baseboard
+Seal/prime (1 coat) then paint (1 coat) the surface area,SF,1.09,1.07,1.06,1.58,208,30.0,Paint
+Paint the surface area - one coat,SF,0.78,0.77,0.65,1.73,206,120.0,Paint
+Vinyl plank flooring,SF,6.88,3.16,3.16,8.72,205,104.26,Flooring
+"Drywall patch / small repair, ready for paint",EA,100.22,98.82,93.99,158.78,199,2.0,Drywall
+Carpet,SF,4.48,4.28,3.91,6.44,198,180.12,Carpet
+Drywall Installer / Finisher - per hour,HR,111.33,110.07,102.74,159.82,198,4.0,Drywall
+Floor prep (scrape rubber back residue),SF,0.84,0.84,0.63,1.6,195,181.09,Carpet
+"Baseboard - 4 1/4"" MDF - w/profile",LF,4.88,5.05,4.31,6.86,186,25.35,Baseboard
+Dust control barrier per square foot,SF,0.96,0.96,0.78,1.64,184,80.0,Drywall
+"1/4"" Cement board",SF,7.31,7.31,4.14,9.65,176,45.79,Tile Floor
+Clean ceramic tile,SF,0.88,0.88,0.61,2.05,175,51.78,Tile Floor
+Seal stud wall for odor control (shellac),SF,1.21,1.21,1.2,1.22,174,297.06,Smoke Seal
+Caulking - silicone,LF,2.93,3.07,2.24,4.23,173,24.0,Shower
+Paint the walls and ceiling - two coats,SF,1.14,0.81,0.81,1.18,168,341.14,Paint
+Protect contents - Cover with plastic,SF,0.29,0.33,0.22,0.44,165,100.0,Paint
+Tile/stone sealer,SF,1.56,1.57,0.9,2.3,159,50.0,Tile Floor
+Texture drywall - heavy hand texture,SF,1.64,1.6,1.53,3.4,153,76.89,Drywall
+Seal underlayment for odor control,SF,0.66,0.66,0.66,0.66,149,75.26,Smoke Seal
+"Baseboard - 3 1/4""",LF,4.5,4.5,3.64,5.04,143,20.0,Baseboard
+"Batt insulation - 4"" - R15 - paper / foil faced",SF,1.61,1.56,1.47,2.49,139,73.0,Insulation
+Seal/prime (1 coat) then paint (2 coats) the walls and ceiling - 2 colors,SF,1.82,1.78,1.78,1.82,132,408.83,Paint
+Additional coats of finish (per coat),SF,1.18,1.45,1.0,1.45,126,162.4,Flooring
+Mask and cover light fixture,EA,16.03,15.74,13.97,22.8,126,1.0,Paint
+Insulation labor minimum,EA,171.24,182.88,7.84,416.75,122,1.0,
+R&R 110 volt copper wiring run and box - rough-in only,EA,84.86,85.34,84.86,85.34,119,1.0,Electrical
+Air mover (per 24 hour period) - No monitoring,EA,26.25,24.5,24.5,26.5,117,10.0,Demo
+Heat/AC register - Floor register - Detach & reset,EA,7.12,7.12,3.02,7.28,117,1.0,HVAC
+Seal the walls and ceiling with shellac/stain blocker - one coat,SF,0.84,0.86,0.82,0.86,117,277.77,Paint
+"Casing - 2 1/4""",LF,2.75,2.68,2.32,3.2,116,17.0,Casing
+"R&R 110 volt copper wiring run, box and switch",EA,106.66,105.5,104.46,107.17,114,2.0,Electrical
+Remove Carpet,SF,0.38,0.37,0.35,0.6,114,117.14,Carpet
+Remove Tile floor covering,SF,3.54,3.54,3.12,8.83,114,39.08,Tile Floor
+"Rosette - corner block - 3/4"" x 3 1/2"" - hardwood",EA,12.48,12.48,12.48,12.48,111,4.0,Doors and Casing
+Refrigerator - Remove & reset,EA,66.84,85.81,42.02,101.91,109,1.0,Appliances
+"Casing - 5"" - hardwood",LF,7.49,7.49,7.49,7.49,108,34.0,Doors and Casing
+Paint casing - one coat,LF,1.1,1.09,0.73,1.22,108,17.0,Casing
+Clean and deodorize carpet,SF,0.77,0.76,0.61,1.2,104,148.23,Carpet
+R&R Angle stop valve,EA,58.9,59.16,45.96,70.34,104,2.0,Vanity
+Stain & finish baseboard,LF,1.8,1.77,1.75,1.96,103,36.22,Baseboard
+"Casing - 3 1/4""",LF,3.96,3.69,3.07,3.97,102,28.0,Door and Casing
+Tackless strip - per LF,LF,0.84,0.85,0.69,0.87,98,41.69,Carpet
+Toilet - Reset,EA,216.64,216.82,176.76,432.41,98,1.0,Plumbing
+Paint door/window trim & jamb - 2 coats (per side),EA,37.72,35.37,35.24,39.37,96,2.0,Door and Casing
+"Batt insulation - 6"" - R19 - paper / foil faced",SF,1.48,1.41,1.3,2.63,94,15.5,Insulation
+Toilet - Detach & reset,EA,351.83,355.2,237.17,488.03,92,1.0,Plumbing
+Vapor barrier - 15# felt,SF,0.38,0.38,0.3,0.44,90,73.22,Hardwood
+Dryer - Remove & reset,EA,50.03,64.38,31.53,177.03,89,1.0,Appliances
+"Remove 1/4"" Cement board",SF,1.33,1.33,1.14,1.46,88,36.23,Tile Floor
+Tile floor covering,SF,15.46,15.51,10.26,26.36,88,41.89,Tile Floor
+Carpet - High grade,SF,5.98,5.98,5.91,7.11,86,216.71,Carpet
+Paint baseboard w/cap &/or shoe - one coat,LF,1.29,1.29,1.27,1.43,85,28.6,Baseboard
+"5/8"" drywall - hung, taped, ready for texture",SF,2.91,2.84,2.73,4.27,84,51.16,Drywall
+Caulking - latex fire sealant - per opening,EA,20.33,20.33,20.33,20.33,84,6.0,Cleaning
+Clean floor - tile - Light clean,SF,0.75,0.61,0.6,0.76,83,46.11,Tile
+Caulking - acrylic,LF,2.63,2.63,2.36,2.8,82,31.06,Baseboard
+Dishwasher - Detach & reset,EA,339.9,365.04,266.37,521.48,82,1.0,Appliances
+Finish carpentry labor minimum,EA,159.85,110.42,7.48,350.0,79,1.0,Baseboard
+Mask more than the floor per square foot - plastic and tape - 4 mil,SF,0.29,0.29,0.28,0.29,78,224.1,Paint
+Paint the walls - one coat,SF,0.76,0.77,0.71,1.1,78,198.14,Paint
+Seal w/stain blocker (1 coat) then paint (1 coat) the walls and ceiling,SF,1.16,1.16,1.09,1.16,78,982.76,Paint
+Carpet - per specs from independent carpet analysis,SF,4.07,5.68,1.09,6.21,77,159.67,Carpet
+Door knob/lockset - Detach & reset,EA,31.14,31.05,26.25,39.76,76,1.0,Door and Casing
+Mask the surface area per square foot - plastic and tape - 4 mil,SF,0.29,0.49,0.27,0.49,76,150.0,Paint
+R&R Carpet tile,SF,4.93,5.42,4.84,5.42,76,191.02,Carpet
+Carpet pad - High grade,SF,0.84,0.84,0.84,1.18,75,111.58,Carpet
+Recessed light fixture - Detach & reset trim only,EA,5.0,6.38,3.23,7.54,75,4.0,Paint
+"R&R 110 volt copper wiring run, box and outlet",EA,105.96,106.66,103.76,106.66,74,4.0,Electrical
+Interior door unit,EA,325.33,363.9,207.47,368.9,73,1.0,Door
+Paint the walls and ceiling - one coat - 2 colors,SF,0.89,0.95,0.62,1.01,72,493.48,Paint
+Heat/AC register - Mechanically attached - Detach & reset,EA,22.9,20.9,11.1,33.21,70,1.0,Paint
+Range - electric - Remove & reset,EA,52.37,64.38,44.36,93.76,70,1.0,Appliances
+Baseboard - Reset,LF,1.37,1.37,1.08,3.35,68,15.0,Baseboard
+Floor preparation for resilient flooring - Heavy,SF,1.03,1.04,0.92,4.0,68,80.94,Flooring
+Urethane foam sealant,LF,0.73,0.73,0.73,0.73,68,66.52,Cleaning
+"Baseboard - 5 1/4"" MDF - flat profile",LF,5.0,4.31,4.31,5.0,67,35.48,Baseboard
+Plumbing fixture supply line,EA,27.23,25.65,18.83,31.95,65,2.0,Plumbing
+Base cap or shoe / Quarter round - Detach & reset,LF,1.93,1.92,1.67,2.01,64,28.43,Baseboard
+Dehumidifier (per 24 hr period)- 110-159 ppd - No monitor.,EA,115.15,115.15,114.0,115.15,64,6.0,Demo
+Electrical labor minimum,EA,163.13,159.73,15.92,525.88,63,1.0,
+"R&R Cove base molding - rubber or vinyl, 4"" high",LF,3.15,5.41,2.8,5.41,63,71.0,Cove Base
+R&R T- molding - for wood flooring,LF,8.43,8.63,7.98,14.78,63,5.0,Flooring
+Sand & finish wood heat register,EA,4.43,4.54,4.34,4.54,63,2.0,Hardwood
+Seal (1 coat) & paint (2 coats) baseboard,LF,2.44,2.44,2.44,2.44,63,30.73,Baseboard
+R&R Combination CO/Smoke detector,EA,131.93,175.85,129.81,175.85,62,1.0,Electrical
+Remove Carpet pad,SF,0.19,0.16,0.14,0.26,62,131.66,Carpet
+Snaplock Laminate - simulated wood flooring,SF,6.48,6.94,6.41,7.7,62,77.48,Laminate Flooring
+Interior door unit - High grade,EA,420.06,420.06,420.06,420.06,60,1.0,Doors and Casing
+"Remove Cove base molding - rubber or vinyl, 4"" high",LF,0.43,0.54,0.41,0.54,60,110.72,Cove Base
+Seal more than the floor perimeter w/PVA primer - one coat,SF,0.68,0.68,0.63,0.73,60,49.79,Drywall
+"Equipment setup, take down, and monitoring (hourly charge)",HR,84.5,70.97,64.89,130.0,59,8.0,General
+Vapor barrier - visqueen - 6mil,SF,0.37,0.36,0.36,0.47,59,96.04,Flooring
+Interior door - Reset - slab only,EA,16.03,16.15,12.65,16.93,58,1.0,Door
+Mask or cover per square foot,SF,0.58,0.57,0.57,0.81,58,194.62,Flooring
+R&R P-trap assembly - ABS (plastic),EA,102.82,107.02,89.1,124.93,58,1.0,Cabinets & Sink
+Waterproof membrane - liquid - tile underlayment,SF,6.04,6.03,5.0,8.77,58,76.0,Shower
+"Batt insulation - 10"" - R30 - paper / foil faced",SF,2.16,2.16,1.98,2.76,57,180.0,Insulation
+Door knob - interior - High grade,EA,67.04,67.13,67.04,67.13,57,1.0,Doors and Casing
+Apply anti-microbial agent to the surface area,SF,0.41,0.52,0.4,0.52,56,45.0,Demo
+Paint the walls and ceiling - one coat,SF,0.77,0.74,0.62,0.81,56,466.75,Paint
+Paint the walls and ceiling - two coats - 2 colors,SF,1.38,1.38,1.35,1.45,56,327.23,Paint
+R&R Carpet pad,SF,0.84,0.8,0.8,1.21,56,98.14,Carpet
+"Blown-in insulation - 24"" depth - R66",SF,3.38,3.39,3.38,3.39,55,60.9,Insulation
+Washer/Washing machine - Remove & reset,EA,64.88,78.29,63.85,78.29,55,1.0,Appliances
+Bypass (sliding) door set - slabs only - Detach & reset,EA,38.34,38.0,37.65,54.96,53,1.0,Door
+Tear out baseboard,LF,0.78,0.81,0.78,0.83,53,20.0,Demo
+Lay existing carpet - Labor only,SF,0.84,0.84,0.67,0.94,52,148.23,Carpet
+Bifold door - (2 slabs only) - Single - Detach & reset,EA,21.54,21.54,15.96,27.27,51,1.0,Door
+Personal protective gloves - Disposable (per pair),EA,0.44,0.39,0.39,0.44,51,4.0,Personal Protective Equipment
+Detach & Reset Shower faucet,EA,111.75,113.71,86.04,156.52,50,1.0,Shower
+"Heat, vent, & air cond. labor minimum",EA,286.52,286.6,69.15,453.3,50,1.0,
+Oak flooring - select grade - no finish,SF,11.51,17.49,11.51,17.49,50,80.0,Hardwood
+P-trap assembly - Detach & reset,EA,83.04,87.19,74.09,106.68,50,1.0,Vanity
+Seal & paint door or window opening (per side),EA,35.68,37.01,35.68,37.01,50,1.0,Door and Casing
+T- molding - for wood flooring,LF,7.89,7.89,7.89,17.58,50,4.0,Flooring
+Window stool & apron,LF,9.3,9.24,9.24,9.3,50,5.0,Doors and Casing
+"Detach & Reset Baseboard - 3 1/4"" MDF w/profile",LF,3.41,3.45,3.11,3.52,49,25.37,Baseboard
+Mask part of the floor per square foot - plastic and tape - 4 mil,SF,0.29,0.31,0.28,0.35,49,96.43,Paint
+Drywall labor minimum,EA,293.79,454.5,49.82,518.01,48,1.0,Drywall
+Floor protection - cardboard and tape,SF,0.64,0.64,0.64,0.76,48,115.59,Engineered Hardwood Floors
+Light fixture - High grade,EA,124.72,124.72,124.72,124.72,48,1.0,Electrical
+Paint part of the walls and ceiling - one coat,SF,0.79,0.82,0.68,1.21,48,254.92,Paint
+R&R Carpet tile - High grade,SF,6.98,6.98,6.9,6.98,48,117.31,Carpet
+Remove Snaplock Laminate - simulated wood flooring,SF,1.95,2.07,1.68,2.23,48,136.17,Flooring
+Remove Vinyl plank flooring,SF,1.69,1.69,1.56,2.22,48,96.88,Flooring
+"1/2"" Cement board",SF,9.11,9.11,5.91,9.38,47,78.91,Shower
+"5/8"" - drywall per LF - up to 2' tall",LF,12.84,12.83,12.75,13.49,47,20.0,Drywall
+"Baseboard - 3 1/4"" MDF - flat profile",LF,3.99,3.46,3.46,5.8,47,15.0,Baseboard
+Plumbing labor minimum,EA,115.56,132.81,28.54,420.88,47,1.0,Cabinets & Sink
+Tile floor covering - High grade,SF,20.64,13.17,10.51,21.14,47,51.49,Tile Floor
+Contents - move out then reset,EA,110.08,91.22,77.0,374.25,46,1.0,Contents
+Glue down carpet,SF,2.62,2.69,2.61,3.02,46,303.75,Carpet
+Cabinetry labor minimum,EA,115.12,122.62,1.0,300.0,45,1.0,Cabinets & Sink
+Paint more than the floor perimeter - two coats,SF,1.17,1.14,1.05,1.21,45,49.83,Paint
+Seal & paint door slab only (per side),EA,44.51,44.51,43.01,44.74,45,2.0,Door and Casing
+Install Vinyl plank flooring,SF,3.1,3.33,3.08,3.33,44,60.0,Flooring
+R&R Vapor barrier - visqueen - 6mil,SF,0.5,0.49,0.49,0.59,44,118.56,Flooring
+Seal/prime (1 coat) then paint (1 coat) the surface area - 2 colors,SF,1.29,1.26,1.26,1.33,43,90.0,Paint
+Vinyl floor covering labor minimum,EA,167.73,245.38,18.17,386.46,43,1.0,Flooring
+Angle stop valve,EA,52.48,49.32,49.32,60.96,42,2.0,Plumbing
+Finish Carpenter - per hour,HR,95.0,90.83,85.0,95.0,42,2.0,Door and Casing
+Heat/AC register - Floor register,EA,22.16,22.18,22.16,22.18,42,2.0,HVAC
+Negative air fan/Air scrubber (24 hr period) - No monit.,DA,76.04,70.5,70.0,76.04,42,4.0,Equipment
+Remove Engineered wood flooring,SF,3.36,3.62,3.29,4.92,42,101.6,Flooring
+Seal & paint closet shelving - single shelf,EA,58.74,57.97,57.19,61.44,42,1.0,Shelving
+Carpet labor minimum,EA,180.91,173.15,47.57,349.13,41,1.0,Carpet
+Interior door - Detach & reset,EA,98.81,100.13,91.06,103.41,41,1.0,Door and Casing
+P-trap assembly - ABS (plastic),EA,87.48,82.06,72.99,105.33,41,1.0,Plumbing
+Peel & seal zipper,EA,15.71,15.71,15.25,19.81,41,1.0,Demo
+Personal protective mask (N-95),EA,1.57,1.57,1.5,5.9,41,2.0,Personal Protective Equipment
+Polyethylene vapor barrier,SF,0.36,0.37,0.36,0.37,41,332.38,Cleaning
+R&R Light fixture,EA,98.56,100.31,92.47,145.83,41,1.0,Electrical
+Recessed light fixture,EA,166.19,166.46,149.64,166.46,41,2.0,Electrical
+Reducer strip - for wood flooring,LF,7.63,1.57,1.11,7.94,41,3.0,Flooring
+Service call - during business hours,EA,234.67,198.11,180.45,266.67,40,1.0,General
+"Step charge for ""tucked"" carpet installation - High grade",EA,18.37,18.15,14.36,19.77,40,12.0,Carpet
+"Baseboard - 4 1/4"" MDF - flat profile",LF,4.22,4.22,4.21,6.09,39,13.0,Baseboard
+Contents - move out then reset - Large room,EA,176.12,176.11,136.75,220.14,39,1.0,Contents
+Door knob - interior,EA,49.84,49.84,49.69,50.36,39,1.0,Door
+"Furnace or A/C - check, clean, replace filters and service",EA,220.43,275.28,197.54,470.36,39,1.0,Flooring General Conditions
+Washing machine - Remove & reset,EA,65.47,182.66,35.02,260.94,39,1.0,Appliances
+Add for HEPA filter (for negative air exhaust fan),EA,215.0,214.6,188.31,218.34,38,0.62,Equipment
+Add for glued down wood flooring appl. over wood substrate,SF,1.38,1.38,0.21,5.69,38,129.09,Flooring
+Clean and prep floor,SF,1.03,1.11,0.61,1.24,38,122.58,Laminate Flooring
+Drill holes for wall cavity drying,EA,0.84,0.83,0.83,0.99,38,22.0,Demo
+Remove Carpet - High grade,SF,0.39,0.38,0.38,0.57,38,126.98,Carpet
+Apply plant-based anti-microbial agent to the surface area,SF,0.41,0.41,0.41,0.63,37,100.0,Demo
+Engineered wood flooring,SF,10.36,11.19,10.29,11.19,37,159.12,Engineered Hardwood Floors
+"Quarter round - 3/4""",LF,2.08,3.18,1.84,3.18,37,29.5,Baseboard
+"Sheathing - OSB - 1/2""",SF,1.98,1.98,1.98,1.98,37,73.78,Prefinished Hardwood Floors
+Asbestos test fee - full service survey - base fee,EA,370.0,380.0,350.0,516.0,36,1.0,General
+Asbestos test fee - full service survey - per sample,EA,35.0,42.0,30.0,49.0,36,7.0,General
+Contents - move out then reset - Small room,EA,68.44,82.63,57.8,104.66,36,1.0,Contents
+Dust containment,EA,858.1,700.0,600.0,1800.0,36,1.0,Flooring General Conditions
+"R&R 1/4"" Cement board",SF,8.79,8.69,5.77,12.45,36,44.5,Tile
+Tile floor covering - per specs from ind. tile analysis,SF,16.32,16.32,4.96,17.21,36,40.86,Tile Floor
+"Wet spray cellulose insulation - 6"" - R20",SF,1.84,1.84,1.84,1.84,36,131.53,Insulation
+Paint the ceiling - one coat,SF,0.77,0.75,0.62,0.87,35,206.98,Paint
+Remove Carpet - per specs from independent carpet analysis,SF,0.38,0.38,0.38,0.57,35,111.62,Carpet
+Ceramic/porcelain tile,SF,23.1,21.94,11.92,68.82,34,22.5,Wall Tile
+Clean floor,SF,0.69,0.56,0.56,0.83,34,86.0,Flooring
+Combination CO/Smoke detector,EA,115.81,120.2,115.81,120.2,34,1.0,Electrical
+Paint part of the ceiling - one coat,SF,0.82,0.85,0.73,0.94,34,122.28,Paint
+Paint the walls - two coats,SF,1.15,1.15,1.08,1.21,34,270.17,Paint
+Carpenter - General Framer - per hour,HR,89.41,89.3,68.62,90.81,33,3.0,Framing
+Containment Barrier/Airlock/Decon. Chamber,SF,1.31,1.31,1.13,2.43,33,120.0,Demo
+Grout sealer,SF,2.59,2.03,2.01,2.62,33,39.17,Tile
+Paint bifold door set - slab only - 2 coats (per side),EA,59.49,58.29,56.22,59.69,33,1.0,Doors and Casings
+R&R Floor drain - tub/shower - metal/plastic,EA,67.18,68.08,63.13,82.18,33,1.0,Shower
+"1/2"" water rock (greenboard) hung, taped ready for texture",SF,2.88,2.9,2.83,4.13,32,79.0,Drywall
+"Batt insulation - 4"" - R13 - paper / foil faced",SF,1.15,1.17,1.1,1.31,32,25.5,Insulation
+Clean ductwork - Interior (PER REGISTER),EA,43.73,63.73,33.02,63.73,32,15.0,Flooring General Conditions
+Outlet or switch cover,EA,4.04,4.35,3.84,4.35,32,4.0,Electrical
+Vinyl - metal transition strip,LF,3.26,3.42,2.74,3.47,32,3.0,Flooring
+Cabinetry - lower (base) units,LF,255.91,255.15,231.44,350.67,31,10.67,Cabinets
+Closet shelf and rod package,LF,26.29,25.83,25.83,35.0,31,6.0,Shelving
+Framing labor minimum,EA,138.5,179.69,44.72,275.0,31,1.0,Framing
+Painting labor minimum,EA,108.66,0.9,0.9,350.0,31,1.0,General
+Seal the walls and ceiling w/PVA primer - one coat,SF,0.68,0.64,0.55,0.69,31,459.06,Drywall
+Vanity,LF,253.12,270.68,183.14,348.01,31,2.5,Vanity
+"Baseboard - 3 1/4"" stain grade",LF,4.91,4.92,4.91,5.54,30,24.12,Baseboard
+"R&R Sheathing - plywood - 5/8"" - tongue and groove",SF,5.06,5.06,5.06,5.06,30,47.58,Framing
+Seal (1 coat) & paint (1 coat) casing,LF,1.69,1.68,1.56,1.9,30,17.0,Door and Casing
+Seal/prime (1 coat) then paint (2 coats) the walls and ceiling,SF,1.51,1.51,1.48,1.51,30,241.82,Paint
+Add-on for tile backsplash installation,SF,26.04,14.08,14.08,30.26,29,5.0,Vanity
+Clean and deodorize carpet - heavy staining,SF,1.19,1.16,1.16,1.19,29,200.0,Carpet
+Engineered wood flooring - High grade,SF,15.59,12.58,12.58,15.59,29,73.78,Prefinished Hardwood Floors
+Install Cabinetry - lower (base) units,LF,48.45,48.48,37.78,120.0,29,4.0,Cabinets & Sink
+R&R Stud wall - 2x4 (per BF),BF,3.39,3.4,3.39,3.4,29,80.0,Framing
+Remove Glue down carpet,SF,0.9,0.87,0.82,1.19,29,158.77,Carpet
+Texture drywall - light hand texture,SF,1.25,1.25,1.19,1.25,29,100.0,Drywall
+Paint casing - two coats,LF,1.68,1.83,1.66,2.02,28,18.5,Doors and Casing
+Paint more than the ceiling - one coat,SF,0.77,0.78,0.52,1.1,28,401.24,Paint
+Stain & finish casing,LF,1.79,1.81,1.75,1.96,28,17.0,Casing
+"Tear out wet drywall, cleanup, bag for disposal",SF,1.44,1.48,1.41,1.64,28,33.0,Demo
+Toe kick - Detach & reset,LF,9.39,9.39,7.31,9.71,28,9.0,Toe Kick
+"Baseboard - 5 1/4"" MDF - w/profile",LF,5.43,5.41,5.07,5.6,27,16.0,Baseboard
+Countertop - flat laid plastic laminate,LF,47.35,43.65,43.41,58.52,27,13.0,Cabinets & Sink
+"Toe kick - pre-finished wood - 1/2""",LF,10.54,11.13,7.33,28.64,27,6.0,Toe Kick
+Commercial Supervision / Project Management - per hour,HR,88.18,90.0,80.11,90.0,26,15.5,General
+Drywall tape joint / repair - per LF,LF,10.5,10.54,10.01,11.86,26,8.0,Drywall
+Light fixture,EA,87.22,77.82,77.82,92.51,26,1.0,Electrical
+Oak flooring - #1 common - no finish,SF,10.65,11.21,9.55,11.88,26,30.0,Flooring
+"R&R Baseboard - 3 1/4"" MDF w/profile",LF,4.83,4.83,4.83,4.88,26,35.39,Baseboard
+Scrape the surface area & prep for paint,SF,0.76,0.77,0.5,0.91,26,10.0,Drywall
+Vinyl floor covering (sheet goods),SF,4.1,4.1,2.92,5.08,26,31.26,Flooring
+Tear out trim and bag for disposal - up to Cat 3,LF,1.4,1.41,1.33,1.41,25,28.0,Demo
+Tile - metal trim - stainless/brass- to 9/16 - High grade,LF,13.77,13.71,13.71,19.86,25,16.0,Shower
+Dishwasher - Reset,EA,172.09,157.46,157.46,417.19,24,1.0,Appliances
+"Interior door, 8' - Reset",EA,113.8,113.8,113.8,113.8,24,3.5,Door and Casing
+Tear out and bag wet insulation,SF,1.08,1.09,1.06,1.59,24,23.36,Demo
+Apply anti-microbial agent to the floor,SF,0.52,0.39,0.39,0.52,23,135.15,Demo
+Apply plant-based anti-microbial agent to the floor,SF,0.42,0.41,0.41,0.49,23,101.6,Demo
+Floor cleaning labor minimum,EA,123.74,58.73,6.11,230.31,23,1.0,
+Install Outlet or switch cover,EA,2.84,2.94,2.73,2.96,23,4.0,Electrical
+Painter - per hour,HR,85.0,75.02,75.02,85.0,23,1.0,Paint
+"R&R Quarter round - 3/4""",LF,2.35,2.47,2.3,2.95,23,61.75,Baseboard
+Seal floor or ceiling joist system (shellac),SF,1.61,1.63,1.61,1.63,23,94.29,Structure Seal and Paint
+Casing - Detach & reset,LF,2.47,2.44,1.98,2.5,22,34.0,Trim
+Contents - move out then reset - Extra large room,EA,327.87,352.22,273.44,418.27,22,1.0,Contents
+HEPA Vacuuming - Detailed - (PER SF),SF,1.23,0.85,0.85,2.1,22,365.18,Hepa Sandwich
+Install Countertop - flat laid plastic laminate,LF,16.71,16.72,12.98,16.86,22,5.5,Vanity
+R&R Recessed light fixture,EA,182.14,185.21,179.87,185.21,22,4.0,Electrical
+R&R Tile floor covering,SF,21.99,21.13,21.13,22.16,22,54.28,Tile
+Seal grout on tile wall,SF,2.82,2.73,2.72,2.85,22,51.74,Tub and Surround
+"Baseboard - 5 1/4""",LF,5.61,6.35,5.61,6.35,21,9.0,Baseboard
+Clean the walls,SF,0.63,0.63,0.63,0.63,21,726.38,Paint
+Dehumidifier (per 24 hr period) - 70-109 ppd - No monitor.,EA,79.29,79.29,79.29,79.29,21,5.0,Equipment
+Detach & Reset Light fixture,EA,75.74,75.74,67.2,133.78,21,1.0,Electrical
+Install Vanity top - one sink - cultured marble,LF,55.11,55.71,51.49,77.0,21,2.5,Vanity
+Tear out wet carpet pad and bag for disposal,SF,0.84,0.72,0.72,0.84,21,36.0,Demo
+"Tear out wet drywall, cleanup, bag, per LF - to 2' - Cat 3",LF,7.96,7.96,7.91,10.7,21,22.0,Cat 3 Mitigation
+"2"" x 4"" lumber (.667 BF per LF)",LF,3.01,3.19,2.87,3.19,20,24.0,Framing
+Additional charge to tile a wall niche,EA,368.9,397.33,293.88,405.0,20,1.0,Shower
+"Batt insulation - 10"" - R30 - unfaced batt",SF,1.92,1.94,1.92,2.69,20,20.0,Insulation
+"Batt insulation - 4"" - R13 - unfaced batt",SF,1.04,1.06,1.04,1.09,20,36.5,Insulation
+Garbage disposer - Detach & reset,EA,247.74,247.74,207.51,285.98,20,1.0,Cabinets & Sink
+General labor - labor minimum,EA,51.64,34.76,12.1,97.72,20,1.0,
+Remove Engineered wood flooring - floating,SF,1.49,1.72,1.49,1.72,20,194.0,Flooring
+Remove Underlayment - sound/crack membrane - up to 40 mil,SF,1.17,1.31,1.17,1.31,20,194.0,Flooring
+Seal & paint base shoe or quarter round,LF,0.95,0.9,0.82,1.0,20,24.0,Baseboard
+Seal & paint paneling,SF,1.36,1.64,1.32,1.64,20,76.05,Paneling
+Seal & paint window stool and apron,LF,4.5,4.47,4.45,4.63,20,5.0,Window Trim
+Stain & finish base shoe or quarter round,LF,1.52,1.44,0.99,1.52,20,27.46,Baseboard
+Tile floor covering labor minimum,EA,173.24,14.01,14.01,557.93,20,1.0,
+Toilet paper holder,EA,30.74,29.16,29.16,30.8,20,1.0,Toilet
+Vinyl plank flooring - High grade,SF,8.07,8.4,7.48,8.69,20,123.6,Flooring
+Vinyl tile,SF,4.45,4.18,3.77,4.65,20,71.58,Flooring
+Clean the walls and ceiling,SF,0.62,0.47,0.47,0.62,19,357.46,
+"Dumpster load - Approx. 20 yards, 4 tons of debris",EA,519.5,519.5,519.5,622.67,19,1.0,General
+Finish hardware labor minimum,EA,131.96,161.75,97.35,170.26,19,1.0,
+Install Sink faucet - Kitchen,EA,114.78,126.31,114.78,167.33,19,1.0,Plumbing
+Install Tile floor covering,SF,9.77,12.35,8.97,14.05,19,116.67,Tile Floor
+Remove Carpet tile,SF,0.9,1.12,0.89,1.33,19,323.55,Carpet Tile
+Seal/prime (1 coat) then paint (1 coat) more than the floor perimeter,SF,1.07,1.06,1.06,1.1,19,98.61,Paint
+Wood delivery,EA,360.0,360.0,150.0,360.0,19,1.0,Flooring General Conditions
+Add for glued down wood flooring application over concrete,SF,1.38,4.1,1.38,4.1,18,80.0,Engineered Hardwood Floors
+Carpet - metal transition strip,LF,3.27,3.21,2.91,4.51,18,6.0,Carpet
+Carpet tile,SF,3.93,4.09,3.31,9.62,18,637.56,Carpet
+Concrete grinding - Light,SF,3.09,3.09,3.09,3.18,18,173.35,Carpet
+Install Combination CO/Smoke detector,EA,43.51,42.01,42.01,43.51,18,1.0,Electrical
+R&R Carpet - Rubber transition strip,LF,4.49,4.43,4.43,4.59,18,3.0,Carpet
+"R&R I-joist - 12"" deep - 1 3/4"" flange",LF,7.25,7.25,7.25,7.25,18,74.0,Framing
+"R&R Sheathing - plywood - 5/8"" - T & G - mobile home",SF,5.54,5.54,5.54,5.54,18,19.21,Flooring
+"Remove 1/2"" Cement board",SF,1.34,1.33,1.33,1.94,18,73.5,Shower
+Stair nosing - for wood flooring,LF,10.15,23.42,9.85,23.42,18,3.0,Flooring
+Tile / marble labor minimum,EA,268.8,266.99,151.31,539.08,18,1.0,Backsplash
+Tile framed shower curb - per LF,LF,155.74,171.61,106.07,175.26,18,6.17,Shower
+Towel ring,EA,33.14,31.56,31.56,33.2,18,1.0,Toilet
+"Underlayment - 1/2"" particle board",SF,2.21,2.21,2.2,2.43,18,88.48,Flooring
+Wallpaper Hanger - per hour,HR,90.0,90.0,81.16,90.0,18,3.0,Wallpaper
+Water extraction from hard surface floor - Cat 3 water,SF,0.98,0.98,0.98,0.98,18,92.5,Demo
+Acoustic ceiling (popcorn) texture,SF,1.3,1.3,1.28,1.47,17,39.28,Drywall
+Bifold door set - (4 slabs only) - Double Detach & reset,EA,38.4,38.45,35.13,42.75,17,1.0,Door
+Clean door opening per EA (per side),EA,22.65,22.65,22.65,22.65,17,2.0,
+Cleaning labor minimum,EA,101.11,141.16,25.94,188.08,17,1.0,
+Cold air return cover,EA,40.28,40.13,40.13,40.28,17,1.0,HVAC
+Detach & Reset Sink faucet - Kitchen,EA,176.59,175.86,130.97,201.21,17,1.0,Cabinets & Sink
+Door dummy knob - Detach & reset,EA,10.9,10.9,9.19,10.9,17,1.0,Door and Casing
+Door stop - wall or floor mounted - Detach & reset,EA,11.99,11.95,11.72,11.99,17,1.0,Baseboard
+Floor protection - self-adhesive plastic film,SF,0.66,0.61,0.61,0.88,17,90.0,General
+Pedestal sink - Detach & reset,EA,412.82,412.82,392.09,412.82,17,1.0,Plumbing
+"R&R Batt insulation - 4"" - R15 - paper / foil faced",SF,1.95,1.98,1.93,2.77,17,16.0,Insulation
+Remove Vinyl floor covering (sheet goods),SF,1.33,1.34,1.28,1.34,17,42.3,Flooring
+Seal & paint baseboard - two coats,LF,1.76,1.76,1.11,2.08,17,50.17,Baseboard
+Seam carpet,LF,6.15,4.98,4.91,8.74,17,6.0,Carpet
+Sink - double basin - Reset,EA,142.17,142.17,142.17,149.23,17,1.0,Plumbing
+Tandem axle dump trailer - per load - including dump fees,EA,332.21,332.21,246.06,344.3,17,1.0,General
+Tear out cove base molding,LF,0.57,0.57,0.57,0.57,17,28.16,Demo
+Tear out non-salv solid/eng. wood flr & bag for disposal,SF,5.61,5.62,5.47,5.92,17,42.0,Demo
+Towel bar,EA,35.2,33.99,33.99,35.26,17,2.0,Toilet
+Baseboard - Detach,LF,1.89,1.89,1.89,3.36,16,20.0,Demo
+Casing - Reset,LF,2.43,2.47,2.39,2.47,16,28.0,Baseboard and Casing
+"Ceiling diffusers/grills - circular - 8""-10"" diameter",EA,50.81,50.81,50.81,50.81,16,1.0,HVAC
+Detach & Reset Kitchen Sink - single basin,EA,215.17,220.03,162.72,234.33,16,1.0,Cabinets & Sink
+Engineered wood flooring - floating,SF,10.51,10.51,10.51,11.75,16,94.73,Flooring
+General Laborer - per hour,HR,62.12,62.12,62.12,62.12,16,13.0,
+Seal more than the walls and ceiling with shellac/stain blocker - one coat,SF,0.85,0.82,0.82,0.85,16,489.15,Smoke Seal
+Seal the ceiling w/PVA primer - one coat,SF,0.64,0.64,0.64,0.72,16,61.65,Drywall
+Stain & finish baseboard w/cap &/or shoe,LF,2.22,2.22,1.94,2.34,16,24.91,Baseboard
+Stain & finish toe-kick,LF,1.76,1.76,1.73,1.96,16,9.5,Toe Kick
+Tear out baseboard and bag for disposal - up to Cat 3,LF,1.33,1.36,1.33,1.54,16,42.03,Demo
+Tile mat - uncoupling membrane,SF,7.09,7.09,6.19,7.25,16,51.49,Tile Floor
+Wood floor covering labor minimum,EA,217.08,136.12,10.84,478.27,16,1.0,
+"Baseboard - 4 1/4""",LF,5.28,5.48,5.28,5.59,15,47.06,Baseboard
+"Baseboard - 6"" MDF w/profile",LF,5.81,5.81,5.69,13.32,15,39.05,Baseboard
+Install Sink faucet - Bathroom,EA,136.07,114.31,111.97,167.33,15,1.0,Vanity
+Install Vanity,LF,47.98,47.71,47.71,48.89,15,2.5,Vanity
+Lace in wood floors,HR,75.0,100.0,66.35,100.0,15,4.0,Flooring General Conditions
+Mortar bed for tile floors,SF,6.08,5.94,4.96,10.82,15,13.18,Tile Floor
+Protect - Cover with plastic,SF,0.41,0.41,0.41,0.52,15,120.0,Demo
+"R&R 1/2"" drywall - hung, taped, ready for texture",SF,3.3,3.31,3.3,6.38,15,28.0,Drywall
+"R&R Casing - 3 1/4""",LF,4.16,4.51,4.16,4.51,15,17.0,Casing
+Remove Vinyl plank flooring - High grade,SF,1.69,2.21,1.69,2.21,15,123.6,Flooring
+Remove Vinyl tile,SF,1.6,1.62,1.57,2.38,15,102.75,Flooring
+Seal the surface area w/latex based stain blocker - one coat,SF,0.71,0.67,0.67,0.75,15,32.0,Paint
+Tear out and bag wet insulation - Category 3 water,SF,1.57,1.58,1.57,1.59,15,80.0,Demo
+"Underlayment - rubber - 1/8"" - Floating",SF,1.2,1.2,1.2,1.21,15,62.54,Flooring
+"Batt insulation - 6"" - R19 - unfaced batt",SF,1.3,1.32,1.3,1.32,14,74.44,Insulation
+Cabinetry - upper (wall) units,LF,169.13,173.65,162.97,250.67,14,17.83,Cabinets & Sink
+Countertop subdeck - plywood,SF,6.06,3.85,3.85,6.06,14,12.0,Fireplace
+"Detach & Reset Baseboard - 3 1/4""",LF,3.35,3.35,2.66,3.42,14,18.83,Baseboard
+Install Cabinetry - upper (wall) units,LF,48.19,47.71,47.71,50.67,14,12.0,Cabinets & Sink
+Miscellaneous concrete labor minimum,EA,563.25,647.58,172.53,704.99,14,1.0,
+Paint crown molding - two coats,LF,1.71,1.73,1.71,1.73,14,56.25,Crown Molding
+"R&R 110 volt copper wiring run, box and GFI outlet",EA,124.1,124.62,124.1,124.62,14,2.0,Electrical
+"R&R Underlayment - rubber - 1/4"" - 3/8"" - Floating",SF,2.32,2.51,2.32,2.51,14,122.58,Laminate Flooring
+Range - electric - Reset,EA,24.95,32.19,24.95,50.45,14,1.0,Appliances
+Range hood - Detach & reset,EA,122.64,116.48,116.25,127.14,14,1.0,Appliances
+"Remove 1/2"" drywall - hung, taped, ready for texture",SF,0.59,0.59,0.59,0.99,14,16.0,Drywall
+Remove Ceramic/porcelain tile,SF,2.85,2.81,2.76,5.73,14,12.5,Wall Tile
+Remove Oak flooring - #1 common - no finish,SF,3.3,4.65,3.08,4.65,14,42.5,Flooring
+"Step charge for ""waterfall"" carpet installation",EA,12.62,12.72,10.14,13.03,14,13.0,Carpet
+Clean floor - Heavy,SF,1.16,0.81,0.81,1.16,13,120.35,Cat 3 Mitigation
+Clean more than the walls with pressure steam,SF,1.48,1.48,1.48,1.48,13,1022.03,Paint
+Detach & Reset Vanity top - one sink - cultured marble,LF,67.85,93.55,38.85,93.66,13,5.0,Vanity
+"Install Casing - 2 1/4""",LF,1.25,0.99,0.99,1.31,13,34.0,Casing
+"Install Casing - 3 1/4""",LF,1.26,1.17,1.17,1.31,13,14.0,Casing
+"Mirror - 1/8"" plate glass",SF,19.41,18.83,18.83,19.41,13,12.0,Vanity
+Paint part of the walls - one coat - 2 colors,SF,0.92,0.93,0.89,0.95,13,178.88,Paint
+Paint the ceiling - two coats,SF,1.1,1.08,0.77,1.26,13,35.0,Paint
+Pre-finished solid wood flooring,SF,9.75,9.75,9.75,10.25,13,29.17,Prefinished Hardwood Floors
+"R&R Baseboard - 4 1/4"" MDF - w/profile",LF,5.53,5.49,5.49,5.53,13,36.03,Baseboard
+R&R Quarter round - for wood flooring,LF,3.45,3.41,3.41,4.09,13,6.0,Flooring
+R&R Vinyl plank flooring,SF,8.31,8.11,8.11,9.84,13,128.07,Flooring
+"Remove 2"" x 4"" lumber (.667 BF per LF)",LF,0.76,0.76,0.76,0.78,13,32.0,Framing
+Rough-in plumbing - per fixture,EA,918.54,876.78,791.05,1106.27,13,2.0,Plumbing
+Tile shower - 61 to 100 SF,EA,3851.8,3326.87,2898.6,5542.71,13,1.0,Shower
+Vanity with countertop - Detach & reset,LF,89.55,93.61,89.32,93.61,13,2.33,Vanity
+Water extraction from carpeted floor,SF,0.64,0.65,0.64,0.66,13,178.33,Demo
+"Window blind - aluminum - 1"" - 7. 1 to 14 SF",EA,112.53,112.29,112.29,112.53,13,1.0,Window Treatment
+Acoustic ceiling tile labor minimum,EA,298.14,65.69,65.69,400.0,12,1.0,
+Add for glued down vinyl plank application over concrete,SF,2.95,2.58,0.5,3.32,12,81.92,Flooring
+Apply plant-based anti-microbial agent to more than the floor,SF,0.42,0.34,0.34,0.49,12,356.22,Hepa Sandwich
+Backsplash - plastic laminate,SF,7.9,8.26,7.19,8.26,12,13.0,Cabinets & Sink
+Backsplash - solid surface - Unattached - Detach & reset,LF,4.75,4.75,3.76,4.79,12,5.71,Vanity
+"Baseboard - 2 1/4"" MDF w/profile",LF,3.51,3.51,3.51,3.51,12,14.0,Baseboard
+Bifold door set - Colonist - Double,EA,382.36,434.56,357.92,434.56,12,1.0,Doors and Casings
+Carpet tile - High grade,SF,6.09,6.05,6.05,6.09,12,435.95,Carpet
+Ceiling fan & light - High grade,EA,533.68,533.68,533.68,533.68,12,1.0,Electrical
+Clean door hardware,EA,11.53,11.53,11.53,11.53,12,1.0,
+Countertop - solid surface/granite - Detach & reset,SF,39.63,41.0,32.19,41.62,12,6.5,Vanity
+Detach & Reset Heat/AC register - Mechanically attached,EA,22.47,20.9,20.9,23.08,12,1.0,HVAC
+Embossing leveler for vinyl flooring,SF,1.19,1.19,0.94,1.19,12,36.27,Flooring
+Fireplace mantel - paint grade - prefab.,EA,715.55,715.55,715.55,715.55,12,1.0,Fireplace
+Floor Prep - Skim Coat,SF,2.22,0.44,0.44,4.0,12,490.65,Carpet Tile
+Heat/AC register - Mechanically attached,EA,33.8,33.63,33.63,33.85,12,1.0,HVAC
+Install Vanity with cultured marble or solid surface top,LF,75.19,59.45,59.45,78.62,12,2.5,Vanity
+Light bar - 4 lights - High grade,EA,228.72,228.72,228.72,228.72,12,1.5,Electrical
+Mask and prep for paint - paper and tape (per LF),LF,0.95,0.95,0.95,0.95,12,51.88,Trim
+Prime & paint door slab only - exterior (per side),EA,52.79,52.8,52.78,53.53,12,2.0,Door and Casing
+R&R Cork flooring - snaplock floating,SF,11.3,11.3,11.3,11.3,12,78.98,Flooring
+"R&R Cove base molding - rubber or vinyl, 6"" high",LF,5.11,5.11,3.94,5.11,12,48.05,Cove Base
+R&R Glue down carpet,SF,3.4,3.4,3.4,3.52,12,418.08,Carpet
+"R&R Quarter round - up to 3/4"" - polystyrene",LF,4.5,4.5,4.5,4.5,12,28.58,Baseboard
+R&R Stair nosing - for wood flooring,LF,10.4,10.4,10.4,10.43,12,45.0,Hardwood
+Remove Cabinetry - upper (wall) units,LF,10.41,15.4,10.41,15.74,12,13.0,Cabinets & Sink
+Remove Carpet tile - High grade,SF,0.89,0.85,0.85,0.89,12,217.98,Carpet
+Seal & paint fireplace mantel,LF,5.81,5.81,5.81,5.81,12,19.0,Fireplace
+Stain & finish door/window trim & jamb (per side),EA,48.97,48.97,48.16,48.97,12,2.0,Trim
+Tear out toe kick and bag for disposal,LF,4.85,4.77,4.77,4.85,12,8.0,Demo
+"Tear out wet drywall, cleanup, bag, per LF - up to 2' tall",LF,5.51,5.6,5.31,5.6,12,8.33,Demo
+"Tear out wet non-salvageable carpet, cut & bag for disp.",SF,0.89,0.89,0.88,0.89,12,111.94,Demo
+Toilet - Detach,EA,75.93,74.2,64.07,394.66,12,1.0,Demo
+"Underlayment - rubber - 1/4"" - 3/8"" - Floating",SF,2.13,2.3,2.13,2.3,12,44.99,Laminate Flooring
+"Window blind - PVC - 1"" - 7.1 to 14 SF",EA,80.36,80.36,80.36,80.36,12,1.5,Window Finishes
+"1/2"" - drywall per LF - up to 4' tall",LF,18.1,18.49,17.83,19.22,11,5.0,Drywall
+Add for glued down application over concrete substrate,SF,4.05,1.38,1.38,4.05,11,120.35,Prefinished Hardwood Floors
+Additional cost for high wall or ceiling - Over 14',SF,0.11,0.1,0.1,0.11,11,308.33,Paint
+"Batt insulation - 12"" - R38 - paper / foil faced",SF,2.54,2.73,2.53,2.73,11,121.58,Insulation
+"Batt insulation - 12"" - R38 - paper faced",SF,3.09,4.1,2.52,4.1,11,10.0,Insulation
+"Chair rail - 2 1/2"" stain grade",LF,4.77,4.6,4.6,5.23,11,18.67,Baseboard
+Clean door - with detail (per side),EA,15.63,15.63,15.63,18.65,11,2.0,
+Concrete grinding,SF,5.7,5.35,2.6,5.7,11,15.0,Sheet Vinyl
+"Cove base molding - rubber or vinyl, 6"" high",LF,4.49,3.51,3.51,7.71,11,25.0,Cove Base
+"Crown molding - 3 1/4""",LF,5.39,5.4,5.39,5.4,11,56.25,Crown Molding
+Detach & Reset Sink faucet - Bathroom,EA,188.01,214.05,171.92,214.05,11,1.0,Vanity
+"Dumpster load - Approx. 12 yards, 1- 3 tons of debris",EA,445.49,445.49,375.0,445.49,11,1.0,Gutters
+Garbage disposal / disposer - Detach & reset,EA,235.94,215.87,215.87,235.94,11,1.0,Appliances
+HEPA Vacuuming - Light - (PER SF),SF,0.53,0.53,0.53,0.53,11,94.04,
+Install Vinyl floor covering (sheet goods),SF,1.5,1.59,1.5,1.59,11,29.63,Flooring
+Paint more than the ceiling - one coat - 2 colors,SF,0.89,0.89,0.88,0.92,11,624.02,Paint
+Paint part of the walls - two coats,SF,1.14,1.14,1.08,1.23,11,191.62,Paint
+Paint the surface area - two coats - 2 colors,SF,1.36,1.36,1.36,1.77,11,32.0,Paint
+Paneling,SF,3.09,3.09,2.77,3.76,11,54.0,Wall Paneling
+"R&R 1/2"" Cement board",SF,8.3,8.3,8.3,10.63,11,100.0,Shower
+R&R Engineered wood flooring - High grade,SF,16.67,16.67,16.67,16.67,11,164.94,Hardwood Floor
+"Remove Underlayment - 1/4"" 5 ply",SF,0.91,1.89,0.91,1.89,11,42.3,Flooring
+Stain & finish chair rail,LF,1.79,1.76,1.76,1.82,11,18.67,Baseboard
+Vanity with cultured marble or solid surface top,LF,279.84,305.58,75.22,305.58,11,2.5,Vanity
+Vinyl plank flooring - Standard grade,SF,5.14,5.94,5.14,5.94,11,148.69,Flooring
+"5/8"" drywall - hung & fire taped only",SF,2.59,2.62,2.52,2.62,10,64.0,Drywall
+Add-on for foam niche/inset - sealed with thinset,EA,145.37,149.74,136.43,149.74,10,1.0,Shower
+Additional labor to remove tile from concrete slab,SF,2.38,2.38,2.38,2.38,10,16.0,Flooring
+Cabinetry - lower (base) units - High grade,LF,325.83,316.7,316.7,325.83,10,5.17,Built-in Shelving
+Carpet Installer - per hour,HR,95.0,95.0,95.0,95.0,10,2.0,Carpet
+Clean door (per side),EA,12.48,12.48,12.48,12.48,10,2.0,
+Clean window unit (per side) 10 - 20 SF,EA,26.29,22.07,22.07,26.29,10,1.0,
+Door Installer/Finish Carpenter - per hour,HR,90.59,90.54,90.54,91.93,10,2.0,Door
+Door lockset & deadbolt - exterior - Detach & reset,EA,36.74,43.59,36.74,43.59,10,2.0,Door and Casing
+Ducting - lay-flat,LF,0.38,0.35,0.35,0.38,10,12.5,Demo
+Install Ceramic/porcelain tile,SF,13.29,12.17,12.17,15.34,10,13.0,Backsplash
+Latex paint - per gallon,EA,36.14,35.28,35.28,55.0,10,1.0,Paint
+Paint baseboard w/cap &/or shoe - two coats,LF,2.04,2.04,2.04,2.04,10,61.75,Baseboard
+Paint more than the walls - one coat,SF,0.79,0.77,0.76,0.91,10,600.95,Paint
+Poured shower pan,SF,70.0,70.0,70.0,70.0,10,12.0,Shower
+R&R Reducer strip - for wood flooring,LF,8.23,8.17,8.17,8.23,10,4.5,Engineered Hardwood Floors
+"R&R Sill - cultured marble on 2"" x 4"" wall",LF,14.3,14.3,14.3,14.3,10,4.0,Window Finishes
+R&R Stone veneer - natural stone,SF,52.65,52.88,52.25,52.88,10,84.0,Fireplace
+Remove Vinyl plank flooring - per specs from ind. vinyl analysis,SF,1.66,1.66,1.55,1.66,10,30.0,Flooring
+Seal (1 coat) & paint (1 coat) baseboard w/cap &/or shoe,LF,1.98,1.98,1.98,2.23,10,65.17,Baseboard
+Seal/prime (1 coat) then paint (2 coats) the ceiling,SF,1.48,1.47,1.47,1.51,10,29.92,Paint
+Shower base,EA,641.92,696.67,298.84,726.68,10,1.0,Shower
+Suspended ceiling tile - 2' x 4',SF,2.45,2.45,2.41,6.48,10,42.14,Ceiling Tile
+Tile tub surround - 60 to 75 SF,EA,2074.06,2621.7,2070.26,2621.7,10,1.0,Tub/Shower
+Underlayment - sound/crack membrane - up to 40 mil,SF,2.19,2.19,2.19,2.19,10,215.95,Flooring
+Vinyl plank flooring - per specs from ind. vinyl analysis,SF,5.83,4.13,4.13,7.68,10,96.04,Flooring
+"5/8"" drywall - hung, taped, floated, ready for paint",SF,3.33,3.33,3.21,3.33,9,111.5,Drywall
+Add for personal protective equipment - Heavy duty,EA,39.81,51.78,20.0,56.0,9,2.0,Personal Protective Equipment
+Bathtub - High grade,EA,1328.65,1328.65,1328.65,1328.65,9,1.0,Tub and Surround
+"Batt insulation - 4"" - R11 - paper / foil faced",SF,1.0,1.0,1.0,1.0,9,76.15,Insulation
+"Bead board - 1/4"" to 3/8"" hardwood",SF,4.02,4.02,4.02,4.02,9,30.0,Paneling
+"Casing - 3 1/4"" MDF w/detail",LF,2.99,2.99,2.99,2.99,9,11.0,Fireplace
+Chandelier - High grade,EA,407.93,407.93,407.93,407.93,9,1.0,Electrical
+Clean floor - Light,SF,0.49,0.49,0.49,0.49,9,188.29,Hardwood Floors
+Clean the floor with pressure steam,SF,1.53,1.53,1.53,1.53,9,63.13,Concrete Floor
+Countertop - Granite or Marble - High grade,SF,90.71,90.71,90.71,90.71,9,41.0,Cabs
+"Detach & Reset Baseboard - 4 1/4"" w/shoe",LF,4.02,4.02,4.02,4.02,9,39.5,Baseboard and trim
+Detach & Reset Shelving - wire (vinyl coated),LF,11.91,11.35,8.89,11.91,9,15.0,Shelving
+Drywall tape joint/repair - per LF,LF,10.13,10.1,10.02,10.98,9,8.0,Drywall
+In-wall / In-ceiling speaker - High grade,EA,463.61,463.61,463.61,463.61,9,2.0,Electrical
+Install Heat/AC register - Mechanically attached,EA,18.64,18.64,18.14,33.33,9,1.0,HVAC
+Material Only Carpet pad,SF,0.54,0.54,0.54,2.08,9,51.33,Carpet
+Mosaic - ceramic/porcelain tile - Shower floor,SF,26.5,26.5,23.02,27.06,9,12.0,Shower
+Paint the walls - one coat - 2 colors,SF,0.91,0.89,0.89,1.01,9,272.74,Paint
+Remove Cabinetry - lower (base) units,LF,10.54,15.4,10.41,15.4,9,6.5,Cabinets & Sink
+Remove Pre-finished solid wood flooring - High grade,SF,4.13,4.13,4.13,4.13,9,73.78,Prefinished Hardwood Floors
+Remove Tile floor covering - High grade,SF,3.54,3.54,3.54,4.15,9,45.49,Tile Floor
+Remove Tile mat - uncoupling membrane,SF,1.63,1.63,1.31,2.73,9,45.49,Tile Floor
+Seal & paint closet shelving - single shelf - Large closet,EA,76.8,76.8,76.8,76.8,9,6.0,Shelving
+Seal & paint stair riser - per side - per LF,LF,4.14,4.2,4.14,4.2,9,45.0,Stair Trim
+Seal/prime (1 coat) then paint (1 coat) the walls and ceiling - 2 colors,SF,1.29,1.26,1.26,1.29,9,334.07,Paint
+Stain & finish balustrade,LF,33.88,34.03,33.88,35.19,9,12.0,Balustrade and Trim
+Stain & finish door slab only (per side),EA,67.76,65.4,65.4,68.67,9,2.0,Doors and Casing
+"Tear out wet drywall, cleanup, bag - Cat 3",SF,2.05,2.06,2.03,2.36,9,64.0,Demo
+"Tear out wet non-salvageable carpet, cut/bag - Cat 3 water",SF,1.29,1.29,1.28,1.34,9,120.35,Cat 3 Mitigation
+Tile - metal trim - aluminum - up to 9/16,LF,5.99,6.62,5.4,6.62,9,15.0,Shower
+Tile shower - 121 to 150 SF - High grade,EA,6260.64,6197.29,4806.11,6323.75,9,1.0,Shower
+Toilet - High grade,EA,829.81,829.81,829.81,829.81,9,1.0,Toilet
+Tub/shower faucet - High grade,EA,453.0,453.0,453.0,453.0,9,1.0,Tub and Surround
+"Underlayment - 1/4"" waterproof OSB",SF,2.51,3.0,2.51,3.0,9,40.05,Flooring
+Window blind - horizontal or vertical - reset,EA,46.57,46.57,46.28,47.65,9,2.0,Blinds
+Wood floor - per specs from independent wood analysis,SF,4.29,4.29,4.29,4.29,9,73.78,Prefinished Hardwood Floors
+"4"" backsplash for flat laid countertop",LF,9.75,9.75,8.79,9.75,8,13.0,Cabinets
+Add-on for foam niche/inset - sealed with bonding compound,EA,152.58,152.58,152.58,152.89,8,1.0,Shower
+Cabinetry - upper (wall) units - Premium grade,LF,320.34,320.56,320.34,320.56,8,12.0,Cabs
+Clean baseboard - Heavy,LF,0.73,0.73,0.73,0.73,8,35.51,
+Clean more than the walls - Heavy,SF,0.65,0.65,0.65,0.65,8,304.74,
+Clean shelving - wire (vinyl coated),LF,3.04,3.04,3.04,3.04,8,20.71,
+Clean window opening per EA (per side),EA,22.65,22.65,22.65,22.65,8,1.5,
+Detach & Reset Door knob - interior,EA,31.5,35.78,26.25,35.78,8,3.0,Door
+Detach & Reset Shower door,EA,285.44,276.05,238.93,286.03,8,1.0,Shower
+Detach & Reset Vanity,LF,73.48,73.48,69.57,73.48,8,5.0,Vanity
+Floor prep (scrape rubber back residue) 40,SF,0.84,0.8,0.8,0.84,8,12705.0,Carpet
+Furnace - forced air - Detach & reset,EA,1095.05,1163.64,1075.44,1863.25,8,1.0,Furnace
+Install Shower base,EA,331.96,331.96,249.86,404.04,8,1.0,Shower
+Install Tub/shower faucet,EA,290.44,253.0,253.0,327.88,8,1.0,Tub/Shower
+Mosaic - ceramic/porcelain tile - High grade,SF,35.14,35.0,19.82,35.53,8,21.28,Shower
+Paint chair rail - one coat,LF,1.1,1.35,1.1,1.35,8,17.04,Baseboard and trim
+Paint stair skirt/apron,LF,6.56,6.51,6.45,6.56,8,30.0,Stair Trim
+Paint the surface area - one coat - 2 colors,SF,0.91,1.13,0.88,1.13,8,50.0,Paint
+"R&R Baseboard - 3 1/4"" MDF - flat profile",LF,4.58,4.58,4.58,4.58,8,45.78,Baseboard
+"R&R Baseboard - 5 1/4"" MDF - flat profile",LF,6.44,5.64,5.64,6.44,8,7.0,Baseboard
+"R&R Batt insulation - 8"" - R25 - unfaced batt",SF,2.21,2.21,2.21,2.21,8,102.16,Insulation
+R&R Cabinetry - upper (wall) units,LF,184.19,184.19,183.65,221.42,8,17.83,Cabinets
+R&R Engineered wood flooring - floating,SF,12.33,12.33,12.33,12.33,8,31.18,Flooring
+R&R Interior door unit,EA,350.03,350.03,350.03,366.78,8,1.0,Door and Casing
+R&R Pre-finished solid wood flooring - High grade,SF,16.56,16.56,16.56,16.56,8,207.26,Hardwood Floors
+R&R Tackless strip - per LF,LF,1.54,1.54,1.54,1.54,8,30.72,Carpet
+"R&R Underlayment - dimple - up to 1/8"" overall thickness",SF,1.6,1.6,1.6,1.6,8,31.18,Flooring
+Remove Interior door unit,EA,26.32,26.38,26.32,36.0,8,1.0,Framing
+Remove Paneling,SF,0.57,0.57,0.57,0.57,8,63.9,Wall Paneling
+Remove Pre-finished solid wood flooring,SF,3.31,3.31,3.31,3.31,8,40.61,Prefinished Hardwood Floors
+Respirator - Full face - multi- purpose resp. (per day),DA,7.61,7.61,7.61,7.61,8,2.0,Personal Protective Equipment
+Respirator cartridge - HEPA & vapor & gas (per pair),EA,38.12,38.12,38.12,38.12,8,2.0,Personal Protective Equipment
+Seal & paint bifold door set - slab only (per side),EA,59.2,59.2,57.48,59.2,8,2.0,Door and Casing
+Seal/prime (1 coat) then paint (2 coats) part of the walls and ceiling - 2 colors,SF,1.82,1.82,1.82,1.82,8,174.99,Paint
+Shelving - wire (vinyl coated) - Detach & reset,LF,11.37,10.47,10.47,11.37,8,9.5,Structure Seal and Paint
+Shower door system - Detach & reset,EA,278.67,266.55,266.55,286.99,8,1.0,Shower
+Suspended ceiling tile - 2' x 2',SF,6.86,5.54,5.54,8.18,8,24.0,Ceiling Tile
+Tear out non-salv floating floor & bag - Category 3 water,SF,4.34,4.34,4.34,4.34,8,80.74,Demo
+"Tear out wet carpet pad, cut/bag - Category 3 water",SF,1.23,1.23,1.21,1.26,8,85.81,Cat 3 Mitigation
+Tile tub surround - 60 to 75 SF - High grade,EA,3171.56,3205.76,3171.56,3205.76,8,1.0,Tub and Surround
+"Underlayment - 1/4"" BC plywood",SF,2.99,2.99,2.99,2.99,8,37.25,Flooring
+Water heater - Detach & reset,EA,800.01,848.49,784.17,1014.51,8,1.0,Water Heater
+Window treatment repair,EA,102.37,102.37,53.57,133.94,8,1.0,
+"1/2"" drywall - hung & fire taped only",SF,2.41,2.4,2.4,2.41,7,16.0,Drywall
+Add for personal protective equipment (hazardous cleanup),EA,15.21,15.21,13.82,24.35,7,3.0,Personal Protective Equipment
+Base shoe,LF,1.83,1.84,1.83,1.86,7,7.0,Baseboard
+"Baseboard - 2 1/4""",LF,3.92,3.92,3.41,4.12,7,47.06,Baseboard
+Baseboard heat - steam/hot wtr cover only - Detach & reset,EA,18.71,18.48,18.48,18.71,7,1.0,Baseboard
+Bathroom ventilation fan - High grade,EA,203.03,207.81,203.03,207.81,7,1.0,HVAC
+Bathtub,EA,1096.29,1104.86,1080.94,1104.86,7,1.0,Tub/Shower
+Cabinetry - upper (wall) units - High grade,LF,215.02,209.91,209.91,215.02,7,5.17,Built-in Shelving
+"Carpenter - Finish, Trim / Cabinet - per hour",HR,91.93,84.74,84.74,93.81,7,4.0,Cabinets and Bar
+Clean door hardware - Heavy,EA,13.51,13.51,13.51,13.51,7,2.0,
+Clean floor - tile,SF,1.1,1.1,1.01,1.1,7,50.0,Floor Tile
+Clean light fixture,EA,16.71,16.71,14.04,18.45,7,1.0,
+Clean outlet or switch,EA,5.08,5.08,5.08,7.21,7,3.0,
+Clean window blind - horizontal or vertical,SF,2.25,2.25,2.25,2.25,7,24.0,
+"Detach & Reset Baseboard - 4 1/4""",LF,3.53,3.53,3.53,3.53,7,47.77,Baseboard
+"Detach & Reset Casing - 2 1/4""",LF,2.41,2.41,2.39,2.52,7,17.0,Baseboard
+"Detach & Reset Casing - 2 1/4"" stain grade",LF,2.25,2.25,2.25,2.41,7,20.0,Casing
+Detach & Reset Door stop - spring stop - mounted on baseboard,EA,11.95,12.04,10.64,12.09,7,1.0,Baseboard
+Detach & Reset Fluorescent light fixture,EA,109.94,109.94,109.94,110.53,7,1.0,Electrical
+Door dummy knob - interior,EA,30.25,29.81,29.81,30.25,7,2.0,Doors and Casings
+Door labor minimum,EA,119.29,255.51,62.05,255.51,7,1.0,
+"Dumpster load - Approx. 30 yards, 5-7 tons of debris",EA,576.79,775.58,576.79,775.58,7,1.0,Demo/Debris Haul
+Dust Containment,HR,75.45,75.45,75.45,75.45,7,20.0,Hardwood General Conditions
+Engineered wood floor - floating - specs from ind analysis,SF,9.08,11.3,9.08,11.3,7,260.61,Engineered Hardwood
+Equipment decontamination charge - per piece of equipment,EA,48.4,48.4,48.02,90.77,7,1.0,Cat 3 Mitigation
+Exterior door - metal - insulated - flush or panel style,EA,515.76,495.21,495.21,515.76,7,1.0,Doors and Casing
+"Install Baseboard - 4 1/4""",LF,2.52,2.52,2.52,2.61,7,11.67,Baseboard
+"Install Casing - 2 1/4"" stain grade",LF,1.17,1.17,1.17,1.28,7,7.0,Casing
+Install Recessed light fixture,EA,129.3,227.19,115.27,227.19,7,4.0,Electrical
+"Interior door, 8' - Detach & reset",EA,101.96,101.96,101.96,101.96,7,1.0,Door
+Lift carpet for drying,SF,0.62,0.61,0.61,0.62,7,65.0,Demo
+"Light weight, gypsum concrete - 1"" thick",SF,4.83,4.83,4.83,4.83,7,7.78,Flooring
+Microwave oven - over range or drawer type- Detach & reset,EA,157.12,157.12,157.12,157.12,7,1.0,Appliances
+Overhead door weather stop,LF,4.74,4.71,4.71,4.76,7,32.0,Garage door
+Paint crown molding - one coat,LF,1.2,1.2,1.15,1.25,7,33.53,Crown molding
+Paint more than the ceiling - two coats,SF,1.16,1.1,1.09,1.23,7,269.3,Paint
+Paint overhead door - Large - 2 coats (per side),EA,203.94,203.94,198.18,206.94,7,1.0,Garage door
+Pedestal sink - Reset,EA,236.62,236.37,236.37,236.62,7,1.0,Plumbing
+Pre-finished solid wood flooring - Premium grade,SF,3.96,3.96,3.96,3.96,7,200.09,Flooring
+"R&R Batt insulation - 10"" - R30 - paper / foil faced",SF,2.67,2.71,2.67,2.72,7,40.0,Insulation
+R&R Bifold door set - Colonist - Double,EA,396.77,455.74,370.87,455.74,7,1.0,Door
+R&R Carpet pad - per specs from independent pad analysis,SF,0.33,0.33,0.33,0.99,7,124.04,Carpet
+R&R Ceramic/porcelain tile - High grade,SF,28.67,28.73,28.67,28.73,7,38.0,Fireplace
+R&R Outlet,EA,26.57,26.57,26.57,28.42,7,1.0,Electrical
+R&R Outlet or switch cover,EA,5.25,5.25,4.84,5.25,7,2.0,Electrical
+R&R Sink faucet - Bathroom,EA,286.52,280.43,280.43,307.82,7,1.0,Vanity
+R&R Suspended ceiling tile - 2' x 4',SF,2.79,4.12,2.71,4.12,7,16.0,Ceiling Tile
+R&R Vanity,LF,261.53,257.77,250.34,278.83,7,4.0,Vanity
+R&R Vinyl - metal transition strip,LF,4.43,4.42,4.42,4.43,7,3.0,Flooring
+Recessed light fixture - Reset entire unit,EA,145.86,147.71,145.86,147.71,7,5.0,Electrical
+"Remove Baseboard - 5 1/4"" MDF - w/profile",LF,0.71,0.71,0.71,0.71,7,44.61,Baseboard
+Remove Carpet - Premium grade,SF,0.36,0.36,0.36,0.36,7,83.88,Carpet
+Remove Carpet pad - Premium grade,SF,0.16,0.16,0.16,0.16,7,83.88,Carpet
+Seal & paint double garage door opening & trim,EA,142.54,140.36,140.36,143.21,7,1.0,Garage door
+Seal more than the ceiling w/PVA primer - one coat,SF,0.64,0.68,0.45,0.68,7,150.58,Drywall
+"Sheathing - plywood - 3/4"" CDX",SF,2.94,2.97,2.91,2.97,7,50.0,Flooring
+"Shelving - 12"" - in place",LF,12.56,11.53,11.53,12.97,7,7.0,Shelving
+Shower Pan,SF,90.0,90.0,90.0,90.0,7,17.0,Shower
+Shower pan,EA,252.56,280.21,209.62,280.21,7,1.0,Shower
+Stain & finish handrail - wall mounted,LF,2.5,2.43,2.43,2.5,7,14.0,Hand Rails
+Stair Skirt/Apron - wall side - paint grade,LF,20.23,19.92,19.92,20.23,7,32.0,Stair Trim
+Tile / Cultured Marble Installer - per hour,HR,136.76,130.0,128.6,184.6,7,4.0,Shower
+Tile shower - 61 to 100 SF - High grade,EA,3565.19,4401.32,3549.5,4473.43,7,1.0,Shower
+Tile tub surround - up to 60 SF,EA,2345.5,2160.24,2160.24,2345.5,7,1.0,Shower
+"Toe kick - unfinished wood - 1/2""",LF,8.33,9.65,8.33,11.17,7,6.0,Toe Kick
+Toilet,EA,617.81,609.9,609.9,618.11,7,1.0,Plumbing
+"Trim board - 1/2"" x 4"" - installed (pine)",LF,4.21,4.21,4.02,4.21,7,19.0,Doors and Casings
+Tub/shower faucet - Detach & reset,EA,306.09,306.09,306.09,371.02,7,1.0,Shower
+110 volt copper wiring run and box - rough-in only,EA,74.72,77.66,74.72,77.66,6,1.0,Electrical
+Apply anti-microbial agent to more than the floor,SF,0.41,0.52,0.41,0.52,6,80.91,Demo
+Apply mold/mildew stain remover to the surface area,SF,0.88,1.07,0.88,1.07,6,250.2,Demo
+Balustrade - High grade,LF,259.93,259.93,259.93,259.93,6,26.0,Balustrade and Hand rails
+Base shoe - stain grade,LF,1.99,1.99,1.99,1.99,6,23.05,Baseboard
+"Baseboard - 4 1/4"" w/shoe",LF,7.17,7.17,7.17,7.17,6,6.0,Baseboard
+Bathtub enclosure - sliding glass doors - High grade,EA,703.37,703.37,703.37,703.37,6,1.0,Tub and Surround
+"Bead board - 1/4"" MDF",SF,4.12,4.12,4.12,4.12,6,12.21,Fireplace
+Bifold door - (2 slabs only) - Single - Reset,EA,21.07,22.52,20.81,22.52,6,2.0,Door
+Built-in freezer/refrigerator - Remove & reset,EA,730.16,730.16,730.16,730.16,6,1.0,Appliances
+Bypass (sliding) door set - Colonist,EA,299.35,299.35,299.35,330.66,6,1.0,Door
+Cabinetry - lower (base) units - Premium grade,LF,479.72,479.72,479.72,479.72,6,18.5,Cabs
+Carpet - Premium grade,SF,0.88,0.88,0.88,0.88,6,201.5,Carpet
+Carpet pad - Premium grade,SF,0.11,0.11,0.11,0.11,6,126.65,Carpet
+Carpet pad - per specs from independent pad analysis,SF,0.83,0.14,0.14,0.83,6,82.62,Flooring
+"Casing - 2 1/4"" stain grade",LF,3.36,3.26,3.26,3.46,6,17.0,Baseboard and Casing
+"Ceramic tile - bullnose - 3/4"" x 6""",LF,11.08,8.37,8.37,11.3,6,12.25,Tile Walls
+"Chair rail - 2 1/2""",LF,3.94,3.94,3.94,3.94,6,37.53,Baseboard and Chair Rail
+Clean ceiling fan and light,EA,45.32,45.32,34.47,45.32,6,1.0,
+Clean floor - tile - Heavy clean,SF,1.38,1.38,1.38,1.38,6,47.09,Tile floor and base
+Clean floor and prep for overlay of subfloor,SF,1.74,1.74,1.74,1.74,6,65.67,Tile Floor
+Clean recessed light fixture,EA,18.47,15.5,15.5,18.47,6,5.0,
+Closet Organizer - Melamine,LF,100.5,100.5,100.5,100.5,6,28.73,Shelving
+"Column - round cast fiberglass - 8"" diameter",LF,46.43,46.43,46.43,46.43,6,7.5,Post
+"Cove base molding - rubber or vinyl, 2 1/2"" high",LF,2.79,2.79,2.79,2.79,6,37.5,Cove Base
+"Detach & Reset Baseboard - 4 1/4"" w/shoe - stain grade",LF,4.17,4.17,4.17,4.17,6,46.77,Baseboard
+"Detach & Reset Baseboard heat cover - steam/hot water - 61""- 84"" long",EA,18.71,18.71,18.71,18.71,6,1.0,HVAC
+Detach & Reset Bypass (sliding) door set - Colonist,EA,28.16,28.16,28.16,37.93,6,1.0,Door
+Detach & Reset Refrigerator - compact (under counter),EA,80.47,80.47,80.47,80.47,6,1.0,Appliances
+Detach & Reset Tub/shower faucet,EA,134.48,134.48,132.7,134.48,6,1.0,Tub/Shower
+"Door jamb per LF - interior - hardwood - 4 9/16""",LF,6.79,6.79,6.79,6.79,6,35.0,Doors and Casing
+Emergency service call - during business hours,EA,235.96,237.27,232.01,239.76,6,1.0,General
+Final cleaning - construction - Commercial 32,SF,0.33,0.33,0.33,0.33,6,13513.0,
+Fluorescent light fixture - 6' & 8' - Detach & reset,EA,157.99,157.99,157.99,157.99,6,1.0,Electrical
+Handrail - detailed profile - hardwood - wall mounted,LF,20.94,20.94,20.94,20.94,6,20.5,Hand Rails
+Hanging light fixture,EA,109.0,116.29,108.93,116.29,6,2.0,Electrical
+Heat/AC register - Mechanically attached - Reset,EA,22.47,18.23,18.23,22.47,6,2.0,HVAC
+Install Fiberglass shower unit - Standard grade,EA,458.89,507.04,458.89,507.04,6,1.0,Plumbing
+Install P-trap assembly - ABS (plastic),EA,78.42,84.85,70.61,84.85,6,1.0,Vanity
+Material Only Tile floor covering - per specs from ind. tile analysis,SF,3.53,3.53,3.53,3.53,6,147.86,Tile Floor
+Mirror/shower door labor minimum,EA,60.86,60.86,52.86,177.41,6,1.0,
+P-trap assembly - Reset,EA,106.68,65.45,65.45,106.68,6,1.0,Vanity
+Paint paneling - one coat,SF,0.94,0.94,0.94,0.94,6,12.26,Fireplace
+"R&R 220 volt copper wiring run, box and receptacle",EA,226.26,226.26,226.26,226.26,6,1.0,Electrical
+R&R Carpet tile 40,SF,4.84,4.84,4.84,4.84,6,12705.0,Carpet
+R&R Ceramic tile base - High grade,LF,38.15,38.15,38.15,38.15,6,17.78,Tile Base
+R&R Engineered wood flooring,SF,13.72,13.72,13.72,13.72,6,117.09,Engineered Hardwood
+R&R Fluorescent - one tube - 4' - strip light,EA,137.07,137.07,137.07,174.04,6,1.0,Electrical
+R&R Snaplock Laminate - per specs from independent analysis,SF,8.4,8.4,8.4,8.4,6,128.84,Flooring
+"R&R Stud wall - 2"" x 4"" x 8' - 16"" oc",LF,25.03,24.5,23.37,26.69,6,9.71,Framing
+R&R Tile shower - 61 to 100 SF - High grade,EA,4406.68,4406.68,3179.52,4406.68,6,1.0,Shower
+Remove Bathtub,EA,105.31,105.31,105.31,106.23,6,1.0,Shower
+Remove Ceramic tile base,LF,2.93,2.97,2.93,2.97,6,30.83,Baseboard
+Remove Countertop - Tile,SF,4.15,4.15,4.15,4.2,6,16.0,Countertops
+Remove Mortar bed for tile floors,SF,1.93,3.78,1.93,3.78,6,111.45,Tile
+Remove Oak flooring - select grade - no finish,SF,4.13,4.13,4.13,4.13,6,208.3,Flooring
+Remove Tile shower - 61 to 100 SF - High grade,EA,297.57,319.12,276.02,319.12,6,0.75,Standing Shower + Drywall
+"Remove Underlayment - 1/4"" BC plywood",SF,1.97,1.97,1.97,1.97,6,20.41,Flooring
+"Remove Underlayment - 1/4"" lauan/mahogany plywood",SF,1.96,1.96,1.96,1.96,6,16.0,Flooring
+Remove wet ceiling tile & drywall and bag for disposal,SF,1.76,1.76,1.76,1.76,6,31.0,Demo
+Respirator cartridge - HEPA only (per pair),EA,18.11,17.71,17.71,23.02,6,2.0,Personal Protective Equipment
+Saltillo floor tile - per specs from ind. tile analysis,SF,21.23,18.85,18.85,21.23,6,55.78,Tile
+Scrape floor and prep for install,SF,0.64,0.64,0.64,0.94,6,32.13,Tile Floor
+Seal 1 coat & paint 1coat French door slab only (per side),EA,83.58,83.58,83.58,83.58,6,2.0,Door and Casing
+Seal 1coat & paint 1coat bypass dr set-slab only(per side),EA,51.9,51.9,51.9,51.9,6,2.0,Door and Casing
+Seal the walls with shellac/stain blocker - one coat,SF,0.82,0.82,0.82,0.82,6,341.83,Structure Seal and Paint
+Seal/prime (1 coat) then paint (1 coat) the ceiling,SF,1.09,4.73,1.06,4.73,6,51.76,Paint
+Shower door system - Reset,EA,289.12,288.64,284.89,294.46,6,1.0,Shower
+Sink faucet - Bathroom,EA,270.88,254.19,205.76,287.58,6,1.0,Vanity
+Sink faucet - Kitchen - High grade,EA,453.66,453.66,453.66,453.66,6,1.0,Cabs
+Solid odor counteractant - crystal or solid block,DA,32.87,32.87,32.87,32.87,6,1.0,Cat 3 Mitigation
+Stain & finish column,LF,7.2,7.2,7.2,7.2,6,7.5,Post
+Stain & finish stair skirt/apron,LF,9.05,9.05,9.05,9.05,6,20.0,Balustrade and Hand rails
+Stair riser - up to 4',EA,23.44,23.44,23.44,23.44,6,15.0,Stair Trim
+Stairway skirt board charge for carpet installation,LF,5.45,5.15,5.15,5.58,6,20.5,Carpet
+"Tear out non-salv. solid/eng. wood flooring, no bagging",SF,4.5,4.5,4.5,4.5,6,67.63,
+Tear out non-salvageable cement board & bag for disposal,SF,1.9,1.89,1.89,1.94,6,38.55,Demo
+Tear out tackless strip and bag for disposal,LF,1.47,1.47,1.47,1.49,6,14.5,Demo
+Trim - Detach,LF,1.34,1.34,1.34,1.34,6,14.0,Demo
+"Trim board - 1"" x 10"" - installed (hardwood - oak or =)",LF,14.19,14.19,14.19,14.19,6,30.0,Balustrade and Hand rails
+Tub/shower faucet,EA,369.17,369.17,369.17,382.38,6,1.0,Plumbing
+"Underlayment - 1/4"" lauan/mahogany plywood",SF,2.77,2.77,2.77,2.77,6,16.0,Flooring
+"Underlayment - 5/8"" particle board",SF,2.25,2.25,2.25,2.25,6,100.2,Tile
+Vanity - Reset,LF,42.51,42.13,42.13,46.38,6,6.33,Vanity
+Vanity with countertop - Reset,LF,53.63,53.43,53.43,54.35,6,2.0,Vanity
+Vinyl floor covering (sheet goods) - High grade,SF,5.25,5.25,5.25,5.25,6,34.94,Flooring
+"Wall cleanout cover - 3"" - 4""",EA,21.64,21.64,21.64,21.64,6,1.0,Plumbing
+"Window blind - PVC - 1"" - 14.1 to 20 SF",EA,89.56,89.56,89.56,134.94,6,1.0,Window Finishes
+Base cap or shoe / Quarter round - Reset,LF,2.01,2.01,2.01,2.01,5,68.51,Baseboard
+"Baseboard - 4 1/4"" stain grade",LF,6.22,6.26,6.22,6.26,5,20.78,Baseboard
+"Baseboard - 6"" MDF - flat profile",LF,5.69,7.97,5.69,7.97,5,19.0,Baseboard and casing
+"Batt insulation - 6"" - R21 - paper / foil faced",SF,1.96,1.96,1.96,1.96,5,1173.81,Insulation
+Cabinet knobs or pulls - Detach & reset,EA,3.22,3.11,3.11,3.22,5,24.0,Cabinets
+Cabinetry - full height unit,LF,379.47,373.8,373.21,379.47,5,3.0,Cabs
+Cabinetry - full height unit - Standard grade,LF,221.16,221.16,221.16,221.16,5,2.0,Cabinets
+Claw-foot tub - Reset,EA,1163.63,1163.63,1163.63,1163.63,5,1.0,Plumbing
+Claw-foot tub/shower faucet (finish trim) - Detach & reset,EA,278.26,278.26,278.26,278.26,5,1.0,Plumbing
+Clean countertop,SF,1.28,1.08,1.08,1.28,5,15.0,
+Clean the walls and ceiling - Heavy,SF,1.23,0.78,0.78,1.23,5,178.03,prior to abatement activities.
+Clean trim - wood,LF,0.58,0.51,0.51,0.64,5,14.0,Casing
+Cold air return cover - Detach & reset,EA,28.09,28.09,28.09,31.21,5,1.0,Structure Seal and Paint
+Cold air return cover - Reset,EA,28.13,31.6,28.13,31.6,5,1.0,HVAC
+Content Manipulation (Bid Item),EA,5043.77,5714.0,600.0,6000.0,5,1.0,Contents
+Countertop - flat laid plastic laminate - Reset,LF,13.43,13.43,10.55,13.43,5,5.0,Countertop
+Crown molding - Detach & reset,LF,4.6,4.6,4.6,4.61,5,78.98,Baseboard and trim
+Dehumidifier (per 24 hr period)- up to 69 ppd- No monitor.,EA,60.35,57.64,57.64,60.35,5,9.0,Equipment
+Detach & Reset Baseboard heat - steam or hot water,LF,19.78,19.78,19.78,19.78,5,15.0,HVAC
+Detach & Reset Towel bar,EA,22.76,22.76,22.76,23.25,5,1.0,Finish Hardware
+Door lockset & deadbolt - exterior,EA,102.09,101.4,101.4,102.09,5,1.0,Doors and Casings
+Door lockset - exterior,EA,60.63,60.32,60.32,60.63,5,1.0,Doors and Casing
+Dryer - Reset,EA,49.99,49.99,49.99,49.99,5,1.0,Appliances
+Floor Prep - Skim Coat Over Glue,EA,2.0,2.0,2.0,2.0,5,184.78,Carpet
+Floor drain - tub/shower - metal/plastic,EA,57.08,57.08,55.01,68.1,5,1.0,Shower
+"Header - engineered strand lumber - 5 1/4"" x 11 7/8""",LF,48.26,48.3,48.26,48.3,5,28.0,Framing
+Install Engineered wood flooring,SF,3.59,3.59,3.59,3.59,5,26.13,Flooring
+Install Kitchen Sink - single basin,EA,193.94,164.86,164.86,193.94,5,1.0,Cabinets & Sink
+Install Mosaic - ceramic/porcelain tile,SF,13.57,14.57,13.57,14.57,5,12.0,Shower
+Install Shower door system - Reset,EA,276.49,276.49,276.49,276.49,5,1.0,Plumbing
+Install Toilet paper holder,EA,16.79,16.79,16.79,18.4,5,1.0,Finishes
+Install Vinyl - metal transition strip,LF,1.6,1.6,1.6,1.6,5,3.0,Flooring
+Installation of access panel,HR,90.54,90.54,90.54,90.54,5,1.0,Baseboard
+"Light weight, gypsum concrete - 1/2"" thick",SF,2.65,2.65,2.65,2.65,5,42.1,Flooring
+Paneling labor minimum,EA,84.02,84.02,65.56,159.6,5,1.0,
+Plumber - per hour,HR,155.68,250.0,155.0,250.0,5,2.0,Tub/Shower
+Prime & paint exterior soffit - wood,SF,2.49,2.49,2.49,2.56,5,284.0,Fascia and Soffit
+"R&R Batt insulation - 6"" - R19 - paper / foil faced",SF,1.91,1.91,1.91,1.91,5,18.0,Insulation
+R&R Carpet - metal transition strip,LF,4.47,4.44,4.44,4.47,5,9.0,Carpet
+R&R Carpet pad - High grade,SF,1.0,1.0,1.0,1.16,5,216.8,Carpet
+R&R Ceramic/porcelain tile,SF,20.69,15.04,15.04,25.97,5,40.0,Backsplash
+"R&R Concrete slab on grade - 8"" - finished in place",SF,21.84,22.1,21.84,22.1,5,1040.12,Concrete
+R&R Door stop - spring stop - mounted on baseboard,EA,15.04,15.04,15.04,15.04,5,1.0,Baseboard
+R&R Heat/AC register - Floor register,EA,24.4,36.85,24.4,36.85,5,1.0,HVAC
+"R&R Sheathing - OSB - 5/8""",SF,2.8,2.8,2.77,2.8,5,160.0,Subfloor
+"R&R Steel door, 3' x 7'",EA,571.62,571.62,571.62,571.62,5,3.0,Door
+R&R Tile framed shower curb - per LF,LF,173.82,173.82,173.82,188.68,5,4.0,Shower
+"R&R Underlayment - 1/2"" particle board",SF,4.06,4.06,4.06,4.06,5,29.63,Flooring
+Range - gas - Remove & reset,EA,210.56,215.87,156.59,215.87,5,1.0,Appliances
+Remove Tackless strip - per LF,LF,0.71,0.71,0.71,0.72,5,32.01,Flooring
+Remove Tile - toilet paper holder,EA,7.16,7.16,7.16,7.17,5,1.0,Finish Hardware
+Repair and reattach the sheathing and panel,HR,90.39,90.39,90.39,90.39,5,4.0,
+Seal & paint window sill,LF,2.86,2.86,2.86,3.04,5,8.0,Window Sill
+Seal/prime (1 coat) then paint (1 coat) the walls and ceiling,SF,1.09,1.09,1.09,1.09,5,157.43,Paint
+"Sheathing - OSB - 3/4"" - tongue and groove",SF,3.62,3.62,2.74,3.62,5,63.73,Flooring
+Shower light - waterproof fixture,EA,226.5,226.5,226.5,226.5,5,1.0,Electrical
+Sink - single - Detach & reset,EA,214.74,214.74,207.64,216.84,5,1.0,Vanity
+Stain & finish door/window trim & jamb - Large (per side),EA,57.1,57.1,57.1,57.1,5,1.0,Trim
+Tear off painted acoustic ceiling (popcorn) texture,SF,1.28,1.28,1.28,1.28,5,21.24,Drywall
+Tear out asbestos vinyl tile floor covering-Double bag for Disposal,SF,5.5,5.5,5.5,5.5,5,66.21,
+Tear out non-salv. tile & bag for disposal,SF,4.48,4.39,4.39,4.48,5,48.0,Demo
+"Tear out wet drywall, cleanup,",LF,7.96,7.96,7.96,7.96,5,23.97,Demo
+"Tear out wet drywall, cleanup, bag, per LF - to 4' - Cat 3",LF,11.05,11.05,11.05,14.86,5,40.1,prior to abatement activities.
+Tile floor covering - Premium grade,SF,22.94,26.05,10.7,26.05,5,57.29,Tile Floor
+"Underlayment - 1/4"" 5 ply",SF,3.45,3.45,3.45,3.45,5,73.31,Flooring
+Wallpaper,SF,2.72,2.72,2.72,2.8,5,146.67,Wallpaper
+Washer/Washing machine - Reset,EA,32.42,32.32,32.32,32.72,5,1.0,Appliances
+Waterproof panel shower surround w/trim - up to 98 SF,EA,479.45,479.45,399.1,503.81,5,1.0,Shower
+Window sill,LF,3.62,3.62,3.6,3.62,5,8.0,Window Sill
+Windows - Vinyl (Bid Item),EA,1668.57,1600.0,1178.9,7150.0,5,1.0,Window Supplement
+Add for prefinished crown molding - w/detail per LF,LF,14.5,14.5,14.5,14.5,4,17.83,Cabinets
+Additional cost for high wall or ceiling - 11' to 14',SF,0.07,0.07,0.06,0.07,4,350.0,Paint
+Apply plant-based anti-microbial agent to the floor - after hrs,SF,0.59,0.59,0.59,0.59,4,102.41,Demo
+Asphalt starter - universal starter course,LF,2.93,2.93,2.93,2.93,4,179.0,Roof
+Backsplash - flat laid plastic laminate - Reset,LF,2.1,2.1,2.1,2.78,4,5.5,Vanity
+Backsplash - solid surface - Unattached,LF,15.78,22.09,15.78,22.09,4,9.17,Cabs
+Baffle vent - plastic,LF,1.64,1.64,1.64,1.64,4,71.38,Insulation
+Balustrade,LF,138.67,139.65,137.68,139.65,4,8.0,Balustrade and Trim
+"Baseboard - 2 1/4"" MDF - flat profile",LF,3.26,3.26,3.26,3.26,4,42.08,Baseboard
+"Baseboard - 8"" paint grade - 2 piece",LF,8.47,8.47,8.47,8.47,4,7.5,Baseboard and Casing
+Baseboard - Detach & reset - multi- member,LF,3.98,3.98,3.98,3.98,4,49.59,Baseboard and Casing
+Bathroom ventilation fan,EA,140.61,146.13,140.61,146.13,4,1.0,Electrical
+"Batt insulation - 12"" - R38 - unfaced batt",SF,1.92,2.25,1.59,2.25,4,42.72,Insulation
+Bypass (sliding) door set - panel,EA,543.1,543.1,543.1,543.1,4,1.0,Door
+Cabinet knob or pull,EA,9.65,9.65,9.65,9.98,4,11.0,Cabinets
+Chandelier,EA,291.39,291.39,291.39,291.39,4,1.0,Electrical
+Clean bathroom fan,EA,49.02,44.42,44.42,49.02,4,1.0,
+Clean ductwork - Interior - Heavy clean (PER REGISTER),EA,52.68,49.39,49.39,55.97,4,26.0,Scaffolding
+Clean mirror,SF,1.23,1.23,1.23,1.23,4,11.75,
+Clean more than the walls and ceiling - Heavy,SF,1.23,1.23,1.23,1.23,4,327.43,consists of walls and floors covered with two layers of poly sheeting and one layer of poly on the ceiling.
+Clean the walls and ceiling - Light,SF,0.46,0.46,0.46,0.46,4,496.56,
+Clean with pressure/chemical spray,SF,0.54,0.55,0.43,0.55,4,1280.0,General
+Contents - Reset - Large room,EA,198.13,198.13,198.13,198.13,4,1.0,Contents
+Corner trim - Detach & reset,LF,2.4,2.4,2.4,2.4,4,24.0,Wall Paneling
+Countertop - Granite or Marble,SF,78.37,78.37,73.46,90.69,4,15.12,Vanity
+Countertop - flat laid plastic laminate - High grade,LF,51.97,48.36,48.36,51.97,4,3.0,Built-in Shelving
+Countertop - solid surface/granite - Reset,SF,17.85,17.85,17.75,17.85,4,6.67,Vanity
+Custom cabinets - vanity units - High grade,LF,390.79,389.52,389.52,390.79,4,9.0,Vanity
+Custom shower door & partition - frameless- Detach & reset,SF,17.28,17.28,17.28,17.28,4,24.0,Shower
+"Detach & Reset Baseboard heat cover - steam/hot water - 12""- 36"" long",EA,18.67,18.63,18.63,18.71,4,1.0,Flooring
+Detach & Reset Downdraft vent,EA,579.71,579.71,579.71,579.71,4,1.0,Appliances
+Detach & Reset In-wall / In-ceiling speaker,EA,24.67,24.67,24.67,24.67,4,1.0,Electrical
+"Detach & Reset Mirror - 1/4"" plate glass",SF,8.88,8.88,8.88,8.88,4,8.0,Paint
+Drape roll insulation - vinyl faced - R11,SF,1.0,1.0,1.0,1.0,4,46.33,Insulation
+Exterior door slab - Detach & reset,EA,31.67,30.96,30.96,32.38,4,1.0,Baseboard
+Final cleaning - construction - Residential LLaauunnddrryy RRoooomm,SF,0.4,0.4,0.28,0.4,4,156.26,Cleaning
+"Floor drain - PVC - 2"" to 4""",EA,207.25,207.25,207.25,207.25,4,1.0,Plumbing
+Floor prep (scrape rubber back,SF,0.63,0.63,0.63,0.63,4,156.25,Carpet
+Floor prep (scrape rubber back residue) and skim coat,SF,2.0,2.0,2.0,2.0,4,122.2,Carpet
+Fluorescent light fixture - 2' & 4' - Detach & reset,EA,97.56,97.56,97.56,97.56,4,1.0,Light Fixture
+Frame in Shower Curb,HR,62.12,62.12,62.12,62.12,4,2.0,Shower
+"Furnace - heavy clean, replace filters and service - w/ AC",EA,679.84,689.47,670.21,689.47,4,1.0,HVAC
+Ice & water barrier,SF,2.58,2.57,2.57,2.58,4,559.5,Roof
+Install Access Panel for Shutoff - spring loaded plastic,HR,115.0,115.0,115.0,115.0,4,1.0,Plumbing
+"Install Baseboard - 7 1/4"" hardwood - molded w/intricate detail",LF,3.09,3.09,3.09,3.09,4,6.0,Base and Casing
+Install Cabinet knob or pull,EA,6.17,6.07,6.07,6.17,4,14.0,Cabinets & Sink
+Install Cabinetry - full height unit,LF,61.2,61.14,60.62,61.26,4,3.0,Cabinets & Sink
+Install Carpet,SF,1.21,0.99,0.94,1.44,4,112.5,Carpet
+Install Electrical panel cover,EA,31.88,33.62,29.41,33.62,4,1.0,Electrical
+Install Light bar - 3 lights,EA,112.5,81.08,81.08,143.91,4,1.0,Electrical
+Install Light fixture,EA,54.11,54.11,54.11,105.63,4,2.0,Lights
+Install Mirror - framed,SF,6.56,6.56,6.54,6.89,4,1.0,Finishes
+Install Plumbing fixture supply line,EA,17.52,19.78,16.18,19.78,4,2.0,Plumbing
+Install Shower curtain rod,EA,18.11,18.11,18.11,18.11,4,1.0,Shower
+Install Shower pan - Remove and replace,EA,147.3,147.3,147.3,147.3,4,1.0,Plumbing
+Install Sink - single,EA,163.37,130.91,130.91,175.77,4,1.0,Vanity
+Install Tile floor covering - Premium grade,SF,10.72,12.33,9.12,12.33,4,63.88,Tile Floor
+Install Toilet,EA,324.64,270.17,270.17,371.02,4,1.0,Baseboard and Casing
+"Interior double door, 8' - Colonist - pre-hung unit",EA,829.33,829.33,829.33,829.33,4,1.0,Door and Casing
+"Joist - floor or ceiling - 2x10 - w/blocking - 16"" oc",SF,4.54,4.54,4.54,4.54,4,283.06,Deck - 12'x12' located on back side of garage
+Laminated - comp. shingle rfg. - w/out felt,SQ,381.04,385.25,376.83,385.25,4,18.0,Roof
+Light bar - 6 lights,EA,124.84,124.84,124.84,124.84,4,1.0,Electrical
+Mask the ceiling perimeter per square foot - plastic and tape - 4 mil,SF,0.28,0.28,0.28,0.28,4,64.5,Dust Control
+"Material Only 2"" x 4"" lumber (.667 BF per LF)",LF,0.66,0.61,0.61,0.71,4,18.0,Drywall
+"Material Only Light weight, gypsum concrete - 1/2"" thick",SF,1.32,1.32,1.32,1.32,4,13.27,Gyp-crete
+"Material Only Sheathing - OSB - 5/8""",SF,0.83,0.83,0.83,0.83,4,32.0,Flooring
+"Material Only Underlayment - 1/2"" particle board",SF,1.05,1.05,1.05,1.05,4,32.0,Flooring
+Mirror - plate glass - Detach & reset,SF,8.52,8.48,8.48,8.56,4,25.34,Vanity
 Outlet,EA,37.16,37.16,37.16,37.16,4,1.0,Electrical
+Outlet or switch - Detach & reset,EA,25.71,27.02,24.1,27.02,4,2.0,Electrical
+Overhead (garage) door opener,EA,514.72,512.91,512.91,516.54,4,1.0,Garage door
+Paint French door slab only - 2 coats (per side),EA,84.21,84.21,84.21,84.21,4,2.0,Doors
+"Paint baseboard, oversized - two coats",LF,1.99,2.15,1.73,2.15,4,16.09,Baseboard
+Poured Shower Pan,EA,1202.5,1202.5,1202.5,1202.5,4,1.0,Shower
+"R&R 1/2"" - drywall per LF - up to 2' tall",LF,15.65,15.65,15.65,15.65,4,18.33,Drywall
+"R&R 1/2"" drywall - hung & fire taped only",SF,3.06,3.06,3.06,3.06,4,186.78,Drywall
+"R&R 5/8"" - drywall per LF - up to 4' tall",LF,22.82,22.82,22.82,22.82,4,14.0,Drywall
+R&R Base shoe,LF,2.13,1.85,1.85,2.42,4,5.5,Baseboard
+"R&R Baseboard - 3 1/4"" stain grade",LF,5.04,5.04,5.04,5.04,4,24.62,Crown and Casing
+"R&R Baseboard - 4 1/4""",LF,5.94,5.92,5.92,5.95,4,34.25,Baseboard
+"R&R Batt insulation - 10"" - R30 - unfaced batt",SF,2.45,2.45,2.45,2.45,4,6.0,Drywall
+R&R Ceiling fan & light,EA,441.5,441.5,441.5,441.5,4,1.0,HVAC
+"R&R Ceramic tile - bullnose - 3/4"" x 6"" - High grade",LF,17.53,19.08,15.98,19.77,4,16.0,Shower
+"R&R Door jamb per LF - interior - hardwood - 4 9/16""",LF,7.27,7.27,7.27,7.27,4,24.0,Doors and Casing
+R&R Drip edge/gutter apron,LF,4.8,4.79,4.79,4.81,4,139.0,Roof
+R&R Exterior door - metal - insulated - flush or panel style,EA,711.59,534.36,534.36,711.59,4,1.0,Exterior Door and Trim
+R&R Exterior door slab - metal - insulated - flush or panel,EA,498.03,498.03,498.03,498.03,4,1.0,Doors
+"R&R Gutter / downspout - aluminum - up to 5""",LF,11.84,11.84,11.84,11.84,4,62.0,Gutters
+R&R House wrap (air/moisture barrier),SF,0.63,0.63,0.63,0.63,4,188.5,Siding
+R&R Parquet flooring,SF,15.5,15.5,15.5,15.5,4,12.24,Flooring
+"R&R Sheathing - plywood - 3/4"" - tongue and groove",SF,5.58,5.73,5.43,5.73,4,20.0,Subfloor
+R&R Soffit - box framing - 2' overhang,LF,14.25,14.03,14.03,14.46,4,235.0,Fascia and Soffit
+R&R Thermostat,EA,136.17,136.17,136.17,136.17,4,1.0,HVAC
+R&R Tile floor covering - High grade,SF,24.63,24.63,24.63,24.63,4,27.04,Tile
+R&R Truss - 6/12 slope,LF,13.61,13.61,13.61,13.61,4,568.5,Trusses
+Re-skin toe kick,LF,12.39,12.39,9.82,12.39,4,6.0,Vanity
+"Remove 5/8"" drywall - hung, taped, ready for texture",SF,0.55,0.55,0.55,0.55,4,106.5,Drywall
+Remove Countertop subdeck - plywood,SF,0.93,0.93,0.93,0.93,4,16.0,Countertops
+"Remove Custom shower door & partition - 1/4"" glass w/frame",SF,2.66,2.66,2.66,2.66,4,40.0,Demo of Shower
+Remove Mortar bed for tile,SF,2.37,2.34,2.34,2.39,4,12.0,Shower
+Remove Shower base,EA,48.36,48.36,48.36,48.69,4,1.0,Demo
+"Remove Stud wall - 2"" x 4"" x 8' - 16"" oc",LF,2.43,2.43,2.43,2.43,4,5.5,Framing
+Remove Tile shower - 121 to 150 SF - High grade,EA,378.03,378.03,378.03,378.03,4,0.75,Shower
+Remove Tile shower - 61 to 100 SF,EA,273.09,272.14,272.14,276.95,4,0.88,Shower
+"Remove Underlayment - rubber - 1/4"" - 3/8"" - Floating",SF,0.21,0.21,0.21,0.21,4,222.47,Flooring
+Remove Vanity with cultured marble or solid surface top,LF,13.17,13.17,13.17,13.17,4,3.0,Vanity
+Remove Vapor barrier - visqueen - 6mil,SF,0.14,0.12,0.12,0.16,4,212.06,Engineered Hardwood
+Remove Wallpaper,SF,0.64,1.17,0.64,1.17,4,28.17,Wallpaper
+Respirator - Half face - multi- purpose resp. (per day),DA,1.67,1.67,1.67,1.67,4,2.0,Personal Protective Equipment
+Rug Cleaning for 3 rugs,SF,3.0,3.0,3.0,3.0,4,96.0,Rug Cleaning
+Scaffold - per section (per day),DA,27.74,27.74,27.74,27.74,4,240.0,Scaffolding
+Scaffolding Setup & Take down - per hour,HR,62.88,62.12,62.12,62.88,4,8.0,Scaffolding
+Seal (1 coat) & paint (1 coat) trim,LF,1.65,1.6,1.6,1.79,4,17.5,Screen Door Replacement
+Seal and Paint halfwall cap and trim,LF,4.45,4.45,4.45,4.45,4,10.0,Halfwall trim and cap
+Seal more than the walls with shellac/stain blocker - one coat,SF,0.85,0.85,0.85,0.85,4,385.62,Smoke Seal
+Shelving - wire (vinyl coated) - Detach,LF,11.31,11.31,11.31,12.54,4,4.0,Demo
+Shower curtain rod - Reset,EA,22.12,22.12,22.12,22.12,4,1.0,Shower
+Shower door system - corner unit - Reset,EA,591.21,591.21,591.04,591.21,4,1.0,Shower
+Shower faucet - High grade,EA,352.47,352.47,352.47,352.47,4,1.0,Shower
+Sink - single - Reset,EA,155.9,155.9,130.93,155.9,4,1.0,Vanity
+Sink - single basin - Detach,EA,45.32,45.09,45.09,45.32,4,1.0,Cat 3 Mitigation
+Sink faucet - Detach & reset,EA,171.62,171.62,154.56,180.01,4,1.0,Vanity
+Sink faucet - Kitchen,EA,325.73,300.19,300.19,325.79,4,1.0,Cabs
+"Sprayed polyurethane foam - open cell - 6""",SF,3.92,3.92,3.92,3.92,4,77.98,Insulation
+Stain & finish baseboard - oversized,LF,2.12,2.12,2.01,2.12,4,8.84,Base and Casing
 Switch,EA,37.86,37.86,37.86,37.86,4,1.0,Electrical
-Tape joint for new to existing drywall - per LF,LF,8.28,11.11,8.28,11.11,4,25.5,Drywall
-Acoustic ceiling (popcorn) texture,SF,1.3,1.3,1.3,1.3,3,45.75,Drywall
-Baseboard - Detach & reset,LF,3.43,3.45,3.43,3.45,3,61.71,Baseboard
-Caulking - silicone,LF,2.93,2.93,2.92,2.93,3,30.0,Baseboard
-Floor protection - heavy paper and tape,SF,0.52,0.43,0.43,0.52,3,251.49,Engineered Hardwood
-Garbage disposer - Detach & reset,EA,285.98,285.98,285.98,285.98,3,1.0,Cabinets & Sink
-Haul debris - per pickup truck load - including dump fees,EA,216.73,216.73,211.64,243.65,3,2.0,General
-Install Cabinet knob or pull,EA,6.17,6.17,6.17,6.17,3,14.0,Cabinets & Sink
-Install Cabinetry - lower (base) units,LF,48.45,48.45,48.45,48.45,3,6.0,Cabinets & Sink
-Install Cabinetry - upper (wall) units,LF,48.45,48.45,48.45,48.45,3,12.0,Cabinets & Sink
-Install Countertop - flat laid plastic laminate,LF,16.71,16.71,16.71,16.71,3,6.0,Cabinets & Sink
-Install Kitchen Sink - single basin,EA,193.94,193.94,193.94,193.94,3,1.0,Cabinets & Sink
-Plumbing labor minimum,EA,132.81,34.22,34.22,161.56,3,1.0,
-"1/2"" - drywall per LF - up to 2' tall",LF,12.45,12.45,12.45,12.45,2,7.0,Drywall
-"Baseboard - 5 1/4""",LF,6.35,6.35,6.35,6.35,2,7.5,Baseboard
-Baseboard - Reset,LF,1.4,1.4,1.4,1.4,2,7.5,Baseboard
-"Batt insulation - 6"" - R19 - paper / foil faced",SF,1.5,1.5,1.5,1.5,2,9.0,Insulation
+Tear out non-salvageable tile floor & bag for disposal,SF,5.52,5.54,5.52,5.54,4,15.0,Demo
+Tile shower - 101 to 120 SF,EA,3423.55,3423.55,3423.55,4520.92,4,0.75,Shower
+Toe kick - Reset,LF,9.47,9.47,9.47,9.47,4,6.67,Vanity
+Toilet & bath accessory labor minimum,EA,126.46,101.66,101.66,149.07,4,1.0,
+"Trim board - 1"" x 6"" - installed (pine)",LF,6.71,6.22,6.22,7.21,4,14.71,Paneling
+"Vinyl-faced/laminated insulation - 2""",SF,2.33,2.33,2.33,2.33,4,68.34,Insulation
+Washing machine - Reset,EA,450.0,450.0,168.01,450.0,4,1.0,Appliances
+Water Heater / Hvac detach,EA,3095.0,3095.0,3095.0,3095.0,4,1.0,Water heater / Hvac
+Water extraction from carpeted floor - Category 3 water,SF,1.6,1.6,1.6,1.6,4,162.69,Cat 3 Mitigation
+Water line copper cap/plug - per cap,EA,31.17,31.17,31.17,31.17,4,2.0,Vanity
+Wood Floor Covering Installer - per hour,HR,75.25,74.68,74.68,80.0,4,2.0,Prefinished Hardwood Floors
+cardboard and tape - tub protection,SF,0.64,0.64,0.64,0.64,4,40.0,Tub/Shower
+"1/2"" drywall - hung, taped, floated, ready for paint",SF,3.19,3.19,3.19,3.27,3,4.0,Drywall
+Add for glued down vinyl plank appl. over wood substrate,SF,0.43,0.43,0.43,4.66,3,56.97,LVP
+Add for lacing/weaving hardwood flooring - per LF,LF,42.48,42.48,42.48,42.65,3,8.0,Hardwood
+Add-on for tile feature strip - High grade,LF,16.3,16.3,16.3,16.3,3,11.0,Shower
+Apply plant-based anti-microbial,SF,0.41,0.42,0.41,0.42,3,646.63,Hepa Sandwich
+Balustrade - Detach & reset - High grade,LF,153.84,153.84,153.84,153.84,3,18.0,Hand Rail and Balusters
+Bathtub - Reset,EA,529.0,529.0,529.0,529.0,3,1.0,Tub/Shower
+Bathtub encl. - sliding glass door system - Reset,EA,274.08,274.08,274.08,274.08,3,1.0,Tub/Shower
+"Batt insulation - 8"" - R25 - unfaced batt",SF,1.67,1.67,1.67,1.67,3,393.04,Insulation
+Bifold door set - solid core - half louvered - Double,EA,577.23,577.23,577.23,577.23,3,1.0,Doors and Casing
+Board-up windows and doors,SF,2.2,2.2,2.13,2.2,3,6.0,Demo
+"Bookcase - built in - 12"" - (SF of face area)",SF,20.66,20.66,20.66,20.66,3,32.0,Built-in Shelving
+Built-in double oven - High grade,EA,3056.39,3056.39,3056.39,3056.39,3,1.0,Appliances
+Cabinet knobs or pulls - Reset,EA,3.22,3.22,3.22,3.22,3,23.0,Cabinets
+Carpet - Standard grade,SF,2.87,3.02,2.87,3.02,3,132.41,Carpet
+Carpet cleaning - Minimum charge,EA,282.08,282.08,266.0,282.08,3,1.0,Carpet
+Carpet pad - Standard grade,SF,0.45,0.48,0.45,0.48,3,64.32,Carpet
+Ceiling fan - Detach & reset,EA,239.34,239.34,239.34,239.34,3,1.0,Electrical
+"Ceramic tile - bullnose - 3/4"" x 6"" - High grade",LF,13.26,13.26,13.02,13.26,3,16.0,Shower
+Ceramic tile base,LF,30.98,30.98,30.98,30.98,3,9.0,Tile Base
+Ceramic/porcelain tile - High grade,SF,25.82,25.82,25.82,25.82,3,7.8,Vanity
+Clean bath accessory,EA,12.37,12.37,12.37,12.37,3,1.0,
+Clean carpet - cleaning charge per step,EA,7.23,7.23,6.26,7.23,3,14.0,Carpet
+Clean ceiling fan and light - Heavy,EA,59.41,59.41,59.41,59.41,3,1.0,
+Clean cold air return cover,EA,15.15,15.15,15.15,15.15,3,1.0,
+Clean door (per side) - Light,EA,9.0,9.0,9.0,9.0,3,2.0,
+Clean door / window opening per EA (per side),EA,22.65,22.65,22.65,22.65,3,2.0,
+Clean door hardware - Light,EA,7.72,7.72,7.72,7.72,3,1.0,
+Clean light fixture - Light,EA,13.29,13.29,13.29,13.29,3,1.0,
+Clean ornamental iron handrail,LF,4.39,3.48,3.48,4.56,3,5.0,Metal Hand Rail - front of building
+Clean register - heat / AC,EA,8.25,8.25,8.25,8.25,3,1.0,
+Clean vanity - inside and out,LF,22.99,22.99,22.99,22.99,3,4.0,
+Clean window unit (per side) 21 - 40 SF,EA,35.03,35.03,35.03,35.03,3,1.0,
+Cooktop - gas - High grade,EA,1002.72,1002.72,1002.72,1002.72,3,1.0,Appliances
+Corner bead - per LF,LF,7.17,7.17,7.17,7.3,3,19.0,Drywall
+Corner trim - stain grade,LF,2.9,2.9,2.9,2.9,3,16.0,Balustrade and Hand rails
+Countertop - Tile,SF,42.7,42.7,33.43,42.7,3,11.4,Vanity
+Countertop - Tile - High grade,SF,46.37,46.37,46.37,46.37,3,18.0,Vanity
+Countertop - flat laid plastic,LF,67.73,67.73,10.01,67.73,3,5.0,Vanity
+Countertop - post formed plastic laminate,LF,55.77,56.13,55.77,56.13,3,13.0,Cabs
+Countertop - wood - butcher block (hardrock maple),SF,73.66,73.66,73.66,73.66,3,16.0,Built-in Shelving
+"Crown molding - 6 1/8"" to 7"" MDF",LF,7.03,7.03,7.03,7.03,3,8.0,Built-in Shelving
+"Custom shower door & partition - 1/4"" glass w/frame",SF,35.53,35.53,35.53,35.53,3,24.0,Shower with Tub
+Detach & Reset Custom cabinets - full height units,LF,82.68,83.75,82.68,83.75,3,3.0,Cab
+Detach & Reset Laundry tub - High grade,EA,528.93,528.93,528.93,528.93,3,0.5,Plumbing
+Detach & Reset T- molding - for wood flooring,LF,1.38,1.47,1.37,1.47,3,4.0,Flooring
+Detach & Reset Trash compactor,EA,160.92,152.87,152.87,160.92,3,1.0,Appliances
+Dishwasher - High grade,EA,1029.04,1029.04,1029.04,1029.04,3,1.0,Appliances
+Door bell/chime - High grade,EA,196.14,196.14,196.14,196.14,3,1.0,Electrical
+Door stop - spring stop - mounted on baseboard,EA,9.44,9.44,9.44,9.44,3,2.0,Baseboard
+Dryer - Electric - Reset,EA,24.91,24.91,24.91,25.22,3,1.0,Appliances
+Drywall Repair - Minimum Charge - Labor and Material,EA,280.33,280.33,280.33,517.08,3,1.0,Backsplash
+Dust control barrier - tension post (per day),DA,3.35,3.35,3.35,3.35,3,3.0,Demo
+Electrician - per hour,HR,126.53,126.53,120.0,126.53,3,4.0,Electrical
+Exterior - paint two coats,SF,1.33,1.33,1.33,1.33,3,1238.0,Siding
+"Fiber cement lap siding - 8""",SF,7.71,6.52,6.52,7.71,3,1238.0,Siding
+Fiberglass reinforced plastic (FRP) paneling w/trim,SF,8.38,6.93,6.93,8.38,3,24.0,Paneling
+French double door set - Interior - pre-hung - stain grade,EA,1131.18,1131.18,1131.18,1131.18,3,1.0,Doors and Casing
+French double door set - Reset,EA,128.86,128.86,128.86,128.86,3,1.0,Doors
+Garbage disposal / disposer,EA,312.74,297.15,297.15,312.74,3,1.0,Appliances
+Garbage disposal / disposer - High grade,EA,400.59,400.59,400.59,400.59,3,1.0,Appliances
+Hanging double light fixture - Premium grade,EA,278.87,278.87,278.87,278.87,3,1.0,Electrical
+House wrap (air/moisture barrier),SF,0.53,0.47,0.47,0.53,3,1238.0,Siding
+In-wall / In-ceiling speaker - Detach & reset,EA,24.54,24.54,24.54,24.54,3,2.0,Structure Seal and Paint
+In-wall / In-ceiling speaker - Reset,EA,24.45,24.45,24.45,24.45,3,1.0,Electrical
+Install **Home owner handling all baseboard**,LF,2.54,2.54,2.54,2.54,3,0.0,Baseboard
+"Install Baseboard - 4 1/4"" w/shoe",LF,3.59,3.59,3.59,3.59,3,10.0,Baseboard and trim
+Install Carpet - High grade,SF,1.05,1.05,1.05,1.05,3,107.25,Carpet
+Install Carpet pad,SF,0.13,0.14,0.13,0.14,3,183.44,Carpet
+Install Carpet pad - High grade,SF,0.15,0.15,0.15,0.15,3,107.25,Carpet
+"Install Chair rail - 2 1/2"" hardwood",LF,2.2,2.2,2.2,2.2,3,3.0,Baseboard and trim
+Install Countertop - solid surface,SF,22.98,22.98,22.83,22.98,3,4.0,Vanity + Plumbing
+"Install Crown molding - 3 1/4""",LF,3.38,3.38,3.38,3.38,3,3.0,Crown molding
+Install Hot air hand dryer,EA,246.39,246.39,246.39,246.39,3,1.0,Bathroom Fixtures
+Install Light fixture - High grade,EA,75.13,75.13,65.72,75.13,3,1.0,Electrical
+Install Paper towel dispenser,EA,28.81,28.81,28.81,28.81,3,1.0,Bathroom Fixtures
+Install Range hood - stainless steel - High grade,EA,161.39,161.39,141.18,161.39,3,1.0,HVAC
+Install Sink - wall mounted,EA,312.35,312.35,312.35,312.35,3,1.0,Plumbing
+Install Soap/hand sanitizer dispenser - wall mounted,EA,25.94,25.94,25.94,25.94,3,1.0,Bathroom Fixtures
+Install Tile - toilet paper holder,EA,37.55,37.34,37.34,37.55,3,1.0,Wall Tile
+Install Tile shower - 61 to 100 SF,EA,2207.05,2207.05,2207.05,2207.05,3,1.0,Shower
+Install Tile shower - 61 to 100 SF - High grade,EA,2442.83,2442.83,2442.83,2442.83,3,1.0,Shower
+Install Vapor barrier - visqueen - 6mil,SF,0.29,0.29,0.29,0.29,3,242.94,Laminate Flooring
+Interior double door - solid core Colonist - pre-hung unit,EA,647.0,647.0,647.0,647.0,3,1.0,Doors and Casing
+Laundry tub - Detach & reset,EA,409.92,409.92,409.92,409.92,3,1.0,Plumbing
+Mask the walls per square foot - plastic and tape - 4 mil,SF,0.3,0.3,0.3,0.3,3,1131.89,Structure Seal
+Material Only Carpet - per specs from independent carpet analysis,SF,4.52,4.52,4.52,4.52,3,210.75,Carpet
+Material Only Carpet pad - per specs from independent pad analysis,SF,1.23,1.23,1.23,1.23,3,107.25,Carpet
+Medicine cabinet - Reset,EA,37.27,37.27,37.27,37.27,3,2.0,Mirror and Medicine cabs
+Microwave oven - over range w/built-in hood - High grade,EA,901.48,901.48,901.48,901.48,3,1.0,Appliances
+Mirror - framed,SF,75.0,75.0,75.0,75.0,3,1.0,Bathroom Fixtures
+Mortar bed for tile,SF,11.57,11.57,11.57,11.57,3,23.11,Standing Shower + Drywall
+Mosaic - ceramic/porcelain tile,SF,28.53,25.83,25.83,28.53,3,12.0,Shower
+Mosaic - ceramic/porcelain tile - Premium grade,SF,37.36,37.36,37.36,37.36,3,23.11,Standing Shower + Drywall
+Overhead (garage) door opener - High grade,EA,561.67,561.67,561.67,561.67,3,3.0,Garage door
+Overhead door & hardware - 12' x 8',EA,2030.49,2030.49,2030.49,2030.49,3,1.0,Garage door
+Overhead door & hardware - 8' x 8',EA,1622.68,1622.68,1622.68,1622.68,3,2.0,Garage door
+Overhead door insulation kit,EA,274.99,274.99,274.99,274.99,3,1.0,Garage Door
+"Paint baseboard, oversized - one coat",LF,1.19,1.15,1.15,1.19,3,17.0,Baseboard
+Paint chair rail - two coats,LF,1.66,1.66,1.66,1.66,3,49.72,Baseboard and Chair Rail
+Paint corner trim - one coat,LF,1.36,1.36,1.36,1.36,3,24.0,Wall Paneling
+Paint overhead door - 2 coats (per side),EA,145.18,135.84,135.84,145.18,3,1.0,Garage door
+Paint part of the walls and ceiling - two coats - 2 colors,SF,1.36,1.36,1.36,1.36,3,261.95,Paint
+Pedestal sink - High grade,EA,766.28,766.28,766.28,766.28,3,1.0,Plumbing
+"Prime & paint ext. railing - 1 coat primer, 1 coat paint",LF,11.17,11.17,11.17,11.17,3,3.0,Steps
+"R&R 1/2"" water rock (greenboard) hung, taped ready for texture",SF,3.46,3.45,3.45,3.59,3,76.0,Drywall
+"R&R 2"" x 4"" lumber (.667 BF per LF)",LF,3.74,3.74,3.74,3.78,3,24.0,Framing
+"R&R 5/8"" - drywall per LF - up to 2' tall",LF,16.47,16.14,16.14,16.47,3,21.5,Drywall
+"R&R 5/8"" drywall - hung, taped, ready for texture",SF,3.43,3.46,3.43,3.46,3,41.0,Drywall
+R&R Attic truss - 8/12 slope,LF,16.41,16.41,16.41,16.41,3,2432.0,Truss System
+"R&R Baseboard - 3 1/4""",LF,5.08,5.08,5.08,5.08,3,9.0,Baseboard
+"R&R Baseboard heat cover - steam/hot water - 12""- 36"" long",EA,46.19,46.19,46.19,46.19,3,1.0,Baseboard
+R&R Batt insulation - Add-on for confined spaces,SF,1.0,1.0,0.87,1.0,3,120.0,Insulation
+R&R Cabinet knob or pull - High grade,EA,14.74,14.74,14.74,14.74,3,4.0,Built-in Shelving
+"R&R Ceramic tile - bullnose - 3/4"" x 6""",LF,12.13,12.13,12.13,16.95,3,20.0,Backsplash
+R&R Corner bead - per LF,LF,8.58,8.58,8.58,8.58,3,18.0,Drywall
+R&R Door dummy knob - interior - High grade,EA,45.96,45.96,45.96,45.96,3,2.0,Doors and Casing
+R&R Door knob - interior,EA,68.13,68.13,68.13,68.13,3,1.0,Doors and Casing
+R&R Door knob - interior - High grade,EA,84.9,84.9,84.9,84.9,3,1.0,Doors and Casing
+R&R Door weather stripping,EA,49.53,49.53,49.53,49.53,3,2.0,Door and Casing
+"R&R Ductwork - hot or cold air - 6"" round",LF,26.2,26.2,26.2,26.2,3,4.0,Duct Repair
+R&R Engineered wood floor - floating - specs from ind analysis,SF,13.02,13.02,13.02,13.02,3,88.41,Engineered Hardwood
+R&R Engineered wood flooring - step charge (tread and riser),LF,30.02,30.02,30.02,30.02,3,18.0,Engineered Hardwood
+R&R Mortar bed for tile floors,SF,9.56,9.56,9.56,9.56,3,15.0,Tile
+R&R Switch,EA,27.27,27.27,27.27,27.27,3,3.0,Electrical
+R&R Thermostat - High grade,EA,168.28,168.28,168.28,168.28,3,1.0,HVAC
+R&R Tile floor covering - per specs from ind. tile analysis,SF,20.75,19.86,19.86,20.75,3,15.29,Tile Floor
+R&R Tile shower - 61 to 100 SF,EA,3783.14,2849.46,2849.46,3783.14,3,1.0,Shower
+"R&R Underlayment - 5/8"" particle board",SF,3.2,3.2,3.2,3.2,3,40.05,Flooring
+R&R Underlayment - snd/crk mbrn - per specs from ind. analysis,SF,2.97,2.97,2.97,2.97,3,88.41,Engineered Hardwood
+R&R Vinyl plank flooring - per specs from ind. vinyl analysis,SF,7.49,5.79,5.79,7.49,3,15.16,Flooring
+R&R Vinyl reducer strip - for carpet,LF,5.04,5.05,4.92,5.05,3,40.0,Carpet
+"R&R Wall cleanout cover - 3"" - 4""",EA,26.31,26.31,26.31,26.31,3,1.0,Plumbing Access
+R&R Washing machine outlet box with valves,EA,370.23,370.23,370.23,370.23,3,1.0,Plumbing
+"R&R Window blind - PVC - 1"" - 7.1 to 14 SF",EA,94.91,94.91,94.91,94.91,3,2.0,Blinds
+Radiator unit - Detach & reset,EA,353.39,353.39,353.39,353.39,3,1.0,HVAC
+Range - freestanding - electric - Detach,EA,34.7,32.99,32.99,34.7,3,1.0,Demo
+Recessed light fixture - Detach & reset entire unit,EA,141.42,141.42,141.42,141.42,3,1.0,Electrical
+Recessed light fixture - High grade,EA,188.49,188.49,188.49,188.49,3,3.0,Electrical
+Refrigerator - Reset,EA,33.31,33.31,33.31,33.31,3,1.0,Appliances
+"Remove 1/2"" drywall - hung, taped, floated, ready for paint",SF,0.59,0.59,0.59,0.59,3,40.0,Tile wall
+Remove Additional charge to remove non-strippable wallpaper,SF,0.28,0.28,0.28,0.28,3,28.17,Wallpaper
+"Remove Baseboard - 4 1/4"" MDF - w/profile",LF,0.75,0.75,0.75,0.75,3,6.0,Baseboard
+Remove Carpet pad - High grade,SF,0.16,0.16,0.16,0.24,3,742.18,Carpet
+Remove Light fixture,EA,11.71,11.71,11.71,11.81,3,1.0,Electrical
+Remove Snaplock Laminate - per specs from independent analysis,SF,1.71,1.71,1.71,1.71,3,23.0,Flooring
+"Remove Trim board - 1"" x 10"" - installed (pine)",LF,0.64,0.64,0.64,0.64,3,4.0,Baseboard
+"Remove Underlayment - 1/4"" waterproof OSB",SF,0.95,0.95,0.95,0.95,3,50.0,Flooring
+"Remove Underlayment - 5/8"" particle board",SF,0.95,0.95,0.95,0.95,3,148.69,Flooring
+Remove Vinyl tile - self adhesive,SF,1.62,1.62,1.62,1.62,3,50.0,Flooring
+Remove Wall heater,EA,35.16,35.16,35.16,35.16,3,1.0,
+Residential Supervision / Project Management - per hour,HR,80.85,80.85,67.67,80.85,3,8.0,
+Robe hook,EA,19.92,19.92,19.92,19.92,3,3.0,Toilet
+"Sand, stain, and finish steps and/or risers",LF,19.3,19.3,19.3,19.37,3,45.0,Hardwood
+Seal & paint bookcase,SF,2.97,2.97,2.97,2.97,3,32.0,Built-in Shelving
+Seal & paint cabinetry - lower - inside and out,LF,51.68,51.68,51.68,51.68,3,8.0,Built-in Shelving
+Seal & paint closet shelving,LF,11.11,11.11,11.11,11.11,3,40.0,Paint
+Seal & paint stair tread - per side - per LF,LF,6.31,6.31,6.31,6.31,3,9.0,Steps
+Seal & paint wood siding,SF,2.32,2.41,2.32,2.41,3,162.0,Siding
+Seal floor or ceiling joist system,SF,1.46,1.46,1.46,1.46,3,702.39,Structure Seal
+Seal stud wall for odor control,SF,1.05,1.05,1.05,1.05,3,1131.89,Structure Seal
+Seal the surface area with fungicidal/bacterial inhibitor - one coat,SF,1.49,1.49,1.49,1.49,3,32.0,Demo
+Seal the surface area with shellac/stain blocker - one coat,SF,0.82,0.82,0.82,0.82,3,20.0,Paint
+Seal/prime (1 coat) then paint (2 coats) the ceiling - 2 colors,SF,1.82,1.82,1.82,1.82,3,13.24,Paint
+Seal/prime (1 coat) then paint (2 coats) the floor,SF,1.52,1.52,1.52,1.52,3,151.45,Paint
+Seal/prime (1 coat) then paint (2 coats) the surface area,SF,1.51,1.52,1.48,1.52,3,90.0,Paint
+"Sheathing - OSB - 5/8""",SF,2.0,2.0,1.85,2.0,3,58.38,Subfloor
+"Sheathing - plywood - 5/8"" - tongue and groove",SF,3.13,3.12,3.12,3.13,3,32.0,Shower with Tub
+Shower curtain rod,EA,36.37,34.88,34.88,36.37,3,1.0,Shower
+Shower door - High grade,EA,989.63,989.63,989.63,989.63,3,1.0,Shower
+Shower pan - Large,EA,349.05,349.05,349.05,349.05,3,1.0,Standing Shower + Drywall
+Sink - double basin,EA,465.09,435.54,435.54,465.09,3,1.0,Cabs
+Sink - double basin - High grade,EA,681.53,681.53,681.53,681.53,3,1.0,Cabs
+Sink - single,EA,358.39,358.39,358.39,358.39,3,1.0,Banjo countertop
+Sink - single - High grade,EA,503.05,503.05,503.05,503.05,3,1.0,Cabs
+Snaplock Laminate - per specs from independent analysis,SF,3.63,3.63,3.63,3.63,3,430.92,Flooring
+Special Doors - Ceiling access,EA,117.45,117.45,117.45,117.45,3,1.0,Plumbing Access
+Sprayed polyurethane foam - 2lb mix - per inch thick,SF,1.55,1.33,1.33,1.55,3,200.17,Insulation
+"Stain & finish post/wood beam 6"" x 6""",LF,6.13,6.13,6.13,6.13,3,4.0,Balustrade and Hand rails
+Stud wall - 2x6 (per BF),BF,3.1,3.1,3.08,3.1,3,349.0,Framing
+T & G paneling - cedar paneling (unfinished),SF,8.54,8.54,8.54,8.54,3,222.57,Paneling
+Tear out and bag affected insulation,SF,0.91,0.91,0.91,0.91,3,7.19,
+Tear out cabinetry - vanity,LF,14.02,14.02,14.0,14.07,3,3.0,Demo
+"Tear out drywall, cleanup, bag for disposal",SF,1.23,1.56,1.23,1.56,3,15.0,
+Tear out non-salv floating floor & bag for disposal,SF,2.84,2.84,2.84,2.94,3,75.0,Demo
+"Tear out non-salv. vinyl & underlay, cut & bag for disp.",SF,3.05,3.05,3.05,3.05,3,16.0,Demo
+Tear out tackless strip and bag for disposal - Category 3,LF,1.89,1.89,1.89,1.89,3,25.66,Demo
+"Tear out wet carpet pad, cut/bag - after hours",SF,1.23,1.23,1.23,1.23,3,28.19,Demo
+"Tear out wet drywall, cleanup, bag - after hours",SF,2.04,2.04,2.04,2.04,3,15.0,Demo
+"Tear out wet drywall, no bagging, per LF - up to 2' tall",LF,4.63,4.63,4.63,4.63,3,13.0,Demo
+"Tear out wet non-salvage cpt, cut/bag - after hours",SF,1.29,1.29,1.29,1.29,3,28.19,Demo
+Tent - Cover with plastic,SF,0.41,0.41,0.41,0.41,3,201.0,Demo
+Tile - per specs from independent tile analysis,SF,17.79,17.79,17.79,17.79,3,12.0,Wall Tile
+Tile shower - 101 to 120 SF - High grade,EA,5292.06,5292.06,5292.06,5292.06,3,1.0,Shower
+Toilet - Detach and Reset,EA,237.17,237.17,237.17,237.17,3,1.0,Plumbing
+"Trim board - 1"" x 10"" - installed (pine)",LF,9.6,9.6,9.6,9.6,3,17.0,Baseboard
+Tub/shower faucet - Detach,EA,299.84,299.84,299.84,299.84,3,0.5,Demo
+"Underlayment - 3/8"" BC plywood",SF,2.65,2.65,2.65,2.65,3,62.73,Flooring
+Vanity - Standard grade,LF,161.22,161.22,161.22,161.22,3,3.5,Vanity
+Vanity top - one sink - cultured marble,LF,115.25,115.25,113.57,115.25,3,4.0,Vanity
+Washer/Washing machine - Detach,EA,42.55,42.55,42.26,44.02,3,1.0,Demo
+"1/4"" drywall - 2 layer curved - hvy. texture, ready for pnt",SF,5.47,5.47,5.47,5.47,2,12.0,Drywall
+"110 volt copper wiring run, box and outlet",EA,150.0,150.0,150.0,150.0,2,1.0,Appliances
+"110 volt copper wiring run, box for light",EA,95.52,95.52,95.52,95.52,2,6.0,Electrical
+Acoustical Treatments Installer - per hour,HR,109.61,109.61,109.61,109.61,2,2.0,Ceiling Tile
+Add for HEPA filter (for neg. air machine/vacuum - Large),EA,338.68,329.31,329.31,348.05,2,1.0,Equipment
+Add for prefinished crown molding per LF,LF,11.24,11.24,11.24,11.24,2,4.0,Cabs
+Add for tear out wood floor glued down over wood substrate,SF,5.66,5.66,5.66,5.66,2,80.26,Demo
+"Add on charge for ""edge wrap"" carpet installation",EA,7.4,7.4,7.4,7.4,2,1.0,Carpet
+"Add on for upgrading ""Low E"" glass to premium grade",SF,5.47,5.47,5.47,5.47,2,140.0,Windows
+Add on to tear out floor drain - tub/shower- metal/plastic,EA,14.08,14.08,14.08,14.08,2,1.0,Demo
+"Add. charge for a retrofit window, 12-23 sf - difficult",EA,276.51,268.04,268.04,284.98,2,1.5,Windows
+Additional charge for steep roof - 7/12 to 9/12 slope,SQ,74.56,74.56,74.56,74.56,2,7.77,Roof
+Additional charge to tile a bench seat,EA,284.25,284.25,284.25,284.25,2,1.0,Shower
+Apply plant-based anti-microbial agent to Floor,SF,0.42,0.42,0.42,0.42,2,292.7,
+Apply plant-based anti-microbial agent to affected surfaces,SF,0.42,0.42,0.42,0.42,2,216.83,
+Asbestos test fee - full service,EA,223.91,407.0,40.83,407.0,2,10.0,
+Asbestos test fee - post abatement air clearance- base fee,EA,487.5,600.0,375.0,600.0,2,2.0,work shifts.
+Baffle vent - foam,LF,1.49,1.49,1.49,1.49,2,209.0,Insulation
+"Baseboard - 6"" hardwood",LF,10.06,10.06,10.06,10.06,2,10.34,Base and Casing
+Bathtub - Detach,EA,171.39,169.5,169.5,173.28,2,1.0,Demo
+Bathtub - Reset - large,EA,685.57,685.57,685.57,685.57,2,1.0,Tub
+Block and pad furniture in room,EA,75.99,75.99,75.99,75.99,2,4.0,Demo
+"Blocking - Up to 2"" x 10""",LF,6.34,6.34,6.34,6.34,2,100.09,Framing
+"Blown-in insulation - 20"" depth - R50",SF,2.84,2.84,2.84,2.84,2,637.51,Insulation
+Breaker panel - 100 amp,EA,1009.82,1009.82,1009.82,1009.82,2,1.0,Electrical
+Built-in oven - Detach & reset,EA,275.65,278.69,272.62,278.69,2,1.0,Appliances
 Bypass (sliding) door set - Install,EA,323.74,323.74,323.74,323.74,2,1.0,Door
-Carpet pad - per specs from independent pad analysis,SF,0.14,0.14,0.14,0.14,2,34.69,Carpet
-Clean baseboard,LF,0.6,0.6,0.6,0.6,2,51.09,Baseboard
+Cab upgrade,EA,1476.0,1476.0,1476.0,1476.0,2,1.0,Change Orders
+Cabinetry - General Laborer - per hour,HR,62.88,62.88,62.88,62.88,2,4.0,Mirror and Medicine cabs
+Cabinetry - lower (base) units - Reset,LF,49.24,49.24,49.24,49.24,2,5.0,Built-in Cabs
+Cabinetry - upper (wall) units - Reset,LF,42.51,42.51,42.51,42.51,2,6.0,Cabinets
+"Casing - 4"" - MDF",LF,3.24,3.49,2.98,3.49,2,12.0,Casing
+Ceramic Tile Flooring Installer - per hour,HR,125.75,125.75,125.75,125.75,2,1.0,Tile Floor
+"Ceramic tile - bullnose - 2"" x 6""",LF,14.28,14.28,14.28,14.28,2,32.0,Shower Tile
+Chair rail - Detach & reset,LF,3.12,3.12,3.12,3.12,2,17.04,Wall Paneling
+Clean bathroom fixtures,EA,140.7,133.7,133.7,147.7,2,1.0,
+Clean cabinetry - lower - inside and out,LF,25.67,25.67,25.67,25.67,2,19.16,
+Clean cabinetry - upper - inside and out,LF,25.67,25.67,25.67,25.67,2,10.85,
+Clean door - French double door set (per side),EA,77.55,77.55,77.55,77.55,2,1.5,
+Clean door - bifold set (per side),EA,24.94,24.94,24.94,24.94,2,2.0,
+Clean door - bypass set (per side),EA,25.05,25.05,25.05,25.05,2,4.0,
+Clean handrail - wall mounted,LF,0.92,0.92,0.92,0.92,2,9.06,
+Clean more than the walls and ceiling,SF,1.44,1.44,1.44,1.44,2,293.66,Abatement
+Clean the surface area - Heavy,SF,0.72,0.65,0.65,0.78,2,227.21,
+Closet package - hall/linen (4 shelves 3' wide),EA,224.9,224.9,224.9,224.9,2,1.0,Shelving
+Closet shelf and rod package - Detach & reset,LF,13.01,13.01,13.01,13.01,2,4.0,Closet Shelving
+Closet shelf and rod package - Reset,LF,13.0,13.0,13.0,13.0,2,8.0,Closet Shelf
+Concrete Finisher - per hour,HR,200.0,200.0,200.0,200.0,2,2.0,Gyp-crete
+Construction adhesive,LF,0.45,0.45,0.45,0.45,2,100.09,Concrete
+Containment Barrier/Airlock/Decon. Chamber - after hours,SF,1.9,1.9,1.9,1.9,2,125.0,Demo
+Countertop - flat laid plastic laminate - Detach & reset,LF,23.62,23.62,23.62,23.62,2,4.0,Built in countertop
+Countertop - post formed plastic laminate - Detach & reset,LF,21.79,21.79,21.79,21.79,2,4.0,Cabs
+Countertop - solid surface/granite - Detach,SF,13.27,13.28,13.26,13.28,2,2.75,Demo
+Countertop edge treatment - laminate,LF,6.22,6.35,6.09,6.35,2,16.29,Cabs
+"Cove base molding - rubber or vinyl, 4"" high Lower Cabi1 (B1)",LF,2.3,2.3,2.3,2.3,2,8.0,
+Deodorize building - Hot thermal fog,CF,0.14,0.15,0.12,0.15,2,3896.01,
+Detach & Reset Backsplash - solid surface - Unattached,LF,5.21,5.21,5.21,5.21,2,6.0,Baseboard
+Detach & Reset Base shoe - stain grade,LF,1.91,1.91,1.91,1.91,2,15.0,Baseboard
+"Detach & Reset Baseboard - 3 1/4"" stain grade",LF,3.49,3.49,3.49,3.49,2,34.66,Baseboard
+"Detach & Reset Baseboard - 4 1/4"" MDF - flat profile",LF,3.38,3.38,3.38,3.38,2,88.68,Baseboard
+Detach & Reset Baseboard electric heater - 4',EA,146.88,135.21,135.21,158.55,2,1.0,Electrical
+Detach & Reset Baseboard electric heater - 8',EA,208.59,208.59,208.59,208.59,2,2.0,Electrical
+"Detach & Reset Baseboard heat cover - steam/hot water - 37""- 60"" long",EA,18.71,18.71,18.71,18.71,2,1.0,Baseboard
+"Detach & Reset Casing - 3 1/4""",LF,2.39,2.39,2.39,2.39,2,10.5,Casing
+"Detach & Reset Furnace - 47,000 BTU - mobile home",EA,900.51,900.51,900.51,900.51,2,1.0,HVAC
+Detach & Reset Heat/AC register - Floor register,EA,7.04,7.04,7.04,7.04,2,1.0,Flooring
+Detach & Reset Overhead door,EA,541.13,613.34,468.92,613.34,2,0.0,Garage Door
+Detach & Reset Overhead door & hardware - 16' x 8',EA,613.34,613.34,613.34,613.34,2,1.0,Garage Door
+Detach & Reset Overhead door & hardware - 8' x 8',EA,468.92,468.92,468.92,468.92,2,1.0,Garage Door
+"Detach & Reset Quarter round - 3/4""",LF,1.97,1.97,1.97,1.97,2,8.0,Baseboard and Casing
+Detach & Reset Sink - single,EA,242.93,242.93,242.93,242.93,2,1.0,Cabs
+Detach & Reset Towel ring,EA,24.55,24.55,24.55,24.55,2,1.0,Finish Hardware
+Detach & Reset Vanity with granite or marble top,LF,89.66,89.66,89.66,89.66,2,2.0,Plumbing
+Detach and reset of furnace and Tankless water heater,EA,4080.0,4080.0,4080.0,4080.0,2,1.0,Furnace/plumbing
+Detaching and resetting baseboard radiant heaters.,EA,1971.0,1971.0,1971.0,1971.0,2,1.0,
+Dishwasher,EA,714.69,714.69,714.69,714.69,2,1.0,Appliances
+Dishwasher - Detach,EA,86.73,85.51,85.51,87.96,2,1.0,Demo
+Door bell/chime,EA,172.9,172.9,172.9,172.9,2,1.0,Electrical
+Door knob/lockset - Detach &,EA,30.77,30.77,30.77,30.77,2,1.5,Exterior Door and Trim
+Door weather stripping,EA,37.75,37.75,37.75,37.75,2,1.0,Truss System
+Dryer - electric - Detach,EA,32.69,32.8,32.58,32.8,2,1.0,Demo
+Drywall prep for tile,EA,99.74,99.74,99.74,99.74,2,3.0,Tub
+"Duct liner - mineral fiber insulation - 1/2""",SF,1.92,1.92,1.92,1.92,2,20.0,Appliances
+Electrical (Bid Item),EA,10497.0,10497.0,10497.0,10497.0,2,1.0,Electrical
+Energy Certificate Card,EA,250.0,250.0,250.0,250.0,2,1.0,Scaffolding
+Exterior - seal or prime and prep for paint,SF,0.75,0.75,0.75,0.75,2,1238.0,Siding
+"Exterior door, 3' x 7' - fire rated",EA,864.17,864.17,864.17,864.17,2,1.0,Doors and Casing
+Exterior light fixture,EA,115.87,115.87,115.87,115.87,2,5.0,Electrical
+Extra required for carefully removing the casing and baseboard to reuse,HR,90.65,90.65,90.65,90.65,2,1.0,Base and Casing
+Fiberglass tub surround only,EA,1247.32,1247.32,1247.32,1247.32,2,1.0,Tub/Shower
+Final cleaning - construction - Commercial Lower Cabi1 (B1),SF,0.29,0.29,0.29,0.29,2,99.2,Cleaning
 Flange repair kit,EA,650.0,650.0,650.0,650.0,2,1.0,Plumbing
-Heat/AC register - Mechanically attached - Detach & reset,EA,22.98,22.98,22.98,22.98,2,1.0,HVAC
+Flashing - pipe jack,EA,74.36,74.36,74.36,74.36,2,4.0,Roof
+Floor leveling as needed,EA,80.0,80.0,80.0,80.0,2,20.0,
+Floor preparation for resilient,SF,0.72,0.72,0.72,0.72,2,46.45,LVP Supplement
+Floor protection - heavy paper,SF,0.43,0.43,0.43,0.43,2,50.25,TILE FLOOR ***OPTIONAL***
+"Furnace or A/C - check, hvy cln, replace filters & service",EA,322.62,322.62,322.62,322.62,2,1.0,HVAC
+"Furring strip - 1"" x 2""",SF,1.13,1.13,1.13,1.13,2,20.0,Paneling
+"Furring strip - 1"" x 3"" - applied to concrete",SF,2.0,2.0,2.0,2.0,2,10.0,Furring for drywall
+Garbage disposal - Detach & reset,EA,229.71,229.71,229.71,229.71,2,1.0,"Cabinets, Counter tops, & Sink"
+Garbage disposal / disposer - Reset,EA,285.99,285.99,285.99,285.99,2,1.0,Appliances
+HEPA Vacuuming - Detailed -,SF,1.01,1.01,1.01,1.01,2,587.05,Hepa Sandwich
+Handicap grab bar - Detach,EA,45.22,45.22,45.22,45.22,2,1.0,
+"Heat, Vent, & Air Conditioning (Bid Item)",EA,2795.0,2795.0,2795.0,2795.0,2,1.0,HVAC and Water Heater
+Install Backsplash - solid surface - Unattached,LF,3.94,3.94,3.94,3.94,2,5.5,Vanity
+Install Base cap or shoe / Quarter round - Detach & reset,LF,1.91,1.91,1.91,1.91,2,11.0,Built-in Cabs
+"Install Baseboard - 3 1/4""",LF,2.47,2.4,2.4,2.54,2,6.0,Baseboard
+"Install Baseboard - 6"" MDF w/profile",LF,2.89,2.89,2.89,2.89,2,23.59,Baseboard
+Install Better Access to Water Heater,HR,113.37,113.37,113.37,113.37,2,4.0,
+Install Bypass (sliding) door set - Colonist,EA,80.48,80.48,80.48,80.48,2,1.5,Door
+"Install Cabinet panels - side, end, or back",SF,10.11,10.11,10.11,10.11,2,16.0,Cabs
 "Install Casing - 4"" - hardwood",LF,1.31,1.31,1.31,1.31,2,19.0,Casing
+Install Countertop - quartz/engineered stone,SF,43.15,43.15,43.15,43.15,2,6.0,Cabinets & Sink
+"Install Cove base molding - rubber or vinyl, 4"" high",LF,1.01,1.01,1.01,1.01,2,49.31,Cove Base
+Install Custom cabinets - full height units,LF,66.46,66.46,66.46,66.46,2,1.5,Cabinets & Sink
 Install Door knob - interior,EA,27.25,27.25,27.25,27.25,2,1.0,Door
-Install Light bar - 3 lights,EA,143.91,143.91,143.91,143.91,2,1.0,Electrical
-Install Toilet,EA,371.02,371.02,371.02,371.02,2,1.0,Plumbing
-Install Vanity with cultured marble or solid surface top,LF,75.17,75.17,75.17,75.17,2,2.0,Cabinets & Sink
+Install Exterior door - metal -,EA,112.59,112.59,112.59,112.59,2,1.0,Exterior Door and Trim
+Install In-wall / In-ceiling speaker,EA,78.37,77.95,77.95,78.79,2,1.5,Speaker
+Install Metal Casing - Reset,LF,1.25,1.25,1.25,1.25,2,7.0,Casing
+"Install Quarter round - 3/4""",LF,1.09,1.06,1.06,1.12,2,6.0,Baseboard
+Install Range hood - add on cost for ceiling mount/island hood,EA,50.44,50.44,50.44,50.44,2,1.0,HVAC
+"Install Rosette - corner block - 3/4"" x 3 1/2"" - hardwood",EA,8.06,8.06,8.06,8.06,2,1.0,Base and Casing
+"Install Sheathing - OSB - 1/2"" - per independent material source",SF,2.55,2.55,2.55,2.55,2,293.0,Roof
+Install Shower door,EA,194.04,194.04,194.04,194.04,2,1.0,Shower
+Install Shower door - corner unit,EA,278.26,278.26,278.26,278.26,2,1.0,Shower
+Install Shower door - corner unit - High grade,EA,360.38,450.0,270.75,450.0,2,1.0,Shower
+Install Shower door system - corner unit - Detach & reset,EA,393.88,393.88,393.88,393.88,2,0.5,Tub/Shower
+Install Sink - double basin,EA,156.85,156.85,156.85,156.85,2,1.0,Plumbing
+Install Smoke detector,EA,43.9,43.9,43.9,43.9,2,2.0,Lights
+Install Vanity top - one sink -,LF,53.78,53.78,53.78,53.78,2,4.0,Vanity
+Install Vinyl plank flooring - High grade,SF,3.1,3.1,3.1,3.1,2,41.0,Flooring
+Install new access panel,EA,175.0,175.0,175.0,175.0,2,1.0,Drywall
+Insulation (Bid Item),EA,2727.0,3654.0,1800.0,3654.0,2,1.0,
+Insulation support wire,SF,0.16,0.16,0.16,0.16,2,1040.12,Insulation
+"Interior barn door - 24"" wide - aluminum coated w/hardware",EA,529.58,529.58,529.58,529.58,2,3.0,Framing
+Interior door slab only - Detach,EA,10.25,10.16,10.16,10.33,2,1.5,Demo
 Interior door unit install,EA,323.65,323.65,323.65,323.65,2,1.0,Door
-"Mask and prep for paint - plastic, paper, tape (per LF)",LF,1.54,1.54,1.54,1.54,2,74.0,Paint
-Mask the floor per square foot - plastic and tape - 4 mil,SF,0.28,0.28,0.28,0.28,2,239.05,Paint
-Paint casing - one coat,LF,1.13,1.13,1.13,1.13,2,19.0,Casing
-Paint part of the walls - one coat,SF,0.76,0.78,0.74,0.78,2,117.44,Paint
-Plumbing fixture supply line,EA,31.95,31.95,31.95,31.95,2,1.0,Plumbing
-Seal the surface area w/PVA primer - one coat,SF,0.64,0.64,0.64,0.64,2,28.0,Drywall
-Texture drywall - smooth / skim coat,SF,1.79,1.79,1.79,1.79,2,28.0,Drywall
-"2"" x 4"" lumber (.667 BF per LF)",LF,3.02,3.02,3.02,3.02,1,24.0,Plumbing
-Add for glued down wood flooring application over concrete,SF,4.1,4.1,4.1,4.1,1,80.0,Flooring
-Add for lacing/weaving hardwood flooring - per LF,LF,42.65,42.65,42.65,42.65,1,3.0,Hardwood
-Built-in freezer/refrigerator - Remove & reset,EA,730.16,730.16,730.16,730.16,1,1.0,Appliances
-Clean ceramic tile,SF,0.9,0.9,0.9,0.9,1,51.49,Tile Floor
-Clean ductwork - Interior (PER REGISTER),EA,37.95,37.95,37.95,37.95,1,32.0,Hardwood General Conditions
-Contents - move out then reset,EA,110.08,110.08,110.08,110.08,1,1.0,Appliances
-Detach & Reset Refrigerator - compact (under counter),EA,80.47,80.47,80.47,80.47,1,1.0,Appliances
-Dishwasher - Detach & reset,EA,417.19,417.19,417.19,417.19,1,1.0,Appliances
-Dryer - Remove & reset,EA,60.36,60.36,60.36,60.36,1,1.0,Appliances
-"Drywall patch / small repair, ready for paint",EA,98.76,98.76,98.76,98.76,1,2.0,Drywall
-Dust Containment,HR,75.45,75.45,75.45,75.45,1,48.0,Hardwood General Conditions
-Dust containment,EA,700.0,700.0,700.0,700.0,1,1.0,Flooring General Conditions
-Dust control barrier per square foot,SF,1.16,1.16,1.16,1.16,1,100.0,Drywall
-Electrical labor minimum,EA,76.05,76.05,76.05,76.05,1,1.0,
-Engineered wood flooring,SF,10.37,10.37,10.37,10.37,1,251.49,Engineered Hardwood
-Floor drain - tub/shower - metal/plastic,EA,68.1,68.1,68.1,68.1,1,1.0,Plumbing
-Framing labor minimum,EA,165.9,165.9,165.9,165.9,1,1.0,
-"Furnace or A/C - check, clean, replace filters and service",EA,198.61,198.61,198.61,198.61,1,1.0,Hardwood General Conditions
-"Heat, vent, & air cond. labor minimum",EA,153.02,153.02,153.02,153.02,1,1.0,
+Jamb and trim for overhead door unit,LF,10.14,10.14,10.14,10.14,2,31.0,Garage door
+"Joist - floor or ceiling - 2x8 - w/blocking - 16"" oc",SF,3.67,3.67,3.67,3.67,2,1040.12,Framing
+Keyless entry pad for overhead door opener,EA,74.31,74.31,74.31,74.31,2,1.0,Garage door
+"Labor to frame 2"" x 6"" x 10' load bearing wall - 16"" oc",LF,31.28,31.28,31.28,31.28,2,146.69,Framing
+Level the plumbing excavation patch,HR,62.12,62.12,62.12,62.12,2,3.0,Flooring
+Light bar - 3 lights,EA,88.45,88.45,88.45,88.45,2,1.0,Plumbing
+Light bar - 4 lights,EA,112.14,112.14,112.14,112.14,2,1.0,Electrical
+Light fixture - Detach & reset,EA,71.09,67.2,67.2,74.97,2,1.5,Paint
+"Light weight, gypsum concrete - 1 1/2"" thick",SF,6.57,6.57,6.57,6.57,2,8.58,Floor
+Lighting Installer - Electrician - per hour,HR,140.84,140.84,140.84,140.84,2,1.0,Electrical
+Major Plumbing Repairs,EA,5000.0,5000.0,5000.0,5000.0,2,1.0,HVAC
+Mask the walls and ceiling per square foot - plastic and tape - 4 mil,SF,0.28,0.28,0.28,0.28,2,727.99,Paint
+Material Only Ceramic/porcelain tile,SF,5.72,5.72,5.72,5.72,2,45.0,Cabinets
+Material Only Exterior door -,EA,1217.76,923.7,923.7,1511.82,2,1.0,Exterior Door and Trim
+Material Only Stud wall - 2x6 (per BF),BF,1.07,1.07,1.07,1.07,2,462.0,Framing
+Megohmmeter check electrical circuits - average residence,EA,1202.97,1202.97,1202.97,1202.97,2,1.0,Electrical
+Microwave oven - over range w/built-in hood,EA,516.78,516.78,516.78,516.78,2,1.0,Appliances
+Mirror & Shower Door Installer - per hour,HR,79.23,79.23,79.23,79.23,2,2.0,Vanity
+"Mirror - 1/4"" plate glass",SF,22.78,22.78,22.78,22.78,2,16.0,Finishings
+Mirror - plate glass - Reset,SF,8.29,8.29,8.29,8.29,2,16.0,Vanity
+Moisture protection for crawl space - visqueen - 10 mil,SF,0.58,0.58,0.58,0.59,2,527.78,Vapor Barrier
+Neg. air fan/Air scrub.-Large (per 24 hr period)-No monit.,DA,120.0,120.0,120.0,120.0,2,4.0,Equipment
+Outlet box - includes 4 connectors and plaster ring,EA,90.18,90.18,90.18,90.18,2,1.0,Plumbing
+Overhead door bottom panel weather seal w/track,LF,12.6,12.6,12.6,12.6,2,16.0,Garage Door
+"Paint baseboard w/cap &/or shoe, oversized - one coat",LF,1.41,1.4,1.4,1.42,2,34.23,Baseboard
+Paint concrete more than the floor,SF,1.1,1.1,1.1,1.1,2,304.44,Concrete Floor
+Paint double French door slabs only - 2 coats (per side),EA,164.44,164.44,164.44,164.44,2,2.0,Doors and Casings
+Paint more than the ceiling - two coats - 2 colors,SF,1.67,1.67,1.67,1.67,2,504.98,Paint
+Paint part of the walls - two coats - 2 colors,SF,1.67,1.67,1.67,1.67,2,731.49,Paint
+Paint toe kick,LF,0.98,0.97,0.97,0.99,2,19.0,Baseboard and Toe Kick
+Painting (Bid Item),EA,8939.39,8939.39,8939.39,8939.39,2,1.0,Siding
+Personal protective gloves - Heavy duty (per pair),EA,6.84,6.84,6.84,6.84,2,24.0,General Clean-up
+Plaster labor minimum,EA,221.16,221.16,221.16,221.16,2,1.0,
+Plumber - Prep for cab install,HR,160.64,160.64,160.64,160.64,2,2.0,Plumbing
+Plumbing/drain line water pressure test,EA,566.11,566.11,566.11,566.11,2,1.0,General
+Plumbing/gas line air pressure test,EA,238.36,238.36,238.36,238.36,2,1.0,General
+Prep door jambs after floor change,HR,74.55,74.55,74.55,74.55,2,2.0,Extras
+Prep wall for wallpaper,SF,0.74,0.74,0.74,0.74,2,1638.63,Wallpaper
+"Prime & paint deck - 2 coats primer, 2 coats paint",SF,2.33,2.33,2.33,2.33,2,240.0,Deck
+"Prime & paint ext. railing - 2 coats primer, 2 coats paint",LF,15.19,15.19,15.19,15.19,2,85.0,Deck
+"Prime & paint exterior fascia - metal, 6""- 8"" wide",LF,2.35,2.35,2.35,2.35,2,422.0,Soffits
+"Prime & paint exterior fascia - wood, 4""- 6"" wide",LF,1.89,1.89,1.89,1.89,2,75.0,Fascia and Soffit
+Prime & paint gutter / downspout,LF,1.85,1.85,1.85,1.85,2,309.0,Gutters
+Prime & paint roof jack,EA,39.81,39.81,39.81,39.81,2,7.0,Roof Sheathing
+Prime & paint roof vent,EA,39.81,39.81,39.81,39.81,2,3.0,Roof Sheathing
+"R&R 1/2"" - drywall per LF - up to 4' tall",LF,22.47,22.47,22.47,22.47,2,6.5,Drywall
+"R&R 110 volt copper wiring run, box for light",EA,103.04,103.04,103.04,103.04,2,1.0,Electrical
+"R&R Aluminum window, horiz. slider 12-23 sf (2 pane)",EA,460.65,500.26,421.05,500.26,2,1.0,Door & Window
+R&R Attic entrance cover and trim,EA,115.09,115.09,115.09,115.09,2,1.0,Truss System
+"R&R Attic fan - 36"" diameter, 12,100 CFM",EA,1369.04,1369.04,1369.04,1369.04,2,1.0,Electrical
+R&R Attic vent - gable end - vinyl,EA,184.4,184.4,184.4,184.4,2,1.0,Trim and Vent
+R&R Bathroom ventilation fan w/light,EA,233.58,233.58,233.58,233.58,2,1.0,Electrical
+"R&R Bathroom ventilation fan, light, and heater",EA,340.0,340.0,340.0,340.0,2,1.0,Electrical
+R&R Brick veneer,SF,25.5,25.5,25.5,25.5,2,1239.0,Brick
+R&R Cabinet knob or pull,EA,11.29,11.29,11.29,11.29,2,5.0,Vanity
+R&R Cabinetry - lower (base) units,LF,268.62,267.51,267.51,269.73,2,9.25,Cabinets & Sink
+R&R Carbon monoxide detector - wall mounted,EA,100.3,100.3,100.3,100.3,2,1.0,Electrical
+R&R Carpet tile - High grade 40,SF,6.98,6.98,6.98,6.98,2,12705.0,Carpet
+"R&R Deck flashing - galvanized - 6"" wide - L shape",LF,5.4,5.4,5.4,5.4,2,12.0,Deck - 12'x12' located on back side of garage
+R&R Deck guard rail - cedar,LF,74.25,74.25,74.25,74.25,2,85.0,Deck
+"R&R Deck planking - 5/4"" cedar (per SF)",SF,17.55,17.55,17.55,17.55,2,240.0,Deck
+R&R Door bell/chime,EA,178.98,178.98,178.98,178.98,2,1.0,Electrical
+R&R Door lockset & deadbolt - exterior,EA,123.6,123.6,123.6,123.6,2,1.0,Doors and Casings
+"R&R Downspout - aluminum - up to 5""",LF,11.98,11.98,11.98,11.98,2,95.0,Gutters
+R&R Drip edge,LF,4.51,4.51,4.51,4.51,2,80.0,Roof
+"R&R Ductwork - flexible - non- insulated - 4"" round",LF,11.11,11.11,11.11,11.11,2,6.0,HVAC
+R&R Exterior light fixture,EA,133.0,133.0,133.0,133.0,2,1.0,Electrical
+"R&R Fascia - fiber cement - 8""",LF,15.14,15.14,15.14,15.14,2,75.0,Fascia and Soffit
+"R&R Fiber cement lap siding - 8""",SF,8.52,8.52,8.52,8.52,2,215.0,Siding
+R&R Flashing - pipe jack,EA,84.65,84.65,84.65,84.65,2,3.0,Roof Sheathing
+"R&R Footings - pre-cast block - 4"" x 14"" x 14""",EA,102.31,102.31,102.31,102.31,2,4.0,Deck - 12'x12' located on back side of garage
+"R&R Framing hanger - 2"" x 6"" or 2"" x 8""",EA,23.42,23.42,23.42,23.42,2,8.0,Framing
+R&R French double doors - Exterior - pre-hung unit,EA,1773.66,1773.66,1773.66,1773.66,2,1.0,Doors and Casings
+"R&R Furnace vent - rain cap and storm collar, 6""",EA,131.74,131.74,131.74,131.74,2,2.0,Roof Sheathing
+"R&R Gutter - aluminum - up to 5""",LF,11.98,11.98,11.98,11.98,2,214.0,Gutters
+R&R Hip / Ridge cap - High profile - composition shingles,LF,15.81,15.81,15.81,15.81,2,50.0,Roof
+R&R Hip / Ridge cap - Standard profile - composition shingles,LF,13.55,13.55,13.55,13.55,2,168.0,Roof Sheathing
+R&R Interior door - birch - stain grade jamb & casing,EA,435.92,435.92,435.92,435.92,2,1.0,"Crown, Door, and Casing"
+R&R Interior door unit - High grade,EA,428.47,428.47,428.47,428.47,2,2.0,Door
+R&R Joist - 2x6 floor or ceiling system,BF,3.66,3.66,3.66,3.66,2,32.0,Framing
+R&R Junction box,EA,171.2,171.2,171.2,171.2,2,1.0,Electrical
+R&R Light - insulation baffle/draft stop,EA,30.35,30.35,30.35,30.35,2,10.0,Truss System
+R&R Light bar - 4 lights,EA,139.03,139.03,139.03,139.03,2,1.0,Electrical
+R&R Overhead (garage) door opener,EA,522.43,522.43,522.43,522.43,2,2.0,Garage Door
+R&R Overhead door & hardware - 16' x 8',EA,2542.06,2542.06,2542.06,2542.06,2,1.0,Garage door
+R&R Overhead door panel - 13' to 18',EA,673.01,673.01,673.01,673.01,2,1.0,Garage Door
+R&R Paver brick,SF,18.31,18.31,18.31,18.31,2,124.53,Paver Patio
+R&R Poured shower pan,SF,70.0,70.0,70.0,70.0,2,16.0,Shower
+"R&R Rigid foam insulation board - 2""",SF,2.99,2.99,2.99,2.99,2,100.09,Concrete
+R&R Roof vent - turtle type - Metal,EA,113.09,113.09,113.09,113.09,2,5.0,Roof Sheathing
+"R&R Screen door - wood - 30"" - 36"" - full screen (no glass)",EA,193.89,192.57,192.57,195.22,2,1.0,Screen Door Replacement
+R&R Security system - key pad,EA,242.49,242.49,242.49,242.49,2,1.0,Electrical
+"R&R Siding - hardboard - lap pattern - 8""",SF,8.18,8.18,8.18,8.18,2,162.0,Siding
+"R&R Siding trim - 1"" x 4"" hardboard trim board",LF,11.17,11.17,11.17,11.17,2,422.0,Soffits
+"R&R Siding trim - 5/4"" x 4"" PVC trim board",LF,8.25,8.25,8.25,8.25,2,40.0,Trim and Vent
+R&R Soap dispenser - surface mounted,EA,91.72,91.72,91.72,91.72,2,1.0,Plumbing
+R&R Soffit & fascia - wood - 2' overhang,LF,24.56,24.56,24.56,24.56,2,422.0,Soffits
+R&R Soffit - fiber cement panel,SF,10.05,10.05,10.05,10.05,2,75.0,Fascia and Soffit
+R&R Soffit vent,EA,99.52,99.52,99.52,99.52,2,8.0,Fascia and Soffit
+R&R Special Doors - Ceiling access - Large,EA,141.85,141.85,141.85,141.85,2,1.5,Truss System
+R&R Suspended ceiling system - 2' x 4',SF,5.06,5.06,5.06,5.06,2,48.0,Ceiling Tile
+R&R T- molding - for wood,LF,8.43,8.43,8.43,8.43,2,3.0,LVP Supplement
+R&R Tile mat - uncoupling membrane,SF,8.57,8.65,8.49,8.65,2,24.09,Engineered Hardwood
+"R&R Toe kick - unfinished wood - 1/2""",LF,13.21,13.21,13.21,13.21,2,6.0,Toe Kick
+R&R Toilet flange,EA,485.85,485.85,485.85,485.85,2,1.0,Plumbing
+"R&R Trim board - 1"" x 6"" - installed (cedar)",LF,7.93,7.93,7.93,7.93,2,18.0,Trim and Vent
+"R&R Trim board - 1/2"" x 4"" - installed (pine)",LF,10.56,10.56,10.56,10.56,2,8.0,Baseboard and Casing
+"R&R Vinyl window, horizontal sliding, 12-23 sf - Premium grade",EA,933.31,933.31,933.31,933.31,2,7.0,Windows
+"R&R Vinyl window, horizontal sliding, 24-32 sf - Premium grade",EA,1366.63,1366.63,1366.63,1366.63,2,2.0,Windows
+"R&R Vinyl window, horizontal sliding, 3-11 sf - Premium grade",EA,804.34,804.34,804.34,804.34,2,3.0,Windows
+R&R Water heater - 40 gallon - Gas - 9 yr,EA,1651.62,1651.62,1651.62,1651.62,2,1.0,Plumbing
+R&R Wrap wood window frame & trim with aluminum sheet,EA,403.13,403.13,403.13,403.13,2,3.0,Windows
+R&R Wrap wood window frame & trim with aluminum sheet - Large,EA,544.91,544.91,544.91,544.91,2,2.0,Windows
+Radiant heat - wire mat,SF,20.53,22.25,18.81,22.25,2,140.75,Engineered Hardwood
+Radiator cover - Large - Detach & reset,LF,14.91,14.91,14.91,14.91,2,1.0,HVAC
+Range - freestanding - electric,EA,902.02,902.02,902.02,902.02,2,1.0,Appliances
+Recessed light fixture - Reset trim only,EA,5.11,5.11,5.11,5.11,2,9.0,Electrical
+Refrigerator - Detach,EA,46.26,46.26,46.26,46.26,2,1.0,Demo
+Refrigerator - side by side - 16 to 22 cf,EA,1538.27,1538.27,1538.27,1538.27,2,1.0,Appliances
+Regrout tile,SF,6.03,6.03,6.03,6.03,2,16.0,Shower Tile
+"Remove 110 volt copper wiring run, box and outlet",EA,7.67,7.67,7.67,7.67,2,1.0,Cab
+Remove Additional charge for high roof (2 stories or greater),SQ,7.46,7.46,7.46,7.46,2,7.77,Roof
+Remove Additional charge for steep roof - 7/12 to 9/12 slope,SQ,18.34,18.34,18.34,18.34,2,7.77,Roof
+"Remove Baseboard - 3 1/4""",LF,0.7,0.7,0.7,0.7,2,44.41,Baseboard
+"Remove Baseboard - 4 1/4"" MDF - flat profile",LF,0.64,0.64,0.64,0.64,2,13.22,Baseboard
+Remove Carpet - Standard grade,SF,0.34,0.34,0.34,0.34,2,117.97,Carpet
+Remove Carpet pad - per specs from independent pad analysis,SF,0.24,0.24,0.24,0.24,2,216.4,Carpet
+"Remove Ceramic tile - bullnose - 2"" x 6""",LF,2.81,2.81,2.81,2.81,2,30.0,Shower Tile
+"Remove Ceramic tile - bullnose - 3/4"" x 6"" - High grade",LF,3.02,3.02,3.02,3.02,2,14.0,Tile wall
+Remove Ceramic/porcelain tile - High grade,SF,2.87,2.87,2.87,2.87,2,40.0,Tile wall
+Remove Countertop - flat laid plastic laminate,LF,8.84,8.84,8.84,8.84,2,6.5,Cabinets & Sink
+Remove Exterior door - metal -,EA,44.92,44.92,44.92,44.92,2,1.0,Exterior Door and Trim
+"Remove Fiber cement lap siding - 8""",SF,0.61,0.61,0.61,0.61,2,928.5,Siding
+Remove Flashing - pipe jack,EA,9.94,9.94,9.94,9.94,2,4.0,Roof
+Remove House wrap (air/moisture barrier),SF,0.07,0.07,0.07,0.07,2,928.5,Siding
+Remove Laminated - comp. shingle rfg. - w/ felt,SQ,83.32,83.32,83.32,83.32,2,8.75,Roof
+Remove Laminated - comp. shingle rfg. - w/out felt,SQ,85.16,85.16,85.16,85.16,2,20.87,Roof Sheathing
+"Remove Light weight, gypsum concrete - 1 1/2"" thick",SF,4.56,4.56,4.56,4.56,2,16.0,Demo
+Remove Mosaic - ceramic/porcelain tile,SF,2.76,2.76,2.76,2.76,2,1.0,Backsplash
+Remove Mosaic - ceramic/porcelain tile - High grade,SF,2.87,2.87,2.87,2.87,2,12.0,Demo of Shower
+Remove P-trap assembly - ABS (plastic),EA,14.06,14.06,14.06,14.06,2,1.0,
+Remove Plumbing fixture supply line,EA,7.36,7.36,7.36,7.36,2,1.5,Vanity
+Remove Reducer strip - for wood flooring,LF,0.72,0.72,0.72,0.72,2,18.0,Flooring
+"Remove Rosette - corner block - 3/4"" x 3 1/2"" - hardwood",EA,3.02,3.02,3.02,3.02,2,2.0,Base and Casing
+"Remove Sheathing - plywood - 5/8"" CDX",SF,0.8,0.8,0.8,0.8,2,20.0,Demo of existing Tub area
+Remove Shower drain - for use with waterproof membrane,EA,21.47,21.47,21.47,21.47,2,1.0,Demo of Shower
+Remove Shower faucet,EA,26.84,26.84,26.84,26.84,2,1.0,Demo of Shower
+Remove Suspended ceiling grid - 2' x 4',SF,0.26,0.26,0.26,0.26,2,61.65,Ceiling Tile
+Remove Suspended ceiling tile - 2' x 4',SF,0.29,0.29,0.29,0.29,2,61.65,Ceiling Tile
+Remove Tile base,LF,3.83,3.01,3.01,4.65,2,18.05,Cove base
+Remove Tile framed shower curb - per LF,LF,13.42,13.42,13.42,13.42,2,5.0,Demo of Shower
+Remove Tile tub surround - up to 60 SF,EA,171.73,171.73,171.73,171.73,2,1.0,Tub Surround
+Remove Toilet partition - oversized/handicap,EA,282.31,282.31,282.31,282.31,2,1.5,
+Remove Towel bar,EA,11.72,11.72,11.72,11.72,2,1.0,
+"Remove Underlayment - rubber - 1/8"" - Floating",SF,0.16,0.16,0.16,0.16,2,207.27,Flooring
+Remove Wallpaper - High grade,SF,1.12,1.12,1.12,1.12,2,1638.63,Wallpaper
+Remove wet ceiling tile & drywall and bag - Cat 3,SF,2.59,2.59,2.59,2.59,2,64.0,
+Remove wet suspended ceiling tile and bag for disposal,SF,0.62,0.62,0.62,0.62,2,51.94,Demo
+Roof and Gutters - Bid provided,EA,67773.09,67773.09,67773.09,67773.09,2,1.0,Roof and Gutters
+Roofing felt - 30 lb.,SQ,63.67,63.67,63.67,63.67,2,11.36,Roof
+"Rosette - corner block - 3/4"" x 3 1/2"" - MDF",EA,11.04,11.04,11.04,11.04,2,5.0,Baseboard and casing
+Rough-in plumbing - floor/laundry pan drain,EA,249.09,244.77,244.77,253.4,2,2.0,Plumbing
+Scrape off asbestos acoustic (popcorn) texture-no haul off,SF,6.49,6.49,6.49,6.49,2,152.1,Drywall
+Seal & paint cabinetry - lower - faces only,LF,31.46,31.46,31.46,31.46,2,10.67,Cabinets
+Seal & paint cabinetry - upper - faces only,LF,27.32,27.32,27.32,27.32,2,17.83,Cabinets
+Seal & paint handrail - wall mounted,LF,2.18,2.18,2.18,2.18,2,12.0,Handrail
+Seal & paint stair stringer - one side,LF,5.07,5.07,5.07,5.07,2,16.0,Steps
+Seal Plaster edges so they don't crumble,HR,132.21,132.21,132.21,132.21,2,3.0,Plaster Seal
+Seal the floor with shellac/stain blocker - one coat,SF,0.85,0.85,0.85,0.85,2,59.07,Smoke Seal
+Seal the surface area w/oil based/hybrid stain blocker - one coat,SF,0.76,0.76,0.76,0.76,2,12.5,Paint
+Seal/prime (1 coat) then paint (1 coat) more than the ceiling - 2 colors,SF,1.29,1.29,1.29,1.29,2,600.09,Paint
+Seal/prime (1 coat) then paint (1 coat) more than the floor perimeter - 2 colors,SF,1.29,1.29,1.29,1.29,2,65.34,Paint
+Seal/prime (1 coat) then paint (2 coats) more than the walls,SF,1.51,1.51,1.51,1.51,2,583.92,Paint
+Sealant,HR,132.21,132.21,132.21,132.21,2,1.0,Plaster Seal
+"Sheathing - plywood - 3/4"" - tongue and groove",SF,3.79,4.09,3.49,4.09,2,129.7,Subfloor
+"Sheathing - plywood - 3/8""",SF,2.03,2.03,2.03,2.03,2,703.32,Subfloor
+"Shelving - 24"" - in place",LF,17.33,17.33,17.33,17.33,2,3.0,Closet Shelving
+Shelving - wire (vinyl coated),LF,11.36,11.36,11.36,11.36,2,3.0,Finishes
+Shower door - corner unit,EA,1370.75,1370.75,1370.75,1370.75,2,1.0,Shower
+Shower door system - corner unit - Detach,EA,405.62,405.62,405.62,405.62,2,0.5,Demo
+"Siding, Soffit, Fascia - Bid provided",EA,85057.42,85057.42,85057.42,85057.42,2,1.0,"Siding, Soffit, Fascia"
+Skimcoat scraped ceiling,SF,1.78,1.78,1.78,1.78,2,163.1,Drywall
+Smoke detector,EA,73.49,73.49,73.49,73.49,2,1.0,Electrical
+Smoke detector - Detach & reset,EA,66.56,67.36,65.76,67.36,2,1.5,Paint
+Spackle/texture nail holes,HR,109.2,109.2,109.2,109.2,2,2.0,Extras
+Stain & finish paneling,SF,1.89,1.89,1.89,1.89,2,241.31,Paneling
+Stairway - disappearing (folding) / attic access ladder,EA,722.71,722.71,722.71,722.71,2,1.0,Truss System
+"Step charge for ""open riser"" carpet installation",EA,31.74,31.48,31.48,32.01,2,23.83,Carpet
+Stud wall - 2x4 (per BF),BF,2.75,2.75,2.75,2.75,2,40.0,
+Tear off asbestos drywall (no haul off),SF,3.58,3.58,3.58,3.58,2,142.25,Abatement
+"Tear out affect drywall, cleanup, bag for disposal",SF,1.23,1.23,1.23,1.23,2,6.17,
+Tear out cove base molding and bag for disp. - up to Cat 3,LF,0.98,0.98,0.98,0.98,2,43.65,
+Tear out non-salv. tile & bag - Category 3 water,SF,6.65,6.59,6.59,6.71,2,21.25,Demo
+"Tear out wet drywall, cleanup,",SF,1.72,2.03,1.41,2.03,2,24.0,Demo
+"Tear out wet drywall, no bagging",SF,1.15,1.15,1.15,1.15,2,13.3,Demo
+"Tear out wet non-salv. gluedn. cpt, cut/bag - Cat 3 water",SF,2.29,2.26,2.26,2.31,2,150.0,
+Temporary heater - electric (per day),DA,51.5,51.5,51.5,51.5,2,6.0,Demo
+Temporary repair services labor minimum,EA,202.93,202.93,202.93,202.93,2,1.0,
+Temporary safety shower,EA,90.61,90.61,90.61,90.61,2,1.0,One negative air machines required for eight days to maintain adequate negative air pressure.
+Temporary toilet (per month),MO,242.34,242.34,242.34,242.34,2,12.0,General
+Tile shower - up to 60 SF,EA,1908.0,1908.0,1908.0,1908.0,2,1.0,Tub/Shower
+Toe kick - Detach,LF,9.31,9.31,9.31,9.31,2,19.0,Demo
+Toilet paper holder - Reset,EA,23.63,24.03,23.23,24.03,2,1.0,Finish Hardware
+Toilet partition - Reset,EA,386.73,386.73,386.73,386.73,2,1.0,Bathroom Fixtures
+Towel bar - Detach & reset,EA,22.87,22.87,22.87,22.87,2,1.0,Finish Hardware
+"Trim board - 1""x 2"" to 1""x 6"" - Detach & reset",LF,3.33,3.26,3.26,3.41,2,17.0,Screen Door Replacement
+Under sink shelf Install,LF,26.94,26.94,26.94,26.94,2,2.0,Shelving
+Underlayment - snd/crk mbrn - per specs from ind. analysis,SF,1.66,1.66,1.66,1.66,2,282.74,Engineered Hardwood
+Vanity - Detach & reset,LF,63.79,72.71,54.87,72.71,2,4.0,Vanity
+Vinyl Floor Covering Installer - per hour,HR,100.0,100.0,100.0,100.0,2,1.0,Flooring
+Wallpaper - High grade,SF,3.05,3.05,3.05,3.05,2,1638.63,Wallpaper
+Wallpaper border,LF,3.13,3.13,3.13,3.13,2,19.96,Wallpaper
+Water extract/remediation labor minimum,EA,88.97,152.24,25.69,152.24,2,1.0,
+Water extraction from hard surface floor,SF,0.3,0.3,0.3,0.3,2,115.41,Demo
+Windows and Doors - Bid provided,EA,275085.11,275085.11,275085.11,275085.11,2,1.0,Doors and Windows
+Wood floor drying extraction mat (per 24 hr prd) No monit.,DA,185.88,186.75,185.0,186.75,2,24.0,Demo
+Wood floor refinish,EA,7420.0,7420.0,7420.0,7420.0,2,1.0,Flooring General Conditions
+"1/2"" Cement board - 75 SF for shower",SF,8.32,8.32,8.32,8.32,1,75.0,Tub/Shower
+"1/2"" Cement board - Shower walls and tub base",SF,8.32,8.32,8.32,8.32,1,90.0,Shower
+"1/2"" Cement board Vanity1 (B2V)anity3 (B2) Bedroom",SF,5.91,5.91,5.91,5.91,1,36.51,Flooring
+"1/2"" drywall - hung, taped, floated, ready for paint - wall next to toilet",SF,3.1,3.1,3.1,3.1,1,24.0,Drywall
+"1/2"" drywall - hung, taped, floated, ready for paint - wall next to toilet and around window",SF,3.1,3.1,3.1,3.1,1,48.0,Drywall
+"1/2"" water rock (greenboard) hung, taped ready for texture - Walls around tub",SF,2.84,2.84,2.84,2.84,1,60.0,Drywall
+"1/4"" drywall - hung, taped, ready for texture",SF,61.01,61.01,61.01,61.01,1,1.0,Drywall
+"2"" x 10"" lumber (1.67 BF per LF)",LF,4.4,4.4,4.4,4.4,1,46.0,Temporary Shoring
+"2"" x 2"" x 8' #2 & better Fir / Larch (material only)",EA,3.51,3.51,3.51,3.51,1,2.0,Subfloor
+"2"" x 4"" lumber - treated (.667 BF per LF)",LF,3.72,3.72,3.72,3.72,1,68.0,Framing
+"2"" x 6"" lumber (1 BF per LF)",LF,3.51,3.51,3.51,3.51,1,500.0,Framing
+"2"" x 6"" x 10' #2 & better Fir / Larch (material only)",EA,9.79,9.79,9.79,9.79,1,2.0,Cleaning
+"2"" x 6"" x 8' #2 treated pine (material only)",EA,9.13,9.13,9.13,9.13,1,1.0,Framing
+"220 volt copper wiring run, box and receptacle",EA,213.21,213.21,213.21,213.21,1,1.0,Appliances
+Add for HEPA filter (for,EA,214.99,214.99,214.99,214.99,1,1.0,Equipment
+Add for bullnose (rounded) corners,SF,0.27,0.27,0.27,0.27,1,10.0,Drywall
+Add on Granite or Marble - edge treatment,LF,26.22,26.22,26.22,26.22,1,10.83,Countertops
+"Add on for ""Low E"" glass",SF,4.83,4.83,4.83,4.83,1,52.0,Windows
+Add on for undermount sink cutout & polish - single basin,EA,209.1,209.1,209.1,209.1,1,1.0,Countertops
+Add on to tear out mortar bed,SF,2.75,2.75,2.75,2.75,1,42.38,Demo
+Add on to tear out tile framed shower curb - per LF,LF,17.64,17.64,17.64,17.64,1,3.0,Cat 3 Mitigation
+Add-on for mitered corner (Countertop),EA,115.36,115.36,115.36,115.36,1,1.0,Cabs
+Add. charge for a retrofit,EA,284.98,284.98,284.98,284.98,1,0.0,Window and trim
+"Add. charge for a retrofit window, 3-11 sf - difficult",EA,193.58,193.58,193.58,193.58,1,2.0,Windows
+Additional Hours For Cleaning Height,HR,71.63,71.63,71.63,71.63,1,8.0,
+Additional charge for a retrofit exterior door,EA,308.27,308.27,308.27,308.27,1,2.0,Door
+Additional charge for custom lowers,LF,31.46,31.46,31.46,31.46,1,10.67,Cabinets
+Additional charge for custom uppers,LF,27.32,27.32,27.32,27.32,1,17.83,Cabinets
+Additional charge to attach decking w/hidden fasteners,SF,3.33,3.33,3.33,3.33,1,144.0,Deck - 12'x12' located on back side of garage
+Additional charge to attach decking w/screws,SF,1.91,1.91,1.91,1.91,1,144.0,Deck - 12'x12' located on back side of garage
+Additional charge to install a corner bench,EA,215.86,215.86,215.86,215.86,1,1.0,Standing Shower + Drywall
+Additional labor cost for Berber or patterned carpets,SF,0.3,0.3,0.3,0.3,1,180.34,Carpet
+Additional labor required to build pressure frame,HR,84.94,84.94,84.94,84.94,1,4.0,
+Additional labor to remove tile from concrete slab CClloosseett ((11)) Mortar installed straight on subfloor requiring grinding,SF,2.38,2.38,2.38,2.38,1,3.9,Flooring
+Additional labor to remove tile from concrete slab HHaallllwwaayy,SF,2.38,2.38,2.38,2.38,1,84.17,Flooring
+Aditional labor to d&r the light during demo- after hours,HR,128.46,128.46,128.46,128.46,1,0.25,Demo
+Air mover (per 24 hour period) - No monitoring Lower Cabi1 (B1) Placed: 5/31 Removed: 6/5,EA,26.25,26.25,26.25,26.25,1,45.0,Demo
+"Aluminum fence gate, 3'- 4' wide - up to 4' high",EA,775.07,775.07,775.07,775.07,1,1.0,Fence
+"Appliance water line - 1/4""",EA,185.0,185.0,185.0,185.0,1,1.0,Appliances
+Apply anti-microbial agent to more than the ceiling,SF,0.4,0.4,0.4,0.4,1,300.43,Demo
+Apply anti-microbial agent to more than the floor perimeter,SF,0.52,0.52,0.52,0.52,1,49.33,Demo
+Apply biological cleaning agent (spore-based) to the surface area,SF,0.41,0.41,0.41,0.41,1,112.0,Mitigation
+Apply mold/mildew stain remover to more than the floor,SF,1.07,1.07,1.07,1.07,1,274.0,Demo
+Apply mold/mildew stain remover to the walls and ceiling,SF,0.88,0.88,0.88,0.88,1,148.5,
+Apply plant-based anti-microbial agent to,SF,0.42,0.42,0.42,0.42,1,630.0,
+Apply plant-based anti-microbial agent to affected area,SF,0.42,0.42,0.42,0.42,1,45.2,
+Apply plant-based anti-microbial agent to affected areas,SF,0.42,0.42,0.42,0.42,1,135.0,
+Apply plant-based anti-microbial agent to part of the walls,SF,0.48,0.48,0.48,0.48,1,230.9,
+Apply plant-based anti-microbial agent to the surface area GGaarraaggee AArreeaa,SF,0.41,0.41,0.41,0.41,1,185.0,
+Asbestos Abatement Permit Fee- Colorado Department of Public Health and Environment,EA,400.0,400.0,400.0,400.0,1,1.0,
+Asbestos Containment Barrier/Airlock/Decon. Chamber,SF,3.75,3.75,3.75,3.75,1,300.0,
+Asbestos Negative air fan/Air scrubber (24 hr period) - 2000 CFM,DA,76.04,76.04,76.04,76.04,1,4.0,
+Asbestos Permit Fee -Notice- Colorado Department of Public Health and Environment,EA,81.0,81.0,81.0,81.0,1,1.0,
+Asbestos Project Manager - Supervisory/Admin- per hour,HR,100.0,100.0,100.0,100.0,1,2.0,
+Asbestos test fee- post abatement air clearance-per sample,EA,75.0,75.0,75.0,75.0,1,15.0,clearances required for this project).
+Base cap or shoe / Quarter round - Detach & reset Upper Cabi2 (B5) Upper Cabi3 (B6) Full Height2 (B1) Lower Cabi1 (B3) 45. Stain & finish base shoe or quarter 17.35 LF 0.00 1.52 0.00 5.28 31.65 LUowppeer rC Caabbi3i1 ( B(B12)) round,LF,1.91,1.91,1.91,1.91,1,17.35,Baseboard
+"Baseboard - 3 1/4"" PrimarBy aBthattuhbro2oB (mBaBt 1hBa)rtaohtothumtbu 3bB (aBth1Bt)uedbroom Closet (1)",LF,4.37,4.37,4.37,4.37,1,48.12,Baseboard
+"Baseboard - 3 1/4"" Primary Bathroom Bathtub Bathroom Bathtub",LF,4.37,4.37,4.37,4.37,1,5.5,Baseboard
+"Baseboard - 4 1/4"" BBeeddrroooomm",LF,5.28,5.28,5.28,5.28,1,8.33,Shelving
+"Baseboard - 7 1/4"" MDF - flat profile",LF,7.09,7.09,7.09,7.09,1,18.0,Baseboard
+Bathroom ventilation fan cover - Detach & reset,EA,14.29,14.29,14.29,14.29,1,1.0,Drywall
+Bathtub - Large,EA,1664.93,1664.93,1664.93,1664.93,1,1.0,Tub
+Bathtub - freestanding,EA,1325.93,1325.93,1325.93,1325.93,1,1.0,Tub
+Bathtub faucet (no shower) - High grade,EA,358.6,358.6,358.6,358.6,1,1.0,Shower with Tub
+"Batt insulation - 6"" - R19 - paper / foil faced CHEIN-SUPPS 3/13/2026 Page: 5",SF,1.45,1.45,1.45,1.45,1,1131.89,Insulation
+"Batt insulation - 6"" - R21 - unfaced batt",SF,1.74,1.74,1.74,1.74,1,698.28,Insulation
+Batt insulation - Add-on for confined spaces,SF,2.42,2.42,2.42,2.42,1,60.0,Insulation
+Belly paper repair (underbelly material) - mobile home,SF,1.97,1.97,1.97,1.97,1,951.08,
+Bifold door set - (4 slabs only) - Double Reset,EA,33.72,33.72,33.72,33.72,1,0.5,Door
+Bifold door set - (4 slabs only) - Reset,EA,38.09,38.09,38.09,38.09,1,1.0,Doors
+Blown-in Insulation Equipment Rental,EA,650.0,650.0,650.0,650.0,1,1.0,Insulation
+"Blown-in cellulose insulation - 12"" depth - R44",SF,1.58,1.58,1.58,1.58,1,39.79,Insulation
+Cab Shelves install,HR,90.54,90.54,90.54,90.54,1,2.0,Vanity
+Cab panel by fridge,SF,70.0,70.0,70.0,70.0,1,16.0,Cabs
+Cab repair,HR,90.65,90.65,90.65,90.65,1,4.0,Cab Repair
+Cabinet - lower (base) unit - Detach - after hours,LF,46.38,46.38,46.38,46.38,1,2.0,Demo
+Cabinet - lower (base) unit w/shoring - Detach,LF,47.24,47.24,47.24,47.24,1,5.04,
+Cabinet - upper (wall) unit - Detach - after hours,LF,39.67,39.67,39.67,39.67,1,2.0,Demo
+Cabinet - vanity and countertop -,LF,38.58,38.58,38.58,38.58,1,2.0,Demo
+Cabinet - vanity and countertop - Detach,LF,32.43,32.43,32.43,32.43,1,3.0,Abatement
+Cabinet - vanity unit - Detach,LF,26.8,26.8,26.8,26.8,1,3.0,
+Cabinet Retro fit,HR,90.54,90.54,90.54,90.54,1,4.0,Vanity
+"Cabinet panels - side, end, or back",SF,17.72,17.72,17.72,17.72,1,6.0,Wet Bar
+Cabinetry (Bid Item),EA,7837.98,7837.98,7837.98,7837.98,1,1.0,Bid Items
+Cabinetry - lower (base) units - Detach & reset,LF,82.15,82.15,82.15,82.15,1,4.5,Cabs
+Cap a Tread,EA,90.0,90.0,90.0,90.0,1,16.0,Stairs upgrade
+Carpenter - General Framer -,HR,89.14,89.14,89.14,89.14,1,0.0,Framing
+Carpet - Commercial Rubber Transition,LF,3.38,3.38,3.38,3.38,1,9.0,Carpet
+Carpet - Detach & relay,SF,1.03,1.03,1.03,1.03,1,329.0,Carpet
+Carpet Cleaning BId Item,EA,450.0,450.0,450.0,450.0,1,1.0,Equipment
+"Casing - 4"" - hardwood",LF,5.28,5.28,5.28,5.28,1,20.0,Baseboard and Casing
+"Ceiling diffusers/grills - circular - 8""-10"" diameter STARR_1184_REC 7/9/2026 Page: 94",EA,50.81,50.81,50.81,50.81,1,1.0,HVAC
+"Ceiling diffusers/grills - circular - 8""-10"" diameter STARR_1184_REC 8/21/2026 Page: 92",EA,50.81,50.81,50.81,50.81,1,1.0,HVAC
+"Ceiling diffusers/grills - circular - 8""-10"" diameter STARR_1184_REC 9/4/2026 Page: 92",EA,50.81,50.81,50.81,50.81,1,1.0,HVAC
+Ceramic tile base - Premium grade,LF,31.67,31.67,31.67,31.67,1,18.6,Tile Floor
+"Chemical gas and odor neutralization cartridge - 16"" x 16""",EA,150.26,150.26,150.26,150.26,1,1.0,
+Claw-foot tub/shower faucet (finish trim) - Reset,EA,184.82,184.82,184.82,184.82,1,1.0,Plumbing
+Clean Ceiling and Wall,SF,0.62,0.62,0.62,0.62,1,885.86,
+Clean balustrade - Heavy,LF,5.89,5.89,5.89,5.89,1,18.0,
+Clean bath accessory - Light,EA,8.91,8.91,8.91,8.91,1,1.0,
+Clean bathroom fixtures - Large bathroom,EA,160.31,160.31,160.31,160.31,1,1.0,
+Clean bathroom fixtures - Light,EA,106.19,106.19,106.19,106.19,1,1.0,
+Clean bathtub enclosure - sliding glass doors,EA,98.93,98.93,98.93,98.93,1,1.0,
+Clean beams - exposed,LF,3.42,3.42,3.42,3.42,1,702.39,
+Clean cabinetry - full height - inside and out,LF,44.86,44.86,44.86,44.86,1,1.5,
+Clean cabinetry - lower - faces only,LF,10.35,10.35,10.35,10.35,1,58.27,
+Clean cabinetry - upper - faces only,LF,10.35,10.35,10.35,10.35,1,22.17,
+Clean chandelier,EA,75.48,75.48,75.48,75.48,1,1.0,
+Clean chandelier - Heavy,EA,96.54,96.54,96.54,96.54,1,1.0,
+Clean closet organizer and rod (Snow Gear Rack),EA,65.25,65.25,65.25,65.25,1,1.0,
+Clean closet shelf and rod per lineal foot,LF,2.2,2.2,2.2,2.2,1,17.0,
+Clean cooktop,EA,35.44,35.44,35.44,35.44,1,1.0,
+Clean countertop - Light,SF,0.86,0.86,0.86,0.86,1,21.17,
+Clean crown molding,LF,0.59,0.59,0.59,0.59,1,47.7,
+Clean dishwasher - exterior,EA,24.72,24.72,24.72,24.72,1,1.0,
+Clean door bell/chime,EA,17.51,17.51,17.51,17.51,1,1.0,
+Clean drapery - per pleat (6'- 8'length) - lined,PL,2.04,2.04,2.04,2.04,1,20.0,Cleaning
+Clean exhaust fan,EA,27.86,27.86,27.86,27.86,1,1.0,
+Clean exhaust fan - Light,EA,18.58,18.58,18.58,18.58,1,1.0,
+Clean exterior door (per side),EA,24.74,24.74,24.74,24.74,1,1.0,
+Clean fireplace face & mantel,SF,2.47,2.47,2.47,2.47,1,27.08,
+Clean fireplace hearth,SF,2.47,2.47,2.47,2.47,1,10.83,
+Clean fireplace screen,EA,52.52,52.52,52.52,52.52,1,1.0,
+Clean floor 71,SF,0.74,0.74,0.74,0.74,1,10580.0,
+Clean floor or roof joist system in confined space - Heavy,SF,9.86,9.86,9.86,9.86,1,100.0,Demo
+Clean light bar,EA,26.92,26.92,26.92,26.92,1,1.0,
+Clean light fixture - Heavy,EA,20.88,20.88,20.88,20.88,1,1.0,
+Clean medicine cabinet - Light,EA,17.67,17.67,17.67,17.67,1,1.0,
+Clean microwave - over range - exterior,EA,18.88,18.88,18.88,18.88,1,1.0,
+Clean mirror - Heavy,SF,1.56,1.56,1.56,1.56,1,9.0,
+Clean mirror - Light,SF,0.83,0.83,0.83,0.83,1,9.0,
+Clean more than the walls - Light,SF,0.46,0.46,0.46,0.46,1,266.82,
+Clean ornamental iron handrail - Light,LF,3.26,3.26,3.26,3.26,1,6.0,
+Clean oven - exterior,EA,20.93,20.93,20.93,20.93,1,2.0,
+Clean part of the walls and ceiling,SF,0.62,0.62,0.62,0.62,1,518.4,
+Clean part of the walls and ceiling - Light,SF,0.46,0.46,0.46,0.46,1,159.37,
+Clean patio door (sliding glass) (per side),EA,52.08,52.08,52.08,52.08,1,1.0,
+Clean patio door (sliding glass) (per side) - Heavy,EA,82.39,82.39,82.39,82.39,1,2.0,
+Clean recessed light fixture - Light,EA,13.3,13.3,13.3,13.3,1,1.0,
+Clean refrigerator - exterior,EA,28.25,28.25,28.25,28.25,1,1.0,
+Clean rug - Full service,EA,104.26,104.26,104.26,104.26,1,4.0,Cleaning
+Clean shower curtain rod,EA,12.27,12.27,12.27,12.27,1,1.0,
+Clean shower curtain rod - Heavy,EA,13.39,13.39,13.39,13.39,1,1.0,
+Clean sink - Light,EA,15.12,15.12,15.12,15.12,1,1.0,
+Clean sink - double and faucet,EA,34.45,34.45,34.45,34.45,1,1.0,
+Clean sink and faucet - pedestal,EA,41.01,41.01,41.01,41.01,1,1.0,
+Clean stud wall,SF,1.02,1.02,1.02,1.02,1,401.51,
+Clean stud wall - Heavy,SF,2.43,2.43,2.43,2.43,1,1131.89,
+Clean the floor,SF,0.63,0.63,0.63,0.63,1,232.58,Cleaning
+Clean the walls - Heavy,SF,0.65,0.65,0.65,0.65,1,500.67,
+Clean toilet,EA,38.08,38.08,38.08,38.08,1,1.0,
+Clean toilet - Heavy,EA,43.71,43.71,43.71,43.71,1,1.0,
+Clean trim - wood - Heavy,LF,0.73,0.73,0.73,0.73,1,26.0,
+Clean upholstered valance,EA,7.13,7.13,7.13,7.13,1,1.0,Cleaning
+Clean vanity - faces only,LF,10.32,10.32,10.32,10.32,1,3.0,
+Clean window blind - horizontal or vertical - Heavy,SF,3.84,3.84,3.84,3.84,1,44.0,
+Clean window blind - horizontal or vertical - Light,SF,1.58,1.58,1.58,1.58,1,20.0,
+Clean window unit (per side) 21 - 40 SF - Heavy,EA,41.33,41.33,41.33,41.33,1,2.0,
+Clean window unit (per side) 3 - 9 SF,EA,18.39,18.39,18.39,18.39,1,1.0,
+Clean window unit (per side) 3 - 9 SF - Half Moon WIndow,EA,18.39,18.39,18.39,18.39,1,1.0,
+Clean with pressure/chemical spray - Drive Way,SF,0.44,0.44,0.44,0.44,1,400.0,
+Clean with pressure/chemical spray - Garage Doors Both Sides,SF,0.56,0.56,0.56,0.56,1,172.67,
+Clean with pressure/chemical spray - Light,SF,0.34,0.34,0.34,0.34,1,945.0,Painting
+Clean with pressure/chemical spray - Very heavy,SF,1.31,1.31,1.31,1.31,1,150.0,Concrete
+Clean with pressure/chemical spray - Very heavy - Floor,SF,1.3,1.3,1.3,1.3,1,699.77,
+Closet package - hall/linen (4 shelves 5'- 6' wide),EA,339.16,339.16,339.16,339.16,1,1.0,Shelving
+Closet shelf and rod package - Detach,LF,12.58,12.58,12.58,12.58,1,4.0,Demo
+Construction clean,SF,0.23,0.23,0.23,0.23,1,716.28,Cleaning
+Containment,SF,1.3,1.3,1.3,1.3,1,120.0,Containment
+Containment Barrier - tension post (per day),DA,3.35,3.35,3.35,3.35,1,2.0,
+Content Manipulation charge - Hallway and Living Room Hallway Closet (2)Office Closet (1) To carefully move the contents around for the carpet installation.,HR,95.0,95.0,95.0,95.0,1,12.0,Contents
+Content Manipulation charge - per LLoowweerr CCaabb ((BB66)) hour,HR,95.0,95.0,95.0,95.0,1,2.0,Contents
+Content Manipulation charge - per hour - after hours,HR,93.33,93.33,93.33,93.33,1,6.0,Demo
+Content Manipulation charge - per hour MARTINDALE_130_REC 2/16/2026 Page: 19,HR,55.12,55.12,55.12,55.12,1,2.0,Contents
+Contents - move out then reset - Lower Cabi2 (B4) Small room,EA,88.14,88.14,88.14,88.14,1,1.0,Contents
+Countertop - flat laid plastic lam. - Detach - after hours,LF,15.11,15.11,15.11,15.11,1,2.0,Demo
+Countertop - solid surface,SF,67.57,67.57,67.57,67.57,1,4.0,Cabinets & Sink
+Deck guard rail - cedar,LF,72.58,72.58,72.58,72.58,1,12.0,Deck - 12'x12' located on back side of garage
+Deck planking - Vinyl (per SF),SF,11.13,11.13,11.13,11.13,1,144.0,Deck - 12'x12' located on back side of garage
+Demo Brick Step in front of fire place,HR,63.94,63.94,63.94,63.94,1,8.0,
+Detach & Reset 5-0 6-8 vinyl sliding patio door,EA,250.79,250.79,250.79,250.79,1,1.0,Exterior work
+Detach & Reset Base shoe,LF,1.59,1.59,1.59,1.59,1,15.0,Baseboard and toe kick
+"Detach & Reset Baseboard - 4 1/4"" MDF - w/profile",LF,3.39,3.39,3.39,3.39,1,35.38,Baseboard
+"Detach & Reset Baseboard - 5 1/4"" stain grade",LF,3.5,3.5,3.5,3.5,1,25.58,Trim
+Detach & Reset Bathtub faucet (no shower) - High grade,EA,108.3,108.3,108.3,108.3,1,1.0,Tub and Platform Tile
+Detach & Reset Bypass mirrored door set,EA,38.45,38.45,38.45,38.45,1,2.0,Door
+Detach & Reset Cabinetry - lower (base) units,LF,81.99,81.99,81.99,81.99,1,11.0,Cabinets & Sink
+Detach & Reset Cabinetry - upper (wall) units,LF,70.12,70.12,70.12,70.12,1,8.0,Cabinets & Sink
+"Detach & Reset Casing - 5"" - hardwood - Detach for reuse",LF,2.41,2.41,2.41,2.41,1,17.0,Base and Casing
+Detach & Reset Countertop - flat laid plastic laminate,LF,23.3,23.3,23.3,23.3,1,15.17,Cabinets & Sink
+Detach & Reset Countertop - solid surface,SF,40.61,40.61,40.61,40.61,1,5.0,Cabinets & Sink
+Detach & Reset Door stop - wall or floor mounted,EA,12.09,12.09,12.09,12.09,1,1.0,Flooring
+Detach & Reset Handicap grab,EA,45.22,45.22,45.22,45.22,1,1.0,Demo
+Detach & Reset Laundry tub,EA,428.8,428.8,428.8,428.8,1,1.0,Plumbing
+Detach & Reset Light fixture - High grade,EA,107.03,107.03,107.03,107.03,1,3.0,Electrical
+Detach & Reset Mirror - framed,SF,9.63,9.63,9.63,9.63,1,1.0,Vanity
+Detach & Reset Outlet - tamper resistant w/night light,EA,24.12,24.12,24.12,24.12,1,1.0,Electrical
+Detach & Reset Overhead (garage) door opener - Premium grade,EA,271.58,271.58,271.58,271.58,1,1.0,Garage Door
+Detach & Reset Overhead door & hardware - 16' x 8' - High grade,EA,592.03,592.03,592.03,592.03,1,1.0,Garage Door
+Detach & Reset P-trap assembly - ABS (plastic),EA,83.04,83.04,83.04,83.04,1,1.0,Cabs
+Detach & Reset Sink - double basin,EA,188.64,188.64,188.64,188.64,1,1.0,Cabinet
+"Detach & Reset Trim board - 1"" x 4"" - installed (cedar)",LF,4.13,4.13,4.13,4.13,1,18.0,Exterior work
+Detach & Reset Window drapery - hardware - single rod,EA,38.25,38.25,38.25,38.25,1,1.0,Windows
+Detach & Reset Window drapery - hardware - single rod - Large,EA,38.25,38.25,38.25,38.25,1,1.0,Windows
+Detach and reset kegerator wall tap,HR,62.12,62.12,62.12,62.12,1,4.0,Drywall
+Door hinges (set of 3) and slab - Detach & reset,EA,39.51,39.51,39.51,39.51,1,6.0,Doors
+Drill holes for wall cavity drying 2nd Floor Suite Hallways,EA,0.84,0.84,0.84,0.84,1,15.0,Demo
+Dryer - Reset - gas,EA,197.84,197.84,197.84,197.84,1,1.0,Appliances
+Dryer - electric - Detach - after hours,EA,49.49,49.49,49.49,49.49,1,1.0,Demo
+Drywall brick **option**,HR,109.86,109.86,109.86,109.86,1,8.0,
+Ductwork - hot or cold air,LF,49.56,49.56,49.56,49.56,1,2.0,HVAC
+Ductwork - hot or cold air - Large size,LF,61.94,61.94,61.94,61.94,1,2.0,HVAC
+Dust Control,EA,400.0,400.0,400.0,400.0,1,1.0,Flooring General Conditions
+Electrical (Bid Item) - For the breaker box repair,EA,4425.0,4425.0,4425.0,4425.0,1,1.0,Supplements
+Electrical Inspection,EA,390.0,390.0,390.0,390.0,1,1.0,
+Electrical Open Bid Item,EA,19170.0,19170.0,19170.0,19170.0,1,1.0,Electrical
+"Equip. setup, take down & monitoring - after hrs",HR,130.17,130.17,130.17,130.17,1,2.0,
+"Equipment setup, take down, and monitoring",HR,72.0,72.0,72.0,72.0,1,4.0,
+Exit sign - Detach & reset,EA,83.48,83.48,83.48,83.48,1,1.0,Electrical
+Extra glue required for carpet,EA,1600.0,1600.0,1600.0,1600.0,1,1.0,
+Extra required to carefully remove the old door.,HR,90.65,90.65,90.65,90.65,1,1.0,Door
+Fiberglass shower unit - Standard grade,EA,921.81,921.81,921.81,921.81,1,1.0,Plumbing
+Fill holes in grout lines,EA,550.0,550.0,550.0,550.0,1,1.0,Tile Floor
+Final cleaning - construction -,SF,0.43,0.43,0.43,0.43,1,717.92,Cleaning
+Final cleaning - construction - Dining Room Residential Bedroom 3 Closet,SF,0.45,0.45,0.45,0.45,1,25.58,Cleaning
+Final cleaning - construction - Residential BBaatthhrroooomm,SF,0.28,0.28,0.28,0.28,1,17.71,Cleaning
+Final cleaning - construction - Residential BELVILL_1667_REC 9/14/2026 Page: 9,SF,0.41,0.41,0.41,0.41,1,315.18,Cleaning
+Final cleaning - construction - Residential Bedroom 6 (1) Primary Bedroom,SF,0.28,0.28,0.28,0.28,1,89.39,Cleaning
+Final cleaning - construction - Residential Extra Room,SF,0.28,0.28,0.28,0.28,1,142.59,Cleaning
+Final cleaning - construction - Residential FLOWERS_4525_LVP 1/5/2026 Page: 12,SF,0.3,0.3,0.3,0.3,1,56.97,Cleaning
+Final cleaning - construction - Residential Kitchen Bedroom 3 Bedroom 2 Dining Room Bedroom 3 Closet,SF,0.45,0.45,0.45,0.45,1,90.21,Appliances
+Final cleaning - construction - Residential MORRIS_11160_REC1 11/17/2025 Page: 4,SF,0.48,0.48,0.48,0.48,1,110.08,Cleaning
+Final cleaning - construction - Residential Mantel (B1) Hearth (B2),SF,0.54,0.54,0.54,0.54,1,21.05,Cleaning
+Final cleaning - construction - SSiinnkk BBaassee ((BB44)) LLoowweerr CCaabb ((BB55)) KKiittcchheenn,SF,0.48,0.48,0.48,0.48,1,98.6,Cleaning
+Floor Covering - Wood (Bid Item),EA,15090.0,15090.0,15090.0,15090.0,1,1.0,Flooring General Conditions
+Floor leveling cement - Light,SF,2.12,2.12,2.12,2.12,1,100.92,Flooring
+Floor prep (scrape rest of glue from pad),SF,0.81,0.81,0.81,0.81,1,167.65,Carpet
+Floor protection - heavy paper and tape FAITH_50_#78_REC-1 3/13/2026 Page: 6,SF,0.45,0.45,0.45,0.45,1,114.86,Flooring
+Floor protection - heavy paper and tape FAITH_50_747680_REC 2/13/2026 Page: 6,SF,0.45,0.45,0.45,0.45,1,114.86,Flooring
+Fluorescent - four tube - 4' - fixture w/lens,EA,153.29,153.29,153.29,153.29,1,1.0,Light Fixture
+"Foam pipe insulation - 1"" wall for 1"" to 1 1/2"" pipe",LF,7.67,7.67,7.67,7.67,1,12.0,Pipe Insulation
+Framing & Rough Carpentry (Bid,EA,28328.02,28328.02,28328.02,28328.02,1,1.0,Framing Supplement
+Framing & Rough Carpentry (Bid Item),EA,38202.0,38202.0,38202.0,38202.0,1,1.0,Deck Framing
+French double door set - Interior - pre-hung unit,EA,995.15,995.15,995.15,995.15,1,1.0,Doors
+"Furnace - check, clean, replace filters and service",EA,219.65,219.65,219.65,219.65,1,1.0,Flooring General Conditions
+Garage Door Replacement,EA,7522.85,7522.85,7522.85,7522.85,1,1.0,Supplements
+Garbage disposal / disposer - Detach & reset JOHNSON-LONGMONT-R-1 3/12/2026 Page: 4,EA,235.94,235.94,235.94,235.94,1,1.0,Appliances
+Garbage disposal / disposer - Install,EA,235.94,235.94,235.94,235.94,1,1.0,Appliances
+Gas/water line cap/plug - per cap,EA,21.02,21.02,21.02,21.02,1,2.0,Cabs
+"Generator - 6,000 watt - portable (per day)",DA,79.78,79.78,79.78,79.78,1,3.0,
+Glue down carpet - Standard grade,SF,2.24,2.24,2.24,2.24,1,1597.34,Carpet
+Grooming Table - Reset,HR,85.0,85.0,85.0,85.0,1,2.0,Grooming Table and Tub
+Gypcrete Bid Item,EA,2260.0,2260.0,2260.0,2260.0,1,1.0,Gypcrete
+Gypcrete Repair in kitchen,EA,1010.0,1010.0,1010.0,1010.0,1,1.0,Debris
+HVAC Cleaning,EA,960.0,960.0,960.0,960.0,1,1.0,
+Handicap grab bar - Reset,EA,45.22,45.22,45.22,45.22,1,1.0,Finish Hardware
+Hazardous Material Service Call - during business hours,EA,186.67,186.67,186.67,186.67,1,1.0,General Clean-up
+Hazardous Waste Cleaning Technician - per hour,HR,90.0,90.0,90.0,90.0,1,8.0,General Clean-up
+Hazardous Waste/AsbestosCleaning Technician - per hour,HR,105.0,105.0,105.0,105.0,1,8.0,
+Hazardous Waste/Mold Cleaning- Supervisory/Admin- per hour,HR,130.0,130.0,130.0,130.0,1,2.0,General Clean-up
+Hazardous waste hauling & disposal - (Bid Item),EA,55.0,55.0,55.0,55.0,1,2.0,
+Hazardous waste hauling & disposal - (Bid Item),CY,68.0,68.0,68.0,68.0,1,12.0,accordance with CDPHE Regulation 8.
+Hazardous waste hauling & disposal fee,EA,300.0,300.0,300.0,300.0,1,1.0,
+Hazardous waste/mold rem. labor min,EA,234.75,234.75,234.75,234.75,1,1.0,
+Heat/AC register - wood - flush mount,EA,75.31,75.31,75.31,75.31,1,1.0,Flooring
+Hydroxyl generator - odor counteractant - 2 optics,DA,180.0,180.0,180.0,180.0,1,5.0,Equipment
+Install Angle stop valve,EA,32.37,32.37,32.37,32.37,1,2.0,Vanity
+Install Backsplash - stainless steel,SF,17.91,17.91,17.91,17.91,1,18.5,Cabinets & Sink
+Install Base shoe - hardwood,LF,0.89,0.89,0.89,0.89,1,28.25,Baseboard
+"Install Baseboard - 10"" hardwood - 2 piece",LF,4.73,4.73,4.73,4.73,1,28.25,Baseboard
+"Install Baseboard - 4 1/4"" stain grade",LF,2.45,2.45,2.45,2.45,1,21.5,Baseboard
+"Install Baseboard - 5 1/4"" MDF - w/profile",LF,2.02,2.02,2.02,2.02,1,3.0,Baseboard and Casing
 Install Bathtub,EA,799.2,799.2,799.2,799.2,1,1.0,Plumbing
+Install Bathtub - High grade,EA,622.1,622.1,622.1,622.1,1,1.0,Tub and Platform Tile
+Install Cabinetry - laminate lower (base) units,LF,48.29,48.29,48.29,48.29,1,8.0,Vanity
+Install Carpet - metal transition strip,LF,1.6,1.6,1.6,1.6,1,3.0,Carpet
+"Install Casing - 3 1/4"" stain grade",LF,1.29,1.29,1.29,1.29,1,45.0,Trim
+Install Ceramic tile base,LF,27.58,27.58,27.58,27.58,1,2.0,Tile Floor
+Install Ceramic tile base - Premium grade,LF,17.9,17.9,17.9,17.9,1,18.6,Tile Floor
+Install Claw-foot shower curtain surround,EA,96.61,96.61,96.61,96.61,1,1.0,Plumbing
+Install Claw-foot tub - High grade,EA,772.89,772.89,772.89,772.89,1,1.0,Plumbing
+Install Claw-foot tub faucet with shower,EA,336.04,336.04,336.04,336.04,1,1.0,Plumbing
+Install Cold air return cover - Large,EA,24.78,24.78,24.78,24.78,1,1.0,HVAC
+Install Countertop - Granite or Marble,SF,43.07,43.07,43.07,43.07,1,49.0,"Cabinets, Counter tops, & Sink"
+Install Countertop - Tile,SF,35.66,35.66,35.66,35.66,1,6.67,Vanity
+Install Countertop - wood - butcher block (hardrock maple),SF,44.03,44.03,44.03,44.03,1,5.0,Wet Bar
+Install Countertop subdeck - plywood,SF,4.21,4.21,4.21,4.21,1,6.67,Vanity
+"Install Custom shower door & partition - 1/4"" glass w/frame",SF,14.52,14.52,14.52,14.52,1,40.0,Shower Tile
+Install Engineered wood flooring - step charge (tread and riser),LF,8.38,8.38,8.38,8.38,1,8.0,Flooring
 Install Fiberglass tub surround only,EA,570.41,570.41,570.41,570.41,1,1.0,Plumbing
-Install Light fixture,EA,105.63,105.63,105.63,105.63,1,1.0,Electrical
+Install Fluorescent light fixture,EA,64.78,64.78,64.78,64.78,1,1.0,Electrical
+Install Interior door unit,EA,70.78,70.78,70.78,70.78,1,1.0,Door
+Install Microwave oven - over range w/built-in hood,EA,145.31,145.31,145.31,145.31,1,1.0,Appliances
+Install Paneling - High grade,SF,1.85,1.85,1.85,1.85,1,60.0,Paneling
 Install Range hood,EA,217.39,217.39,217.39,217.39,1,1.0,Electrical
+Install Refrigerator - compact (under counter),EA,43.24,43.24,43.24,43.24,1,1.0,Appliances
 Install Shower faucet,EA,185.51,185.51,185.51,185.51,1,1.0,Plumbing
-Insulation labor minimum,EA,190.35,190.35,190.35,190.35,1,1.0,
-Interior door - Reset - slab only,EA,16.18,16.18,16.18,16.18,1,1.0,Door
-Lace in wood floors,HR,100.0,100.0,100.0,100.0,1,3.0,Flooring General Conditions
-Mask and cover large light fixture,EA,22.18,22.18,22.18,22.18,1,1.0,Paint
-Mask and cover light fixture,EA,15.74,15.74,15.74,15.74,1,10.0,Paint
+Install Shower pan - Install Only,EA,130.0,130.0,130.0,130.0,1,1.0,Plumbing
+Install T- molding - for wood flooring,LF,1.65,1.65,1.65,1.65,1,12.0,LVP
+Install Tile - metal trim - aluminum - up to 9/16,LF,2.62,2.62,2.62,2.62,1,24.0,Shower
+Install Tile shower - 101 to 120 SF,EA,3201.64,3201.64,3201.64,3201.64,1,1.0,Shower
+Install Vanity with granite or marble top,LF,65.71,65.71,65.71,65.71,1,3.5,Vanity
+Install Vinyl tile,SF,1.74,1.74,1.74,1.74,1,30.8,Flooring
+Install Water filtration system - under sink,EA,105.02,105.02,105.02,105.02,1,1.0,Plumbing
+Insulation - Extra Insulation,EA,966.73,966.73,966.73,966.73,1,1.0,Insulation
+Insurance Adjustment to Match Scope,EA,1183.23,1183.23,1183.23,1183.23,1,1.0,Insurance Adjustment
+Interior door - Detach & reset - slab only WW360_1336-ALL 9/1/2026 Page: 11,EA,27.24,27.24,27.24,27.24,1,2.0,Door
+Job-site moving/storage container - 20' long (per month),MO,275.0,275.0,275.0,275.0,1,1.0,
+Labor to install joist - floor or ceiling - 2x10,LF,2.3,2.3,2.3,2.3,1,46.0,Temporary Shoring
+Labor to repair floor joists and subfloor,HR,83.91,83.91,83.91,83.91,1,4.0,Cleaning
+Laundry tub - High grade,EA,564.73,564.73,564.73,564.73,1,1.0,Shower with Tub
+Laundry tub - Reset,EA,200.0,200.0,200.0,200.0,1,1.0,Laundry Sink
+Lift carpet for drying - after hours,SF,0.92,0.92,0.92,0.92,1,100.0,Demo
+Light fixture - Detach,EA,64.79,64.79,64.79,64.79,1,1.0,Abatement
+Light fixture - Premium grade,EA,217.94,217.94,217.94,217.94,1,1.0,Electrical
+Light fixture - Reset - Large,EA,139.22,139.22,139.22,139.22,1,1.0,Electrical
+Light fixture Bedroom Closet (1) PrimarBy aBthattuhbro2o (mB 1B)aBthaBttuhabrthotoumb3 B (aBth1t)ub,EA,80.53,80.53,80.53,80.53,1,1.0,Light Fixture
+Mask and cover register / air return,EA,6.63,6.63,6.63,6.63,1,12.0,Hardwood General Conditions
+Mask and prep for paint - tape only (per LF) MOON_17024_REC 8/4/2026 Page: 14,LF,0.7,0.7,0.7,0.7,1,16.0,Doors and Casing
+Mask and prep for paint - tape only (per LF) REINHOLTZ_9926_REC 2/17/2026 Page: 10,LF,0.67,0.67,0.67,0.67,1,17.0,Door and Casing
+Mask and prep for paint - tape only (per LF) REINHOLTZ_9926_REC 2/2/2026 Page: 10,LF,0.67,0.67,0.67,0.67,1,17.0,Door and Casing
+Mask the floor per square foot - plastic and tape - 4 mil PPrriimmaarryy BBeeddrroooomm Painting above finished floors will require masking to prevent damage to those floor materials.,SF,0.29,0.29,0.29,0.29,1,16.23,Paint
+Master Lock + Chain,EA,62.0,62.0,62.0,62.0,1,1.0,
+"Material Only Underlayment - 3/4"" OSB - tongue and groove",SF,0.96,0.96,0.96,0.96,1,32.0,Cleaning
+Material Only Vanity,LF,202.45,202.45,202.45,202.45,1,2.58,Vanity
+Microwave oven - over range or drawer type- Install,EA,157.12,157.12,157.12,157.12,1,1.0,Appliances
+Moisture Protection Installer - per hour,HR,76.51,76.51,76.51,76.51,1,2.0,
+Mortar bed for tile floors Vanity1 (BV2)anity3 (B2) Bedroom,SF,5.94,5.94,5.94,5.94,1,32.51,Flooring
+Move shower drain location,EA,580.0,580.0,580.0,580.0,1,1.0,Shower
+Moving Floor Register,EA,993.25,993.25,993.25,993.25,1,1.0,HVAC
+Moving Plumging for tub,HR,155.0,155.0,155.0,155.0,1,4.0,Tub
+Muck-out/Flood loss cleanup - confined space - Heavy,SF,8.65,8.65,8.65,8.65,1,112.0,Mitigation
+Nail plate,EA,3.01,3.01,3.01,3.01,1,1.0,HVAC
+Negative air fan/Air scrubber (24,DA,76.04,76.04,76.04,76.04,1,2.0,Equipment
 Oak flooring - clear grade - no finish,SF,13.28,13.28,13.28,13.28,1,9.0,Hardwood
-Oak flooring - select grade - no finish,SF,17.49,17.49,17.49,17.49,1,80.0,Flooring
-Paint more than the ceiling - one coat - 2 colors,SF,0.89,0.89,0.89,0.89,1,624.02,Paint
-Paint the surface area - two coats,SF,1.1,1.1,1.1,1.1,1,24.0,Paint
-Paint the surface area - two coats - 2 colors,SF,1.36,1.36,1.36,1.36,1,32.0,Paint
-Protect contents - Cover with plastic,SF,0.33,0.33,0.33,0.33,1,100.0,Paint
-R&R T- molding - for wood flooring,LF,8.49,8.49,8.49,8.49,1,9.0,Engineered Hardwood
-R&R Tile mat - uncoupling membrane,SF,8.65,8.65,8.65,8.65,1,1.0,Engineered Hardwood
-Radiant heat - wire mat,SF,22.25,22.25,22.25,22.25,1,251.49,Engineered Hardwood
-Range - gas - Remove & reset,EA,215.87,215.87,215.87,215.87,1,1.0,Appliances
-Remove Engineered wood flooring,SF,3.38,3.38,3.38,3.38,1,241.49,Engineered Hardwood
-Remove Oak flooring - select grade - no finish,SF,4.13,4.13,4.13,4.13,1,30.0,Flooring
-Remove Tile floor covering - High grade,SF,3.54,3.54,3.54,3.54,1,45.49,Tile Floor
-Remove Tile mat - uncoupling membrane,SF,1.63,1.63,1.63,1.63,1,45.49,Tile Floor
-Residential Supervision / Project Management - per hour,HR,80.85,80.85,80.85,80.85,1,8.0,
-Rough-in plumbing - per fixture,EA,1106.27,1106.27,1106.27,1106.27,1,1.0,Plumbing
-"Sand, stain, and finish steps and/or risers",LF,19.37,19.37,19.37,19.37,1,4.0,Hardwood
-Seal/prime (1 coat) then paint (1 coat) the surface area,SF,1.1,1.1,1.1,1.1,1,88.0,Paint
-"Step charge for ""tucked"" carpet installation - High grade",EA,18.43,18.43,18.43,18.43,1,18.0,Carpet
-Texture drywall - heavy hand texture,SF,1.66,1.66,1.66,1.66,1,88.0,Drywall
-Tile floor covering - High grade,SF,13.17,13.17,13.17,13.17,1,51.49,Tile Floor
-Tile floor covering labor minimum,EA,557.93,557.93,557.93,557.93,1,1.0,
-Tile mat - uncoupling membrane,SF,7.09,7.09,7.09,7.09,1,51.49,Tile Floor
-Toilet - Detach & reset,EA,341.48,341.48,341.48,341.48,1,1.0,Toilet
-Vapor barrier - 15# felt,SF,0.4,0.4,0.4,0.4,1,44.55,Hardwood
-Washer/Washing machine - Remove & reset,EA,78.29,78.29,78.29,78.29,1,1.0,Appliances
-Wood delivery,EA,360.0,360.0,360.0,360.0,1,1.0,Flooring General Conditions
+Overhead door & hardware - 16' x 7',EA,1909.36,1909.36,1909.36,1909.36,1,1.0,Garage door
+Overhead door & hardware - 16' x 8',EA,2423.92,2423.92,2423.92,2423.92,1,1.0,Garage door
+Overhead door bottom panel,LF,12.6,12.6,12.6,12.6,1,0.0,Garage Door
+P-trap assembly - ABS (plastic) PPrriimmaarryy BBeeddrroooomm,EA,88.36,88.36,88.36,88.36,1,1.0,Plumbing
+Paint Brick **option,HR,74.97,74.97,74.97,74.97,1,4.0,
+Paint baseboard - one coat Built in shelving (B1),LF,1.02,1.02,1.02,1.02,1,41.35,Baseboard
+Paint baseboard - one coat Hallway,LF,1.02,1.02,1.02,1.02,1,47.77,Baseboard
+Paint baseboard - two coats PrimarBy aBthattuhbro2Bo (amBBtha 1Brt)ohaottuhmbtu 3Bb (aBB th1e t d)u r b oom Closet (1),LF,1.7,1.7,1.7,1.7,1,47.26,Baseboard
+Paint bifold door set - slab only - 2 coats (per side) MOON_17024_REC 8/4/2026 Page: 26,EA,59.69,59.69,59.69,59.69,1,1.0,Doors and Casings
+Paint cab face,HR,74.85,74.85,74.85,74.85,1,8.0,Cab Repair
+Paint corner trim - one coat Hearth (B2),LF,1.36,1.36,1.36,1.36,1,24.0,Wall Paneling
+Paint door or window opening - 2 coats (per side) STARR_1184_REC 7/9/2026 Page: 41,EA,36.4,36.4,36.4,36.4,1,1.0,Doors and Casing
+Paint door or window opening - 2 coats (per side) STARR_1184_REC 8/21/2026 Page: 63,EA,36.4,36.4,36.4,36.4,1,1.0,Doors and Casing
+Paint door or window opening - 2 coats (per side) STARR_1184_REC 9/4/2026 Page: 63,EA,36.4,36.4,36.4,36.4,1,1.0,Doors and Casing
+Paint overhead door - Large - 2,EA,203.94,203.94,203.94,203.94,1,0.0,Garage Door
+Paint single bifold door - slab only - 2 coats (per side),EA,34.09,34.09,34.09,34.09,1,1.0,Doors
+Paint the ceiling - one coat - 2 colors,SF,0.93,0.93,0.93,0.93,1,271.94,Paint
+Paint the walls and ceiling - one coat - 2 colors MOTTRAM_1532_INSTALL 5/8/2025 Page: 10,SF,0.62,0.62,0.62,0.62,1,371.9,Paint
+Paint the walls and ceiling - two coats HHaallllwwaayy,SF,1.15,1.15,1.15,1.15,1,124.67,Paint
+Painting - Faux (special effects) - 2 part,SF,2.66,2.66,2.66,2.66,1,207.0,Paint
+Painting - Faux (special effects) - 3 part,SF,3.45,3.45,3.45,3.45,1,117.27,Paint
+Pet Grooming tub - Reset,EA,350.1,350.1,350.1,350.1,1,1.0,Grooming Table and Tub
+Piano skid board - (per month),MO,120.51,120.51,120.51,120.51,1,2.0,Contents
+Plumbing (Bid Item),EA,4642.0,4642.0,4642.0,4642.0,1,1.0,Bid Items
+Plumbing - Repair of drain line,EA,350.0,350.0,350.0,350.0,1,1.0,Plumbing
+Plywood and Labor for temp containment between Utility room and Unit 101.,EA,178.0,178.0,178.0,178.0,1,1.0,
+Pool Stick Rack Reset,HR,78.2,78.2,78.2,78.2,1,1.0,Finish Hardware
+Post Mold Testing ( optional ),EA,550.0,550.0,550.0,550.0,1,1.0,
+"R&R 2"" x 4"" lumber (.667 BF",LF,3.78,3.78,3.78,3.78,1,0.0,Framing
+"R&R 2"" x 6"" cedar - deck grade (1 BF per LF)",LF,8.28,8.28,8.28,8.28,1,288.0,Deck - 12'x12' located on back side of garage
+"R&R 2"" x 6"" lumber (1 BF per LF)",LF,4.39,4.39,4.39,4.39,1,150.0,Framing
+R&R 5-0 6-8 vinyl sliding patio door,EA,1097.58,1097.58,1097.58,1097.58,1,1.0,Doors and Casing
+"R&R Baseboard - 5 1/4""",LF,6.46,6.46,6.46,6.46,1,12.0,Baseboard
+"R&R Batt insulation - 6"" - R19 - unfaced batt",SF,1.72,1.72,1.72,1.72,1,951.08,
+R&R Bifold door - Colonist - Single,EA,208.87,208.87,208.87,208.87,1,1.0,Doors
+"R&R Casing - 2 1/4""",LF,3.49,3.49,3.49,3.49,1,17.0,Baseboard and casing
+R&R Closet shelf,LF,35.06,35.06,35.06,35.06,1,12.0,Shelving
+R&R Combination CO/Smoke,EA,129.81,129.81,129.81,129.81,1,0.0,Electrical
+R&R Corner trim,LF,2.78,2.78,2.78,2.78,1,56.0,Wallpaper
+R&R Countertop - flat laid plastic laminate,LF,55.91,55.91,55.91,55.91,1,4.0,Vanity
+R&R Countertop - post formed plastic laminate,LF,61.98,61.98,61.98,61.98,1,1.0,Cabs
+R&R Countertop - solid surface,SF,74.02,74.02,74.02,74.02,1,14.17,Countertop - *****OPTIONAL*****
+"R&R Cove base molding - rubber or vinyl, 4"" high RIO_4725_REVISED 2/4/2026 Page: 5",LF,2.91,2.91,2.91,2.91,1,80.54,Cove Base
+R&R Deck planking - treated lumber (per SF),SF,11.8,11.8,11.8,11.8,1,78.0,Deck Boards
+"R&R Door numbers/letters - plastic or metal - up to 4""",EA,23.62,23.62,23.62,23.62,1,1.0,
+R&R Ductwork system - hot or cold air - 1200 to 1599 SF home,EA,8206.2,8206.2,8206.2,8206.2,1,1.0,HVAC
+R&R Exterior door - solid alder - paneled,EA,1521.15,1521.15,1521.15,1521.15,1,1.0,Doors
+"R&R Fiberglass duct wrap, 1 1/2"" thick",SF,7.72,7.72,7.72,7.72,1,24.0,HVAC
+R&R Flat trim for wallpaper seams,LF,2.78,2.78,2.78,2.78,1,16.0,Wallpaper
+R&R Floor drain - tub/shower - metal/plastic PRADO_8411_REC 1/13/2026 Page: 9,EA,63.13,63.13,63.13,63.13,1,1.0,Shower
+R&R Floor drain - tub/shower - metal/plastic PRADO_8411_REC 1/9/2026 Page: 9,EA,63.13,63.13,63.13,63.13,1,1.0,Shower
+R&R Fluorescent - four tube - 4' - fixture w/lens,EA,172.85,172.85,172.85,172.85,1,1.0,Light Fixture
+R&R Handrail - detailed profile - hardwood - wall mounted,LF,22.0,22.0,22.0,22.0,1,14.0,Handrail
+R&R Hanging light fixture,EA,125.35,125.35,125.35,125.35,1,1.0,Lights
+R&R Header - engineered,LF,37.92,37.92,37.92,37.92,1,0.0,Framing
+"R&R Header - engineered strand lumber - 3 1/2"" x 7""",LF,37.92,37.92,37.92,37.92,1,17.0,Framing
+R&R Heat/AC register - LVP match - flush mount,EA,77.23,77.23,77.23,77.23,1,1.0,Flooring
+"R&R I-joist - 12"" deep - 3 1/2"" flange",LF,10.71,10.71,10.71,10.71,1,32.0,Subfloor Repair
+R&R Jamb and trim for,LF,11.48,11.48,11.48,11.48,1,0.0,Framing
+R&R Jamb and trim for overhead door unit,LF,11.48,11.48,11.48,11.48,1,30.0,Framing
+R&R Kitchen Sink - single basin,EA,413.05,413.05,413.05,413.05,1,1.0,"Cabinets, Counter tops, & Sink"
+"R&R Labor to frame 2"" x 4"" load bearing wall - 16"" oc",SF,2.07,2.07,2.07,2.07,1,91.33,Framing
+R&R Light bar - 8 lights,EA,191.22,191.22,191.22,191.22,1,1.0,Lights
+R&R Linear Floor Drain,EA,464.08,464.08,464.08,464.08,1,1.0,Shower
+"R&R Mixing valve - brass - 1/2""",EA,209.58,209.58,209.58,209.58,1,1.0,Shower
+R&R Overhead (garage) door,EA,522.43,522.43,522.43,522.43,1,0.0,Garage Door
+R&R Overhead door panel - 13',EA,673.01,673.01,673.01,673.01,1,0.0,Garage Door
+R&R P-trap assembly - ABS (plastic) ROYSTER_1973_REV_INS 6/6/2025 Page: 4,EA,115.67,115.67,115.67,115.67,1,1.0,Cabinets & Sink
+R&R Plumbing fixture supply,EA,33.58,33.58,33.58,33.58,1,4.0,Countertop - *****OPTIONAL*****
+R&R Plumbing fixture supply line BEST_1621_REC1 12/2/2025 Page: 13,EA,33.93,33.93,33.93,33.93,1,1.0,Plumbing
+R&R Plumbing fixture supply line STARR_1184_REC 8/21/2026 Page: 107,EA,33.72,33.72,33.72,33.72,1,2.0,Vanity
+R&R Plumbing fixture supply line STARR_1184_REC 9/4/2026 Page: 107,EA,33.72,33.72,33.72,33.72,1,2.0,Vanity
+"R&R Screen door - metal - 30"" - 36"" - full screen (no glass)",EA,272.2,272.2,272.2,272.2,1,2.0,Door
+"R&R Sheathing - plywood - 3/4"" CDX",SF,3.86,3.86,3.86,3.86,1,9.03,Flooring
+"R&R Shelving - 16"" - in place",LF,15.09,15.09,15.09,15.09,1,6.0,Shelving
+R&R Shower base,EA,692.31,692.31,692.31,692.31,1,1.0,Shower
+R&R Shower door,EA,625.16,625.16,625.16,625.16,1,1.0,Shower
+R&R Shower door - corner unit,EA,1098.21,1098.21,1098.21,1098.21,1,1.0,Shower
+R&R Shower faucet,EA,300.32,300.32,300.32,300.32,1,1.0,Shower
+R&R Siding - shiplap - pine or equal,SF,21.14,21.14,21.14,21.14,1,15.0,Paneling
+R&R Sink faucet - Kitchen,EA,332.52,332.52,332.52,332.52,1,1.0,"Cabinets, Counter tops, & Sink"
+R&R Storm door assembly,EA,333.23,333.23,333.23,333.23,1,1.0,Doors
+"R&R Stud wall - 2"" x 4"" x 8' -",LF,26.69,26.69,26.69,26.69,1,0.0,Framing
+R&R T- molding - for wood flooring - High grade,LF,23.83,23.83,23.83,23.83,1,4.0,Flooring
+R&R Tile shower - 101 to 120 SF - High grade,EA,5116.8,5116.8,5116.8,5116.8,1,1.0,Shower
+R&R Tile tub surround - up to 60 SF,EA,2329.12,2329.12,2329.12,2329.12,1,1.0,Shower
+"R&R Toe kick - pre-finished wood - 1/2""",LF,20.47,20.47,20.47,20.47,1,6.0,Toe Kick
+R&R Toilet,EA,675.59,675.59,675.59,675.59,1,1.0,Plumbing
+"R&R Trim board - 1"" x 2"" - installed (pine)",LF,3.87,3.87,3.87,3.87,1,18.0,Shelving
+R&R Tub/shower faucet,EA,408.96,408.96,408.96,408.96,1,1.0,Tub
+R&R Vanity with cultured marble or solid surface top,LF,292.68,292.68,292.68,292.68,1,4.0,Vanity
+R&R Vinyl tile,SF,5.67,5.67,5.67,5.67,1,30.8,Flooring
+"R&R Vinyl window, horizontal sliding, 3-11 sf",EA,317.79,317.79,317.79,317.79,1,2.0,Windows
+"R&R Vinyl window, picture/fixed, 12-23 sf",EA,375.48,375.48,375.48,375.48,1,1.0,Windows
+R&R Water heater - 40 gallon - Electric - 9 yr,EA,1368.22,1368.22,1368.22,1368.22,1,1.0,Plumbing
+R&R Water heater - 40 gallon - Electric - 9 yr PrimarBy aBthattuhbro2o (mBBa 1BBt)haarttohhottuumbb 3B (aBth1B t)u e b droom Closet (1),EA,1368.22,1368.22,1368.22,1368.22,1,1.0,Plumbing
+R&R Window sill - stain grade,LF,5.73,5.73,5.73,5.73,1,5.0,Window Trim
+Range - electric - Remove & reset Primary Bedroom Primary BathroomBathroom,EA,64.37,64.37,64.37,64.37,1,1.0,Appliances
+Range hood - add on cost for ceiling mount/island hood,EA,429.61,429.61,429.61,429.61,1,1.0,HVAC
+Recessed light fixture - Detach & reset entire unit BEST_1621_REC 9/12/2025 Page: 13,EA,142.32,142.32,142.32,142.32,1,1.0,Shower
+"Recessed light fixture - canless LED - up to 8""",EA,65.98,65.98,65.98,65.98,1,4.0,Lights
+Reducer strip,LF,7.63,7.63,7.63,7.63,1,6.0,Flooring
+Refrig. water line - Disconnect & reconnect - with repairs,EA,113.75,113.75,113.75,113.75,1,1.0,Appliances
+Reinstall Balustrade,LF,140.2,140.2,140.2,140.2,1,12.0,Balustrade
+"Remove 1/2"" water rock (greenboard) hung, taped ready for texture",SF,0.59,0.59,0.59,0.59,1,80.0,Tub/Shower
+"Remove 5/8"" drywall - hung, taped, floated, ready for paint",SF,0.59,0.59,0.59,0.59,1,10.0,Drywall
+Remove Angle stop valve,EA,7.0,7.0,7.0,7.0,1,2.0,Vanity
+"Remove Baseboard - 2 1/4"" MDF - flat profile",LF,0.6,0.6,0.6,0.6,1,10.0,Baseboard
+"Remove Baseboard - 7 1/4"" hardwood - molded w/intricate detail",LF,0.71,0.71,0.71,0.71,1,6.0,Base and Casing
+Remove Bathtub enclosure - sliding glass doors,EA,46.06,46.06,46.06,46.06,1,1.0,
+Remove Bathtub faucet (no shower),EA,39.34,39.34,39.34,39.34,1,1.0,
+Remove Breaker panel - 100 amp w/arc fault breakers,EA,140.6,140.6,140.6,140.6,1,4.0,
+Remove Bypass (sliding) door set,EA,21.11,21.11,21.11,21.11,1,2.0,Demo
+"Remove Casing - 5"" - hardwood - Detach for reuse",LF,0.71,0.71,0.71,0.71,1,17.0,Base and Casing
+Remove Ceiling fan without,EA,26.4,26.4,26.4,26.4,1,1.0,Light Fixture
+"Remove Chair rail - 2 1/2""",LF,0.6,0.6,0.6,0.6,1,27.83,Baseboard
+Remove Drinking fountain,EA,151.99,151.99,151.99,151.99,1,1.0,
+Remove Electrical panel cover,EA,9.62,9.62,9.62,9.62,1,1.0,Electrical
+Remove Engineered wood flooring - High grade,SF,4.09,4.09,4.09,4.09,1,270.45,Hardwood Floor
+Remove Fiberglass reinforced plastic (FRP) paneling w/trim,SF,1.18,1.18,1.18,1.18,1,28.0,FRP Paneling
+Remove Fiberglass tub surround only,EA,48.98,48.98,48.98,48.98,1,1.0,Abatement
+Remove Light fixture - High grade,EA,15.6,15.6,15.6,15.6,1,3.0,
+Remove P-trap assembly - ABS (plastic) ssaalleess fflloooorr,EA,14.06,14.06,14.06,14.06,1,1.0,
+Remove Paneling - Premium grade,SF,0.57,0.57,0.57,0.57,1,92.0,
+"Remove Rubberized floor surface - glued sheets, poured, or rolled",SF,1.72,1.72,1.72,1.72,1,400.75,
+"Remove Shelving - 12"" - in place",LF,0.73,0.73,0.73,0.73,1,7.0,Demo
+"Remove Shelving - 24"" - in place",LF,1.16,1.16,1.16,1.16,1,3.0,Demo
+Remove Shower Surround - one wall new tile,EA,361.67,361.67,361.67,361.67,1,0.25,Shower
+Remove Tile floor covering - Standard grade,SF,3.59,3.59,3.59,3.59,1,35.95,Tile
+Remove Tile shower - 101 to 120 SF,EA,323.87,323.87,323.87,323.87,1,0.75,Shower
+Remove Tile shower - 121 to 150 SF,EA,383.94,383.94,383.94,383.94,1,0.8,Shower
+Remove Tile shower - up to 60 SF,EA,251.29,251.29,251.29,251.29,1,1.0,
+Remove Tub/shower faucet,EA,35.79,35.79,35.79,35.79,1,1.0,Demo of existing Tub area
+Remove Vinyl plank flooring - Standard grade,SF,1.69,1.69,1.69,1.69,1,183.24,Flooring
+Remove and Reset shelving and Paint them,LF,18.71,18.71,18.71,18.71,1,10.0,Shelving
+Remove framing and step under shower,HR,89.7,89.7,89.7,89.7,1,2.0,Shower
+Remove framing around tub and repair subfloor for new tub,HR,89.7,89.7,89.7,89.7,1,2.0,Tub
+Remove polyethylene vapor,SF,0.24,0.24,0.24,0.24,1,1293.25,Demo
+Remove polyethylene vapor barrier - Category 3,SF,0.24,0.24,0.24,0.24,1,112.0,Mitigation
+Reset the Floating Toilet,EA,575.0,575.0,575.0,575.0,1,1.0,Plumbing
+Rubber Flooring Install,EA,3.0,3.0,3.0,3.0,1,184.43,
+Sand exposed framing - Walls,SF,2.91,2.91,2.91,2.91,1,100.0,Demo
+Scaffolding (Bid Item),EA,1900.0,1900.0,1900.0,1900.0,1,1.0,
+Seal & paint single garage door opening & trim,EA,112.43,112.43,112.43,112.43,1,1.0,Painting
+Seal & paint window stool and apron MOON_17024_REC 9/8/2026 Page: 40,LF,4.54,4.54,4.54,4.54,1,6.0,Doors and Casing
+Seal (1 coat) & paint (1 coat) baseboard Primary BedroomPrimary BathrooBmathroom VaniVtya1n(itBy23)(B2) Bedroom,LF,1.76,1.76,1.76,1.76,1,48.12,Baseboard
+Seal (1 coat) & paint (1 coat) baseboard RICHARDSON_1200_REC 4/29/2025 Page: 6,LF,1.77,1.77,1.77,1.77,1,27.46,Baseboard
+Seal attic framing (shellac) - up to 5/12,SF,1.78,1.78,1.78,1.78,1,1250.0,Sealing
+Seal more than the ceiling perimeter w/PVA primer - one coat,SF,0.65,0.65,0.65,0.65,1,89.22,Drywall
+Seal more than the floor perimeter with fungicidal/bacterial inhibitor - one coat,SF,1.49,1.49,1.49,1.49,1,29.54,Drywall
+Seal stud wall Kilz (anti-microbial coating),SF,2.61,2.61,2.61,2.61,1,32.0,
+Seal the walls and ceiling w/latex based stain blocker - one coat,SF,0.75,0.75,0.75,0.75,1,320.25,Paint
+Seal/prime (1 coat) then paint (2 coats) the walls,SF,1.52,1.52,1.52,1.52,1,454.23,Paint
+Service call - after business hours,EA,353.32,353.32,353.32,353.32,1,1.0,General
+Shelving - Reset,LF,8.36,8.36,8.36,8.36,1,12.0,Paneling
+Shelving - wire (vinyl coated) - Eeset,LF,11.92,11.92,11.92,11.92,1,3.0,Shelving
+Shelving - wire (vinyl coated) - Reset,LF,12.54,12.54,12.54,12.54,1,10.0,Closet Shelving
+Shower Surround - one wall new tile,EA,3187.03,3187.03,3187.03,3187.03,1,0.5,Shower
+Shower door system - Detach,EA,286.51,286.51,286.51,286.51,1,1.0,Demo
+Shower door system - corner unit - Detach & reset,EA,495.04,495.04,495.04,495.04,1,1.0,Shower
+Shower faucet,EA,279.0,279.0,279.0,279.0,1,1.0,Shower
+Sink - double basin - Detach & reset,EA,190.88,190.88,190.88,190.88,1,1.0,Cabs
+Sink - double basin - Reinstall,EA,188.43,188.43,188.43,188.43,1,1.0,Cabs
+Sink - wall mounted - Reset,EA,268.75,268.75,268.75,268.75,1,0.5,Plumbing
+Sink faucet - Kitchen - Reinstall,EA,145.09,145.09,145.09,145.09,1,1.0,Cabs
+Snake drain fee - not insurance related,EA,189.0,189.0,189.0,189.0,1,1.0,
+Sound insulation board,LF,12.64,12.64,12.64,12.64,1,22.92,Insulation Board
+Spray foam for main level,EA,6927.0,6927.0,6927.0,6927.0,1,1.0,Insulation
+Stain & finish wood patio door (per side),EA,118.86,118.86,118.86,118.86,1,4.0,Trim
+Stain & finish wood window sill,LF,3.32,3.32,3.32,3.32,1,5.0,Window Trim
+Stain - wood fence/gate,SF,1.0,1.0,1.0,1.0,1,1380.0,Fence
+Stain/finish deck,SF,1.09,1.09,1.09,1.09,1,144.0,Deck - 12'x12' located on back side of garage
+Stucco demo and repair,EA,6341.26,6341.26,6341.26,6341.26,1,1.0,Exterior
+Swing door - (2 slabs only) - Single - Detach & reset,EA,22.53,22.53,22.53,22.53,1,1.0,Door
+"T & G paneling - butterfly (beaded vee with 1"" cove)",SF,10.73,10.73,10.73,10.73,1,30.0,Paneling wall
+"Taxes, insurance, permits & fees (Bid Item)",EA,200.0,200.0,200.0,200.0,1,1.0,
+"Tear out affected drywall, cleanup, bag for disposal",SF,1.23,1.23,1.23,1.23,1,40.0,
+Tear out and bag insulation,SF,1.18,1.18,1.18,1.18,1,1834.28,
+Tear out and bag wet insulation - after hours,SF,1.57,1.57,1.57,1.57,1,15.0,Demo
+Tear out baseboard - after hours,LF,1.18,1.18,1.18,1.18,1,12.06,Demo
+Tear out baseboard and bag for disposal,LF,1.75,1.75,1.75,1.75,1,15.0,Demo
+Tear out cabinetry - lower (base),LF,14.07,14.07,14.07,14.07,1,6.0,Demo
+Tear out countertop - flat laid plastic laminate,LF,8.09,8.09,8.09,8.09,1,5.04,
+Tear out non-salv wood floor & bag - Category 3 water,SF,11.08,11.08,11.08,11.08,1,1.0,Demo
+Tear out non-salv. tile & bag -,SF,6.59,6.59,6.59,6.59,1,20.0,Demo
+Tear out non-salv. tile & bag for,SF,4.44,4.44,4.44,4.44,1,16.0,Demo
+Tear out non-salvageable cement,SF,2.78,2.78,2.78,2.78,1,20.0,Demo
+Tear out non-salvageable cement board & bag - Cat 3 water,SF,2.8,2.8,2.8,2.8,1,21.5,Demo
+Tear out non-salvageable tile,SF,8.21,8.21,8.21,8.21,1,42.38,Demo
+Tear out non-salvageable tile floor & bag - Cat 3 water,SF,8.23,8.23,8.23,8.23,1,101.6,Cat 3 Mitigation
+"Tear out non-salvageable vinyl tile, cut & bag for disp.",SF,2.48,2.48,2.48,2.48,1,79.0,Demo
+"Tear out non-salvageable vinyl, cut & bag for disposal",SF,2.18,2.18,2.18,2.18,1,9.0,Demo
+Tear out subfloor & bag for disposal,SF,2.72,2.72,2.72,2.72,1,16.0,Demo
+"Tear out wet carpet pad, cut/bag -",SF,1.23,1.23,1.23,1.23,1,73.28,Demo
+"Tear out wet drywall, cleanup, bag, PPhhoottoo ddeevveellooPPpphhmmootteeoonn aattrreeaa per LF - to 2' - Cat 3",LF,7.92,7.92,7.92,7.92,1,46.4,
+"Tear out wet drywall, cleanup, bag, per LF - 2' aft hrs",LF,7.97,7.97,7.97,7.97,1,18.33,Demo
+"Tear out wet drywall, cleanup, bag, per LF - 4' aft hrs",LF,11.32,11.32,11.32,11.32,1,16.0,Demo
+Tear out wet non-salvageable,SF,1.29,1.29,1.29,1.29,1,73.28,Demo
+"Tear out wet paneling, bag for disposal",SF,0.88,0.88,0.88,0.88,1,18.0,Demo
+Temporary shoring post - Screw jack (per day),DA,45.11,45.11,45.11,45.11,1,24.0,Temporary Shoring
+Thermostat - High grade,EA,160.65,160.65,160.65,160.65,1,2.0,HVAC
+Tile - Material,EA,4845.61,4845.61,4845.61,4845.61,1,1.0,Tile
+Tile floor covering Primary Bathroom Bathroom,SF,14.28,14.28,14.28,14.28,1,37.38,Flooring
+Tile pick up and delivery,EA,250.0,250.0,250.0,250.0,1,1.0,General
+Toilet paper holder - Detach,EA,24.03,24.03,24.03,24.03,1,1.0,Demo
+Toilet paper holder - Detach & reset,EA,24.15,24.15,24.15,24.15,1,1.0,Finish Hardware
+Towel bar - Reset,EA,22.0,22.0,22.0,22.0,1,2.0,Finishes
+Towel ring - Reset,EA,23.23,23.23,23.23,23.23,1,1.0,Finishes
+Towel ring Bedroom Closet (1) Bathtub2 (B1) Bathtub3 (B1) Primary Bathroom Bathtub Bathroom Bathtub,EA,32.86,32.86,32.86,32.86,1,1.0,Finishings
+"Trim board - 1"" x 12"" x 16' MDF - material only",EA,56.45,56.45,56.45,56.45,1,2.0,Sump Pump Box
+"Trim board - 1/2"" x 6"" - installed (pine)",LF,5.13,5.13,5.13,5.13,1,10.0,Paneling wall
+Truck Mount Extraction,EA,2475.0,2475.0,2475.0,2475.0,1,1.0,
+Truss - 6/12 slope,LF,10.93,10.93,10.93,10.93,1,198.0,Framing
+Urinal - Detach & reset,EA,488.93,488.93,488.93,488.93,1,1.0,Plumbing
+Vanity with granite or marble top,LF,315.71,315.71,315.71,315.71,1,3.5,Vanity
+Vinyl plank flooring Hallway,SF,6.52,6.52,6.52,6.52,1,194.4,Flooring
+"Vinyl window, horizontal",EA,443.27,443.27,443.27,443.27,1,0.0,Window and trim
+"Vinyl window, horizontal sliding, 12-23 sf",EA,443.27,443.27,443.27,443.27,1,1.0,Window and trim
+"Window blind - PVC - 2"" - 32.1 to 42 SF",EA,269.01,269.01,269.01,269.01,1,1.0,Blinds
+Window blind - horizontal or vertical - Detach,EA,46.19,46.19,46.19,46.19,1,2.0,Demo
+Window labor minimum,EA,63.97,63.97,63.97,63.97,1,1.0,
+Wood Floor Covering Installer - per hour - Dust Containment,HR,75.45,75.45,75.45,75.45,1,16.0,Hardwood General Conditions
+Wood Steps Custom Cuts,HR,74.65,74.65,74.65,74.65,1,2.0,Flooring
+Wood fence 5'- 6' high - treated,LF,36.19,36.19,36.19,36.19,1,80.0,Fence

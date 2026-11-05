@@ -8,7 +8,7 @@
   "logo_path": "",
   "overhead_pct": 10.0,
   "profit_pct": 10.0,
-  "markup_pct": 5.0,
+  "markup_pct": 0.0,
   "billing": [
     {
       "label": "Deposit due at signing",

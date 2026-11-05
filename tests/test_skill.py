@@ -96,6 +96,26 @@ def test_photo_sheets(tmp_path):
     assert (tmp_path / "sheets" / "sheet_02.jpg").exists() and (tmp_path / "sheets" / "photo_014.jpg").exists()
 
 
+def test_photo_report(tmp_path):
+    photos = tmp_path / "photos"
+    photos.mkdir()
+    for n in range(5):
+        Image.new("RGB", (1200, 900) if n % 2 else (900, 1200), (n * 40, 90, 140)).save(photos / f"p{n}.jpg")
+    (tmp_path / "picks.json").write_text(json.dumps({"date_of_loss": "2026-09-28", "photos": [
+        {"file": f"p{n}.jpg", "caption": f"Damage {n}", "room": "Bathroom"} for n in range(5)]}))
+    (tmp_path / "estimate.json").write_text(json.dumps({"customer": "Jane Doe", "address": "123 Main St",
+                                                        "claim_number": "CLM-1", "estimate_number": "DOE_123_REC"}))
+    out = run("photo_report.py", tmp_path / "picks.json", "--photos", photos, "--estimate",
+              tmp_path / "estimate.json", "--out", tmp_path / "out")
+    pdf = tmp_path / "out" / "Doe - Photo Report.pdf"
+    assert f"-> {pdf}" in out and pdf.exists()
+    import pdfplumber
+    with pdfplumber.open(pdf) as doc:
+        text = "\n".join(p.extract_text() or "" for p in doc.pages)
+        assert len(doc.pages) == 3
+    assert "CLM-1" in text and "Photo 5." in text and "Bathroom: Damage 4" in text
+
+
 def test_package_contains_skill_files(tmp_path):
     out = skill_build.package(tmp_path / "s.skill")
     names = zipfile.ZipFile(out).namelist()
