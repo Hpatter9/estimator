@@ -139,6 +139,8 @@ every job and every revision, and deliver all three. Use `--only` only when the 
 or two. Before reporting back, confirm the script printed three `->` lines. The script prints the totals by
 trade; check that they look sane (no trade at $0, no missing trades, warnings about items without a trade).
 
+**Selections sign-off**: when the owner needs to approve finishes before ordering (or asks for a selection sheet), fill `selections` in estimate.json as in step 3 and run `python scripts/render.py estimate.json --out <dir> --only selections`. It writes `<Last Name> - Material Selection Approval.pdf`: each selection with an owner-initials line, the selection acknowledgments from company.json, and the customer signature block only. It is separate from the three documents and isn't sent unless asked.
+
 Markup applies to the Estimate and Agreement only, using `markup_pct` from `assets/company.json` unless the
 user gives one or estimate.json sets it ("bump it up by 15%" = `"markup_pct": 15`). Say which markup you used.
 
