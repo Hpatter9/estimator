@@ -56,6 +56,11 @@ hub, the job folder's `estimate/` directory).
   mirrors, tub surround. Prefer what they show over guesses from post-demo photos.
 - **Notes**: the estimator's notes say which rooms are affected and what's being done. They win over
   assumptions.
+- **ITEL report**: a lab analysis (Itel Laboratories) the carrier orders on a damaged material, usually flooring:
+  it names the sample it tested (e.g. "Bedroom 2 carpet"), the like-kind-and-quality replacement it matched, and
+  a unit price. It arrives by email from the adjuster or ITEL; Keystone saves it in the job's `files/ITEL/` with a
+  summary next to it. Read every ITEL report on the job before pricing, and use each one only for the material and
+  rooms it covers (see "ITEL pricing" in step 2).
 - A DocuSketch share link (`app.docusketch.com/player/...`) is a 360° viewer. Its photos usually can't be
   read from the link, so ask for the downloaded photos or photo report instead.
 - **Xactimate price list (.PLX)**: encrypted by Xactware and can't be read. Prices come from
@@ -77,6 +82,19 @@ the same work, pick the one on the list. Items with neither get a realistic pric
 `price_source: "estimated"`. The user needs to check those, so they are flagged in the PDF and the summary.
 `python scripts/price_lookup.py --components <words>` shows material / equipment / labor component costs, for
 pricing a bid item or explaining a price.
+
+**ITEL pricing.** When an ITEL report covers a material, that material's replacement line in the rooms the report
+covers follows the report, not the price list:
+- Keep the price-list description and unit for the line (e.g. the carpet or vinyl plank line), use the report's
+  price as `unit_price`, set `price_source: "itel"`, and put the matched product and the report in the item note
+  ("Priced per ITEL report 4412-883: Shaw Endura Plus, Amber Oak, $3.14/SF").
+- ITEL prices are often material only, while price-list flooring lines are installed prices. When the report
+  doesn't say it includes installation, ask before using its price on an installed line.
+- Everything else stays priced as usual: removal, pad, underlayment, transitions, other materials, other rooms.
+- Add the house-style sentence for it to that trade's notes ("Vinyl plank is priced per the ITEL flooring
+  analysis at $3.14/SF.").
+- Ask when it doesn't line up: the sample is a different material or room than the line, two reports cover the
+  same material, or the report's unit doesn't convert cleanly (per SY vs per SF: 1 SY = 9 SF).
 
 Only scope the affected rooms; sketches often cover the whole house. Group items into sections by room, plus
 "General Conditions". When the notes call something optional or priced separately, give those sections an
