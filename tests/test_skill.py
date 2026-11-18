@@ -170,3 +170,15 @@ def test_pricelist_parsing():
 def test_price_lookup_shows_list_price():
     out = run("price_lookup.py", "snaplock", "laminate", "simulated")
     assert "CODE8X_OCT26" in out.splitlines()[0] and "median" in out.splitlines()[0]
+
+
+def test_selection_approval_sheet(tmp_path):
+    (tmp_path / "estimate.json").write_text(json.dumps(sample_job()))
+    out = run("render.py", tmp_path / "estimate.json", "--out", tmp_path / "out", "--only", "selections")
+    pdfs = list((tmp_path / "out").glob("*.pdf"))
+    assert len(pdfs) == 1 and pdfs[0].name.endswith(" - Material Selection Approval.pdf") and f"-> {pdfs[0]}" in out
+    assert "of 3 documents" not in out
+    import pdfplumber
+    with pdfplumber.open(pdfs[0]) as doc:
+        text = "\n".join(p.extract_text() or "" for p in doc.pages)
+    assert "Vinyl Plank" in text and "DuraLux" in text and "Owner initials" in text and "CUSTOMER SIGNATURE" in text

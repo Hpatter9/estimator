@@ -3,11 +3,13 @@
 
     python render.py estimate.json --out /mnt/user-data/outputs
     python render.py estimate.json --out out --only estimate          # estimate | agreement | xactimate
+    python render.py estimate.json --out out --only selections        # the Material Selection Approval sheet
 
 Writes:
     <Last Name> - Reconstruction Estimate.pdf   trades with O&P-inclusive totals, bullets, exclusions, billing
     <Last Name> - Reconstruction Agreement.pdf  same scope + material selections, waivers, terms, signature
     <Last Name> - Xactimate Estimate.pdf        Xactimate-format estimate (Forefront letterhead, rooms, recaps, sketch)
+    <Last Name> - Material Selection Approval.pdf   only with --only selections: the owner's sign-off on finishes
 
 and prints the totals. The JSON format is in references/estimate_format.md.
 Money math: O&P is figured per line (like Xactimate), markup is applied per trade on the customer
@@ -388,6 +390,57 @@ def render_estimate(job: Job, company: dict, path: Path):
 
 # ---------------------------------------------------------------- Reconstruction Agreement
 
+def selection_flowables(sels: list, company: dict, initials: bool = False) -> list:
+    """The selection blocks (fields + photo) and the acknowledgments, shared by the Agreement and the sign-off sheet."""
+    story = []
+    for sel in sels:
+        fields = [tuple(f) if isinstance(f, (list, tuple)) else (f["label"], f["value"]) for f in sel.get("fields", [])]
+        fields.append(("Viewed", sel.get("viewed", "Online only (not viewed in person)")))
+        rows = [[Paragraph(f"<b>{esc(k).upper()}</b>", S("k", fontSize=6.5, textColor=MUTED)), Paragraph(esc(v), BODY_S)]
+                for k, v in fields]
+        if initials:
+            rows.append([Paragraph("<b>APPROVED</b>", S("k", fontSize=6.5, textColor=MUTED)),
+                         Paragraph("Owner initials: ________", BODY_S)])
+        tbl = Table(rows, colWidths=[1.3 * inch, WIDTH - 1.3 * inch - 1.75 * inch])
+        tbl.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), PALE), ("LINEBELOW", (0, 0), (-1, -1), 2, colors.white),
+                                 ("VALIGN", (0, 0), (-1, -1), "MIDDLE"), ("TOPPADDING", (0, 0), (-1, -1), 5),
+                                 ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
+        img_cell = ""
+        img = sel.get("image")
+        if img and Path(img).exists():
+            img_cell = [Image(img, width=1.6 * inch, height=1.6 * inch, kind="proportional"),
+                        Paragraph(esc(sel.get("caption", "")), S("cap", fontSize=6.5, textColor=MUTED))]
+        row = Table([[tbl, img_cell]], colWidths=[WIDTH - 1.75 * inch, 1.75 * inch])
+        row.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
+        story.append(KeepTogether([Bar(sel.get("title", ""), radius=0), row, Spacer(1, 10)]))
+    story.append(Paragraph("SELECTION ACKNOWLEDGMENTS", H3))
+    for a in company.get("selection_acknowledgments", []):
+        story.append(Bullet(f"<b>{esc(a['lead'])}</b> {esc(a['text'])}", bar=True))
+    return story
+
+
+def render_selections(job: Job, company: dict, path: Path):
+    """Material Selection Approval: the owner's sign-off on finishes, on its own so it can be signed before ordering."""
+    d = job.d
+    sels = d.get("selections") or []
+    cols = [("Property", address_html(d.get("address"))), ("Customer", esc(d.get("customer")))]
+    story = info_block(cols, SKY)
+    story += [callout(esc(company.get("selection_sheet_intro") or
+                          "Please review each selection below, initial it, and sign at the bottom. We order materials "
+                          "once this sheet is signed, so check brand, product, color and size carefully.")),
+              Spacer(1, 8)]
+    story += selection_flowables(sels, company, initials=True)
+    sign = Table([[Paragraph("<b>CUSTOMER SIGNATURE / DATE</b>", S("sg", fontSize=6.5)), "",
+                   Paragraph("<b>PRINTED NAME</b>", S("sg2", fontSize=6.5))]],
+                 colWidths=[WIDTH * 0.5, WIDTH * 0.08, WIDTH * 0.42])
+    sign.setStyle(TableStyle([("LINEABOVE", (0, 0), (0, 0), 0.8, INK), ("LINEABOVE", (2, 0), (2, 0), 0.8, INK),
+                              ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
+    story.append(KeepTogether([Paragraph("Approval", H2),
+                               Paragraph("By signing, Owner approves the material selections above as listed.", BODY_S),
+                               Spacer(1, 36), sign]))
+    make_doc(path, "Material Selection Approval", company).build(story)
+
+
 def render_agreement(job: Job, company: dict, path: Path):
     d, scopes = job.d, job.scopes()
     has_options = len(scopes) > 1
@@ -400,26 +453,7 @@ def render_agreement(job: Job, company: dict, path: Path):
     sels = d.get("selections") or []
     if sels:
         story += [PageBreak(), Paragraph("Material Selections", H2)] + rule(SKY, 0.8, 6)
-        for sel in sels:
-            fields = [tuple(f) if isinstance(f, (list, tuple)) else (f["label"], f["value"]) for f in sel.get("fields", [])]
-            fields.append(("Viewed", sel.get("viewed", "Online only (not viewed in person)")))
-            rows = [[Paragraph(f"<b>{esc(k).upper()}</b>", S("k", fontSize=6.5, textColor=MUTED)), Paragraph(esc(v), BODY_S)]
-                    for k, v in fields]
-            tbl = Table(rows, colWidths=[1.3 * inch, WIDTH - 1.3 * inch - 1.75 * inch])
-            tbl.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), PALE), ("LINEBELOW", (0, 0), (-1, -1), 2, colors.white),
-                                     ("VALIGN", (0, 0), (-1, -1), "MIDDLE"), ("TOPPADDING", (0, 0), (-1, -1), 5),
-                                     ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
-            img_cell = ""
-            img = sel.get("image")
-            if img and Path(img).exists():
-                img_cell = [Image(img, width=1.6 * inch, height=1.6 * inch, kind="proportional"),
-                            Paragraph(esc(sel.get("caption", "")), S("cap", fontSize=6.5, textColor=MUTED))]
-            row = Table([[tbl, img_cell]], colWidths=[WIDTH - 1.75 * inch, 1.75 * inch])
-            row.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
-            story.append(KeepTogether([Bar(sel.get("title", ""), radius=0), row, Spacer(1, 10)]))
-        story.append(Paragraph("SELECTION ACKNOWLEDGMENTS", H3))
-        for a in company.get("selection_acknowledgments", []):
-            story.append(Bullet(f"<b>{esc(a['lead'])}</b> {esc(a['text'])}", bar=True))
+        story += selection_flowables(sels, company)
 
     story += exclusions(company, "agreement", agreement=True)
     rows = [("Scope of work" if not s["option"] else f"Optional: {s['option']}", money(s["total"])) for s in scopes]
@@ -491,6 +525,12 @@ def main(argv=None) -> int:
     if "xactimate" in wanted:
         written.append(a.out / f"{stem} - Xactimate Estimate.pdf")
         render_xactimate(job, company, written[-1])
+    if "selections" in wanted:
+        if not data.get("selections"):
+            print("! --only selections: estimate.json has no selections, so no sign-off sheet was written.", file=sys.stderr)
+        else:
+            written.append(a.out / f"{stem} - Material Selection Approval.pdf")
+            render_selections(job, company, written[-1])
 
     scopes = job.scopes()
     print(f"Markup on customer documents: {job.markup:g}%   O&P: {job.op_pct:g}%")
@@ -503,8 +543,9 @@ def main(argv=None) -> int:
         print(f"{len(est)} items priced without price-book history: " + "; ".join(est[:12]))
     for f in written:
         print(f"-> {f}")
-    if len(written) < 3:
-        print(f"Note: only {len(written)} of 3 documents written (--only {a.only}).")
+    core = [f for f in written if not f.name.endswith("Material Selection Approval.pdf")]
+    if len(core) < 3 and wanted & {"estimate", "agreement", "xactimate"}:
+        print(f"Note: only {len(core)} of 3 documents written (--only {a.only}).")
     return 0
 
 
