@@ -253,9 +253,10 @@ short plain paragraphs, warm and unhurried, no bullet points, no corporate phras
   number if the adjuster's scope differs.
 - *Homeowner, out of pocket*: no insurance talk; mention the 50/40/10 billing schedule and that signing the
   Agreement gets them on the calendar; mention selections if the Agreement has allowances.
-- *Adjuster*: professional and brief. Insured name, loss address, claim number, price list used, a 2–3 line
+- *Adjuster*: professional and brief. Insured name, loss address, claim number, a 2–3 line
   summary of the scope logic (why the walls are included, texture to match, anything unusual) and a request to
-  review/approve or call. Never mention markup. Attach the Xactimate Estimate **and a photo report** (key photos
+  review/approve or call. Never mention markup, and don't name the price list in the email (it is already on
+  the Xactimate cover). Attach the Xactimate Estimate **and a photo report** (key photos
   with a one-line description each); the Reconstruction Estimate is not for adjusters. Homeowner cc only if
   Hunter says so.
 
