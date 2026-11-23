@@ -1,6 +1,6 @@
 ---
 name: "forefront-estimate"
-description: "Forefront Building + Restoration's estimating workflow. Drafts reconstruction estimates from a DocuSketch .ESX sketch, job notes and site photos, priced from Forefront's own price book, and produces their Reconstruction Estimate, Reconstruction Agreement and Xactimate-format PDFs, then drafts the send-off email in Gmail. Also turns an existing Xactimate estimate PDF into the customer Reconstruction Estimate / Agreement. Use this whenever someone wants to write, price, scope, convert, revise, re-send or email a reconstruction / repair / water / fire / mold estimate or agreement, uploads an .ESX or DocuSketch export, an Xactimate PDF, or a zip of job photos, or mentions Forefront estimates, even if they don't say \"skill\"."
+description: "Forefront Building + Restoration's estimating workflow. Drafts reconstruction estimates from a DocuSketch .ESX sketch, job notes and site photos, priced from Forefront's own price book, and produces their Reconstruction Estimate, Reconstruction Agreement and Xactimate-format PDFs, then drafts the send-off email in Gmail, and once the price is agreed drafts the selections email (what the homeowner must pick and the budget per square foot) that comes before the Agreement. Also turns an existing Xactimate estimate PDF into the customer Reconstruction Estimate / Agreement. Use this whenever someone wants to write, price, scope, convert, revise, re-send or email a reconstruction / repair / water / fire / mold estimate or agreement, uploads an .ESX or DocuSketch export, an Xactimate PDF, or a zip of job photos, asks what's next on an approved job or for a selections / allowance email, or mentions Forefront estimates, even if they don't say \"skill\"."
 ---
 
 # Forefront estimate
@@ -12,6 +12,7 @@ Turn a job into Forefront's documents:
 - **Xactimate Estimate**: always laid out like Forefront's real Xactimate exports (see "The Xactimate PDF" below), for the estimator, adjusters and customers who want line items.
 - **Photo report**: key photos with a one-line caption each, on the Xactimate letterhead, for the adjuster (step 6).
 - **Send-off email**: a Gmail draft in Hunter's voice, with the right PDF attached and the job's log address bcc'd (step 6).
+- **Selections email**: once the price is agreed, a Gmail draft telling the homeowner what to pick and the budget per square foot for each (step 7). The Agreement is not sent until those picks are in.
 
 Everything runs with the scripts in `scripts/` (Python + reportlab, already in the sandbox). Work in a scratch
 folder and save finished files to the outputs folder (`/mnt/user-data/outputs` on claude.ai; in the Forefront
@@ -28,6 +29,9 @@ hub, the job folder's `estimate/` directory).
   estimator would want caught before the customer sees a price: an install with no matching removal (new carpet
   but no carpet removal), a quantity far off the room size (1 SF of membrane on a 250 SF floor), a labor minimum
   triggered by such a slip, or $0 open/bid items. Don't change the Xactimate; mention them in the report.
+- **Estimate agreed, what's next / selections / "send the agreement"**: the insurer approved the estimate (or an
+  out-of-pocket homeowner said yes). Do step 7: the selections email comes next, and the Agreement only after the
+  homeowner has picked.
 - **Revise**: change the existing estimate.json and re-run step 4. Don't start over. If the user only needs one
   document right now ("I only need the estimate for now"), use `--only estimate`; otherwise render all three.
 
@@ -153,7 +157,9 @@ python scripts/render.py estimate.json --out /mnt/user-data/outputs
 ```
 
 Always produce all three documents - Reconstruction Estimate, Reconstruction Agreement and Xactimate Estimate - on
-every job and every revision, and deliver all three. Use `--only` only when the user explicitly asks for just one
+every job and every revision, and deliver all three to the estimator. The Agreement at this stage is a working
+copy for Forefront: it never goes to the homeowner until the price is agreed and their selections are picked
+(step 7). Use `--only` only when the user explicitly asks for just one
 or two. Before reporting back, confirm the script printed three `->` lines. The script prints the totals by
 trade; check that they look sane (no trade at $0, no missing trades, warnings about items without a trade).
 
@@ -251,8 +257,9 @@ short plain paragraphs, warm and unhurried, no bullet points, no corporate phras
 - *Homeowner, insurance claim*: say the Xactimate version has gone / will go to the adjuster, that the adjuster's
   approval is the next step, and that the deductible is due at signing. Mention that supplements can change the
   number if the adjuster's scope differs.
-- *Homeowner, out of pocket*: no insurance talk; mention the 50/40/10 billing schedule and that signing the
-  Agreement gets them on the calendar; mention selections if the Agreement has allowances.
+- *Homeowner, out of pocket*: no insurance talk; mention the 50/40/10 billing schedule. Don't promise the
+  Agreement yet: say that once they're happy with the number, the next step is picking their finishes, and the
+  Agreement follows (step 7).
 - *Adjuster*: professional and brief. Insured name, loss address, claim number, price list used, a 2–3 line
   summary of the scope logic (why the walls are included, texture to match, anything unusual) and a request to
   review/approve or call. Never mention markup. Attach the Xactimate Estimate **and a photo report** (key photos
@@ -291,6 +298,53 @@ session's outputs folder) when the extension is connected; otherwise create the 
 Hunter exactly which file to drag on.
 
 Report the draft in one line (recipient, bcc, subject, what's attached, what still needs attaching).
+
+## 7. After the price is agreed: selections first, then the Agreement
+
+Forefront's order is fixed, and the Agreement never goes out early:
+
+1. Estimate sent (step 6).
+2. Price agreed: the adjuster approves the Xactimate (insurance jobs), or the homeowner says yes (out of pocket).
+3. **Selections email** to the homeowner: what they need to pick and the budget for each.
+4. Homeowner picks. Record each pick in `selections` in estimate.json (brand, product, color, price).
+5. Reconstruction Agreement rendered with those selections and sent for signature; deposit and scheduling follow.
+
+So when someone asks "what's next" on an approved job, or asks for the Agreement before the picks are in, draft
+the selections email instead and say why. A job with nothing for the owner to choose (drywall and paint to match
+existing only) skips steps 3-4; say so rather than inventing selections.
+
+**What goes on the list.** Every finish in the agreed estimate that the owner has to choose: flooring (wood,
+laminate, vinyl, carpet, tile), wall tile, cabinets, countertops, doors, fixtures, and paint colors where a
+surface is being repainted. Things matched to existing (texture, baseboard profile, ceiling tile, trim paint)
+are not selections; name them in one sentence so the owner knows there is nothing to pick there.
+
+**The budget** is the material-only cost per unit that the agreed estimate carries, so the owner can shop
+against it:
+- An ITEL report covers the material: use its matched product and its per-SF price ("Shaw Albright, 5" oak,
+  $5.51/SF").
+- Otherwise: the material component for the grade in the estimate line, from
+  `price_lookup.py --components <words> --list <market>` (e.g. "Carpet - High grade" -> "Carpet - High grade -
+  Allowance"; "Tile floor covering" at average grade -> "Ceramic/porcelain floor tile"; hand-entered costs are in
+  `references/component_costs_manual.csv`). Never quote the installed line price as the budget; it includes labor.
+- If the adjuster approved a different grade or price than Forefront wrote, the budget follows what was approved.
+- Budgets are before sales tax and before O&P. Pad, underlayment, setting materials and grout are included in the
+  job and are not part of the per-SF budget; say so once.
+
+For each selection give: where it goes, the approved like-kind product or grade, the budget per SF (per LF / EA
+where that is the unit), and the area being covered so they can tell a supplier how much (floor SF; mention that
+Forefront orders the waste). Paint colors have no budget: ask for the color name/brand or offer to color match.
+
+**The email** is a Gmail draft like step 6 (Forefront account, signature on, bcc `office+<job#>`, never sent).
+Subject: `Selections for your repairs – <street address>`. Hunter's voice: open with the news that the estimate
+is agreed, say that picking finishes is the next step, then one short paragraph per selection (plain sentences,
+no table), then what happens when they go over or under budget (over: we price the difference before ordering
+and it is the owner's cost; nothing is ordered until they approve), how to send picks back (reply with brand,
+product, color and a link or photo, or ask to see samples), and what comes after (the Agreement with their
+selections written in, then deposit and scheduling). Do not attach the Agreement and do not ask for a signature
+or deposit in this email. Leave out supplements, markup and anything about payment of other invoices.
+
+When the picks come back, fill `selections`, re-render (`--only agreement`, plus `--only selections` when a
+Material Selection Approval sheet is wanted), and draft the Agreement email.
 
 ## Company details
 
