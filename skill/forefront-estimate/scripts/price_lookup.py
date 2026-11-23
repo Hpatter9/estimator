@@ -7,6 +7,7 @@
     python price_lookup.py snaplock --list COBO8X_OCT26   # only the Boulder list
     python price_lookup.py --components laminate     # material / equipment / labor component costs
                                                      # (component_costs.csv + hand-entered component_costs_manual.csv)
+    python price_lookup.py --budget 5.51             # homeowner's shopping budget for a $5.51/SF approved material
 
 One price column per Xactimate price list in references/xactimate_prices.csv (CODE8X_OCT26 = Denver,
 COBO8X_OCT26 = Boulder, ...); `median` / `latest` / `used` come from Forefront's past estimates
@@ -18,6 +19,8 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
+import math
 import sys
 from pathlib import Path
 
@@ -57,12 +60,27 @@ def components(words: list[str], unit: str | None, limit: int, plist: str | None
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("words", nargs="+")
+    p.add_argument("words", nargs="*")
     p.add_argument("--unit")
     p.add_argument("--limit", type=int, default=25)
     p.add_argument("--components", action="store_true", help="search material/equipment/labor component costs")
     p.add_argument("--list", dest="plist", help="only this price list, e.g. COBO8X_OCT26 (Boulder)")
+    p.add_argument("--budget", type=float, metavar="PRICE",
+                   help="approved material price per unit -> the homeowner's shopping budget after Forefront's "
+                        "material margin (material_margin_pct in assets/company.json, 30%% unless --margin)")
+    p.add_argument("--margin", type=float, help="material margin %% for --budget")
     a = p.parse_args(argv)
+    if a.budget is not None:
+        margin = a.margin
+        if margin is None:
+            company = REF.parent / "assets" / "company.json"
+            margin = json.loads(company.read_text(encoding="utf-8")).get("material_margin_pct", 30.0) \
+                if company.exists() else 30.0
+        budget = math.floor(a.budget * (100 - margin) + 1e-9) / 100   # rounded down: margin is never below target
+        print(f"approved material ${a.budget:.2f}  ->  homeowner budget ${budget:.2f}  ({margin:g}% material margin)")
+        return 0
+    if not a.words:
+        p.error("give the words to search for (or --budget PRICE)")
     words = [w.lower() for w in a.words]
     if a.components:
         return components(words, a.unit, a.limit, a.plist)

@@ -60,6 +60,17 @@ def jobs(library: Library) -> int:
     return len({r.estimate for r in history(library)})
 
 
+def owner_budget(approved_material_price: float, margin_pct: float = 30.0) -> float:
+    """The per-unit shopping budget to give a homeowner for a material they select.
+
+    `approved_material_price` is the material-only price the agreed estimate carries (ITEL price, or the
+    Xactimate material component). The budget leaves Forefront `margin_pct` of that price, and is rounded
+    DOWN to the cent so the margin is never less than asked: $5.51 at 30% -> $3.85.
+    """
+    import math
+    return math.floor(approved_material_price * (100 - margin_pct) + 1e-9) / 100
+
+
 def default_markup(library: Library, company) -> float:
     """Company setting if set, else the median of past jobs, else 0."""
     if company.markup_pct is not None:

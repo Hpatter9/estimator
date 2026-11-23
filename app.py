@@ -213,6 +213,14 @@ with tab_review:
                        "".join(f" | optional {o}: ${est.scope_total(o):,.2f}" for o in est.options))
         with st.expander(f"Material selections for the Agreement ({len(est.selections)}) - optional"):
             st.caption("Leave empty if there are no customer selections; the Agreement then skips that section.")
+            from estimator.markup import owner_budget
+            b1, b2 = st.columns(2)
+            approved = b1.number_input("Approved material price per unit ($, material only)", min_value=0.0, step=0.01,
+                                       help="The ITEL price, or the Xactimate material component for the approved grade.")
+            b2.metric(f"Homeowner budget ({company.material_margin_pct:g}% material margin)",
+                      f"${owner_budget(approved, company.material_margin_pct):,.2f}")
+            st.caption("Give the homeowner this budget in the selections email, not the approved price. "
+                       "The Agreement goes out only after they have picked.")
             viewed_opts = ["Online only (not viewed in person)", "Viewed in person"]
             kept = []
             for i, sel in enumerate(est.selections):

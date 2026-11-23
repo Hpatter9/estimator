@@ -137,7 +137,8 @@ Read `references/house_style.md`. Give every line item a `trade`, then write one
 (per option) with bullets in Forefront's wording and the standard note where one applies. Add `scopes` areas
 and an `intro` only when there are optional add-ons. Agreements only: add `selections` when the user gives
 product details (brand, product, SKU/color, size, photo). When the owner still has to pick finishes (flooring,
-tile, doors, cabinets), add a `selections` entry per finish as an allowance: the material cost per unit from
+tile, doors, cabinets), add a `selections` entry per finish as an allowance: the owner's budget per unit (the
+approved material cost less Forefront's material margin, see step 7), starting from
 `price_lookup.py --components <words> --list <market>` (hand-entered costs such as snaplock laminate live in
 `references/component_costs_manual.csv`), the quantity with waste, the allowance total, the pre-loss finish,
 "Brand / product / color: To be selected by Owner", what happens over allowance, and `"viewed": "To be selected"`.
@@ -318,19 +319,31 @@ laminate, vinyl, carpet, tile), wall tile, cabinets, countertops, doors, fixture
 surface is being repainted. Things matched to existing (texture, baseboard profile, ceiling tile, trim paint)
 are not selections; name them in one sentence so the owner knows there is nothing to pick there.
 
-**The budget** is the material-only cost per unit that the agreed estimate carries, so the owner can shop
-against it:
-- An ITEL report covers the material: use its matched product and its per-SF price ("Shaw Albright, 5" oak,
-  $5.51/SF").
+**The budget** is what the owner may spend per unit on the material. It is NOT the approved material price:
+Forefront keeps a margin on materials (`material_margin_pct` in `assets/company.json`, 30% unless Hunter gives
+another), so the budget is the approved material price less that margin, rounded down to the cent.
+`python scripts/price_lookup.py --budget 5.51` prints it ($5.51 approved -> $3.85 budget).
+
+The approved material price it starts from:
+- An ITEL report covers the material: its per-SF price ("Shaw Albright, 5" oak, $5.51/SF").
 - Otherwise: the material component for the grade in the estimate line, from
   `price_lookup.py --components <words> --list <market>` (e.g. "Carpet - High grade" -> "Carpet - High grade -
   Allowance"; "Tile floor covering" at average grade -> "Ceramic/porcelain floor tile"; hand-entered costs are in
-  `references/component_costs_manual.csv`). Never quote the installed line price as the budget; it includes labor.
-- If the adjuster approved a different grade or price than Forefront wrote, the budget follows what was approved.
-- Budgets are before sales tax and before O&P. Pad, underlayment, setting materials and grout are included in the
-  job and are not part of the per-SF budget; say so once.
+  `references/component_costs_manual.csv`). Never start from the installed line price; it includes labor.
+- If the adjuster approved a different grade or price than Forefront wrote, start from what was approved.
 
-For each selection give: where it goes, the approved like-kind product or grade, the budget per SF (per LF / EA
+Rules for the number the owner sees:
+- Only the budget goes in the email and in the Agreement's `selections` allowance. Never show the approved
+  price, the margin, or how the budget was worked out, and never call the budget "what insurance approved".
+  Call it "your material budget".
+- The budget is the shelf price before sales tax. Forefront pays the tax, so the real margin lands a little
+  under the target; if Hunter wants the margin held after tax, divide the budget by (1 + the local rate).
+- Pad, underlayment, setting materials and grout are included in the job and are not part of the budget; say so.
+- In the report to Hunter (not the email), list approved price -> budget for each selection, and flag any line
+  where the owner has already been shown the approved material price (an ITEL price in an Xactimate note they
+  were copied on), since they may ask about the difference.
+
+For each selection give: where it goes, the like-kind product or grade, the budget per SF (per LF / EA
 where that is the unit), and the area being covered so they can tell a supplier how much (floor SF; mention that
 Forefront orders the waste). Paint colors have no budget: ask for the color name/brand or offer to color match.
 

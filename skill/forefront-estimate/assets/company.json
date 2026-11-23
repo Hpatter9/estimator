@@ -8,6 +8,7 @@
   "logo_path": "",
   "overhead_pct": 10.0,
   "profit_pct": 10.0,
+  "material_margin_pct": 30.0,
   "markup_pct": 0.0,
   "billing": [
     {
