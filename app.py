@@ -217,8 +217,9 @@ with tab_review:
             b1, b2 = st.columns(2)
             approved = b1.number_input("Approved material price per unit ($, material only)", min_value=0.0, step=0.01,
                                        help="The ITEL price, or the Xactimate material component for the approved grade.")
-            b2.metric(f"Homeowner budget ({company.material_margin_pct:g}% material margin)",
-                      f"${owner_budget(approved, company.material_margin_pct):,.2f}")
+            op = company.overhead_pct + company.profit_pct
+            b2.metric(f"Homeowner budget (+{op:g}% O&P, less {company.material_margin_pct:g}% margin)",
+                      f"${owner_budget(approved, company.material_margin_pct, op):,.2f}")
             st.caption("Give the homeowner this budget in the selections email, not the approved price. "
                        "The Agreement goes out only after they have picked.")
             viewed_opts = ["Online only (not viewed in person)", "Viewed in person"]

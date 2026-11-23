@@ -66,18 +66,20 @@ def main(argv=None) -> int:
     p.add_argument("--components", action="store_true", help="search material/equipment/labor component costs")
     p.add_argument("--list", dest="plist", help="only this price list, e.g. COBO8X_OCT26 (Boulder)")
     p.add_argument("--budget", type=float, metavar="PRICE",
-                   help="approved material price per unit -> the homeowner's shopping budget after Forefront's "
-                        "material margin (material_margin_pct in assets/company.json, 30%% unless --margin)")
+                   help="approved material price per unit -> the homeowner's shopping budget: O&P added, then Forefront's "
+                        "material margin taken out (material_margin_pct in assets/company.json, 30%% unless --margin)")
     p.add_argument("--margin", type=float, help="material margin %% for --budget")
     a = p.parse_args(argv)
     if a.budget is not None:
-        margin = a.margin
-        if margin is None:
-            company = REF.parent / "assets" / "company.json"
-            margin = json.loads(company.read_text(encoding="utf-8")).get("material_margin_pct", 30.0) \
-                if company.exists() else 30.0
-        budget = math.floor(a.budget * (100 - margin) + 1e-9) / 100   # rounded down: margin is never below target
-        print(f"approved material ${a.budget:.2f}  ->  homeowner budget ${budget:.2f}  ({margin:g}% material margin)")
+        company = REF.parent / "assets" / "company.json"
+        cfg = json.loads(company.read_text(encoding="utf-8")) if company.exists() else {}
+        margin = a.margin if a.margin is not None else cfg.get("material_margin_pct", 30.0)
+        op = cfg.get("overhead_pct", 10.0) + cfg.get("profit_pct", 10.0)
+        with_op = a.budget * (100 + op) / 100
+        # O&P on, then margin off; rounded down so the margin is never below target
+        budget = math.floor(a.budget * (100 + op) * (100 - margin) / 100 + 1e-9) / 100
+        print(f"approved material ${a.budget:.2f}  +{op:g}% O&P = ${with_op:.2f}  "
+              f"-{margin:g}% margin  ->  homeowner budget ${budget:.2f}")
         return 0
     if not a.words:
         p.error("give the words to search for (or --budget PRICE)")

@@ -52,7 +52,7 @@ class Company(BaseModel):
     # markup for customer Estimates / Agreements; None = use the median of your past jobs (see markup.py)
     markup_pct: Optional[float] = None
     # margin Forefront keeps on owner-selected materials: the owner's shopping budget is the approved
-    # material price less this percent (see markup.owner_budget and the skill's selections email)
+    # material price plus O&P, less this percent (see markup.owner_budget and the skill's selections email)
     material_margin_pct: float = 30.0
     billing: list[Payment] = Field(default_factory=lambda: [
         Payment(label="Deposit due at signing", short="Deposit at signing", pct=50),
