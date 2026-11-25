@@ -169,6 +169,15 @@ user gives one or estimate.json sets it ("bump it up by 15%" = `"markup_pct": 15
 - **A short estimate goes on one page.** The Job Total & Billing block may sit at the very bottom of page 1:
   use a 0.3" bottom margin with the footer at 0.12", H2 spaceBefore 6 on that heading, 3pt table padding and
   1pt spacers in the exclusions list. Rasterize (`pdftoppm -r 60 -png`) and confirm the page count.
+- **The Agreement has no half-empty pages.** render.py lets the scope, Material Selections, totals/billing and
+  Waivers sections flow on without page breaks, keeps each section heading on the same page as its first block,
+  and only reserves the photo column on a selection when it has a photo. Don't add `PageBreak()`s back. After
+  rendering, tile all pages (`pdftoppm -r 40 -png`, paste side by side with PIL) and check that no page ends with
+  more than about a quarter of it blank except the last; if one does, tighten the block that got pushed over.
+- **Selections the owner has chosen are priced in, not optional.** Once the owner has picked an upgrade (a
+  product, pad, paneling or paint color change), fold it into the base scope (`option: ""`) under the trade it
+  belongs to and say "included in Agreement Amount" in its selection. Keep `option` sections only for things the
+  owner hasn't decided on yet.
 - The logo in `assets/logo.png` is 800px wide and makes up most of the PDF's bytes; a 300–400px copy renders
   identically on screen and keeps the estimate PDF under ~15 KB, which matters for emailing (step 6).
 

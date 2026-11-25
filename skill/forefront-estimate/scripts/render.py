@@ -390,10 +390,11 @@ def render_estimate(job: Job, company: dict, path: Path):
 
 # ---------------------------------------------------------------- Reconstruction Agreement
 
-def selection_flowables(sels: list, company: dict, initials: bool = False) -> list:
-    """The selection blocks (fields + photo) and the acknowledgments, shared by the Agreement and the sign-off sheet."""
+def selection_flowables(sels: list, company: dict, initials: bool = False, lead: list | None = None) -> list:
+    """The selection blocks (fields + photo) and the acknowledgments, shared by the Agreement and the sign-off sheet.
+    `lead` (a section heading) is kept on the same page as the first block so it is never stranded."""
     story = []
-    for sel in sels:
+    for n, sel in enumerate(sels):
         fields = [tuple(f) if isinstance(f, (list, tuple)) else (f["label"], f["value"]) for f in sel.get("fields", [])]
         fields.append(("Viewed", sel.get("viewed", "Online only (not viewed in person)")))
         rows = [[Paragraph(f"<b>{esc(k).upper()}</b>", S("k", fontSize=6.5, textColor=MUTED)), Paragraph(esc(v), BODY_S)]
@@ -401,18 +402,22 @@ def selection_flowables(sels: list, company: dict, initials: bool = False) -> li
         if initials:
             rows.append([Paragraph("<b>APPROVED</b>", S("k", fontSize=6.5, textColor=MUTED)),
                          Paragraph("Owner initials: ________", BODY_S)])
-        tbl = Table(rows, colWidths=[1.3 * inch, WIDTH - 1.3 * inch - 1.75 * inch])
-        tbl.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), PALE), ("LINEBELOW", (0, 0), (-1, -1), 2, colors.white),
-                                 ("VALIGN", (0, 0), (-1, -1), "MIDDLE"), ("TOPPADDING", (0, 0), (-1, -1), 5),
-                                 ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
-        img_cell = ""
+        # Compact rows; the photo column is only reserved when there is a photo, so text uses the full width.
         img = sel.get("image")
-        if img and Path(img).exists():
+        has_img = bool(img and Path(img).exists())
+        tbl_w = WIDTH - 1.75 * inch if has_img else WIDTH
+        tbl = Table(rows, colWidths=[1.3 * inch, tbl_w - 1.3 * inch])
+        tbl.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, -1), PALE), ("LINEBELOW", (0, 0), (-1, -1), 1, colors.white),
+                                 ("VALIGN", (0, 0), (-1, -1), "MIDDLE"), ("TOPPADDING", (0, 0), (-1, -1), 2),
+                                 ("BOTTOMPADDING", (0, 0), (-1, -1), 2)]))
+        if has_img:
             img_cell = [Image(img, width=1.6 * inch, height=1.6 * inch, kind="proportional"),
                         Paragraph(esc(sel.get("caption", "")), S("cap", fontSize=6.5, textColor=MUTED))]
-        row = Table([[tbl, img_cell]], colWidths=[WIDTH - 1.75 * inch, 1.75 * inch])
-        row.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
-        story.append(KeepTogether([Bar(sel.get("title", ""), radius=0), row, Spacer(1, 10)]))
+            row = Table([[tbl, img_cell]], colWidths=[tbl_w, 1.75 * inch])
+            row.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0)]))
+        else:
+            row = tbl
+        story.append(KeepTogether(((lead or []) if n == 0 else []) + [Bar(sel.get("title", ""), radius=0), row, Spacer(1, 6)]))
     story.append(Paragraph("SELECTION ACKNOWLEDGMENTS", H3))
     for a in company.get("selection_acknowledgments", []):
         story.append(Bullet(f"<b>{esc(a['lead'])}</b> {esc(a['text'])}", bar=True))
@@ -452,8 +457,8 @@ def render_agreement(job: Job, company: dict, path: Path):
 
     sels = d.get("selections") or []
     if sels:
-        story += [PageBreak(), Paragraph("Material Selections", H2)] + rule(SKY, 0.8, 6)
-        story += selection_flowables(sels, company)
+        # No page break: sections flow on so the agreement has no half-empty pages.
+        story += selection_flowables(sels, company, lead=[Paragraph("Material Selections", H2)] + rule(SKY, 0.8, 6))
 
     story += exclusions(company, "agreement", agreement=True)
     rows = [("Scope of work" if not s["option"] else f"Optional: {s['option']}", money(s["total"])) for s in scopes]
@@ -464,9 +469,10 @@ def render_agreement(job: Job, company: dict, path: Path):
     story.append(KeepTogether([Spacer(1, 8), money_table(rows, total_rows=[len(rows) - 1], plain_rows=range(len(rows) - 1)),
                                Paragraph("Billing", H2), money_table(bill, plain_rows=range(len(bill)))]))
 
-    story += [PageBreak(), Paragraph("Waivers and Acknowledgments", H2)] + rule(SKY, 0.8, 4)
-    for w in company.get("waivers", []):
-        story.append(KeepTogether([Paragraph(esc(w["heading"]).upper(), H3)] + [Bullet(esc(i), bar=True) for i in w["items"]]))
+    lead = [Paragraph("Waivers and Acknowledgments", H2)] + rule(SKY, 0.8, 4)
+    for n, w in enumerate(company.get("waivers", [])):
+        story.append(KeepTogether((lead if n == 0 else []) + [Paragraph(esc(w["heading"]).upper(), H3)]
+                                  + [Bullet(esc(i), bar=True) for i in w["items"]]))
     story += [Paragraph("Reconstruction Work Authorization / Direct to Pay", H2)] + rule(SKY, 0.8, 4)
     story.append(Paragraph(esc(company.get("agreement_terms_intro", "")), BODY_S))
     for n, t in enumerate(company.get("agreement_terms", []), 1):
