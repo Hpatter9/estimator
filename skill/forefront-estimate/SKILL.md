@@ -202,6 +202,11 @@ an adjuster (reason or measurement), not as reminders to yourself.
   say no to it); the line note says the carpet runs continuously with no seam or transition and is replaced
   through to the next break. When the homeowner asks for the rest of the floor priced separately so they can
   decide, the customer documents may show that part as an option, but the insurance Xactimate still includes it.
+- **Step edges get matching nosing.** Where new hard flooring (LVP/LVT, laminate, wood) ends at a step down,
+  such as a sunken or raised entry or a landing, use "Stair nosing - for wood flooring" (LF) on every step edge,
+  not a reducer, plus a color-matched nosing for the selected product (the manufacturer's flush stair nose,
+  usually 94" pieces). Price it as a per-piece material upgrade until the supplier quotes it, and name it in the
+  flooring selection. Check the photos for steps on each side of the area.
 - **Doors**: bypass (sliding) and interior doors are not detached for drywall or paint work; detach & reset
   them only when flooring is being replaced under them.
 - **Keep paint prep simple.** Don't list hardware detach & reset for painting (towel bars, mirrors, outlet and
