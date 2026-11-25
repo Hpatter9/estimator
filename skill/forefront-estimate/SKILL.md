@@ -33,6 +33,14 @@ hub, the job folder's `estimate/` directory).
 
 ## 1. Read the inputs
 
+- **Measurements (iPhone scan, use first)**: when the job has a Keystone Scan file (`room-scan-<job>-<date>.json`,
+  usually in `sketch/`), run `python scripts/read_scan.py <file> --json rooms.json`. It prints each room's ceiling
+  height, floor SF, wall SF (doors, windows and openings taken out), floor perimeter LF (doorways out: the baseboard
+  run) and ceiling perimeter LF, measured with the iPhone's LiDAR, plus the doors, windows and the fixtures it saw
+  (tub, toilet, vanity...). Use those numbers as they are; the heights are measured, so no 8' assumption. If the user
+  gives a different height, pass `--height "Kitchen=9"`. The matching `room-scan-....png` is the floor plan with
+  every wall's length: use it as the job's sketch page (`sketches`). Rooms that weren't scanned still come from the
+  DocuSketch floor plans below.
 - **Measurements (DocuSketch floor plans)**: DocuSketch's .ESX is encrypted and can't be read, so don't open or ask
   for it. Take the measurements from the floor-plan images (`measurements_<floor>.png` for room sizes,
   `image_wall_measurements_<floor>.png` for wall lengths) or DocuSketch's PDF: rooms are length x width, floor
@@ -141,7 +149,7 @@ Customer / Homeowner signature block — no Forefront representative signature l
 ## 4. Build the documents
 
 Write `estimate.json` in the format in `references/estimate_format.md`, including the Xactimate fields:
-`level` (e.g. "1st Floor"), `type_of_estimate` (Water / Fire / Mold), `price_list`, `sketches` (the DocuSketch
+`level` (e.g. "1st Floor"), `type_of_estimate` (Water / Fire / Mold), `price_list`, `sketches` (the Keystone Scan floor plan `room-scan-....png` when there is one, else the DocuSketch
 floor-plan image per floor, preferably `image_wall_measurements_<floor>.png`), and `rooms` whose names match the
 section names exactly. Then:
 

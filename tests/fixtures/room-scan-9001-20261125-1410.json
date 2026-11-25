@@ -1,0 +1,38 @@
+{
+  "address" : "123 Main St, Denver, CO 80211",
+  "app" : "Keystone Scan",
+  "format" : 1,
+  "jobName" : "Sample",
+  "jobNumber" : 9001,
+  "rooms" : [
+    {
+      "ceilingAreaSF" : 120, "ceilingHeightFt" : 8, "floorAreaSF" : 120, "id" : "A", "name" : "Bedroom",
+      "netWallAreaSF" : 0, "perimeterLF" : 44, "scannedAt" : "2026-11-25T21:10:00Z", "wallAreaSF" : 352,
+      "walls" : [
+        { "lengthFt" : 12, "heightFt" : 8, "start" : [0, 0], "end" : [12, 0] },
+        { "lengthFt" : 10, "heightFt" : 8, "start" : [12, 0], "end" : [12, 10] },
+        { "lengthFt" : 12, "heightFt" : 8, "start" : [12, 10], "end" : [0, 10] },
+        { "lengthFt" : 10, "heightFt" : 8, "start" : [0, 10], "end" : [0, 0] }
+      ],
+      "doors" : [ { "kind" : "door", "widthFt" : 3, "heightFt" : 6.7, "center" : [1.5, 0], "along" : [1, 0] } ],
+      "windows" : [ { "kind" : "window", "widthFt" : 4, "heightFt" : 4, "center" : [6, 10], "along" : [1, 0] } ],
+      "openings" : [],
+      "objects" : [ { "kind" : "bed", "widthFt" : 5, "depthFt" : 6.7, "heightFt" : 2 } ],
+      "outline" : [[0, 0], [12, 0], [12, 10], [0, 10]]
+    },
+    {
+      "ceilingAreaSF" : 40, "ceilingHeightFt" : 8.5, "floorAreaSF" : 40, "id" : "B", "name" : "Bathroom",
+      "netWallAreaSF" : 0, "perimeterLF" : 26, "scannedAt" : "2026-11-25T21:20:00Z", "wallAreaSF" : 221,
+      "walls" : [
+        { "lengthFt" : 8, "heightFt" : 8.5, "start" : [0, 0], "end" : [8, 0] },
+        { "lengthFt" : 5, "heightFt" : 8.5, "start" : [8, 0], "end" : [8, 5] },
+        { "lengthFt" : 8, "heightFt" : 8.5, "start" : [8, 5], "end" : [0, 5] },
+        { "lengthFt" : 5, "heightFt" : 8.5, "start" : [0, 5], "end" : [0, 0] }
+      ],
+      "doors" : [ { "kind" : "door", "widthFt" : 2.5, "heightFt" : 6.7, "center" : [1.25, 0], "along" : [1, 0] } ],
+      "windows" : [], "openings" : [],
+      "objects" : [ { "kind" : "bathtub", "widthFt" : 5, "depthFt" : 2.5, "heightFt" : 1.5 }, { "kind" : "toilet", "widthFt" : 1.5, "depthFt" : 2.3, "heightFt" : 2.5 } ],
+      "outline" : [[0, 0], [8, 0], [8, 5], [0, 5]]
+    }
+  ]
+}

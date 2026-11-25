@@ -182,3 +182,19 @@ def test_selection_approval_sheet(tmp_path):
     with pdfplumber.open(pdfs[0]) as doc:
         text = "\n".join(p.extract_text() or "" for p in doc.pages)
     assert "Vinyl Plank" in text and "DuraLux" in text and "Owner initials" in text and "CUSTOMER SIGNATURE" in text
+
+
+def test_read_scan_turns_an_iphone_scan_into_room_numbers(tmp_path):
+    from pathlib import Path
+    scan = Path(__file__).parent / "fixtures" / "room-scan-9001-20261125-1410.json"
+    out = run("read_scan.py", scan, "--json", tmp_path / "rooms.json", "--height", "Bathroom=9")
+    assert "Keystone Scan of #9001 Sample (2 rooms" in out
+    rooms = {r["name"]: r for r in json.loads((tmp_path / "rooms.json").read_text())}
+    bed, bath = rooms["Bedroom"], rooms["Bathroom"]
+    # 12 x 10 bedroom, 8' walls: 352 SF of wall less a 3x6.7 door and a 4x4 window.
+    assert bed["floor_sf"] == 120 and bed["ceiling_perimeter_lf"] == 44
+    assert bed["wall_sf"] == round(352 - 3 * 6.7 - 16, 2)
+    assert bed["floor_perimeter_lf"] == 41  # the doorway has no baseboard; the window doesn't count
+    # A height given by hand replaces the scanned one for every wall.
+    assert bath["height_ft"] == 9 and bath["wall_sf"] == round(26 * 9 - 2.5 * 6.7, 2)
+    assert any("bathtub" in f for f in bath["fixtures"])
