@@ -1,6 +1,6 @@
 ---
 name: "forefront-estimate"
-description: "Forefront Building + Restoration's estimating workflow. Drafts reconstruction estimates from a DocuSketch .ESX sketch, job notes and site photos, priced from Forefront's own price book, and produces their Reconstruction Estimate, Reconstruction Agreement and Xactimate-format PDFs, then drafts the send-off email in Gmail. Also turns an existing Xactimate estimate PDF into the customer Reconstruction Estimate / Agreement. Use this whenever someone wants to write, price, scope, convert, revise, re-send or email a reconstruction / repair / water / fire / mold estimate or agreement, uploads an .ESX or DocuSketch export, an Xactimate PDF, or a zip of job photos, or mentions Forefront estimates, even if they don't say \"skill\"."
+description: "Forefront Building + Restoration's estimating workflow. Drafts reconstruction estimates from DocuSketch's floor plans (the measured floor-plan images or PDF), job notes and site photos, priced from Forefront's own price book, and produces their Reconstruction Estimate, Reconstruction Agreement and Xactimate-format PDFs, then drafts the send-off email in Gmail. Also turns an existing Xactimate estimate PDF into the customer Reconstruction Estimate / Agreement. Use this whenever someone wants to write, price, scope, convert, revise, re-send or email a reconstruction / repair / water / fire / mold estimate or agreement, uploads DocuSketch floor plans, an Xactimate PDF, or a zip of job photos, or mentions Forefront estimates, even if they don't say \"skill\"."
 ---
 
 # Forefront estimate
@@ -19,7 +19,7 @@ hub, the job folder's `estimate/` directory).
 
 ## Pick the path
 
-- **New job**: an ESX and/or notes and/or photos. Do steps 1–6.
+- **New job**: floor plans and/or notes and/or photos. Do steps 1–6.
 - **Convert an Xactimate PDF**: someone uploads an Xactimate estimate and wants the customer documents. Run
   `python scripts/read_xactimate.py estimate.pdf --json est.json` and confirm the summary says
   "all room totals match". Keep its items and prices as they are (`price_source: "xactimate"`), then do steps 3–6,
@@ -33,17 +33,14 @@ hub, the job folder's `estimate/` directory).
 
 ## 1. Read the inputs
 
-- **DocuSketch .ESX**: `python scripts/read_esx.py job.ESX --json rooms.json`. It prints floor SF, wall SF
-  (minus doors and windows), floor and ceiling perimeter per room. DocuSketch exports every room at an 8' ceiling.
-  If the user gave real heights, pass `--height "Kitchen=10"` (repeatable) or `--default-height 9`. If not, carry
-  on at 8' and list it as an assumption, because walls change with height and floors don't.
-- **Encrypted ESX**: newer DocuSketch exports wrap the sketch in an encrypted `XACTDOC.ZIPXML`, and read_esx.py
-  says "no sketch found inside the ESX". Then take the measurements from the floor-plan images in the same
-  sketches zip (`measurements_<floor>.png` for room sizes, `image_wall_measurements_<floor>.png` for wall
-  lengths): rooms are length x width, floor perimeter is 2 x (L + W), walls are perimeter x height minus doors
-  and windows. Check the images are actually this property (room names and layout match the photos) before using
-  them; a mismatched image has come through before. Watch for rooms whose labelled rectangles overlap (an
-  L-shaped living/dining) and don't count the overlap twice.
+- **Measurements (DocuSketch floor plans)**: DocuSketch's .ESX is encrypted and can't be read, so don't open or ask
+  for it. Take the measurements from the floor-plan images (`measurements_<floor>.png` for room sizes,
+  `image_wall_measurements_<floor>.png` for wall lengths) or DocuSketch's PDF: rooms are length x width, floor
+  perimeter is 2 x (L + W), walls are perimeter x height minus doors and windows. DocuSketch draws every room at an
+  8' ceiling: if the user gave real heights use them, otherwise carry on at 8' and list it as an assumption, because
+  walls change with height and floors don't. Check the images are actually this property (room names and layout
+  match the photos) before using them; a mismatched image has come through before. Watch for rooms whose
+  labelled rectangles overlap (an L-shaped living/dining) and don't count the overlap twice.
 - **Photos**: for a zip or several images, run `python scripts/photo_sheets.py photos.zip --out photos/` and view
   the contact sheets. Open single `photo_###.jpg` files only where you need detail. Note what the photos show
   that matters for scope: materials, damage extent, texture, trim profile, cabinets, flooring type.
