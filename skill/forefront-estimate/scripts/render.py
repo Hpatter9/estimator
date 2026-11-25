@@ -348,7 +348,6 @@ def render_estimate(job: Job, company: dict, path: Path):
         story += [Paragraph("Cost Summary", H2),
                   money_table(rows, total_rows=[1, len(rows) - 1], italic_rows=range(2, len(rows) - 1),
                               plain_rows=[0, *range(2, len(rows) - 1)])]
-    story.append(Paragraph(esc(company.get("amounts_note", "")), S("an", fontSize=7.5, textColor=MUTED, spaceBefore=6)))
     for scope in scopes:
         story += scope_flowables(scope, has_options, agreement=False)
     story += exclusions(company, "estimate", agreement=False)
