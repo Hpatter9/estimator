@@ -10,7 +10,8 @@ Turn a job into Forefront's documents:
 - **Reconstruction Estimate**: the customer summary, with trades, O&P-inclusive totals, plain-English bullets, exclusions and a 50/40/10 billing table.
 - **Reconstruction Agreement**: the same scope, plus material selections, waivers, work-authorization terms and a signature block.
 - **Xactimate Estimate**: always laid out like Forefront's real Xactimate exports (see "The Xactimate PDF" below), for the estimator, adjusters and customers who want line items.
-- **Photo report**: key photos with a one-line caption each, on the Xactimate letterhead, for the adjuster (step 6).
+- **Photo report**: key photos with a one-line caption each, on the Xactimate letterhead (step 6). Any email
+  that includes photos carries them as a photo report, never as loose images.
 - **Send-off email**: a Gmail draft in Hunter's voice, with the right PDF attached and the job's log address bcc'd (step 6).
 
 Everything runs with the scripts in `scripts/` (Python + reportlab, already in the sandbox). Work in a scratch
@@ -259,10 +260,17 @@ short plain paragraphs, warm and unhurried, no bullet points, no corporate phras
   with a one-line description each); the Reconstruction Estimate is not for adjusters. Homeowner cc only if
   Hunter says so.
 
-**Photo report** (adjuster send-offs): pick the 6–12 photos that justify the scope (damage, the extent of
-removal, before-loss finishes that set the replacement), write one plain line per photo for an adjuster
-("Ceiling drywall removed above the tub, approx. 4' x 6'"), put them in `picks.json` (format in the script's
-docstring) and run:
+**Photos always go out as a photo report.** Whenever an email includes photos — an adjuster send-off, a
+quote request to a subcontractor, a reply to a homeowner, anything — build a photo report PDF and attach
+that. Never attach loose image files, and say "photo report" in the body, not "photos attached". This holds
+even for two or three photos.
+
+**Photo report**: pick the photos that make the point of the email. For an adjuster that is the 6–12 that
+justify the scope (damage, the extent of removal, before-loss finishes that set the replacement); for a
+subcontractor it is the equipment or area to be priced, with every label and data plate that was
+photographed. Write one plain line per photo for the reader ("Ceiling drywall removed above the tub,
+approx. 4' x 6'"; "A/C coil data plate: model ..., serial ..."), put them in `picks.json` (format in the
+script's docstring) and run:
 
 ```
 python scripts/photo_report.py picks.json --photos photos/ --estimate estimate.json --out <outputs>
@@ -270,14 +278,26 @@ python scripts/photo_report.py picks.json --photos photos/ --estimate estimate.j
 
 It writes `<Last Name> - Photo Report.pdf` on the Xactimate letterhead with client, property and claim number,
 2 photos per page (`--per-page 4` for many photos). Add `"date_of_loss"` to picks.json when it's known.
+Without an estimate.json, put `customer`, `address` and the rest straight in picks.json; set `title` when
+the report is about one thing ("Photo Report - Furnace and Water Heater") and leave the claim number off a
+report that goes to a subcontractor.
+
+**Photos from CompanyCam** (CompanyCam connector): find the job with `search_projects`, list its photos
+with `list_project_photos`, and scan them with `view_photos` at `variant: "thumbnail"` (10 per call;
+photos usually have no descriptions, so they have to be looked at). Then call `view_photos` with
+`variant: "original"` on the picks: each image is saved to a local file whose path is in the result, and
+those files are what `picks.json` points at. Downloading the photo URLs directly does not work in a cloud
+session (`static.companycam.com` is blocked).
 
 **In the Forefront hub** (a `hub` / `mcp__hub__*` Gmail draft tool is available): pass the PDFs as file paths
 in `attachments` and the hub attaches them directly and BCCs the Homebase log address itself. Skip the base64
 steps below and the Chrome upload; they are only for claude.ai.
 
 **Attachments**: homeowner gets the Reconstruction Estimate only (not the Agreement unless asked); adjuster gets
-the Xactimate Estimate + photo report. The Gmail connector takes attachments as inline base64, which has to be
-typed into the tool call, so:
+the Xactimate Estimate + photo report. If the Gmail connector's `create_draft` describes file references,
+attach any file, whatever its size, by setting the attachment's `content` to
+`sha256:<sha256sum of the file>:<absolute path>` and skip the rest of this section. Otherwise the connector
+takes attachments as inline base64, which has to be typed into the tool call, so:
 1. Shrink first: render with a 300–400px logo, then `qpdf --recompress-flate --compression-level=9
    --object-streams=generate in.pdf small.pdf` (aim for under ~15 KB / 20k base64 chars).
 2. `base64 -w0 small.pdf > est.b64`, then `fold -w 2000 est.b64 | split -l 1 -d - chunk_` and `cat` the chunks.
